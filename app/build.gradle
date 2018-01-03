@@ -20,8 +20,8 @@ android {
 
         defaultConfig {
             applicationId "edu.aku.hassannaqvi.mapps_form6"
-            minSdkVersion 19
-            targetSdkVersion 19
+            minSdkVersion 22
+            targetSdkVersion 22
 
 
             versionCode code
