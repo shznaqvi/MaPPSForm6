@@ -47,10 +47,6 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form6.activities.SectionAActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
             android:name="edu.aku.hassannaqvi.mapps_form6.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
@@ -65,13 +61,9 @@
             android:name="edu.aku.hassannaqvi.mapps_form6.activities.InfoActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form6.activities.Form4Activity"
+            android:name="edu.aku.hassannaqvi.mapps_form6.activities.Form6Activity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name="edu.aku.hassannaqvi.mapps_form6.activities.Form5Activity"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize"></activity>
 
     </application>
 

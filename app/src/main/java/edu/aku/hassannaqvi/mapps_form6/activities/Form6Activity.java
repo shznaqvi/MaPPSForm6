@@ -32,9 +32,9 @@ import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform4.R;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class Form4Activity extends AppCompatActivity {
+public class Form6Activity extends AppCompatActivity {
 
-    private static final String TAG = Form4Activity.class.getSimpleName();
+    private static final String TAG = Form6Activity.class.getSimpleName();
 
     @BindView(R.id.app_header)
     TextView appHeader;
@@ -108,7 +108,7 @@ public class Form4Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form4);
+        setContentView(R.layout.activity_form6);
         ButterKnife.bind(this);
 
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());

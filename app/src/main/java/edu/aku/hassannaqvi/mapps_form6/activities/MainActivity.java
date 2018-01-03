@@ -39,8 +39,7 @@ import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mapps_form6.getclasses.GetEnrolled;
 import edu.aku.hassannaqvi.mapps_form6.otherclasses.FormsList;
-import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncForms4;
-import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncForms5;
+import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncForms;
 import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncParticipants;
 import edu.aku.hassannaqvi.mappsform4.R;
 
@@ -373,8 +372,8 @@ public class MainActivity extends Activity {
         Log.e(TAG, "syncServer: 2");
         if (networkInfo != null && networkInfo.isConnected()) {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms4(this).execute();
-            new SyncForms5(this).execute();
+            new SyncForms(this).execute();
+            //new SyncForms5(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
             new SyncParticipants(this).execute();
