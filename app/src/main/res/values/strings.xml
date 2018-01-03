@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">MaPPS - Form 4 and 5: Pregnancy Confirmation and Clinical Assessment</string>
+    <string name="app_name4">MaPPS - Form 4: Pregnancy Confirmation and Clinical Assessment</string>
+    <string name="app_name5">MaPPS - Form 5: Ultrasound Assessment</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions." </string>
+
+    <!-- String related to form buttons -->
+    <string name="end_interview"> اختتام </string>
+    <string name="start_interview"> انٽرويو شروع ڪريو </string>
+    <string name="nextSection"> اڳيون سيڪشن </string>
+
+    <!-- String related to section headings -->
+    <string name="Seca"> معلومات براء سڃاڻپ </string>
+    <string name="Secb">  آخري ماهواري جي نشاندهي </string>
+    <string name="form5">الٽراسائونڊ جو معائنو</string>
+
+
+    <!-- Strings that are fixed for all apps -->
+    <string name="title_activity_splashscreen">SplashscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="other">ٻيو ڪو(وضاحت ڪريو)</string>
+    <string name="dkn">خبر ڪونهي</string>
+    <string name="yes">ها</string>
+    <string name="no">نه</string>
+    <string name="na">لاڳو نه ٿو ٿئي</string>
+    <string name="male"> مرد </string>
+    <string name="female"> عورت </string>
+    <string name="year"> سال </string>
+    <string name="month"> مهينو </string>
+    <string name="day"> ڏينهن </string>
+
+
+    <!-- Strings related to Sections Below -->
+
+    <!--- Form 4 String -->
+
+    <string name="mp04a001"> خاندا ن نمبر </string>
+    <string name="mp04a002"> شرڪت ڪندڙ جو شناخت نمبر </string>
+    <string name="mp04a003"> شرڪت ڪندڙ جو نالو </string>
+    <string name="mp04a004"> گھر جي سربراه جو نالو </string>
+    <string name="mp04a005"> رابطي لاء نمبر </string>
+
+    <string name="mp02a005"> ڪلسٽر جو نالو </string>
+    <string name="mp02a006"> ڳوٺ جو نالو </string>
+    <string name="mp02a007"> مڪمل پتو </string>
+
+    <string name="mp04a013"> زباني رضامندي </string>
+    <string name="mp04a014"> انٽرويو جو نتيجو </string>
+    <string name="mp04a01401"> پورو ٿيو </string>
+    <string name="mp04a01402"> اڌ ۾ ڇڏيو </string>
+    <string name="mp04a01403"> انڪار ڪيو </string>
+    <string name="mp04a01404"> ٻن دورن کان پوء به ڪير به موجوده نه هو </string>
+    <string name="mp04a01405"> لڏي وئي </string>
+    <string name="mp04a01406">Ultrasound not done </string>
+
+    <string name="mp04b001">توهان جي آخري ماهواري جو پهريون ڏينهن ڪهڙو هيو؟</string>
+    <string name="lmp">آخري ماهواري جي تاريخ</string>
+    <string name="mp04b002">هن وقت توهان ڪيترن مهينن جي حمل /پيٽ سان آهيو؟</string>
+    <string name="mp04b002a">Weeks</string>
+
+    <string name="mp02d">وزن ۽ قد ماپڻ </string>
+    <string name="mp02dsubM1"> Measurer 1 </string>
+    <string name="mp02dsubM2"> Measurer 2 </string>
+    <string name="mp02dsubM3"> Measurer 3 </string>
+    <string name="mp02d001"> قد جي ماپ لکو </string>
+    <string name="mp02d002"> قد جي ماپ لکو </string>
+    <string name="mp02d003"> ڇا قد جي ماپ ۾ ڪوفرق (>1 cm) آيوآهي </string>
+    <string name="mp02d003sub"> If no (differ by 1.0 cm), go to Q207 </string>
+    <string name="mp02d004"> قد جي ماپ لکو </string>
+    <string name="mp02d005"> وزن لکو </string>
+    <string name="mp02d006"> وزن لکو </string>
+    <string name="mp02d007"> آيوآهي (>.5 kg) ڇا وزن ۾ ڪو فرق </string>
+    <string name="mp02d007sub"> If no (differ by 0.5 kg), go to Q211 </string>
+    <string name="mp02d008"> وزن لکو </string>
+    <string name="mp02d009"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mp02d010"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mp02d011"> ڇا کاٻي ٻانهن يا /ڏوري جي ماپ ۾ (>.5 cm) فرق آيو آهي. </string>
+    <string name="mp02d011sub"> If no (differ by 0.5cm), go to Q215 </string>
+    <string name="mp02d012"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+
+    <string name="mp04d"> رت ۾ ڳاڙها جزا جانچڻ ۽ رت جو نمونو وٺڻ</string>
+    <string name="mp04d001"> خون/رت جي ٽيسٽ ڪرائڻ </string>
+    <string name="mp04d001a"> g/L</string>
+
+    <string name="mp04e">الٽرا سائونڊ لاءِ موڪليو</string>
+    <string name="mp04e001"> ڇا شرڪت ڪندڙ کي الٽرا سائونڊ لاء چيو ويو آهي .؟</string>
+    <string name="mp04e002sub"> If the participant states that she has not been referred for an ultrasound, refer her for an ultrasound at the closest facility to <her></her> </string>
+    <string name="mp04e002"> ڇا شرڪت ڪندڙ هينئر تائين الٽراسائونڊ ڪرايو آهي؟ </string>
+    <string name="mp04e00202">صلاح ڏني وئي آهي الٽراسائونڊ ڪرائڻ لاء</string>
+
+    <!-- Form 5 Strings-->
+    <string name="secb">الٽراسائونڊ جي مطابق سوال جواب</string>
+    <string name="ultcl">الٽراسائونڊ ڪلينڪ جو نالو</string>
+    <string name="mp05b001">الٽراسائونڊ جي مطابق ٻار جي مٿي کان پوئين حصي تائين جي ماپ ڪيتري آهي؟</string>
+    <string name="mp05b00101">CRL</string>
+    <string name="mp05b00102">BPD</string>
+    <string name="mp05b00103">FL</string>
+    <string name="mp05b00104">Not mentioned</string>
+    <string name="cm">cm </string>
+    <string name="days">days</string>
+    <string name="mp05b002">ٻار جي عمر اندازن مٿي کان پوئين حصي جي ماپ مطابق ڪيتري آهي؟</string>
+
+    <string name="secc">الٽراسائونڊ جو مشاهدو</string>
+    <string name="mp05c001">ڇا ٻار صاف نظر ايندڙ آهي؟</string>
+    <string name="mp05c00103">Film not available</string>
+    <string name="mp05c002">ڇا ٻار ٻچيداني ۾ موجود آهي؟</string>
+    <string name="mp05c00203">Not mentioned</string>
+    <string name="mp05c00204">specify</string>
+    <string name="mp05c003">ڇا هڪ کان وڌيڪ ٻار آهن؟</string>
+    <string name="mp05c004">ڇا ٻار جي دل حرڪت ڪري ٿي؟</string>
+    <string name="mp05c005">ڇا ٻار ۾ ڪو نقص آهي؟</string>
+    <string name="mp05c005x">Specify..</string>
+    <string name="mp05c006">Expected date of delivery</string>
+    <string name="mp05c007">Date of Ultrasound</string>
+
+</resources>
