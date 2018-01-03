@@ -54,33 +54,29 @@ public class InfoActivity extends Activity {
 
     @BindView(R.id.app_header)
     TextView appHeader;
-    @BindView(R.id.mp04a001)
-    EditText mp04a001;
-    @BindView(R.id.mp04a002)
-    EditText mp04a002;
-    @BindView(R.id.mp04a003)
-    Spinner mp04a003;
+    @BindView(R.id.mp06a001)
+    EditText mp06a001;
+    @BindView(R.id.mp06a002)
+    EditText mp06a002;
+    @BindView(R.id.mp06a003)
+    Spinner mp06a003;
     @BindView(R.id.lhws)
     Spinner lhws;
-    @BindView(R.id.mp04a004)
-    EditText mp04a004;
-    @BindView(R.id.mp04a005)
-    EditText mp04a005;
-    @BindView(R.id.mp04a007)
-    EditText mp04a007;
-    @BindView(R.id.mp04a013)
-    RadioGroup mp04a013;
-    @BindView(R.id.mp04a01301)
-    RadioButton mp04a01301;
-    @BindView(R.id.mp04a01302)
-    RadioButton mp04a01302;
+    @BindView(R.id.mp06a005)
+    EditText mp06a005;
+    @BindView(R.id.mp06a008)
+    EditText mp06a008;
+    @BindView(R.id.mp06a007)
+    EditText mp06a007;
+    @BindView(R.id.mp06a013)
+    RadioGroup mp06a013;
+    @BindView(R.id.mp06a01301)
+    RadioButton mp06a01301;
+    @BindView(R.id.mp06a01302)
+    RadioButton mp06a01302;
 
     @BindView(R.id.fldGrpParticipant)
     LinearLayout fldGrpParticipant;
-    @BindView(R.id.mp05a012)
-    EditText mp05a012;
-    @BindView(R.id.fldGrpClinic)
-    LinearLayout fldGrpClinic;
 
     ArrayList<String> partNames;
     int position;
@@ -113,11 +109,11 @@ public class InfoActivity extends Activity {
 
 
                 ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.colorPrimary));
-                ((TextView) parent.getChildAt(0)).setTextSize(36);
+                ((TextView) parent.getChildAt(0)).setTextSize(28);
                 Log.d("Selected LHWs", LHWs.get(lhws.getSelectedItem().toString()));
 
 
-                mp04a001.setText(null);
+                mp06a001.setText(null);
 
             }
 
@@ -127,20 +123,13 @@ public class InfoActivity extends Activity {
             }
         });
 
-        if (AppMain.formType.equals("5")) {
-            fldGrpClinic.setVisibility(View.VISIBLE);
-            this.setTitle(getResources().getString(R.string.app_name5));
-        } else if (AppMain.formType.equals("4")) {
-            fldGrpClinic.setVisibility(View.GONE);
-            this.setTitle(getResources().getString(R.string.app_name4));
-            mp05a012.setText(null);
-        }
 
-        mp04a003.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mp06a003.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                mp04a002.setText(AppMain.Eparticipant.get(i).getSno());
+                mp06a002.setText(AppMain.Eparticipant.get(i).getSno());
+
 
                 position = i;
             }
@@ -153,9 +142,9 @@ public class InfoActivity extends Activity {
 
     }
 
-    @OnTextChanged(value = R.id.mp04a001,
+    @OnTextChanged(value = R.id.mp06a001,
             callback = OnTextChanged.Callback.TEXT_CHANGED)
-    void afterMp04a001Input(Editable editable) {
+    void aftermp06a001Input(Editable editable) {
         check = false;
         fldGrpParticipant.setVisibility(View.GONE);
     }
@@ -165,7 +154,7 @@ public class InfoActivity extends Activity {
     void onCheckParticipantsClick() {
         //TODO implement
 
-        enrolledParticipant = db.getEnrolledByHousehold(AppMain.curCluster, LHWs.get(lhws.getSelectedItem().toString()), mp04a001.getText().toString());
+        enrolledParticipant = db.getEnrolledByHousehold(AppMain.curCluster, LHWs.get(lhws.getSelectedItem().toString()), mp06a001.getText().toString());
 
         if (enrolledParticipant.size() != 0) {
 
@@ -188,7 +177,7 @@ public class InfoActivity extends Activity {
 
             check = true;
 
-            mp04a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, partNames));
+            mp06a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, partNames));
 
 
         } else {
@@ -241,17 +230,8 @@ public class InfoActivity extends Activity {
 
                 finish();
 
-                if (AppMain.formType.equals("4") && mp04a01301.isChecked()) {
-                    Intent intent = new Intent(this, Form6Activity.class);
-                    startActivity(intent);
-                } else if (AppMain.formType.equals("5") && mp04a01301.isChecked()) {
-                    //Intent intent = new Intent(this, Form5Activity.class);
-                    //startActivity(intent);
-                } else if (mp04a01302.isChecked()) {
-                    Intent intent = new Intent(this, EndingActivity.class);
-                    intent.putExtra("complete", false);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(this, Form6Activity.class);
+                startActivity(intent);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -296,11 +276,11 @@ public class InfoActivity extends Activity {
         AppMain.fc.setInterviewer01(AppMain.loginMem[1]);
         AppMain.fc.setInterviewer02(AppMain.loginMem[2]);
         AppMain.fc.setClustercode(AppMain.curCluster);
-        AppMain.fc.setHousehold(mp04a001.getText().toString());
+        AppMain.fc.setHousehold(mp06a001.getText().toString());
         AppMain.fc.setDeviceID(AppMain.deviceId);
-        AppMain.fc.setSno(mp04a002.getText().toString());
+        AppMain.fc.setSno(mp06a002.getText().toString());
         AppMain.fc.setFormType(AppMain.formType);
-        AppMain.fc.setVillageacode(mp04a007.getText().toString());
+        AppMain.fc.setVillageacode(mp06a007.getText().toString());
 
         AppMain.fc.setLhwCode(AppMain.Eparticipant.get(position).getLhwCode());
         AppMain.fc.setApp_version(AppMain.versionName + "." + AppMain.versionCode);
@@ -309,13 +289,10 @@ public class InfoActivity extends Activity {
         JSONObject sInfo = new JSONObject();
 
         sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
-        sInfo.put("mp04a003", mp04a003.getSelectedItem().toString());
-        sInfo.put("mp04a004", mp04a004.getText().toString());
-        sInfo.put("mp04a005", mp04a005.getText().toString());
-        if (AppMain.formType.equals("5")) {
-            sInfo.put("mp05a012", mp05a012.getText().toString());
-        }
-        sInfo.put("mp04a13", mp04a01301.isChecked() ? "1" : mp04a01302.isChecked() ? "2" : "0");
+        sInfo.put("mp06a003", mp06a003.getSelectedItem().toString());
+        sInfo.put("mp06a005", mp06a005.getText().toString());
+        sInfo.put("mp06a008", mp06a008.getText().toString());
+        sInfo.put("mp06a013", mp06a01301.isChecked() ? "1" : mp06a01302.isChecked() ? "2" : "0");
 
         AppMain.fc.setsInfo(String.valueOf(sInfo));
 
@@ -362,105 +339,92 @@ public class InfoActivity extends Activity {
 
         //======================= Q 1 ===============
 
-        if (mp04a001.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a001), Toast.LENGTH_SHORT).show();
-            mp04a001.setError("This data is Required!");
+        if (mp06a001.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a001), Toast.LENGTH_SHORT).show();
+            mp06a001.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a001: This Data is Required!");
+            Log.i(TAG, "mp06a001: This Data is Required!");
             return false;
         } else {
-            mp04a001.setError(null);
+            mp06a001.setError(null);
         }
 
         //======================= Q 3 ===============
 
-        if (mp04a003.getSelectedItem() == "....") {
-//        if (mp04a003.getSelectedItem().equals("")) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a003), Toast.LENGTH_SHORT).show();
-            ((TextView) mp04a003.getSelectedView()).setText("This Data is Required");
-            ((TextView) mp04a003.getSelectedView()).setError("This Data is Required");
-            ((TextView) mp04a003.getSelectedView()).setTextColor(Color.RED);
+        if (mp06a003.getSelectedItem() == "....") {
+//        if (mp06a003.getSelectedItem().equals("")) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a003), Toast.LENGTH_SHORT).show();
+            ((TextView) mp06a003.getSelectedView()).setText("This Data is Required");
+            ((TextView) mp06a003.getSelectedView()).setError("This Data is Required");
+            ((TextView) mp06a003.getSelectedView()).setTextColor(Color.RED);
 
-            Log.i(TAG, "mp04a003: This Data is Required!");
+            Log.i(TAG, "mp06a003: This Data is Required!");
             return false;
         } else {
-            ((TextView) mp04a003.getSelectedView()).setError(null);
+            ((TextView) mp06a003.getSelectedView()).setError(null);
         }
 
         //======================= Q 2 ===============
 
-        if (mp04a002.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a002), Toast.LENGTH_SHORT).show();
-            mp04a002.setError("This data is Required!");
+        if (mp06a002.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a002), Toast.LENGTH_SHORT).show();
+            mp06a002.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a002: This Data is Required!");
+            Log.i(TAG, "mp06a002: This Data is Required!");
             return false;
         } else {
-            mp04a002.setError(null);
+            mp06a002.setError(null);
         }
 
-        /*if (mp04a003.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a003), Toast.LENGTH_SHORT).show();
-            mp04a003.setError("This data is Required!");
+        /*if (mp06a003.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a003), Toast.LENGTH_SHORT).show();
+            mp06a003.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a003: This Data is Required!");
+            Log.i(TAG, "mp06a003: This Data is Required!");
             return false;
         } else {
-            mp04a003.setError(null);
+            mp06a003.setError(null);
         }*/
 
-        if (mp04a004.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a004), Toast.LENGTH_SHORT).show();
-            mp04a004.setError("This data is Required!");
+        if (mp06a005.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a005), Toast.LENGTH_SHORT).show();
+            mp06a005.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a004: This Data is Required!");
+            Log.i(TAG, "mp06a005: This Data is Required!");
             return false;
         } else {
-            mp04a004.setError(null);
+            mp06a005.setError(null);
         }
 
-        if (mp04a007.getText().toString().isEmpty()) {
+        if (mp06a007.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp02a006), Toast.LENGTH_SHORT).show();
-            mp04a007.setError("This data is Required!");
+            mp06a007.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a007: This Data is Required!");
+            Log.i(TAG, "mp06a007: This Data is Required!");
             return false;
         } else {
-            mp04a007.setError(null);
+            mp06a007.setError(null);
         }
 
-        if (mp04a005.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a005), Toast.LENGTH_SHORT).show();
-            mp04a005.setError("This data is Required!");
+        if (mp06a008.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a008), Toast.LENGTH_SHORT).show();
+            mp06a008.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a005: This Data is Required!");
+            Log.i(TAG, "mp06a008: This Data is Required!");
             return false;
         } else {
-            mp04a005.setError(null);
-        }
-
-
-        if (AppMain.formType.equals("5")) {
-            if (mp05a012.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.ultcl), Toast.LENGTH_SHORT).show();
-                mp05a012.setError("This data is Required!");
-
-                Log.i(TAG, "mp05a012: This Data is Required!");
-                return false;
-            } else {
-                mp05a012.setError(null);
-            }
+            mp06a008.setError(null);
         }
 
 
-        if (mp04a013.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp04a013), Toast.LENGTH_SHORT).show();
-            mp04a01302.setError("This data is Required!");
+        if (mp06a013.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a013), Toast.LENGTH_SHORT).show();
+            mp06a01302.setError("This data is Required!");
 
-            Log.i(TAG, "mp04a013: This Data is Required!");
+            Log.i(TAG, "mp06a013: This Data is Required!");
             return false;
         } else {
-            mp04a01302.setError(null);
+            mp06a01302.setError(null);
         }
 
 

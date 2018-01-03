@@ -7,12 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,9 +16,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,76 +24,53 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform4.R;
-import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class Form6Activity extends AppCompatActivity {
 
     private static final String TAG = Form6Activity.class.getSimpleName();
 
-    @BindView(R.id.app_header)
-    TextView appHeader;
-    @BindView(R.id.mp04b001)
-    DatePickerInputEditText mp04b001;
-    @BindView(R.id.mp04b00199)
-    CheckBox mp04b00199;
-    @BindView(R.id.mp04b002)
-    EditText mp04b002;
-    @BindView(R.id.mp02d001)
-    EditText mp02d001;
-    @BindView(R.id.mp02d001id1)
-    Spinner mp02d001id1;
-    @BindView(R.id.mp02d005)
-    EditText mp02d005;
-    @BindView(R.id.mp02d005id1)
-    Spinner mp02d005id1;
-    @BindView(R.id.mp02d009)
-    EditText mp02d009;
-    @BindView(R.id.mp02d009id1)
-    Spinner mp02d009id1;
-    @BindView(R.id.mp02d002)
-    EditText mp02d002;
-    @BindView(R.id.mp02d002id2)
-    Spinner mp02d002id2;
-    @BindView(R.id.mp02d006)
-    EditText mp02d006;
-    @BindView(R.id.mp02d006id2)
-    Spinner mp02d006id2;
-    @BindView(R.id.mp02d010)
-    EditText mp02d010;
-    @BindView(R.id.mp02d010id2)
-    Spinner mp02d010id2;
-    @BindView(R.id.fldGrpmp02d004)
-    LinearLayout fldGrpmp02d004;
-    @BindView(R.id.mp02d004)
-    EditText mp02d004;
-    @BindView(R.id.mp02d004id3)
-    Spinner mp02d004id3;
-    @BindView(R.id.fldGrpmp02d008)
-    LinearLayout fldGrpmp02d008;
-    @BindView(R.id.mp02d008)
-    EditText mp02d008;
-    @BindView(R.id.mp02d008id3)
-    Spinner mp02d008id3;
-    @BindView(R.id.fldGrpmp02d012)
-    LinearLayout fldGrpmp02d012;
-    @BindView(R.id.mp02d012)
-    EditText mp02d012;
-    @BindView(R.id.mp02d012id3)
-    Spinner mp02d012id3;
-    @BindView(R.id.mp04d001)
-    EditText mp04d001;
-    /* @BindView(R.id.mp04e001) RadioGroup mp04e001;
-     @BindView(R.id.mp04e00101) RadioButton mp04e00101;
-     @BindView(R.id.mp04e00102) RadioButton mp04e00102;*/
-    @BindView(R.id.mp04e002)
-    RadioGroup mp04e002;
-    @BindView(R.id.mp04e00201)
-    RadioButton mp04e00201;
-    @BindView(R.id.mp04e00202)
-    RadioButton mp04e00202;
-
-    @BindView(R.id.mp04d00177)
-    CheckBox mp04d00177;
+    @BindView(R.id.mp06b001)
+    EditText mp06b001;
+    @BindView(R.id.mp06b001id1)
+    Spinner mp06b001id1;
+    @BindView(R.id.mp06b005)
+    EditText mp06b005;
+    @BindView(R.id.mp06b005id1)
+    Spinner mp06b005id1;
+    @BindView(R.id.mp06b009)
+    EditText mp06b009;
+    @BindView(R.id.mp06b009id1)
+    Spinner mp06b009id1;
+    @BindView(R.id.mp06b002)
+    EditText mp06b002;
+    @BindView(R.id.mp06b002id2)
+    Spinner mp06b002id2;
+    @BindView(R.id.mp06b006)
+    EditText mp06b006;
+    @BindView(R.id.mp06b006id2)
+    Spinner mp06b006id2;
+    @BindView(R.id.mp06b010)
+    EditText mp06b010;
+    @BindView(R.id.mp06b010id2)
+    Spinner mp06b010id2;
+    @BindView(R.id.fldGrpmp06b004)
+    LinearLayout fldGrpmp06b004;
+    @BindView(R.id.mp06b004)
+    EditText mp06b004;
+    @BindView(R.id.mp06b004id3)
+    Spinner mp06b004id3;
+    @BindView(R.id.fldGrpmp06b008)
+    LinearLayout fldGrpmp06b008;
+    @BindView(R.id.mp06b008)
+    EditText mp06b008;
+    @BindView(R.id.mp06b008id3)
+    Spinner mp06b008id3;
+    @BindView(R.id.fldGrpmp06b012)
+    LinearLayout fldGrpmp06b012;
+    @BindView(R.id.mp06b012)
+    EditText mp06b012;
+    @BindView(R.id.mp06b012id3)
+    Spinner mp06b012id3;
 
     boolean flag_q4 = false, flag_q8 = false, flag_q12 = false;
 
@@ -111,47 +82,18 @@ public class Form6Activity extends AppCompatActivity {
         setContentView(R.layout.activity_form6);
         ButterKnife.bind(this);
 
-        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
-        String maxDate9Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_9Months) + AppMain.MILLISECONDS_IN_DAY));
 
-        mp04b001.setManager(getSupportFragmentManager());
-        mp04b001.setMaxDate(dateToday);
-        mp04b001.setMinDate(maxDate9Months);
-
-        mp04b00199.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mp04b001.setVisibility(View.GONE);
-                    mp04b001.setText(null);
-                } else {
-                    mp04b001.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+        mp06b001id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b002id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b004id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b005id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b006id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b008id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b009id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b010id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        mp06b012id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
 
 
-        mp02d001id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d002id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d004id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d005id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d006id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d008id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d009id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d010id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp02d012id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-
-        mp04d00177.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mp04d001.setVisibility(View.GONE);
-                    mp04d001.setText(null);
-                } else {
-                    mp04d001.setVisibility(View.VISIBLE);
-                }
-            }
-        });
 
 
     }
@@ -209,142 +151,113 @@ public class Form6Activity extends AppCompatActivity {
 
     public boolean ValidateForm() {
 
-        if (mp04b001.getText().toString().isEmpty() && !mp04b00199.isChecked()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp04b001), Toast.LENGTH_SHORT).show();
-            mp04b001.setError("This data is Required!");
-            Log.i(TAG, "mp04b001: This data is Required!");
-            return false;
-        } else {
-            mp04b001.setError(null);
-        }
-
-
-        if (mp04b002.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp04b002), Toast.LENGTH_SHORT).show();
-            mp04b002.setError("This data is Required!");
-            Log.i(TAG, "mp04b002: This data is Required!");
-            return false;
-        } else {
-            mp04b002.setError(null);
-        }
-
-        if (Integer.valueOf(mp04b002.getText().toString()) < 4 || Integer.valueOf(mp04b002.getText().toString()) > 42) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp04b002), Toast.LENGTH_SHORT).show();
-            mp04b002.setError("Range is 4 to 42 weeks");
-            Log.i(TAG, "mp04b002: Range is 4 to 42 weeks");
-            return false;
-        } else {
-            mp04b002.setError(null);
-        }
-
-
 //        1
-        if (mp02d001.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d001), Toast.LENGTH_SHORT).show();
-            mp02d001.setError("This data is Required!");
-            Log.i(TAG, "mp02d001: This data is Required!");
+        if (mp06b001.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
+            mp06b001.setError("This data is Required!");
+            Log.i(TAG, "mp06b001: This data is Required!");
             return false;
         } else {
-            mp02d001.setError(null);
-            if (!mp02d001.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d001), Toast.LENGTH_SHORT).show();
-                mp02d001.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "mp02d001: Invalid Decimal value is Required!");
+            mp06b001.setError(null);
+            if (!mp06b001.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
+                mp06b001.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "mp06b001: Invalid Decimal value is Required!");
                 return false;
             } else {
-                mp02d001.setError(null);
-                if (Double.parseDouble(mp02d001.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d001), Toast.LENGTH_SHORT).show();
-                    mp02d001.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "mp02d001: Invalid Greater then 0");
+                mp06b001.setError(null);
+                if (Double.parseDouble(mp06b001.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
+                    mp06b001.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "mp06b001: Invalid Greater then 0");
                     return false;
                 } else {
-                    mp02d001.setError(null);
-                    if (Double.parseDouble(mp02d001.getText().toString()) < 100 || Double.parseDouble(mp02d001.getText().toString()) > 180) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d001), Toast.LENGTH_SHORT).show();
-                        mp02d001.setError("Invalid: Range 100-180");
-                        Log.i(TAG, "mp02d001: Invalid Range 100-180");
+                    mp06b001.setError(null);
+                    if (Double.parseDouble(mp06b001.getText().toString()) < 100 || Double.parseDouble(mp06b001.getText().toString()) > 180) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
+                        mp06b001.setError("Invalid: Range 100-180");
+                        Log.i(TAG, "mp06b001: Invalid Range 100-180");
                         return false;
                     } else {
-                        mp02d001.setError(null);
+                        mp06b001.setError(null);
                     }
                 }
             }
         }
 
-        TextView mp02d001id1_txt = (TextView) mp02d001id1.getSelectedView();
-        if (mp02d001id1.getSelectedItemId() == 0) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d001), Toast.LENGTH_SHORT).show();
-            mp02d001id1_txt.setTextColor(Color.RED);
-            mp02d001id1_txt.setError("This data is Required!");
-            Log.i(TAG, "mp02d001id1: This data is Required!");
+        TextView mp06b001id1_txt = (TextView) mp06b001id1.getSelectedView();
+        if (mp06b001id1.getSelectedItemId() == 0) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
+            mp06b001id1_txt.setTextColor(Color.RED);
+            mp06b001id1_txt.setError("This data is Required!");
+            Log.i(TAG, "mp06b001id1: This data is Required!");
             return false;
         } else {
-            mp02d001id1_txt.setError(null);
+            mp06b001id1_txt.setError(null);
         }
 
 //        2
-        if (mp02d002.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d002), Toast.LENGTH_SHORT).show();
-            mp02d002.setError("This data is Required!");
-            Log.i(TAG, "mp02d002: This data is Required!");
+        if (mp06b002.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
+            mp06b002.setError("This data is Required!");
+            Log.i(TAG, "mp06b002: This data is Required!");
             return false;
         } else {
-            mp02d002.setError(null);
-            if (!mp02d002.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d002), Toast.LENGTH_SHORT).show();
-                mp02d002.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "mp02d002: Invalid Decimal value is Required!");
+            mp06b002.setError(null);
+            if (!mp06b002.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
+                mp06b002.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "mp06b002: Invalid Decimal value is Required!");
                 return false;
             } else {
-                mp02d002.setError(null);
-                if (Double.parseDouble(mp02d002.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d002), Toast.LENGTH_SHORT).show();
-                    mp02d002.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "mp02d002: Invalid Greater then 0");
+                mp06b002.setError(null);
+                if (Double.parseDouble(mp06b002.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
+                    mp06b002.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "mp06b002: Invalid Greater then 0");
                     return false;
                 } else {
-                    mp02d002.setError(null);
-                    if (Double.parseDouble(mp02d002.getText().toString()) < 100 || Double.parseDouble(mp02d002.getText().toString()) > 180) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d002), Toast.LENGTH_SHORT).show();
-                        mp02d002.setError("Invalid: Range between 100-180");
-                        Log.i(TAG, "mp02d002: Invalid Range between 100-180");
+                    mp06b002.setError(null);
+                    if (Double.parseDouble(mp06b002.getText().toString()) < 100 || Double.parseDouble(mp06b002.getText().toString()) > 180) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
+                        mp06b002.setError("Invalid: Range between 100-180");
+                        Log.i(TAG, "mp06b002: Invalid Range between 100-180");
                         return false;
                     } else {
-                        mp02d002.setError(null);
+                        mp06b002.setError(null);
                     }
                 }
             }
         }
 
-        TextView mp02d002id2_txt = (TextView) mp02d002id2.getSelectedView();
-        if (mp02d002id2.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d002), Toast.LENGTH_SHORT).show();
-            mp02d002id2_txt.setTextColor(Color.RED);
-            mp02d002id2_txt.setText("This data is Required!");
-            mp02d002id2_txt.setError("This data is Required!");
-            Log.i(TAG, "mp02d002id2: This data is Required!");
+        TextView mp06b002id2_txt = (TextView) mp06b002id2.getSelectedView();
+        if (mp06b002id2.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
+            mp06b002id2_txt.setTextColor(Color.RED);
+            mp06b002id2_txt.setText("This data is Required!");
+            mp06b002id2_txt.setError("This data is Required!");
+            Log.i(TAG, "mp06b002id2: This data is Required!");
             return false;
         } else {
-            mp02d002id2_txt.setError(null);
+            mp06b002id2_txt.setError(null);
         }
 
-        if (mp02d001id1.getSelectedItem().toString().contains(mp02d002id2.getSelectedItem().toString())) {
-            Toast.makeText(this, "ERROR(invalid) Users same: " + getString(R.string.mp02d001), Toast.LENGTH_SHORT).show();
-            mp02d001id1_txt.setError("Users Same");
-            mp02d002id2_txt.setError("Users Same");
-            Log.i(TAG, "mp02d001id1: Users Same");
+        if (mp06b001id1.getSelectedItem().toString().contains(mp06b002id2.getSelectedItem().toString())) {
+            Toast.makeText(this, "ERROR(invalid) Users same: " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
+            mp06b001id1_txt.setError("Users Same");
+            mp06b002id2_txt.setError("Users Same");
+            Log.i(TAG, "mp06b001id1: Users Same");
             return false;
         } else {
-            mp02d001id1_txt.setError(null);
-            mp02d002id2_txt.setError(null);
+            mp06b001id1_txt.setError(null);
+            mp06b002id2_txt.setError(null);
         }
 
 //        Skip
 
 //        Question 4 Checking
 
-        double q4 = Double.parseDouble(mp02d001.getText().toString()) - Double.parseDouble(mp02d002.getText().toString());
+        double q4 = Double.parseDouble(mp06b001.getText().toString()) - Double.parseDouble(mp06b002.getText().toString());
 
         if (Math.signum(q4) == -1) {
             q4 = q4 * -1;
@@ -354,15 +267,15 @@ public class Form6Activity extends AppCompatActivity {
             if (q4 > 1.0) {
                 flag_q4 = true;
 
-                fldGrpmp02d004.setVisibility(View.VISIBLE);
-                mp02d001.setEnabled(false);
-                mp02d002.setEnabled(false);
+                fldGrpmp06b004.setVisibility(View.VISIBLE);
+                mp06b001.setEnabled(false);
+                mp06b002.setEnabled(false);
 
-                mp02d001id1.setEnabled(false);
-                mp02d002id2.setEnabled(false);
+                mp06b001id1.setEnabled(false);
+                mp06b002id2.setEnabled(false);
 
                 Toast.makeText(this, "ERROR(invalid): Difference in Measurement", Toast.LENGTH_SHORT).show();
-                Log.i(TAG, "mp02d001 & mp02d002: Difference in Measurement");
+                Log.i(TAG, "mp06b001 & mp06b002: Difference in Measurement");
 
                 return false;
             }
@@ -370,156 +283,156 @@ public class Form6Activity extends AppCompatActivity {
 
 //            4
         if (flag_q4) {
-            if (mp02d004.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d004), Toast.LENGTH_SHORT).show();
-                mp02d004.setError("This data is Required!");
-                Log.i(TAG, "mp02d004: This data is Required!");
+            if (mp06b004.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
+                mp06b004.setError("This data is Required!");
+                Log.i(TAG, "mp06b004: This data is Required!");
                 return false;
             } else {
-                mp02d004.setError(null);
-                if (!mp02d004.getText().toString().contains(".")) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d004), Toast.LENGTH_SHORT).show();
-                    mp02d004.setError("Invalid: Decimal value is Required!");
-                    Log.i(TAG, "mp02d004: Invalid Decimal value is Required!");
+                mp06b004.setError(null);
+                if (!mp06b004.getText().toString().contains(".")) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
+                    mp06b004.setError("Invalid: Decimal value is Required!");
+                    Log.i(TAG, "mp06b004: Invalid Decimal value is Required!");
                     return false;
                 } else {
-                    mp02d004.setError(null);
-                    if (Double.parseDouble(mp02d004.getText().toString()) < 1) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d004), Toast.LENGTH_SHORT).show();
-                        mp02d004.setError("Invalid: Greater then 0");
-                        Log.i(TAG, "mp02d004: Invalid Greater then 0");
+                    mp06b004.setError(null);
+                    if (Double.parseDouble(mp06b004.getText().toString()) < 1) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
+                        mp06b004.setError("Invalid: Greater then 0");
+                        Log.i(TAG, "mp06b004: Invalid Greater then 0");
                         return false;
                     } else {
-                        mp02d004.setError(null);
-                        if (Double.parseDouble(mp02d004.getText().toString()) < 100 || Double.parseDouble(mp02d004.getText().toString()) > 180) {
-                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d004), Toast.LENGTH_SHORT).show();
-                            mp02d004.setError("Invalid: Range 100-180");
-                            Log.i(TAG, "mp02d004: Invalid Range 100-180");
+                        mp06b004.setError(null);
+                        if (Double.parseDouble(mp06b004.getText().toString()) < 100 || Double.parseDouble(mp06b004.getText().toString()) > 180) {
+                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
+                            mp06b004.setError("Invalid: Range 100-180");
+                            Log.i(TAG, "mp06b004: Invalid Range 100-180");
                             return false;
                         } else {
-                            mp02d004.setError(null);
+                            mp06b004.setError(null);
                         }
                     }
                 }
             }
 
-            TextView mp02d004id3_txt = (TextView) mp02d004id3.getSelectedView();
-            if (mp02d004id3.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d004), Toast.LENGTH_SHORT).show();
-                mp02d004id3_txt.setError("This data is Required!");
-                mp02d004id3_txt.setText("This data is Required!");
-                Log.i(TAG, "mp02d004id3: This data is Required!");
+            TextView mp06b004id3_txt = (TextView) mp06b004id3.getSelectedView();
+            if (mp06b004id3.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
+                mp06b004id3_txt.setError("This data is Required!");
+                mp06b004id3_txt.setText("This data is Required!");
+                Log.i(TAG, "mp06b004id3: This data is Required!");
                 return false;
             } else {
-                mp02d004id3_txt.setError(null);
+                mp06b004id3_txt.setError(null);
             }
         }
 
 //        5
-        if (mp02d005.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d005), Toast.LENGTH_SHORT).show();
-            mp02d005.setError("This data is Required!");
-            Log.i(TAG, "mp02d005: This data is Required!");
+        if (mp06b005.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
+            mp06b005.setError("This data is Required!");
+            Log.i(TAG, "mp06b005: This data is Required!");
             return false;
         } else {
-            mp02d005.setError(null);
-            if (!mp02d005.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d005), Toast.LENGTH_SHORT).show();
-                mp02d005.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "mp02d005: Invalid Decimal value is Required!");
+            mp06b005.setError(null);
+            if (!mp06b005.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
+                mp06b005.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "mp06b005: Invalid Decimal value is Required!");
                 return false;
             } else {
-                mp02d005.setError(null);
-                if (Double.parseDouble(mp02d005.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d005), Toast.LENGTH_SHORT).show();
-                    mp02d005.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "mp02d005: Invalid Greater then 0");
+                mp06b005.setError(null);
+                if (Double.parseDouble(mp06b005.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
+                    mp06b005.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "mp06b005: Invalid Greater then 0");
                     return false;
                 } else {
-                    mp02d005.setError(null);
-                    if (Double.parseDouble(mp02d005.getText().toString()) < 30.0 || Double.parseDouble(mp02d005.getText().toString()) > 99.0) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d005), Toast.LENGTH_SHORT).show();
-                        mp02d005.setError("Invalid: Range 30.0-99.0");
-                        Log.i(TAG, "mp02d005: Invalid Range 30.0-99.0");
+                    mp06b005.setError(null);
+                    if (Double.parseDouble(mp06b005.getText().toString()) < 30.0 || Double.parseDouble(mp06b005.getText().toString()) > 99.0) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
+                        mp06b005.setError("Invalid: Range 30.0-99.0");
+                        Log.i(TAG, "mp06b005: Invalid Range 30.0-99.0");
                         return false;
                     } else {
-                        mp02d005.setError(null);
+                        mp06b005.setError(null);
                     }
                 }
             }
         }
 
-        TextView mp02d005id1_txt = (TextView) mp02d005id1.getSelectedView();
-        if (mp02d005id1.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d005), Toast.LENGTH_SHORT).show();
-            mp02d005id1_txt.setError("This data is Required!");
-            mp02d005id1_txt.setText("This data is Required!");
-            Log.i(TAG, "mp02d005id1: This data is Required!");
+        TextView mp06b005id1_txt = (TextView) mp06b005id1.getSelectedView();
+        if (mp06b005id1.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
+            mp06b005id1_txt.setError("This data is Required!");
+            mp06b005id1_txt.setText("This data is Required!");
+            Log.i(TAG, "mp06b005id1: This data is Required!");
             return false;
         } else {
-            mp02d005id1_txt.setError(null);
+            mp06b005id1_txt.setError(null);
         }
 
 //        6
-        if (mp02d006.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d006), Toast.LENGTH_SHORT).show();
-            mp02d006.setError("This data is Required!");
-            Log.i(TAG, "mp02d006: This data is Required!");
+        if (mp06b006.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
+            mp06b006.setError("This data is Required!");
+            Log.i(TAG, "mp06b006: This data is Required!");
             return false;
         } else {
-            mp02d006.setError(null);
-            if (!mp02d006.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d006), Toast.LENGTH_SHORT).show();
-                mp02d006.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "mp02d006: Invalid Decimal value is Required!");
+            mp06b006.setError(null);
+            if (!mp06b006.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
+                mp06b006.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "mp06b006: Invalid Decimal value is Required!");
                 return false;
             } else {
-                mp02d006.setError(null);
-                if (Double.parseDouble(mp02d006.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d006), Toast.LENGTH_SHORT).show();
-                    mp02d006.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "mp02d006: Invalid Greater then 0");
+                mp06b006.setError(null);
+                if (Double.parseDouble(mp06b006.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
+                    mp06b006.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "mp06b006: Invalid Greater then 0");
                     return false;
                 } else {
-                    mp02d006.setError(null);
-                    if (Double.parseDouble(mp02d006.getText().toString()) < 30.0 || Double.parseDouble(mp02d006.getText().toString()) > 99.0) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d006), Toast.LENGTH_SHORT).show();
-                        mp02d006.setError("Invalid: Range 30.0-99.0");
-                        Log.i(TAG, "mp02d006: Invalid Range 30.0-99.0");
+                    mp06b006.setError(null);
+                    if (Double.parseDouble(mp06b006.getText().toString()) < 30.0 || Double.parseDouble(mp06b006.getText().toString()) > 99.0) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
+                        mp06b006.setError("Invalid: Range 30.0-99.0");
+                        Log.i(TAG, "mp06b006: Invalid Range 30.0-99.0");
                         return false;
                     } else {
-                        mp02d006.setError(null);
+                        mp06b006.setError(null);
                     }
                 }
             }
         }
 
-        TextView mp02d006id2_txt = (TextView) mp02d006id2.getSelectedView();
-        if (mp02d006id2.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d006), Toast.LENGTH_SHORT).show();
-            mp02d006id2_txt.setError("This data is Required!");
-            mp02d006id2_txt.setText("This data is Required!");
-            Log.i(TAG, "mp02d006id1: This data is Required!");
+        TextView mp06b006id2_txt = (TextView) mp06b006id2.getSelectedView();
+        if (mp06b006id2.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
+            mp06b006id2_txt.setError("This data is Required!");
+            mp06b006id2_txt.setText("This data is Required!");
+            Log.i(TAG, "mp06b006id1: This data is Required!");
             return false;
         } else {
-            mp02d006id2_txt.setError(null);
+            mp06b006id2_txt.setError(null);
         }
-        if (mp02d005id1.getSelectedItem().toString().contains(mp02d006id2.getSelectedItem().toString())) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d005), Toast.LENGTH_SHORT).show();
-            mp02d006id2_txt.setError("Users Same");
-            mp02d005id1_txt.setError("Users Same");
-            Log.i(TAG, "mp02d005id1: Users Same");
+        if (mp06b005id1.getSelectedItem().toString().contains(mp06b006id2.getSelectedItem().toString())) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
+            mp06b006id2_txt.setError("Users Same");
+            mp06b005id1_txt.setError("Users Same");
+            Log.i(TAG, "mp06b005id1: Users Same");
             return false;
         } else {
-            mp02d006id2_txt.setError(null);
-            mp02d005id1_txt.setError(null);
+            mp06b006id2_txt.setError(null);
+            mp06b005id1_txt.setError(null);
         }
 
 //        Skip
 
         //        Question 8 Checking
 
-        double q8 = Double.parseDouble(mp02d005.getText().toString()) - Double.parseDouble(mp02d006.getText().toString());
+        double q8 = Double.parseDouble(mp06b005.getText().toString()) - Double.parseDouble(mp06b006.getText().toString());
 
         if (Math.signum(q8) == -1) {
             q8 = q8 * -1;
@@ -529,15 +442,15 @@ public class Form6Activity extends AppCompatActivity {
             if (q8 > 0.5) {
                 flag_q8 = true;
 
-                fldGrpmp02d008.setVisibility(View.VISIBLE);
-                mp02d005.setEnabled(false);
-                mp02d006.setEnabled(false);
+                fldGrpmp06b008.setVisibility(View.VISIBLE);
+                mp06b005.setEnabled(false);
+                mp06b006.setEnabled(false);
 
-                mp02d005id1.setEnabled(false);
-                mp02d006id2.setEnabled(false);
+                mp06b005id1.setEnabled(false);
+                mp06b006id2.setEnabled(false);
 
                 Toast.makeText(this, "ERROR(invalid): Difference in Measurement", Toast.LENGTH_SHORT).show();
-                Log.i(TAG, "mp02d005 & mp02d006: Difference in Measurement");
+                Log.i(TAG, "mp06b005 & mp06b006: Difference in Measurement");
 
                 return false;
             }
@@ -547,156 +460,156 @@ public class Form6Activity extends AppCompatActivity {
 
 //            8
 
-            if (mp02d008.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d008), Toast.LENGTH_SHORT).show();
-                mp02d008.setError("This data is Required!");
-                Log.i(TAG, "mp02d008: This data is Required!");
+            if (mp06b008.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
+                mp06b008.setError("This data is Required!");
+                Log.i(TAG, "mp06b008: This data is Required!");
                 return false;
             } else {
-                mp02d008.setError(null);
-                if (!mp02d008.getText().toString().contains(".")) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d008), Toast.LENGTH_SHORT).show();
-                    mp02d008.setError("Invalid: Decimal value is Required!");
-                    Log.i(TAG, "mp02d008: Invalid Decimal value is Required!");
+                mp06b008.setError(null);
+                if (!mp06b008.getText().toString().contains(".")) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
+                    mp06b008.setError("Invalid: Decimal value is Required!");
+                    Log.i(TAG, "mp06b008: Invalid Decimal value is Required!");
                     return false;
                 } else {
-                    mp02d008.setError(null);
-                    if (Double.parseDouble(mp02d008.getText().toString()) < 1) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d008), Toast.LENGTH_SHORT).show();
-                        mp02d008.setError("Invalid: Greater then 0");
-                        Log.i(TAG, "mp02d008: Invalid Greater then 0");
+                    mp06b008.setError(null);
+                    if (Double.parseDouble(mp06b008.getText().toString()) < 1) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
+                        mp06b008.setError("Invalid: Greater then 0");
+                        Log.i(TAG, "mp06b008: Invalid Greater then 0");
                         return false;
                     } else {
-                        mp02d008.setError(null);
-                        if (Double.parseDouble(mp02d008.getText().toString()) < 30.0 || Double.parseDouble(mp02d008.getText().toString()) > 99.0) {
-                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d008), Toast.LENGTH_SHORT).show();
-                            mp02d008.setError("Invalid: Range 30.0-99.0");
-                            Log.i(TAG, "mp02d008: Invalid Range 30.0-99.0");
+                        mp06b008.setError(null);
+                        if (Double.parseDouble(mp06b008.getText().toString()) < 30.0 || Double.parseDouble(mp06b008.getText().toString()) > 99.0) {
+                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
+                            mp06b008.setError("Invalid: Range 30.0-99.0");
+                            Log.i(TAG, "mp06b008: Invalid Range 30.0-99.0");
                             return false;
                         } else {
-                            mp02d008.setError(null);
+                            mp06b008.setError(null);
                         }
                     }
                 }
             }
 
-            TextView mp02d008id3_txt = (TextView) mp02d008id3.getSelectedView();
-            if (mp02d008id3.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d008), Toast.LENGTH_SHORT).show();
-                mp02d008id3_txt.setError("This data is Required!");
-                mp02d008id3_txt.setText("This data is Required!");
-                Log.i(TAG, "mp02d008id3: This data is Required!");
+            TextView mp06b008id3_txt = (TextView) mp06b008id3.getSelectedView();
+            if (mp06b008id3.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
+                mp06b008id3_txt.setError("This data is Required!");
+                mp06b008id3_txt.setText("This data is Required!");
+                Log.i(TAG, "mp06b008id3: This data is Required!");
                 return false;
             } else {
-                mp02d008id3_txt.setError(null);
+                mp06b008id3_txt.setError(null);
             }
 
         }
 
 //        9
-        if (mp02d009.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d009), Toast.LENGTH_SHORT).show();
-            mp02d009.setError("This data is Required!");
-            Log.i(TAG, "mp02d009: This data is Required!");
+        if (mp06b009.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
+            mp06b009.setError("This data is Required!");
+            Log.i(TAG, "mp06b009: This data is Required!");
             return false;
         } else {
-            mp02d009.setError(null);
-            if (!mp02d009.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d009), Toast.LENGTH_SHORT).show();
-                mp02d009.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "mp02d009: Invalid Decimal value is Required!");
+            mp06b009.setError(null);
+            if (!mp06b009.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
+                mp06b009.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "mp06b009: Invalid Decimal value is Required!");
                 return false;
             } else {
-                mp02d009.setError(null);
-                if (Double.parseDouble(mp02d009.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d009), Toast.LENGTH_SHORT).show();
-                    mp02d009.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "mp02d009: Invalid Greater then 0");
+                mp06b009.setError(null);
+                if (Double.parseDouble(mp06b009.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
+                    mp06b009.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "mp06b009: Invalid Greater then 0");
                     return false;
                 } else {
-                    mp02d009.setError(null);
-                    if (Double.parseDouble(mp02d009.getText().toString()) < 15.0 || Double.parseDouble(mp02d009.getText().toString()) > 45.0) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d009), Toast.LENGTH_SHORT).show();
-                        mp02d009.setError("Invalid: Range 15.0-45.0");
-                        Log.i(TAG, "mp02d009: Invalid Range 15.0-45.0");
+                    mp06b009.setError(null);
+                    if (Double.parseDouble(mp06b009.getText().toString()) < 15.0 || Double.parseDouble(mp06b009.getText().toString()) > 45.0) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
+                        mp06b009.setError("Invalid: Range 15.0-45.0");
+                        Log.i(TAG, "mp06b009: Invalid Range 15.0-45.0");
                         return false;
                     } else {
-                        mp02d009.setError(null);
+                        mp06b009.setError(null);
                     }
                 }
             }
         }
 
-        TextView mp02d009id1_txt = (TextView) mp02d009id1.getSelectedView();
-        if (mp02d009id1.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d009), Toast.LENGTH_SHORT).show();
-            mp02d009id1_txt.setError("This data is Required!");
-            mp02d009id1_txt.setText("This data is Required!");
-            Log.i(TAG, "mp02d009id1: This data is Required!");
+        TextView mp06b009id1_txt = (TextView) mp06b009id1.getSelectedView();
+        if (mp06b009id1.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
+            mp06b009id1_txt.setError("This data is Required!");
+            mp06b009id1_txt.setText("This data is Required!");
+            Log.i(TAG, "mp06b009id1: This data is Required!");
             return false;
         } else {
-            mp02d009id1_txt.setError(null);
+            mp06b009id1_txt.setError(null);
         }
 
 //        10
-        if (mp02d010.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d010), Toast.LENGTH_SHORT).show();
-            mp02d010.setError("This data is Required!");
-            Log.i(TAG, "mp02d010: This data is Required!");
+        if (mp06b010.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
+            mp06b010.setError("This data is Required!");
+            Log.i(TAG, "mp06b010: This data is Required!");
             return false;
         } else {
-            mp02d010.setError(null);
-            if (!mp02d010.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d010), Toast.LENGTH_SHORT).show();
-                mp02d010.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "mp02d010: Invalid Decimal value is Required!");
+            mp06b010.setError(null);
+            if (!mp06b010.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
+                mp06b010.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "mp06b010: Invalid Decimal value is Required!");
                 return false;
             } else {
-                mp02d010.setError(null);
-                if (Double.parseDouble(mp02d010.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d010), Toast.LENGTH_SHORT).show();
-                    mp02d010.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "mp02d010: Invalid Greater then 0");
+                mp06b010.setError(null);
+                if (Double.parseDouble(mp06b010.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
+                    mp06b010.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "mp06b010: Invalid Greater then 0");
                     return false;
                 } else {
-                    mp02d010.setError(null);
-                    if (Double.parseDouble(mp02d010.getText().toString()) < 15.0 || Double.parseDouble(mp02d010.getText().toString()) > 45.0) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d010), Toast.LENGTH_SHORT).show();
-                        mp02d010.setError("Invalid: Range 15.0-45.0");
-                        Log.i(TAG, "mp02d010: Invalid Range 15.0-45.0");
+                    mp06b010.setError(null);
+                    if (Double.parseDouble(mp06b010.getText().toString()) < 15.0 || Double.parseDouble(mp06b010.getText().toString()) > 45.0) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
+                        mp06b010.setError("Invalid: Range 15.0-45.0");
+                        Log.i(TAG, "mp06b010: Invalid Range 15.0-45.0");
                         return false;
                     } else {
-                        mp02d010.setError(null);
+                        mp06b010.setError(null);
                     }
                 }
             }
         }
 
-        TextView mp02d010id2_txt = (TextView) mp02d010id2.getSelectedView();
-        if (mp02d010id2.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d010), Toast.LENGTH_SHORT).show();
-            mp02d010id2_txt.setError("This data is Required!");
-            mp02d010id2_txt.setText("This data is Required!");
-            Log.i(TAG, "mp02d010id2: This data is Required!");
+        TextView mp06b010id2_txt = (TextView) mp06b010id2.getSelectedView();
+        if (mp06b010id2.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
+            mp06b010id2_txt.setError("This data is Required!");
+            mp06b010id2_txt.setText("This data is Required!");
+            Log.i(TAG, "mp06b010id2: This data is Required!");
             return false;
         } else {
-            mp02d010id2_txt.setError(null);
+            mp06b010id2_txt.setError(null);
         }
-        if (mp02d009id1.getSelectedItem().toString().contains(mp02d010id2.getSelectedItem().toString())) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d009), Toast.LENGTH_SHORT).show();
-            mp02d009id1_txt.setError("Users Same");
-            mp02d010id2_txt.setError("Users Same");
-            Log.i(TAG, "mp02d009id1: Users Same");
+        if (mp06b009id1.getSelectedItem().toString().contains(mp06b010id2.getSelectedItem().toString())) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
+            mp06b009id1_txt.setError("Users Same");
+            mp06b010id2_txt.setError("Users Same");
+            Log.i(TAG, "mp06b009id1: Users Same");
             return false;
         } else {
-            mp02d009id1_txt.setError(null);
-            mp02d010id2_txt.setError(null);
+            mp06b009id1_txt.setError(null);
+            mp06b010id2_txt.setError(null);
         }
 
 //        Skip
         //        Question 12 Checking
 
-        double q12 = Double.parseDouble(mp02d009.getText().toString()) - Double.parseDouble(mp02d010.getText().toString());
+        double q12 = Double.parseDouble(mp06b009.getText().toString()) - Double.parseDouble(mp06b010.getText().toString());
 
         if (Math.signum(q12) == -1) {
             q12 = q12 * -1;
@@ -706,15 +619,15 @@ public class Form6Activity extends AppCompatActivity {
             if (q12 > 0.5) {
                 flag_q12 = true;
 
-                fldGrpmp02d012.setVisibility(View.VISIBLE);
-                mp02d009.setEnabled(false);
-                mp02d010.setEnabled(false);
+                fldGrpmp06b012.setVisibility(View.VISIBLE);
+                mp06b009.setEnabled(false);
+                mp06b010.setEnabled(false);
 
-                mp02d009id1.setEnabled(false);
-                mp02d010id2.setEnabled(false);
+                mp06b009id1.setEnabled(false);
+                mp06b010id2.setEnabled(false);
 
                 Toast.makeText(this, "ERROR(invalid): Difference in Measurement", Toast.LENGTH_SHORT).show();
-                Log.i(TAG, "mp02d009 & mp02d010: Difference in Measurement");
+                Log.i(TAG, "mp06b009 & mp06b010: Difference in Measurement");
 
                 return false;
             }
@@ -722,89 +635,51 @@ public class Form6Activity extends AppCompatActivity {
 
         if (flag_q12) {
 //            12
-            if (mp02d012.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d012), Toast.LENGTH_SHORT).show();
-                mp02d012.setError("This data is Required!");
-                Log.i(TAG, "mp02d012: This data is Required!");
+            if (mp06b012.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
+                mp06b012.setError("This data is Required!");
+                Log.i(TAG, "mp06b012: This data is Required!");
                 return false;
             } else {
-                mp02d012.setError(null);
-                if (!mp02d012.getText().toString().contains(".")) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d012), Toast.LENGTH_SHORT).show();
-                    mp02d012.setError("Invalid: Decimal value is Required!");
-                    Log.i(TAG, "mp02d012: Decimal value is Required!");
+                mp06b012.setError(null);
+                if (!mp06b012.getText().toString().contains(".")) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
+                    mp06b012.setError("Invalid: Decimal value is Required!");
+                    Log.i(TAG, "mp06b012: Decimal value is Required!");
                     return false;
                 } else {
-                    mp02d012.setError(null);
-                    if (Double.parseDouble(mp02d012.getText().toString()) < 1) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d012), Toast.LENGTH_SHORT).show();
-                        mp02d012.setError("Invalid: Greater then 0");
-                        Log.i(TAG, "mp02d012: Greater then 0");
+                    mp06b012.setError(null);
+                    if (Double.parseDouble(mp06b012.getText().toString()) < 1) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
+                        mp06b012.setError("Invalid: Greater then 0");
+                        Log.i(TAG, "mp06b012: Greater then 0");
                         return false;
                     } else {
-                        mp02d012.setError(null);
-                        if (Double.parseDouble(mp02d012.getText().toString()) < 15.0 || Double.parseDouble(mp02d012.getText().toString()) > 45.0) {
-                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp02d012), Toast.LENGTH_SHORT).show();
-                            mp02d012.setError("Invalid: Range 15.0-45.0");
-                            Log.i(TAG, "mp02d012: Range 15.0-45.0");
+                        mp06b012.setError(null);
+                        if (Double.parseDouble(mp06b012.getText().toString()) < 15.0 || Double.parseDouble(mp06b012.getText().toString()) > 45.0) {
+                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
+                            mp06b012.setError("Invalid: Range 15.0-45.0");
+                            Log.i(TAG, "mp06b012: Range 15.0-45.0");
                             return false;
                         } else {
-                            mp02d012.setError(null);
+                            mp06b012.setError(null);
                         }
                     }
                 }
             }
 
-            TextView mp02d012id3_txt = (TextView) mp02d012id3.getSelectedView();
-            if (mp02d012id3.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp02d012), Toast.LENGTH_SHORT).show();
-                mp02d012id3_txt.setError("This data is Required!");
-                mp02d012id3_txt.setText("This data is Required!");
-                Log.i(TAG, "mp02d012id3: This data is Required!");
+            TextView mp06b012id3_txt = (TextView) mp06b012id3.getSelectedView();
+            if (mp06b012id3.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
+                mp06b012id3_txt.setError("This data is Required!");
+                mp06b012id3_txt.setText("This data is Required!");
+                Log.i(TAG, "mp06b012id3: This data is Required!");
                 return false;
             } else {
-                mp02d012id3_txt.setError(null);
+                mp06b012id3_txt.setError(null);
             }
         }
 
-
-        if (!mp04d00177.isChecked()) {
-            if (mp04d001.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp04d001), Toast.LENGTH_SHORT).show();
-                mp04d001.setError("This data is Required!");
-                Log.i(TAG, "mp04d001: This data is Required!");
-                return false;
-            } else {
-                mp04d001.setError(null);
-            }
-
-            if (Double.valueOf(mp04d001.getText().toString()) < 4.0 || Double.valueOf(mp04d001.getText().toString()) > 20.0) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp04d001), Toast.LENGTH_SHORT).show();
-                mp04d001.setError("Range is 4.0 to 20.0");
-                Log.i(TAG, "mp04d001: Range is 4.0 to 20.0");
-                return false;
-            } else {
-                mp04d001.setError(null);
-            }
-        }
-
-            /*if (mp04e001.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp04e001), Toast.LENGTH_SHORT).show();
-                mp04e00102.setError("This data is Required!");
-                Log.i(TAG, "mp04e001: This data is Required!");
-                return false;
-            } else {
-                mp04e00102.setError(null);
-            }*/
-
-        if (mp04e002.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp04e002), Toast.LENGTH_SHORT).show();
-            mp04e00202.setError("This data is Required!");
-            Log.i(TAG, "mp04e002: This data is Required!");
-            return false;
-        } else {
-            mp04e00202.setError(null);
-        }
 
 
         return true;
@@ -815,46 +690,39 @@ public class Form6Activity extends AppCompatActivity {
 
         JSONObject form4 = new JSONObject();
 
-        form4.put("mp04b001", mp04b001.getText().toString());
-        form4.put("mp04b00199", mp04b00199.isChecked() ? "99" : "0");
-        form4.put("mp04b002", mp04b002.getText().toString());
+        form4.put("mp06b001", mp06b001.getText().toString());
+        form4.put("mp06b001id1", mp06b001id1.getSelectedItem().toString());
 
-        form4.put("mp04c001", mp02d001.getText().toString());
-        form4.put("mp04c001id1", mp02d001id1.getSelectedItem().toString());
+        form4.put("mp06b002", mp06b002.getText().toString());
+        form4.put("mp06b002id2", mp06b002id2.getSelectedItem().toString());
 
-        form4.put("mp04c002", mp02d002.getText().toString());
-        form4.put("mp04c002id2", mp02d002id2.getSelectedItem().toString());
+        form4.put("mp06b003", flag_q4 ? "1" : "2");
 
-        form4.put("mp04c003", flag_q4 ? "1" : "2");
+        form4.put("mp06b004", mp06b004.getText().toString());
+        form4.put("mp06b004id3", mp06b004id3.getSelectedItem().toString());
 
-        form4.put("mp04c004", mp02d004.getText().toString());
-        form4.put("mp04c004id3", mp02d004id3.getSelectedItem().toString());
+        form4.put("mp06b005", mp06b005.getText().toString());
+        form4.put("mp06b005id1", mp06b005id1.getSelectedItem().toString());
 
-        form4.put("mp04c005", mp02d005.getText().toString());
-        form4.put("mp04c005id1", mp02d005id1.getSelectedItem().toString());
+        form4.put("mp06b006", mp06b006.getText().toString());
+        form4.put("mp06b006id2", mp06b006id2.getSelectedItem().toString());
 
-        form4.put("mp04c006", mp02d006.getText().toString());
-        form4.put("mp04c006id2", mp02d006id2.getSelectedItem().toString());
+        form4.put("mp06b007", flag_q8 ? "1" : "2");
 
-        form4.put("mp04c007", flag_q8 ? "1" : "2");
+        form4.put("mp06b008", mp06b008.getText().toString());
+        form4.put("mp06b008id3", mp06b008id3.getSelectedItem().toString());
 
-        form4.put("mp04c008", mp02d008.getText().toString());
-        form4.put("mp04c008id3", mp02d008id3.getSelectedItem().toString());
+        form4.put("mp06b009", mp06b009.getText().toString());
+        form4.put("mp06b009id1", mp06b009id1.getSelectedItem().toString());
 
-        form4.put("mp04c009", mp02d009.getText().toString());
-        form4.put("mp04c009id1", mp02d009id1.getSelectedItem().toString());
+        form4.put("mp06b010", mp06b010.getText().toString());
+        form4.put("mp06b010id2", mp06b010id2.getSelectedItem().toString());
 
-        form4.put("mp04c010", mp02d010.getText().toString());
-        form4.put("mp04c010id2", mp02d010id2.getSelectedItem().toString());
+        form4.put("mp06b011", flag_q12 ? "1" : "2");
 
-        form4.put("mp04c011", flag_q12 ? "1" : "2");
+        form4.put("mp06b012", mp06b012.getText().toString());
+        form4.put("mp06b012id3", mp06b012id3.getSelectedItem().toString());
 
-        form4.put("mp04c012", mp02d012.getText().toString());
-        form4.put("mp04c012id3", mp02d012id3.getSelectedItem().toString());
-
-        form4.put("mp04d001", mp04d00177.isChecked() ? "77" : mp04d001.getText().toString());
-        // form4.put("mp04e001", mp04e00101.isChecked() ? "1" : mp04e00102.isChecked() ? "2" : "0");
-        form4.put("mp04e002", mp04e00201.isChecked() ? "1" : mp04e00202.isChecked() ? "2" : "0");
 
         AppMain.fc.setsA(String.valueOf(form4));
 

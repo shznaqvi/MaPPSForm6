@@ -40,7 +40,7 @@
 
         <Spinner
             android:id="@+id/lhws"
-            style="@style/spinner"
+            style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/mp04a001"
+            android:text="@string/mp06a001"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -79,11 +79,11 @@
                 />
 
             <EditText
-                android:id="@+id/mp04a001"
+                android:id="@+id/mp06a001"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/mp04a001"
+                android:hint="@string/mp06a001"
                 android:inputType="number"
                 android:maxLength="3" />
 
@@ -95,28 +95,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp04a003"
+                android:text="@string/mp06a003"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <!--<EditText-->
-            <!--android:id="@+id/mp04a003"-->
+            <!--android:id="@+id/mp06a003"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"-->
-            <!--android:hint="@string/mp04a003"-->
+            <!--android:hint="@string/mp06a003"-->
             <!--android:enabled="false"-->
             <!--android:inputType="textCapWords" />-->
 
             <Spinner
-                android:id="@+id/mp04a003"
+                android:id="@+id/mp06a003"
                 style="@style/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,16 +129,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp04a002"
+                android:text="@string/mp06a002"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp04a002"
+                android:id="@+id/mp06a002"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:hint="@string/mp04a002"
+                android:hint="@string/mp06a002"
                 android:inputType="number"
                 android:maxLength="9" />
 
@@ -146,16 +147,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp04a004"
+                android:text="@string/mp06a005"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp04a004"
+                android:id="@+id/mp06a005"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/mp04a004"
+                android:hint="@string/mp06a005"
                 android:inputType="textCapWords" />
 
             <TextView
@@ -168,7 +169,7 @@
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp04a007"
+                android:id="@+id/mp06a007"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -180,19 +181,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp04a005"
+                android:text="@string/mp06a008"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp04a005"
+                android:id="@+id/mp06a008"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp04a005"
+                android:hint="@string/mp06a008"
                 android:inputType="number"
                 android:maxLength="11" />
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/fldGrpClinic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -218,32 +219,32 @@
 
 
             </LinearLayout>
-
+-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp04a013"
+                android:text="@string/mp06a013"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/mp04a013"
+                android:id="@+id/mp06a013"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/mp04a01301"
+                    android:id="@+id/mp06a01301"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/yes" />
 
                 <RadioButton
-                    android:id="@+id/mp04a01302"
+                    android:id="@+id/mp06a01302"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -253,16 +254,17 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:layout_marginTop="40dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_End"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:padding="2dp"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e"
@@ -274,9 +276,11 @@
                     android:id="@+id/btn_Continue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
                     android:padding="2dp"
                     android:text="@string/nextSection"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/whiteOverlay"
                     android:textSize="32sp"
                     android:visibility="visible" />
                 <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->

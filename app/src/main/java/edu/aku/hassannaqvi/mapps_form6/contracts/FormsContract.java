@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class FormsContract {
 
     private String projectName = "MaPPS Study";
-    private String surveyType = "Pregnancy Confirmation and Ultrasound Assesment";
+    private String surveyType = "Third Trimester Anthropometric Assessment (pregnancy)";
     private Long _ID;
     private String UID = "";
     private String formDate = ""; // Date

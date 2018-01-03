@@ -245,8 +245,8 @@ public class MainActivity extends Activity {
     public void openForm(View v) {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
-                AppMain.formType = "4";
                 Intent oF = new Intent(MainActivity.this, InfoActivity.class);
+                AppMain.formType = "Form - 6";
                 startActivity(oF);
             } else {
 

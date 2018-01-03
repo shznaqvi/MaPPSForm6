@@ -25,20 +25,20 @@ public class EndingActivity extends Activity {
 
     @BindView(R.id.activity_ending)
     RelativeLayout activityEnding;
-    @BindView(R.id.mp02a014)
-    RadioGroup mp02a014;
-    @BindView(R.id.mp02a01401)
-    RadioButton mp02a01401;
-    @BindView(R.id.mp02a01402)
-    RadioButton mp02a01402;
-    @BindView(R.id.mp02a01403)
-    RadioButton mp02a01403;
-    @BindView(R.id.mp02a01404)
-    RadioButton mp02a01404;
-    @BindView(R.id.mp02a01405)
-    RadioButton mp02a01405;
-    @BindView(R.id.mp02a01406)
-    RadioButton mp02a01406;
+    @BindView(R.id.mp06a014)
+    RadioGroup mp06a014;
+    @BindView(R.id.mp06a01401)
+    RadioButton mp06a01401;
+    @BindView(R.id.mp06a01402)
+    RadioButton mp06a01402;
+    @BindView(R.id.mp06a01403)
+    RadioButton mp06a01403;
+    @BindView(R.id.mp06a01404)
+    RadioButton mp06a01404;
+    @BindView(R.id.mp06a01405)
+    RadioButton mp06a01405;
+    @BindView(R.id.mp06a01406)
+    RadioButton mp06a01406;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,25 +49,25 @@ public class EndingActivity extends Activity {
         Boolean check = getIntent().getExtras().getBoolean("complete");
 
         if (check || AppMain.endFlag) {
-            mp02a01401.setEnabled(true);
-            mp02a01402.setEnabled(false);
-            mp02a01403.setEnabled(false);
-            mp02a01404.setEnabled(false);
-            mp02a01405.setEnabled(false);
-            mp02a01406.setEnabled(false);
+            mp06a01401.setEnabled(true);
+            mp06a01402.setEnabled(false);
+            mp06a01403.setEnabled(false);
+            mp06a01404.setEnabled(false);
+            mp06a01405.setEnabled(false);
+            mp06a01406.setEnabled(false);
         } else {
-            mp02a01401.setEnabled(false);
-            mp02a01402.setEnabled(true);
-            mp02a01403.setEnabled(true);
-            mp02a01404.setEnabled(true);
-            mp02a01405.setEnabled(true);
-            mp02a01406.setEnabled(true);
+            mp06a01401.setEnabled(false);
+            mp06a01402.setEnabled(true);
+            mp06a01403.setEnabled(true);
+            mp06a01404.setEnabled(true);
+            mp06a01405.setEnabled(true);
+            mp06a01406.setEnabled(true);
         }
 
         if (AppMain.formType.equals("5")) {
-            mp02a01406.setVisibility(View.VISIBLE);
+            mp06a01406.setVisibility(View.VISIBLE);
         } else {
-            mp02a01406.setVisibility(View.GONE);
+            mp06a01406.setVisibility(View.GONE);
         }
 
     }
@@ -97,12 +97,12 @@ public class EndingActivity extends Activity {
 
     public boolean ValidateForm() {
 
-        if (mp02a014.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.mp04a013), Toast.LENGTH_SHORT).show();
-            mp02a01406.setError("This data is Required!");
+        if (mp06a014.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "" + getString(R.string.mp06a013), Toast.LENGTH_SHORT).show();
+            mp06a01406.setError("This data is Required!");
             return false;
         } else {
-            mp02a01406.setError(null);
+            mp06a01406.setError(null);
         }
 
         return true;
@@ -112,8 +112,8 @@ public class EndingActivity extends Activity {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
 
-        AppMain.fc.setIstatus(mp02a01401.isChecked() ? "1" : mp02a01402.isChecked() ? "2" : mp02a01403.isChecked() ? "3"
-                : mp02a01404.isChecked() ? "4" : mp02a01405.isChecked() ? "5" : mp02a01406.isChecked() ? "6" : "0");
+        AppMain.fc.setIstatus(mp06a01401.isChecked() ? "1" : mp06a01402.isChecked() ? "2" : mp06a01403.isChecked() ? "3"
+                : mp06a01404.isChecked() ? "4" : mp06a01405.isChecked() ? "5" : mp06a01406.isChecked() ? "6" : "0");
         AppMain.fc.setEndingDateTime((DateFormat.format("dd-MM-yyyy HH:mm", new Date())).toString());
 
 
