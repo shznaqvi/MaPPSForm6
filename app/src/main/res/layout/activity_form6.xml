@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.mapps_form6.activities.Form4Activity">
+    tools:context="edu.aku.hassannaqvi.mapps_form6.activities.Form6Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
