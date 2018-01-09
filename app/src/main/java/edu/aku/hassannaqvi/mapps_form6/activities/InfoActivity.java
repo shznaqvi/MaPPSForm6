@@ -278,7 +278,7 @@ public class InfoActivity extends Activity {
         AppMain.fc.setClustercode(AppMain.curCluster);
         AppMain.fc.setHousehold(mp06a001.getText().toString());
         AppMain.fc.setDeviceID(AppMain.deviceId);
-        AppMain.fc.setSno(mp06a002.getText().toString());
+        AppMain.fc.setSno(AppMain.Eparticipant.get(position).getSno());
         AppMain.fc.setFormType(AppMain.formType);
         AppMain.fc.setVillageacode(mp06a007.getText().toString());
 
@@ -289,6 +289,7 @@ public class InfoActivity extends Activity {
         JSONObject sInfo = new JSONObject();
 
         sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
+        sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
         sInfo.put("mp06a003", mp06a003.getSelectedItem().toString());
         sInfo.put("mp06a005", mp06a005.getText().toString());
         sInfo.put("mp06a008", mp06a008.getText().toString());
@@ -342,8 +343,8 @@ public class InfoActivity extends Activity {
         if (mp06a001.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a001), Toast.LENGTH_SHORT).show();
             mp06a001.setError("This data is Required!");
-
             Log.i(TAG, "mp06a001: This Data is Required!");
+            mp06a001.requestFocus();
             return false;
         } else {
             mp06a001.setError(null);
@@ -357,6 +358,7 @@ public class InfoActivity extends Activity {
             ((TextView) mp06a003.getSelectedView()).setText("This Data is Required");
             ((TextView) mp06a003.getSelectedView()).setError("This Data is Required");
             ((TextView) mp06a003.getSelectedView()).setTextColor(Color.RED);
+            mp06a003.requestFocus();
 
             Log.i(TAG, "mp06a003: This Data is Required!");
             return false;
@@ -369,7 +371,7 @@ public class InfoActivity extends Activity {
         if (mp06a002.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a002), Toast.LENGTH_SHORT).show();
             mp06a002.setError("This data is Required!");
-
+            mp06a002.requestFocus();
             Log.i(TAG, "mp06a002: This Data is Required!");
             return false;
         } else {
@@ -389,7 +391,7 @@ public class InfoActivity extends Activity {
         if (mp06a005.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a005), Toast.LENGTH_SHORT).show();
             mp06a005.setError("This data is Required!");
-
+            mp06a005.requestFocus();
             Log.i(TAG, "mp06a005: This Data is Required!");
             return false;
         } else {
@@ -399,7 +401,7 @@ public class InfoActivity extends Activity {
         if (mp06a007.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp02a006), Toast.LENGTH_SHORT).show();
             mp06a007.setError("This data is Required!");
-
+            mp06a007.requestFocus();
             Log.i(TAG, "mp06a007: This Data is Required!");
             return false;
         } else {
@@ -409,7 +411,7 @@ public class InfoActivity extends Activity {
         if (mp06a008.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a008), Toast.LENGTH_SHORT).show();
             mp06a008.setError("This data is Required!");
-
+            mp06a008.requestFocus();
             Log.i(TAG, "mp06a008: This Data is Required!");
             return false;
         } else {
@@ -420,7 +422,9 @@ public class InfoActivity extends Activity {
         if (mp06a013.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp06a013), Toast.LENGTH_SHORT).show();
             mp06a01302.setError("This data is Required!");
-
+            mp06a01302.setFocusable(true);
+            mp06a01302.setFocusableInTouchMode(true);
+            mp06a01302.requestFocus();
             Log.i(TAG, "mp06a013: This Data is Required!");
             return false;
         } else {

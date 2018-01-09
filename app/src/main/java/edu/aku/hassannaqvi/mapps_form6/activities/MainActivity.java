@@ -40,7 +40,6 @@ import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mapps_form6.getclasses.GetEnrolled;
 import edu.aku.hassannaqvi.mapps_form6.otherclasses.FormsList;
 import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncForms;
-import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncParticipants;
 import edu.aku.hassannaqvi.mappsform4.R;
 
 
@@ -130,8 +129,8 @@ public class MainActivity extends Activity {
 */
         db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = db.getTodayForms();
-        Collection<FormsContract> unsyncedForms4 = db.getUnsyncedForms4();
-        Collection<FormsContract> unsyncedForms5 = db.getUnsyncedForms5();
+        Collection<FormsContract> unsyncedForms6 = db.getUnsyncedForms6();
+
 
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
@@ -186,9 +185,7 @@ public class MainActivity extends Activity {
             rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
             rSumText += "\r\n";
             rSumText += "\r\n";
-            rSumText += "Unsynced Forms4: \t" + unsyncedForms4.size();
-            rSumText += "\r\n";
-            rSumText += "Unsynced Forms5: \t" + unsyncedForms5.size();
+            rSumText += "Unsynced Forms6: \t" + unsyncedForms6.size();
             rSumText += "\r\n";
 
         }
@@ -246,7 +243,7 @@ public class MainActivity extends Activity {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
                 Intent oF = new Intent(MainActivity.this, InfoActivity.class);
-                AppMain.formType = "Form - 6";
+                AppMain.formType = "6";
                 startActivity(oF);
             } else {
 
@@ -375,9 +372,9 @@ public class MainActivity extends Activity {
             new SyncForms(this).execute();
             //new SyncForms5(this).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
             new SyncParticipants(this).execute();
-
+*/
             /*Toast.makeText(getApplicationContext(), "Syncing Eligibles", Toast.LENGTH_SHORT).show();
             new SyncEligibles(this).execute();*/
 

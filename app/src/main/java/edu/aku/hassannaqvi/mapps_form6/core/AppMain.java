@@ -34,13 +34,14 @@ public class AppMain extends Application {
 
     public static final String _PROJECT_FOLDER_2 = "mapps/form2/api/";
     public static final String _PROJECT_FOLDER_4 = "mapps/form4/api/";
+    public static final String _PROJECT_FOLDER_6 = "mapps/form6/api/";
 
     public static final String _HOST_URL = "http://" + _IP + ":" + _PORT + "/" + _PROJECT_FOLDER_2;
 
     public static final String _HOST_URL_4 =
             "http://" + _IP
                     + ":" + _PORT
-                    + "/" + _PROJECT_FOLDER_4;
+                    + "/" + _PROJECT_FOLDER_6;
     // Retrieve FileName.php from Contract class Abstract _URI
 
 

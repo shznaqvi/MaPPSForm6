@@ -117,7 +117,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             EnrolledTable.COLUMN_SYNCED + " TEXT,"
             + EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
             EnrolledTable.COLUMN_NAME_SNO + " TEXT," +
-            EnrolledTable.COLUMN_NAME_WOMEN_NAME + " TEXT" +
+            EnrolledTable.COLUMN_NAME_WOMEN_NAME + " TEXT," +
+            EnrolledTable.COLUMN_NAME_UID_F4 + " TEXT" +
+
             " );";
     private static final String SQL_CREATE_LHWS = "CREATE TABLE "
             + LHWsContract.LHWsTable.TABLE_NAME + "(" +
@@ -223,6 +225,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(EnrolledTable.COLUMN_NAME_HOUSEHOLD, ec.getHouseHold());
                 values.put(EnrolledTable.COLUMN_NAME_WOMEN_NAME, ec.getWomen_name());
                 values.put(EnrolledTable.COLUMN_NAME_SNO, ec.getSno());
+                values.put(EnrolledTable.COLUMN_NAME_UID_F4, ec.getUid_f4());
 
                 db.insert(EnrolledTable.TABLE_NAME, null, values);
             }
@@ -693,7 +696,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledTable.COLUMN_NAME_SNO,
                 EnrolledTable.COLUMN_NAME_SUBAREACODE,
                 EnrolledTable.COLUMN_NAME_LHWCODE,
+                EnrolledTable.COLUMN_NAME_UID_F4,
                 EnrolledTable.COLUMN_NAME_HOUSEHOLD
+
         };
 
         String whereClause = EnrolledTable.COLUMN_NAME_SUBAREACODE + " = ? AND " +
@@ -742,6 +747,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledTable.COLUMN_NAME_LHWCODE,
                 EnrolledTable.COLUMN_NAME_HOUSEHOLD,
                 EnrolledTable.COLUMN_NAME_SNO,
+                EnrolledTable.COLUMN_NAME_UID_F4,
                 EnrolledTable.COLUMN_NAME_WOMEN_NAME
         };
 
@@ -789,6 +795,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledTable.COLUMN_NAME_LHWCODE,
                 EnrolledTable.COLUMN_NAME_HOUSEHOLD,
                 EnrolledTable.COLUMN_NAME_SNO,
+                EnrolledTable.COLUMN_NAME_UID_F4,
                 EnrolledTable.COLUMN_NAME_WOMEN_NAME
         };
 
@@ -891,7 +898,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<FormsContract> getUnsyncedForms4() {
+    public Collection<FormsContract> getUnsyncedForms6() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -925,7 +932,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 /*        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' AND "
                 + FormsTable.COLUMN_FORMTYPE + " =?";*/
         String whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_FORMTYPE + " =?";
-        String[] whereArgs = new String[]{"4"};
+        String[] whereArgs = new String[]{"6"};
         String groupBy = null;
         String having = null;
 

@@ -155,6 +155,7 @@ public class Form6Activity extends AppCompatActivity {
         if (mp06b001.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
             mp06b001.setError("This data is Required!");
+            mp06b001.requestFocus();
             Log.i(TAG, "mp06b001: This data is Required!");
             return false;
         } else {
@@ -162,6 +163,7 @@ public class Form6Activity extends AppCompatActivity {
             if (!mp06b001.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
                 mp06b001.setError("Invalid: Decimal value is Required!");
+                mp06b001.requestFocus();
                 Log.i(TAG, "mp06b001: Invalid Decimal value is Required!");
                 return false;
             } else {
@@ -169,6 +171,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (Double.parseDouble(mp06b001.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
                     mp06b001.setError("Invalid: Greater then 0");
+                    mp06b001.requestFocus();
                     Log.i(TAG, "mp06b001: Invalid Greater then 0");
                     return false;
                 } else {
@@ -177,6 +180,7 @@ public class Form6Activity extends AppCompatActivity {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
                         mp06b001.setError("Invalid: Range 100-180");
                         Log.i(TAG, "mp06b001: Invalid Range 100-180");
+                        mp06b001.requestFocus();
                         return false;
                     } else {
                         mp06b001.setError(null);
@@ -190,6 +194,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
             mp06b001id1_txt.setTextColor(Color.RED);
             mp06b001id1_txt.setError("This data is Required!");
+            mp06b001id1_txt.requestFocus();
             Log.i(TAG, "mp06b001id1: This data is Required!");
             return false;
         } else {
@@ -200,6 +205,7 @@ public class Form6Activity extends AppCompatActivity {
         if (mp06b002.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
             mp06b002.setError("This data is Required!");
+            mp06b002.requestFocus();
             Log.i(TAG, "mp06b002: This data is Required!");
             return false;
         } else {
@@ -207,6 +213,7 @@ public class Form6Activity extends AppCompatActivity {
             if (!mp06b002.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
                 mp06b002.setError("Invalid: Decimal value is Required!");
+                mp06b002.requestFocus();
                 Log.i(TAG, "mp06b002: Invalid Decimal value is Required!");
                 return false;
             } else {
@@ -215,6 +222,7 @@ public class Form6Activity extends AppCompatActivity {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
                     mp06b002.setError("Invalid: Greater then 0");
                     Log.i(TAG, "mp06b002: Invalid Greater then 0");
+                    mp06b002.requestFocus();
                     return false;
                 } else {
                     mp06b002.setError(null);
@@ -222,6 +230,7 @@ public class Form6Activity extends AppCompatActivity {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b002), Toast.LENGTH_SHORT).show();
                         mp06b002.setError("Invalid: Range between 100-180");
                         Log.i(TAG, "mp06b002: Invalid Range between 100-180");
+                        mp06b002.requestFocus();
                         return false;
                     } else {
                         mp06b002.setError(null);
@@ -236,6 +245,7 @@ public class Form6Activity extends AppCompatActivity {
             mp06b002id2_txt.setTextColor(Color.RED);
             mp06b002id2_txt.setText("This data is Required!");
             mp06b002id2_txt.setError("This data is Required!");
+            mp06b002id2_txt.requestFocus();
             Log.i(TAG, "mp06b002id2: This data is Required!");
             return false;
         } else {
@@ -246,6 +256,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(invalid) Users same: " + getString(R.string.mp06b001), Toast.LENGTH_SHORT).show();
             mp06b001id1_txt.setError("Users Same");
             mp06b002id2_txt.setError("Users Same");
+            mp06b002id2_txt.requestFocus();
             Log.i(TAG, "mp06b001id1: Users Same");
             return false;
         } else {
@@ -286,6 +297,7 @@ public class Form6Activity extends AppCompatActivity {
             if (mp06b004.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
                 mp06b004.setError("This data is Required!");
+                mp06b004.requestFocus();
                 Log.i(TAG, "mp06b004: This data is Required!");
                 return false;
             } else {
@@ -293,6 +305,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (!mp06b004.getText().toString().contains(".")) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
                     mp06b004.setError("Invalid: Decimal value is Required!");
+                    mp06b004.requestFocus();
                     Log.i(TAG, "mp06b004: Invalid Decimal value is Required!");
                     return false;
                 } else {
@@ -301,6 +314,7 @@ public class Form6Activity extends AppCompatActivity {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
                         mp06b004.setError("Invalid: Greater then 0");
                         Log.i(TAG, "mp06b004: Invalid Greater then 0");
+                        mp06b004.requestFocus();
                         return false;
                     } else {
                         mp06b004.setError(null);
@@ -308,6 +322,7 @@ public class Form6Activity extends AppCompatActivity {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
                             mp06b004.setError("Invalid: Range 100-180");
                             Log.i(TAG, "mp06b004: Invalid Range 100-180");
+                            mp06b004.requestFocus();
                             return false;
                         } else {
                             mp06b004.setError(null);
@@ -321,6 +336,7 @@ public class Form6Activity extends AppCompatActivity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b004), Toast.LENGTH_SHORT).show();
                 mp06b004id3_txt.setError("This data is Required!");
                 mp06b004id3_txt.setText("This data is Required!");
+                mp06b004id3_txt.requestFocus();
                 Log.i(TAG, "mp06b004id3: This data is Required!");
                 return false;
             } else {
@@ -332,6 +348,7 @@ public class Form6Activity extends AppCompatActivity {
         if (mp06b005.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
             mp06b005.setError("This data is Required!");
+            mp06b005.requestFocus();
             Log.i(TAG, "mp06b005: This data is Required!");
             return false;
         } else {
@@ -339,6 +356,7 @@ public class Form6Activity extends AppCompatActivity {
             if (!mp06b005.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
                 mp06b005.setError("Invalid: Decimal value is Required!");
+                mp06b005.requestFocus();
                 Log.i(TAG, "mp06b005: Invalid Decimal value is Required!");
                 return false;
             } else {
@@ -346,6 +364,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (Double.parseDouble(mp06b005.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
                     mp06b005.setError("Invalid: Greater then 0");
+                    mp06b005.requestFocus();
                     Log.i(TAG, "mp06b005: Invalid Greater then 0");
                     return false;
                 } else {
@@ -353,6 +372,7 @@ public class Form6Activity extends AppCompatActivity {
                     if (Double.parseDouble(mp06b005.getText().toString()) < 30.0 || Double.parseDouble(mp06b005.getText().toString()) > 99.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
                         mp06b005.setError("Invalid: Range 30.0-99.0");
+                        mp06b005.requestFocus();
                         Log.i(TAG, "mp06b005: Invalid Range 30.0-99.0");
                         return false;
                     } else {
@@ -367,6 +387,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
             mp06b005id1_txt.setError("This data is Required!");
             mp06b005id1_txt.setText("This data is Required!");
+            mp06b005id1_txt.requestFocus();
             Log.i(TAG, "mp06b005id1: This data is Required!");
             return false;
         } else {
@@ -378,6 +399,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
             mp06b006.setError("This data is Required!");
             Log.i(TAG, "mp06b006: This data is Required!");
+            mp06b006.requestFocus();
             return false;
         } else {
             mp06b006.setError(null);
@@ -385,6 +407,7 @@ public class Form6Activity extends AppCompatActivity {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
                 mp06b006.setError("Invalid: Decimal value is Required!");
                 Log.i(TAG, "mp06b006: Invalid Decimal value is Required!");
+                mp06b006.requestFocus();
                 return false;
             } else {
                 mp06b006.setError(null);
@@ -392,6 +415,7 @@ public class Form6Activity extends AppCompatActivity {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
                     mp06b006.setError("Invalid: Greater then 0");
                     Log.i(TAG, "mp06b006: Invalid Greater then 0");
+                    mp06b006.requestFocus();
                     return false;
                 } else {
                     mp06b006.setError(null);
@@ -399,6 +423,7 @@ public class Form6Activity extends AppCompatActivity {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
                         mp06b006.setError("Invalid: Range 30.0-99.0");
                         Log.i(TAG, "mp06b006: Invalid Range 30.0-99.0");
+                        mp06b006.requestFocus();
                         return false;
                     } else {
                         mp06b006.setError(null);
@@ -412,6 +437,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b006), Toast.LENGTH_SHORT).show();
             mp06b006id2_txt.setError("This data is Required!");
             mp06b006id2_txt.setText("This data is Required!");
+            mp06b006id2_txt.requestFocus();
             Log.i(TAG, "mp06b006id1: This data is Required!");
             return false;
         } else {
@@ -421,6 +447,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b005), Toast.LENGTH_SHORT).show();
             mp06b006id2_txt.setError("Users Same");
             mp06b005id1_txt.setError("Users Same");
+            mp06b005id1_txt.requestFocus();
             Log.i(TAG, "mp06b005id1: Users Same");
             return false;
         } else {
@@ -463,6 +490,7 @@ public class Form6Activity extends AppCompatActivity {
             if (mp06b008.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
                 mp06b008.setError("This data is Required!");
+                mp06b008.requestFocus();
                 Log.i(TAG, "mp06b008: This data is Required!");
                 return false;
             } else {
@@ -470,6 +498,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (!mp06b008.getText().toString().contains(".")) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
                     mp06b008.setError("Invalid: Decimal value is Required!");
+                    mp06b008.requestFocus();
                     Log.i(TAG, "mp06b008: Invalid Decimal value is Required!");
                     return false;
                 } else {
@@ -477,6 +506,7 @@ public class Form6Activity extends AppCompatActivity {
                     if (Double.parseDouble(mp06b008.getText().toString()) < 1) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
                         mp06b008.setError("Invalid: Greater then 0");
+                        mp06b008.requestFocus();
                         Log.i(TAG, "mp06b008: Invalid Greater then 0");
                         return false;
                     } else {
@@ -484,6 +514,7 @@ public class Form6Activity extends AppCompatActivity {
                         if (Double.parseDouble(mp06b008.getText().toString()) < 30.0 || Double.parseDouble(mp06b008.getText().toString()) > 99.0) {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
                             mp06b008.setError("Invalid: Range 30.0-99.0");
+                            mp06b008.requestFocus();
                             Log.i(TAG, "mp06b008: Invalid Range 30.0-99.0");
                             return false;
                         } else {
@@ -498,6 +529,7 @@ public class Form6Activity extends AppCompatActivity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b008), Toast.LENGTH_SHORT).show();
                 mp06b008id3_txt.setError("This data is Required!");
                 mp06b008id3_txt.setText("This data is Required!");
+                mp06b008id3_txt.requestFocus();
                 Log.i(TAG, "mp06b008id3: This data is Required!");
                 return false;
             } else {
@@ -510,6 +542,7 @@ public class Form6Activity extends AppCompatActivity {
         if (mp06b009.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
             mp06b009.setError("This data is Required!");
+            mp06b009.requestFocus();
             Log.i(TAG, "mp06b009: This data is Required!");
             return false;
         } else {
@@ -517,6 +550,7 @@ public class Form6Activity extends AppCompatActivity {
             if (!mp06b009.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
                 mp06b009.setError("Invalid: Decimal value is Required!");
+                mp06b009.requestFocus();
                 Log.i(TAG, "mp06b009: Invalid Decimal value is Required!");
                 return false;
             } else {
@@ -524,6 +558,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (Double.parseDouble(mp06b009.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
                     mp06b009.setError("Invalid: Greater then 0");
+                    mp06b009.requestFocus();
                     Log.i(TAG, "mp06b009: Invalid Greater then 0");
                     return false;
                 } else {
@@ -532,6 +567,7 @@ public class Form6Activity extends AppCompatActivity {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
                         mp06b009.setError("Invalid: Range 15.0-45.0");
                         Log.i(TAG, "mp06b009: Invalid Range 15.0-45.0");
+                        mp06b009.requestFocus();
                         return false;
                     } else {
                         mp06b009.setError(null);
@@ -545,6 +581,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
             mp06b009id1_txt.setError("This data is Required!");
             mp06b009id1_txt.setText("This data is Required!");
+            mp06b009id1_txt.requestFocus();
             Log.i(TAG, "mp06b009id1: This data is Required!");
             return false;
         } else {
@@ -555,6 +592,7 @@ public class Form6Activity extends AppCompatActivity {
         if (mp06b010.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
             mp06b010.setError("This data is Required!");
+            mp06b010.requestFocus();
             Log.i(TAG, "mp06b010: This data is Required!");
             return false;
         } else {
@@ -562,6 +600,7 @@ public class Form6Activity extends AppCompatActivity {
             if (!mp06b010.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
                 mp06b010.setError("Invalid: Decimal value is Required!");
+                mp06b010.requestFocus();
                 Log.i(TAG, "mp06b010: Invalid Decimal value is Required!");
                 return false;
             } else {
@@ -569,6 +608,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (Double.parseDouble(mp06b010.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
                     mp06b010.setError("Invalid: Greater then 0");
+                    mp06b010.requestFocus();
                     Log.i(TAG, "mp06b010: Invalid Greater then 0");
                     return false;
                 } else {
@@ -576,6 +616,7 @@ public class Form6Activity extends AppCompatActivity {
                     if (Double.parseDouble(mp06b010.getText().toString()) < 15.0 || Double.parseDouble(mp06b010.getText().toString()) > 45.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
                         mp06b010.setError("Invalid: Range 15.0-45.0");
+                        mp06b010.requestFocus();
                         Log.i(TAG, "mp06b010: Invalid Range 15.0-45.0");
                         return false;
                     } else {
@@ -590,6 +631,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b010), Toast.LENGTH_SHORT).show();
             mp06b010id2_txt.setError("This data is Required!");
             mp06b010id2_txt.setText("This data is Required!");
+            mp06b010id2_txt.requestFocus();
             Log.i(TAG, "mp06b010id2: This data is Required!");
             return false;
         } else {
@@ -599,6 +641,7 @@ public class Form6Activity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b009), Toast.LENGTH_SHORT).show();
             mp06b009id1_txt.setError("Users Same");
             mp06b010id2_txt.setError("Users Same");
+            mp06b010id2_txt.requestFocus();
             Log.i(TAG, "mp06b009id1: Users Same");
             return false;
         } else {
@@ -638,6 +681,7 @@ public class Form6Activity extends AppCompatActivity {
             if (mp06b012.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
                 mp06b012.setError("This data is Required!");
+                mp06b012.requestFocus();
                 Log.i(TAG, "mp06b012: This data is Required!");
                 return false;
             } else {
@@ -645,6 +689,7 @@ public class Form6Activity extends AppCompatActivity {
                 if (!mp06b012.getText().toString().contains(".")) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
                     mp06b012.setError("Invalid: Decimal value is Required!");
+                    mp06b012.requestFocus();
                     Log.i(TAG, "mp06b012: Decimal value is Required!");
                     return false;
                 } else {
@@ -653,6 +698,7 @@ public class Form6Activity extends AppCompatActivity {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
                         mp06b012.setError("Invalid: Greater then 0");
                         Log.i(TAG, "mp06b012: Greater then 0");
+                        mp06b012.requestFocus();
                         return false;
                     } else {
                         mp06b012.setError(null);
@@ -660,6 +706,7 @@ public class Form6Activity extends AppCompatActivity {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
                             mp06b012.setError("Invalid: Range 15.0-45.0");
                             Log.i(TAG, "mp06b012: Range 15.0-45.0");
+                            mp06b012.requestFocus();
                             return false;
                         } else {
                             mp06b012.setError(null);
@@ -673,6 +720,7 @@ public class Form6Activity extends AppCompatActivity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.mp06b012), Toast.LENGTH_SHORT).show();
                 mp06b012id3_txt.setError("This data is Required!");
                 mp06b012id3_txt.setText("This data is Required!");
+                mp06b012id3_txt.requestFocus();
                 Log.i(TAG, "mp06b012id3: This data is Required!");
                 return false;
             } else {
