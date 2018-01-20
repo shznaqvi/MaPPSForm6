@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.aku.hassannaqvi.mapps_form6.activities.EndingActivity">
+    tools:context="edu.aku.hassannaqvi.mapps_form8.activities.EndingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,50 +23,50 @@
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimary"
             android:padding="2dp"
-            android:text="@string/mp04a014"
+            android:text="@string/mp08a014"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
         <RadioGroup
-            android:id="@+id/mp06a014"
+            android:id="@+id/mp08a014"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/mp06a01401"
+                android:id="@+id/mp08a01401"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp04a01401" />
+                android:text="@string/mp08a01401" />
 
             <RadioButton
-                android:id="@+id/mp06a01402"
+                android:id="@+id/mp08a01402"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp04a01402" />
+                android:text="@string/mp08a01402" />
 
             <RadioButton
-                android:id="@+id/mp06a01403"
+                android:id="@+id/mp08a01403"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp04a01403" />
+                android:text="@string/mp08a01403" />
 
             <RadioButton
-                android:id="@+id/mp06a01404"
+                android:id="@+id/mp08a01404"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp04a01404" />
+                android:text="@string/mp08a01404" />
 
             <RadioButton
-                android:id="@+id/mp06a01405"
+                android:id="@+id/mp08a01405"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp04a01405" />
+                android:text="@string/mp08a01405" />
 
             <RadioButton
-                android:id="@+id/mp06a01406"
+                android:id="@+id/mp08a01406"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp04a01406"
+                android:text="@string/mp08a01406"
                 android:visibility="gone" />
 
 
