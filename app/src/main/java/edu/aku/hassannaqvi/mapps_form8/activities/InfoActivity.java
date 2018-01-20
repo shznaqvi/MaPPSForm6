@@ -230,7 +230,7 @@ public class InfoActivity extends Activity {
 
                 finish();
 
-                Intent intent = new Intent(this, SectionDActivity.class);
+                Intent intent = new Intent(this, SectionEActivity.class);
                 startActivity(intent);
 
             } else {

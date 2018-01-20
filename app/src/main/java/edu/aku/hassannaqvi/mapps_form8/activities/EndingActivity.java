@@ -99,10 +99,10 @@ public class EndingActivity extends Activity {
 
         if (mp08a014.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.mp08a013), Toast.LENGTH_SHORT).show();
-            mp08a01406.setError("This data is Required!");
+            mp08a01405.setError("This data is Required!");
             return false;
         } else {
-            mp08a01406.setError(null);
+            mp08a01405.setError(null);
         }
 
         return true;

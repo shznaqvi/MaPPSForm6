@@ -61,12 +61,19 @@
             android:name="edu.aku.hassannaqvi.mapps_form8.activities.InfoActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionDActivity"
+            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionEActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionAActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionBActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionCActivity"></activity>
+        <activity
+            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionBActivity"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionCActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionDActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

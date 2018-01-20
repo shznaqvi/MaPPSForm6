@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.aku.hassannaqvi.mapps_form8.activities.SectionEActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/mp08e"
+            android:textSize="40sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#efefef"
+            android:gravity="center"
+            android:text="Measurer 1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/mp08e001"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08e001"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:textSize="32sp" />
+
+        <Spinner
+            android:id="@+id/mp08e001id1"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08esubM1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/mp08e005"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e005"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08e005"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textSize="32sp" />
+
+        <Spinner
+            android:id="@+id/mp08e005id1"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08esubM1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+
+            android:text="@string/mp08e009"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e009"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08e009"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textSize="32sp" />
+
+        <Spinner
+            android:id="@+id/mp08e009id1"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08esubM1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#efefef"
+            android:gravity="center"
+            android:text="Measurer 2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+
+            android:text="@string/mp08e002"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08e002"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:textSize="32sp" />
+
+        <Spinner
+            android:id="@+id/mp08e002id2"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08esubM2" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+
+
+            android:text="@string/mp08e006"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e006"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08e006"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textSize="32sp" />
+
+        <Spinner
+            android:id="@+id/mp08e006id2"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08esubM2" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+
+            android:text="@string/mp08e010"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e010"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08e010"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textSize="32sp" />
+
+        <Spinner
+            android:id="@+id/mp08e010id2"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mp08esubM2" />
+
+
+        <LinearLayout
+            android:id="@+id/fldGrpmp08e004"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#efefef"
+                android:gravity="center"
+                android:text="Measurer 3"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp08e004"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp08e004"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp08e004"
+                android:inputType="numberDecimal"
+                android:maxLength="5"
+                android:textSize="32sp" />
+
+            <Spinner
+                android:id="@+id/mp08e004id3"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp08esubM3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpmp08e008"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+
+                android:text="@string/mp08e008"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp08e008"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp08e008"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:textSize="32sp" />
+
+            <Spinner
+                android:id="@+id/mp08e008id3"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp08esubM3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpmp08e012"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+
+                android:text="@string/mp08e012"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp08e012"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp08e012"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:textSize="32sp" />
+
+            <Spinner
+                android:id="@+id/mp08e012id3"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp08esubM3" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/mp08f"
+            android:textSize="40sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/mp08e013"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/mp08e013"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/gl"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textSize="32sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e"
+                android:textSize="32sp" />
+
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
+            <Button
+                android:id="@+id/btn_Continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:text="@string/nextSection"
+                android:textColor="@color/whiteOverlay"
+                android:textSize="32sp" />
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
