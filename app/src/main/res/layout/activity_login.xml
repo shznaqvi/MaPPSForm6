@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="edu.aku.hassannaqvi.mapps_form6.activities.LoginActivity">
+    tools:context="edu.aku.hassannaqvi.mapps_forms5.activities.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -61,7 +61,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
                 android:contentDescription="Mapps LOGO"
-                android:src="@drawable/mapps4_icon" />
+                android:src="@drawable/mappss5_icon" />
 
 
             <LinearLayout

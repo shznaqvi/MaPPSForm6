@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MaPPS - Form 6: Third Trimester Anthropometric Assessment (pregnancy)</string>
+    <string name="app_name">MaPPS - Form S5:  6 Month Preconception Anthropometry Assessment (Sub-study only)</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -43,44 +43,44 @@
 
     <!--- Form 4 String -->
 
-    <string name="mp06a001"> خاندا ن نمبر </string>
-    <string name="mp06a002"> شرڪت ڪندڙ جو شناخت نمبر </string>
-    <string name="mp06a003"> شرڪت ڪندڙ جو نالو </string>
-    <string name="mp06a005"> گھر جي سربراه جو نالو </string>
-    <string name="mp06a008"> رابطي لاء نمبر </string>
+    <string name="mps5a001"> خاندا ن نمبر </string>
+    <string name="mps5a002"> شرڪت ڪندڙ جو شناخت نمبر </string>
+    <string name="mps5a003"> شرڪت ڪندڙ جو نالو </string>
+    <string name="mps5a005"> گھر جي سربراه جو نالو </string>
+    <string name="mps5a008"> رابطي لاء نمبر </string>
 
-    <string name="mp02a005"> ڪلسٽر جو نالو </string>
-    <string name="mp02a006"> ڳوٺ جو نالو </string>
-    <string name="mp02a007"> مڪمل پتو </string>
+    <string name="mps5a006"> ڪلسٽر جو نالو </string>
+    <string name="mps5a007"> ڳوٺ جو نالو </string>
+    <string name="mps5a009"> مڪمل پتو </string>
 
-    <string name="mp06a013"> زباني رضامندي </string>
-    <string name="mp04a014"> انٽرويو جو نتيجو </string>
-    <string name="mp04a01401"> پورو ٿيو </string>
-    <string name="mp04a01402"> اڌ ۾ ڇڏيو </string>
-    <string name="mp04a01403"> انڪار ڪيو </string>
-    <string name="mp04a01404"> ٻن دورن کان پوء به ڪير به موجوده نه هو </string>
-    <string name="mp04a01405"> لڏي وئي </string>
-    <string name="mp04a01406">Ultrasound not done </string>
+    <string name="mps5a013"> زباني رضامندي </string>
+    <string name="mps5a014"> انٽرويو جو نتيجو </string>
+    <string name="mps5a01401"> پورو ٿيو </string>
+    <string name="mps5a01402"> اڌ ۾ ڇڏيو </string>
+    <string name="mps5a01403"> انڪار ڪيو </string>
+    <string name="mps5a01404"> ٻن دورن کان پوء به ڪير به موجوده نه هو </string>
+    <string name="mps5a01405"> لڏي وئي </string>
 
-    <string name="mp06b">قد ۽ وزن جي ماپ </string>
-    <string name="mp06bsubM1"> Measurer 1 </string>
-    <string name="mp06bsubM2"> Measurer 2 </string>
-    <string name="mp06bsubM3"> Measurer 3 </string>
-    <string name="mp06b001"> قد جي ماپ لکو </string>
-    <string name="mp06b002"> قد جي ماپ لکو </string>
-    <string name="mp06b003"> ڇا قد جي ماپ ۾ ڪوفرق (>1 cm) آيوآهي </string>
-    <string name="mp06b003sub"> If no (differ by 1.0 cm), go to Q207 </string>
-    <string name="mp06b004"> قد جي ماپ لکو </string>
-    <string name="mp06b005"> وزن لکو </string>
-    <string name="mp06b006"> وزن لکو </string>
-    <string name="mp06b007"> آيوآهي (>.5 kg) ڇا وزن ۾ ڪو فرق </string>
-    <string name="mp06b007sub"> If no (differ by 0.5 kg), go to Q211 </string>
-    <string name="mp06b008"> وزن لکو </string>
-    <string name="mp06b009"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
-    <string name="mp06b010"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
-    <string name="mp06b011"> ڇا کاٻي ٻانهن يا /ڏوري جي ماپ ۾ (>.5 cm) فرق آيو آهي. </string>
-    <string name="mp06b011sub"> If no (differ by 0.5cm), go to Q215 </string>
-    <string name="mp06b012"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+
+    <string name="mps5b">قد ۽ وزن جي ماپ </string>
+    <string name="mps5bsubM1"> Measurer 1 </string>
+    <string name="mps5bsubM2"> Measurer 2 </string>
+    <string name="mps5bsubM3"> Measurer 3 </string>
+    <string name="mps5b001"> قد جي ماپ لکو </string>
+    <string name="mps5b002"> قد جي ماپ لکو </string>
+    <string name="mps5b003"> ڇا قد جي ماپ ۾ ڪوفرق (>1 cm) آيوآهي </string>
+    <string name="mps5b003sub"> If no (differ by 1.0 cm), go to Q207 </string>
+    <string name="mps5b004"> قد جي ماپ لکو </string>
+    <string name="mps5b005"> وزن لکو </string>
+    <string name="mps5b006"> وزن لکو </string>
+    <string name="mps5b007"> آيوآهي (>.5 kg) ڇا وزن ۾ ڪو فرق </string>
+    <string name="mps5b007sub"> If no (differ by 0.5 kg), go to Q211 </string>
+    <string name="mps5b008"> وزن لکو </string>
+    <string name="mps5b009"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mps5b010"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mps5b011"> ڇا کاٻي ٻانهن يا /ڏوري جي ماپ ۾ (>.5 cm) فرق آيو آهي. </string>
+    <string name="mps5b011sub"> If no (differ by 0.5cm), go to Q215 </string>
+    <string name="mps5b012"> کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
 
 
 </resources>
