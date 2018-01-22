@@ -791,7 +791,7 @@ public class SectionEActivity extends AppCompatActivity {
         form4.put("mp08e012id3", mp08e012id3.getSelectedItem().toString());
         form4.put("mp08e013", mp08e013.getText().toString());
 
-        AppMain.fc.setsA(String.valueOf(form4));
+        AppMain.fc.setsE(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -800,7 +800,7 @@ public class SectionEActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updatesA();
+        int updcount = db.updatesE();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

@@ -14,7 +14,9 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.mapps_form8.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form8.core.DatabaseHelper;
+import edu.aku.hassannaqvi.mapps_form8.validation.validatorClass;
 import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySectionBBinding;
 
@@ -56,7 +58,7 @@ public class SectionBActivity extends AppCompatActivity {
         bl.mp08b003.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bl.mp08b003a.isChecked() || bl.mp08b001b.isChecked()) {
+                if (bl.mp08b003a.isChecked() || bl.mp08b003b.isChecked()) {
 
                     bl.fldGrpmp08b006.setVisibility(View.GONE);
                 } else {
@@ -84,6 +86,62 @@ public class SectionBActivity extends AppCompatActivity {
 
     public Boolean formValidation() {
 
+        if (!validatorClass.EmptyRadioButton(this, bl.mp08b001, bl.mp08b001a, getString(R.string.mp08b001))) {
+            return false;
+        }
+
+        if (bl.mp08b001c.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bl.mp08b002, getString(R.string.mp08b002))) {
+                return false;
+            }
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b003a, getString(R.string.mp08b003))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b00388, bl.mp08b00388x, getString(R.string.mp08b003) + " - " + getString(R.string.other))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyTextBox(this, bl.mp08b004, getString(R.string.mp08b004))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyTextBox(this, bl.mp08b005, getString(R.string.mp08b005))) {
+            return false;
+        }
+
+        if (!validatorClass.RangeTextBox(this, bl.mp08b005, 3, 42, getString(R.string.mp08b002), " weeks")) {
+            return false;
+        }
+
+        if (!bl.mp08b003a.isChecked() && !bl.mp08b003b.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, bl.mp08b006, bl.mp08b006a, getString(R.string.mp08b006))) {
+                return false;
+            }
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.mp08b007, bl.mp08b007a, getString(R.string.mp08b007))) {
+            return false;
+        }
+
+
+        if (bl.mp08b007a.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bl.mp08b008, getString(R.string.mp08b008))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bl.mp08b008, 1, 0, getString(R.string.mp08b002), " days")) {
+                return false;
+            }
+        }
+
+
+
+
+
         return true;
 
     }
@@ -98,11 +156,16 @@ public class SectionBActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                startActivity(new Intent(this, SectionDActivity.class).putExtra("complete", false));
+                if (AppMain.outcome == 1) {
+
+                    startActivity(new Intent(this, SectionEActivity.class).putExtra("complete", false));
+                } else {
+                    startActivity(new Intent(this, SectionCActivity.class).putExtra("complete", false));
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -145,8 +208,10 @@ public class SectionBActivity extends AppCompatActivity {
                 : "0");
         sB.put("mp08b008", bl.mp08b008.getText().toString());
 
+        AppMain.outcome = bl.mp08b003.indexOfChild(findViewById(bl.mp08b003.getCheckedRadioButtonId())) + 1;
 
-        //AppMain.fc.setsC(String.valueOf(sRc));
+
+        AppMain.fc.setsB(String.valueOf(sB));
 
 
         //sRc.put()
@@ -160,10 +225,10 @@ public class SectionBActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
 
 
-        /*Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
         // 2. UPDATE FORM ROWID
-        int updcount = db.updateSC();
+        int updcount = db.updatesB();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -172,14 +237,22 @@ public class SectionBActivity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-*/
 
-        return true;
+
+        //return true;
     }
 
     @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
+    public void BtnEnd() {
+        finish();
+        Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);
     }
 
     public class checking {

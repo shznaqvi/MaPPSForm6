@@ -135,18 +135,14 @@
 
             </RadioGroup>
 
-            <LinearLayout
-                android:id="@+id/fldGrpmp08c003"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/mp08c002"
+                    android:text="@string/mp08c003"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -190,8 +186,11 @@
 
                 </RadioGroup>
 
-
-            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/fldGrpmp08c004"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -241,6 +240,8 @@
                     android:text="@string/dkn" />
 
             </RadioGroup>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -684,13 +685,6 @@
                     android:layout_weight="1"
                     android:text="@string/mp08c009p" />
 
-                <CheckBox
-                    android:id="@+id/mp08c009q"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/mp08c009q" />
 
                 <CheckBox
                     android:id="@+id/mp08c00977"
@@ -714,7 +708,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/other" />
+                    android:text="@string/mp08c009q" />
 
 
                 <EditText
@@ -722,7 +716,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:hint="@string/other"
+                    android:hint="@string/mp08c009q"
                     android:inputType="textCapWords"
                     android:text='@{mp08c00988.checked ? mp08c00988x.getText.toString : ""}'
                     android:visibility="@{mp08c00988.checked ? View.VISIBLE : View.GONE}" />

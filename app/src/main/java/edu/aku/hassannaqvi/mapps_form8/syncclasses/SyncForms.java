@@ -59,7 +59,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            String url = AppMain._HOST_URL_4 + FormsContract.FormsTable._URL.replace(".php", "6.php");
+            String url = AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "8.php");
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -87,17 +87,17 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
                 }
             }
 
-            Toast.makeText(mContext, sSynced + " Forms6 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " Forms8 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Forms6 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Forms6 data");
+            pd.setMessage(sSynced + " Forms8 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading Forms8 data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Forms6 Sync Failed");
+            pd.setTitle("Forms8 Sync Failed");
             pd.show();
         }
     }

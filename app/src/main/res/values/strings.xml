@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MaPPS - Form 6: Third Trimester Anthropometric Assessment (pregnancy)</string>
+    <string name="app_name">MaPPS - Form 8: Birth History and Maternal Postpartum Antrhopometric Assessment</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

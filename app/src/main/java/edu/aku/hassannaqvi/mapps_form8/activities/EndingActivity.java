@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
-import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -64,12 +63,12 @@ public class EndingActivity extends Activity {
             mp08a01406.setEnabled(true);
         }
 
-        if (AppMain.formType.equals("5")) {
+        /*if (AppMain.formType.equals("5")) {
             mp08a01406.setVisibility(View.VISIBLE);
         } else {
             mp08a01406.setVisibility(View.GONE);
         }
-
+*/
     }
 
     @OnClick(R.id.btn_End)
@@ -133,6 +132,11 @@ public class EndingActivity extends Activity {
             return false;
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 }
