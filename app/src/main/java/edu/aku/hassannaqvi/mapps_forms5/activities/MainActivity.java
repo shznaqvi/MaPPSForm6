@@ -243,7 +243,7 @@ public class MainActivity extends Activity {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
                 Intent oF = new Intent(MainActivity.this, InfoActivity.class);
-                AppMain.formType = "6";
+                AppMain.formType = "S5";
                 startActivity(oF);
             } else {
 
@@ -265,7 +265,7 @@ public class MainActivity extends Activity {
                             editor.putString("tagName", m_Text);
                             editor.commit();
 
-                            AppMain.formType = "4";
+                            AppMain.formType = "S5";
 
                             Intent oF = new Intent(MainActivity.this, InfoActivity.class);
                             startActivity(oF);
