@@ -185,7 +185,7 @@ public class MainActivity extends Activity {
             rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
             rSumText += "\r\n";
             rSumText += "\r\n";
-            rSumText += "Unsynced Forms6: \t" + unsyncedForms6.size();
+            rSumText += "Unsynced Forms8: \t" + unsyncedForms6.size();
             rSumText += "\r\n";
 
         }
