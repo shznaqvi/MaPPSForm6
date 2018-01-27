@@ -115,7 +115,7 @@ public class SectionDActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bl.mp08d006, 1, 99, getString(R.string.mp08d006), " times")) {
+            if (!validatorClass.RangeTextBox(this, bl.mp08d006, 1, 12, getString(R.string.mp08d006), " times")) {
                 return false;
             }
         }
