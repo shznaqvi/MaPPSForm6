@@ -26,6 +26,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -34,6 +35,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.mapps_forms5.contracts.ClustersContract;
 import edu.aku.hassannaqvi.mapps_forms5.contracts.FormsContract;
+import edu.aku.hassannaqvi.mapps_forms5.contracts.LHWsContract;
 import edu.aku.hassannaqvi.mapps_forms5.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.mapps_forms5.core.AppMain;
 import edu.aku.hassannaqvi.mapps_forms5.core.DatabaseHelper;
@@ -57,6 +59,10 @@ public class MainActivity extends Activity {
 
     @BindView(R.id.spUC)
     Spinner spUC;
+    @BindView(R.id.lhws)
+    Spinner lhws;
+    List<String> LHWsName;
+    HashMap<String, String> LHWs;
 
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
@@ -226,6 +232,21 @@ public class MainActivity extends Activity {
 
                     Log.d("Selected Cluster", AppMain.curCluster);
 
+                    LHWsName = new ArrayList<>();
+                    LHWs = new HashMap<>();
+
+                    Collection<LHWsContract> collectionLHWs = db.getLHWsByCluster(AppMain.curCluster);
+                    for (LHWsContract lhws : collectionLHWs) {
+                        LHWsName.add(lhws.getLhwName());
+                        LHWs.put(lhws.getLhwName(), lhws.getLhwId());
+                        Collections.sort(LHWsName);
+                    }
+
+                    ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(getBaseContext(),
+                            android.R.layout.simple_dropdown_item_1line, LHWsName);
+
+                    lhws.setAdapter(dataAdapter2);
+
 
                 }
 
@@ -236,6 +257,21 @@ public class MainActivity extends Activity {
             });
 
         }
+
+        lhws.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                //((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.colorPrimary));
+                Log.d("Selected LHWs", LHWs.get(lhws.getSelectedItem().toString()));
+                AppMain.selectedLhw = LHWs.get(lhws.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 

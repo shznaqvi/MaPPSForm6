@@ -15,6 +15,8 @@ import android.view.View;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.mapps_forms5.contracts.EnrolledContract;
@@ -84,7 +86,7 @@ public class AppMain extends Application {
     public static String areaCode;
     public static String curCluster = "";
     //    For participant
-    public static ArrayList<EnrolledContract> Eparticipant;
+    //public static ArrayList<EnrolledContract> Eparticipant;
     public static String currentParticipantName = "";
     public static String formType = "";
     public static JSONObject sA;
@@ -98,6 +100,18 @@ public class AppMain extends Application {
     public static int maritalStatus = 0;
     public static int currentAge = 0;
     public static String lmp;
+    public static int totalWmCount = 0;
+    public static int wmCount = 1;
+    public static String selectedLhw;
+    public static int position = 0;
+    public static boolean checked = false;
+    public static String hhno = "";
+
+    public static ArrayList<EnrolledContract> Eparticipant = new ArrayList<>();
+
+    // Gul Sanober
+    public static List<String> ParticipantsName = new ArrayList<>();
+    public static HashMap<String, EnrolledContract> ParticipantsMap = new HashMap<>();
 
     protected LocationManager locationManager;
     //    Login Members Array

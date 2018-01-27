@@ -22,7 +22,8 @@ public class EnrolledContract {
     private String houseHold;  // Structure
     private String women_name;
     private String sno;
-    private String uid_f4;
+    private String uid_f2;
+    private String frmno;
 
     public EnrolledContract() {
     }
@@ -34,7 +35,8 @@ public class EnrolledContract {
         this.houseHold = ec.getHouseHold();
         this.women_name = ec.getWomen_name();
         this.sno = ec.getSno();
-        this.uid_f4 = ec.getUid_f4();
+        this.uid_f2 = ec.getUid_f2();
+        this.frmno = ec.getFrmno();
     }
 
     public EnrolledContract Sync(JSONObject jsonObject) throws JSONException {
@@ -44,7 +46,8 @@ public class EnrolledContract {
         this.houseHold = jsonObject.getString(EnrolledTable.COLUMN_NAME_HOUSEHOLD);
         this.women_name = jsonObject.getString(EnrolledTable.COLUMN_NAME_WOMEN_NAME);
         this.sno = jsonObject.getString(EnrolledTable.COLUMN_NAME_SNO);
-        this.uid_f4 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F4);
+        this.uid_f2 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F2);
+        this.frmno = jsonObject.getString(EnrolledTable.COLUMN_NAME_FRMNO);
         return this;
 
     }
@@ -56,16 +59,25 @@ public class EnrolledContract {
         this.houseHold = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_HOUSEHOLD));
         this.women_name = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_WOMEN_NAME));
         this.sno = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_SNO));
-        this.uid_f4 = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_UID_F4));
+        this.uid_f2 = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_UID_F2));
+        this.frmno = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_FRMNO));
         return this;
     }
 
-    public String getUid_f4() {
-        return uid_f4;
+    public String getFrmno() {
+        return frmno;
     }
 
-    public void setUid_f4(String uid_f4) {
-        this.uid_f4 = uid_f4;
+    public void setFrmno(String frmno) {
+        this.frmno = frmno;
+    }
+
+    public String getUid_f2() {
+        return uid_f2;
+    }
+
+    public void setUid_f2(String uid_f2) {
+        this.uid_f2 = uid_f2;
     }
 
     public Long get_ID() {
@@ -121,6 +133,10 @@ public class EnrolledContract {
         return sno;
     }
 
+    public void setSno(String sno) {
+        this.sno = sno;
+    }
+
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
@@ -131,14 +147,15 @@ public class EnrolledContract {
         json.put(EnrolledTable.COLUMN_NAME_HOUSEHOLD, this.houseHold);
         json.put(EnrolledTable.COLUMN_NAME_WOMEN_NAME, this.women_name);
         json.put(EnrolledTable.COLUMN_NAME_SNO, this.sno);
-        json.put(EnrolledTable.COLUMN_NAME_UID_F4, this.uid_f4);
+        json.put(EnrolledTable.COLUMN_NAME_UID_F2, this.uid_f2);
+        json.put(EnrolledTable.COLUMN_NAME_FRMNO, this.frmno);
 
         return json;
     }
 
     public static abstract class EnrolledTable implements BaseColumns {
 
-        public static final String _URI = "enrolled.php";
+        public static final String _URI = "sampleds1.php";
 
         public static final String TABLE_NAME = "enrolled";
 
@@ -146,14 +163,15 @@ public class EnrolledContract {
         public static final String COLUMN_NAME_LUID = "l_uid";
         public static final String COLUMN_NAME_SUBAREACODE = "clustercode";
         public static final String COLUMN_NAME_LHWCODE = "lhwcode";
-        public static final String COLUMN_NAME_HOUSEHOLD = "household";
+        public static final String COLUMN_NAME_HOUSEHOLD = "hhno";
         public static final String COLUMN_NAME_WOMEN_NAME = "epname";
         public static final String COLUMN_NAME_SNO = "sno";
-        public static final String COLUMN_NAME_UID_F4 = "uid_f4";
+        public static final String COLUMN_NAME_UID_F2 = "uid_f2";
+        public static final String COLUMN_NAME_FRMNO = "frmno";
 
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String _URIGET = "pregnancies.php";
+        public static final String _URIGET = "sampleds1.php";
     }
 
 }
