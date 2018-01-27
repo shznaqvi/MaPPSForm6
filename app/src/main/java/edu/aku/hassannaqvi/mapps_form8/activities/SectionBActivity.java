@@ -112,7 +112,7 @@ public class SectionBActivity extends AppCompatActivity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bl.mp08b005, 3, 42, getString(R.string.mp08b002), " weeks")) {
+        if (!validatorClass.RangeTextBox(this, bl.mp08b005, 3, 42, getString(R.string.mp08b005), " weeks")) {
             return false;
         }
 
@@ -133,7 +133,7 @@ public class SectionBActivity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bl.mp08b008, 1, 0, getString(R.string.mp08b002), " days")) {
+            if (!validatorClass.RangeTextBox(this, bl.mp08b008, 1, 7, getString(R.string.mp08b008), " days")) {
                 return false;
             }
         }
@@ -193,7 +193,7 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("mp08b00388x", bl.mp08b00388x.getText().toString());
 
         sB.put("mp08b004", bl.mp08b004.getText().toString());
-        sB.put("mp08b005", bl.mp08b002.getText().toString());
+        sB.put("mp08b005", bl.mp08b005.getText().toString());
 
 
         sB.put("mp08b006", bl.mp08b006a.isChecked() ? "1"

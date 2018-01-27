@@ -39,10 +39,12 @@ public class SectionCActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bl.mp08c00377.isChecked() || bl.mp08c00399.isChecked()) {
-                    bl.fldGrpmp08c004.setVisibility(View.VISIBLE);
-                } else {
                     bl.fldGrpmp08c004.setVisibility(View.GONE);
                     bl.mp08c004.clearCheck();
+                    bl.mp08c005.clearCheck();
+                } else {
+                    bl.fldGrpmp08c004.setVisibility(View.VISIBLE);
+
                 }
             }
         });
@@ -214,15 +216,17 @@ public class SectionCActivity extends Activity {
             return false;
         }
 
-        if (bl.mp08c00377.isChecked() || bl.mp08c00399.isChecked()) {
+        if (bl.mp08c003a.isChecked() || bl.mp08c003b.isChecked()) {
             if (!validatorClass.EmptyRadioButton(this, bl.mp08c004, bl.mp08c004a, getString(R.string.mp08c004))) {
                 return false;
             }
+
+            if (!validatorClass.EmptyRadioButton(this, bl.mp08c005, bl.mp08c005a, getString(R.string.mp08c005))) {
+                return false;
+            }
+
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08c005, bl.mp08c005a, getString(R.string.mp08c005))) {
-            return false;
-        }
 
         if (!validatorClass.EmptyRadioButton(this, bl.mp08c006, bl.mp08c006a, getString(R.string.mp08c006))) {
             return false;

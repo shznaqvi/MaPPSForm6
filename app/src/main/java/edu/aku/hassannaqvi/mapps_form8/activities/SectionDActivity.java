@@ -67,13 +67,26 @@ public class SectionDActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08d001, bl.mp08d001b, bl.mp08d001bx, getString(R.string.mp08c001b) + " - " + getString(R.string.hours))) {
+        if (!validatorClass.EmptyRadioButton(this, bl.mp08d001, bl.mp08d001b, bl.mp08d001bx, getString(R.string.mp08d001b) + " - " + getString(R.string.hours))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08d001, bl.mp08d001c, bl.mp08d001cx, getString(R.string.mp08c001c) + " - " + getString(R.string.hours))) {
+        if (bl.mp08d001b.isChecked()) {
+            if (!validatorClass.RangeTextBox(this, bl.mp08d001bx, 1, 23, getString(R.string.mp08d001b), " hours")) {
+                return false;
+            }
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.mp08d001, bl.mp08d001c, bl.mp08d001cx, getString(R.string.mp08d001c) + " - " + getString(R.string.hours))) {
             return false;
         }
+
+        if (bl.mp08d001c.isChecked()) {
+            if (!validatorClass.RangeTextBox(this, bl.mp08d001cx, 1, 30, getString(R.string.mp08d001c), " days")) {
+                return false;
+            }
+        }
+
 
         if (!validatorClass.EmptyRadioButton(this, bl.mp08d002, bl.mp08d002a, getString(R.string.mp08d002))) {
             return false;
@@ -98,7 +111,11 @@ public class SectionDActivity extends Activity {
         }
 
         if (!bl.mp08d00677.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bl.mp08d006, getString(R.string.mp08b006))) {
+            if (!validatorClass.EmptyTextBox(this, bl.mp08d006, getString(R.string.mp08d006))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bl.mp08d006, 1, 99, getString(R.string.mp08d006), " times")) {
                 return false;
             }
         }
