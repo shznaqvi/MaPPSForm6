@@ -428,10 +428,18 @@ public class InfoActivity extends Activity {
         return true;
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+        if (AppMain.checked) {
+            Toast.makeText(getApplicationContext(), "You can not go back",
+                    Toast.LENGTH_SHORT).show();
+
+        } else {
+            AppMain.ParticipantsMap.clear();
+            AppMain.ParticipantsName.clear();
+            startActivity(new Intent(this, MainActivity.class));
+
+        }
     }
-*/
 
 }
