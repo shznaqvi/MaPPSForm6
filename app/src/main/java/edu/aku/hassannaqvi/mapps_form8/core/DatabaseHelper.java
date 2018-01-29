@@ -998,7 +998,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 /*        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' AND "
                 + FormsTable.COLUMN_FORMTYPE + " =?";*/
         String whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_FORMTYPE + " =?";
-        String[] whereArgs = new String[]{"6"};
+        String[] whereArgs = new String[]{"8"};
         String groupBy = null;
         String having = null;
 

@@ -25,6 +25,8 @@ public class SectionBActivity extends AppCompatActivity {
     ActivitySectionBBinding bl;
 
     String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
+    String minDate = AppMain.convertDateFormat("01-07-2017");
+
 
 
     @Override
@@ -42,6 +44,8 @@ public class SectionBActivity extends AppCompatActivity {
         bl.mp08b004.setManager(getSupportFragmentManager());
         bl.mp08b002.setMaxDate(dateToday);
         bl.mp08b004.setMaxDate(dateToday);
+        bl.mp08b002.setMinDate(minDate);
+        bl.mp08b004.setMinDate(minDate);
 
         bl.mp08b001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

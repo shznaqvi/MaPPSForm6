@@ -14,7 +14,11 @@ import android.view.View;
 
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.mapps_form8.contracts.EnrolledContract;
@@ -104,6 +108,31 @@ public class AppMain extends Application {
     //    Login Members Array
     Location location;
 
+    public static Calendar getCalendarDate(String value) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date = sdf.parse(value);
+            calendar.setTime(date);
+            return calendar;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar;
+    }
+
+    public static String convertDateFormat(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date d = sdf.parse(dateStr);
+            return new SimpleDateFormat("dd/MM/yyyy").format(d);
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        return "";
+    }
 
     @Override
     public void onCreate() {
@@ -259,4 +288,5 @@ public class AppMain extends Application {
         }
 
     }
+
 }
