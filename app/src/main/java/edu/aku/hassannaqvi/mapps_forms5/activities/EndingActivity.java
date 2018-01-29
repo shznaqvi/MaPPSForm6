@@ -37,13 +37,15 @@ public class EndingActivity extends Activity {
     @BindView(R.id.mps5a01405)
     RadioButton mps5a01405;
 
+    Boolean check;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        Boolean check = getIntent().getExtras().getBoolean("complete");
+        check = getIntent().getExtras().getBoolean("complete");
 
         if (check || AppMain.endFlag) {
             mps5a01401.setEnabled(true);
@@ -78,11 +80,36 @@ public class EndingActivity extends Activity {
 
                 AppMain.partiFlag = 0;
 
-                finish();
-                Toast.makeText(this, "Complete Sections", Toast.LENGTH_SHORT).show();
+                if (AppMain.wmCount < AppMain.totalWmCount && check) {
+                    finish();
+                    AppMain.wmCount++;
+                    AppMain.ParticipantsMap.remove(AppMain.position);
+                    AppMain.ParticipantsName.remove(AppMain.position);
+                    AppMain.checked = true;
+                    Toast.makeText(this, "Complete Sections", Toast.LENGTH_SHORT).show();
+                    Intent endSec = new Intent(this, InfoActivity.class);
+                    endSec.putExtra("complete", false);
+                    startActivity(endSec);
+
+                } else {
+                    AppMain.wmCount = 1;
+                    AppMain.totalWmCount = 0;
+                    AppMain.ParticipantsName.clear();
+                    AppMain.ParticipantsMap.clear();
+                    AppMain.Eparticipant.clear();
+                    //A.flag = true;
+                    AppMain.checked = false;
+                    Toast.makeText(this, "Complete Sections", Toast.LENGTH_SHORT).show();
+                    Intent endSec = new Intent(this, MainActivity.class);
+                    endSec.putExtra("complete", false);
+                    startActivity(endSec);
+                }
+
+
+                /*Toast.makeText(this, "Complete Sections", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
                 endSec.putExtra("complete", false);
-                startActivity(endSec);
+                startActivity(endSec);*/
             }
         }
     }

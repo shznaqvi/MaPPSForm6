@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -25,10 +26,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,7 +34,6 @@ import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import edu.aku.hassannaqvi.mapps_forms5.contracts.EnrolledContract;
 import edu.aku.hassannaqvi.mapps_forms5.contracts.FormsContract;
-import edu.aku.hassannaqvi.mapps_forms5.contracts.LHWsContract;
 import edu.aku.hassannaqvi.mapps_forms5.core.AppMain;
 import edu.aku.hassannaqvi.mapps_forms5.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsforms5.R;
@@ -45,9 +42,9 @@ public class InfoActivity extends Activity {
 
     private static final String TAG = InfoActivity.class.getSimpleName();
 
-    List<String> LHWsName;
+    //List<String> LHWsName;
     DatabaseHelper db;
-    HashMap<String, String> LHWs;
+    //HashMap<String, String> LHWs;
     Boolean check = false;
     Collection<EnrolledContract> enrolledParticipant;
 
@@ -60,8 +57,8 @@ public class InfoActivity extends Activity {
     EditText mps5a002;
     @BindView(R.id.mps5a003)
     Spinner mps5a003;
-    @BindView(R.id.lhws)
-    Spinner lhws;
+    /*@BindView(R.id.lhws)
+    Spinner lhws;*/
     @BindView(R.id.mps5a005)
     EditText mps5a005;
     @BindView(R.id.mps5a008)
@@ -80,6 +77,8 @@ public class InfoActivity extends Activity {
 
     ArrayList<String> partNames;
     int position;
+    @BindView(R.id.checkParticipants)
+    Button checkParticipants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,49 +88,36 @@ public class InfoActivity extends Activity {
 
         db = new DatabaseHelper(this);
 
-        LHWsName = new ArrayList<>();
+        if (AppMain.checked) {
+            mps5a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, AppMain.ParticipantsName));
+            fldGrpParticipant.setVisibility(View.VISIBLE);
+            mps5a001.setText(AppMain.hhno);
+            mps5a001.setEnabled(false);
+            checkParticipants.setEnabled(false);
+        } else {
 
-        LHWs = new HashMap<>();
-
-        final Collection<LHWsContract> collectionLHWs = db.getLHWsByCluster(AppMain.curCluster);
-
-        for (LHWsContract lhws : collectionLHWs) {
-            LHWsName.add(lhws.getLhwName());
-            Collections.sort(LHWsName);
-            LHWs.put(lhws.getLhwName(), lhws.getLhwId());
-
+            mps5a001.setText(null);
+            mps5a001.setEnabled(true);
+            checkParticipants.setEnabled(true);
         }
-        lhws.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, LHWsName));
 
-        lhws.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-
-                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.colorPrimary));
-                ((TextView) parent.getChildAt(0)).setTextSize(28);
-                Log.d("Selected LHWs", LHWs.get(lhws.getSelectedItem().toString()));
-
-
-                mps5a001.setText(null);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
 
         mps5a003.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                mps5a002.setText(AppMain.Eparticipant.get(i).getSno());
+                //mps5a002.setText(AppMain.Eparticipant.get(i).getSno());
+
+                if (mps5a003.getSelectedItemPosition() != 0) {
+                    AppMain.position = i;
+
+                    mps5a002.setText(AppMain.ParticipantsMap.get(mps5a003.getSelectedItem().toString()).getSno());
+                }
 
 
-                position = i;
+
+
             }
 
             @Override
@@ -145,8 +131,14 @@ public class InfoActivity extends Activity {
     @OnTextChanged(value = R.id.mps5a001,
             callback = OnTextChanged.Callback.TEXT_CHANGED)
     void aftermps5a001Input(Editable editable) {
-        check = false;
-        fldGrpParticipant.setVisibility(View.GONE);
+        //AppMain.checked = false;
+        if (!AppMain.checked) {
+            fldGrpParticipant.setVisibility(View.GONE);
+        } else {
+            fldGrpParticipant.setVisibility(View.VISIBLE);
+            AppMain.checked = true;
+        }
+
     }
 
 
@@ -154,30 +146,30 @@ public class InfoActivity extends Activity {
     void onCheckParticipantsClick() {
         //TODO implement
 
-        enrolledParticipant = db.getEnrolledByHousehold(AppMain.curCluster, LHWs.get(lhws.getSelectedItem().toString()), mps5a001.getText().toString());
+        AppMain.checked = true;
+        enrolledParticipant = db.getEnrolledByHousehold(AppMain.curCluster, AppMain.selectedLhw, mps5a001.getText().toString());
+
+        AppMain.totalWmCount = enrolledParticipant.size();
 
         if (enrolledParticipant.size() != 0) {
 
             Toast.makeText(getApplicationContext(), "Participant found", Toast.LENGTH_LONG).show();
 
-            AppMain.Eparticipant = new ArrayList<>();
-
-            partNames = new ArrayList<>();
-
-            partNames.add("....");
-            AppMain.Eparticipant.add(new EnrolledContract());
+            AppMain.ParticipantsName.add("Select Participant..");
 
             for (EnrolledContract ec : enrolledParticipant) {
                 AppMain.Eparticipant.add(new EnrolledContract(ec));
 
-                partNames.add(ec.getWomen_name().replaceFirst(String.valueOf(ec.getWomen_name().charAt(0)),
-                        String.valueOf(ec.getWomen_name().toUpperCase().charAt(0))));
+                AppMain.ParticipantsName.add(ec.getWomen_name().toUpperCase());
+                AppMain.ParticipantsMap.put(ec.getWomen_name().toUpperCase(), new EnrolledContract(ec));
+
+                AppMain.Eparticipant.add(new EnrolledContract(ec));
             }
             fldGrpParticipant.setVisibility(View.VISIBLE);
 
             check = true;
 
-            mps5a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, partNames));
+            mps5a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, AppMain.ParticipantsName));
 
 
         } else {
@@ -216,8 +208,6 @@ public class InfoActivity extends Activity {
     void onBtnContinueClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-//        Intent secba = new Intent(this, ParticipantListActivity.class);
-//        startActivity(secba);
 
         if (ValidateForm()) {
             try {
@@ -288,14 +278,17 @@ public class InfoActivity extends Activity {
 
         JSONObject sInfo = new JSONObject();
 
+
         sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
-        sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
+        sInfo.put("uid_f2", AppMain.Eparticipant.get(position).getUid_f2());
+        sInfo.put("frmno", AppMain.Eparticipant.get(position).getFrmno());
         sInfo.put("mps5a003", mps5a003.getSelectedItem().toString());
         sInfo.put("mps5a005", mps5a005.getText().toString());
         sInfo.put("mps5a008", mps5a008.getText().toString());
         sInfo.put("mps5a013", mps5a01301.isChecked() ? "1" : mps5a01302.isChecked() ? "2" : "0");
 
         AppMain.fc.setsInfo(String.valueOf(sInfo));
+        AppMain.hhno = mps5a001.getText().toString();
 
         setGPS();
 
@@ -352,7 +345,7 @@ public class InfoActivity extends Activity {
 
         //======================= Q 3 ===============
 
-        if (mps5a003.getSelectedItem() == "....") {
+        if (mps5a003.getSelectedItemPosition() == 0) {
 //        if (mps5a003.getSelectedItem().equals("")) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mps5a003), Toast.LENGTH_SHORT).show();
             ((TextView) mps5a003.getSelectedView()).setText("This Data is Required");
@@ -437,8 +430,16 @@ public class InfoActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }
+        if (AppMain.checked) {
+            Toast.makeText(getApplicationContext(), "You can not go back",
+                    Toast.LENGTH_SHORT).show();
 
+        } else {
+            AppMain.ParticipantsMap.clear();
+            AppMain.ParticipantsName.clear();
+            startActivity(new Intent(this, MainActivity.class));
+
+        }
+    }
 
 }

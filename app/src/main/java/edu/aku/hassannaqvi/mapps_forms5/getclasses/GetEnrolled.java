@@ -64,7 +64,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            return downloadUrl(AppMain._HOST_URL_4 + EnrolledContract.EnrolledTable._URIGET);
+            return downloadUrl(AppMain._HOST_URL_5 + EnrolledContract.EnrolledTable._URIGET);
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }
