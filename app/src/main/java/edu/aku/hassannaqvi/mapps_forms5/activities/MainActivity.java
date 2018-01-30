@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -71,6 +72,8 @@ public class MainActivity extends Activity {
     DatabaseHelper db;
     List<String> clustersName;
     HashMap<String, String> cluster;
+    @BindView(R.id.testing)
+    TextView testing;
     private String rSumText = "";
     private ProgressDialog pd;
     private Boolean exit = false;
@@ -84,7 +87,9 @@ public class MainActivity extends Activity {
 
         // Reset working variables
         AppMain.child_name = "Test";
-
+        if (Integer.valueOf(Arrays.toString(AppMain.versionName.split(".", 0))) < 1) {
+            testing.setVisibility(View.VISIBLE);
+        }
         if (AppMain.admin) {
             adminsec.setVisibility(View.VISIBLE);
         } else {

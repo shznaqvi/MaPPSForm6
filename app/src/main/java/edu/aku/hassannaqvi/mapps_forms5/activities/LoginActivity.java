@@ -47,6 +47,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -104,7 +105,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     LinearLayout loginLayout1;
     @BindView(R.id.loginLayout2)
     LinearLayout loginLayout2;
-
+    @BindView(R.id.testing)
+    TextView testing;
     DatabaseHelper db;
     List<String> clustersCode;
     List<String> clustersName;
@@ -147,7 +149,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
+        if (Integer.valueOf(Arrays.toString(AppMain.versionName.split(".", 0))) < 1) {
+            testing.setVisibility(View.VISIBLE);
+        }
         // Set up the login form.
         mEmailView1 = findViewById(R.id.email1);
         populateAutoComplete();
