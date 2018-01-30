@@ -131,9 +131,11 @@ public class InfoActivity extends Activity {
     @OnTextChanged(value = R.id.mps5a001,
             callback = OnTextChanged.Callback.TEXT_CHANGED)
     void aftermps5a001Input(Editable editable) {
-        //AppMain.checked = false;
+        AppMain.checked = false;
         if (!AppMain.checked) {
             fldGrpParticipant.setVisibility(View.GONE);
+            AppMain.ParticipantsMap.clear();
+            AppMain.ParticipantsName.clear();
         } else {
             fldGrpParticipant.setVisibility(View.VISIBLE);
             AppMain.checked = true;
