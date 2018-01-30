@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
@@ -54,6 +55,8 @@ public class MainActivity extends Activity {
     TextView recordSummary;
     @BindView(R.id.areaCode)
     EditText areaCode;
+    @BindView(R.id.testing)
+    TextView testing;
 
     @BindView(R.id.spUC)
     Spinner spUC;
@@ -75,7 +78,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-
+        if (Integer.valueOf(Arrays.toString(AppMain.versionName.split(".", 0))) < 1) {
+            testing.setVisibility(View.VISIBLE);
+        }
         // Reset working variables
         AppMain.child_name = "Test";
 
