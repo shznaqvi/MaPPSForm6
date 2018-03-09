@@ -74,6 +74,13 @@
         <activity
             android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionDActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section7BActivity" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section7DActivity" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section7EActivity" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section9DActivity" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10DActivity" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10EActivity" />
+        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10FActivity"></activity>
     </application>
 
 </manifest>

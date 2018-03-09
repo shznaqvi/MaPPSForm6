@@ -215,7 +215,7 @@ public class SectionBActivity extends AppCompatActivity {
         AppMain.outcome = bl.mp08b003.indexOfChild(findViewById(bl.mp08b003.getCheckedRadioButtonId())) + 1;
 
 
-        AppMain.fc.setsB(String.valueOf(sB));
+        AppMain.fc.setS8B(String.valueOf(sB));
 
 
         //sRc.put()
@@ -232,7 +232,7 @@ public class SectionBActivity extends AppCompatActivity {
         Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
         // 2. UPDATE FORM ROWID
-        int updcount = db.updatesB();
+        int updcount = db.updates8B();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

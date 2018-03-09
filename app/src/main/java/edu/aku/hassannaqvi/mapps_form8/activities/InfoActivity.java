@@ -140,6 +140,21 @@ public class InfoActivity extends Activity {
             }
         });
 
+
+        if (AppMain.formType.equals("7")) {
+            AppMain.ftype = "mp07";
+            this.setTitle(getResources().getString(R.string.app_name7));
+        } else if (AppMain.formType.equals("8")) {
+            AppMain.ftype = "mp08";
+            this.setTitle(getResources().getString(R.string.app_name8));
+        } else if (AppMain.formType.equals("9")) {
+            AppMain.ftype = "mp09";
+            this.setTitle(getResources().getString(R.string.app_name9));
+        } else if (AppMain.formType.equals("10")) {
+            AppMain.ftype = "mp10";
+            this.setTitle(getResources().getString(R.string.app_name10));
+        }
+
     }
 
     @OnTextChanged(value = R.id.mp08a001,
@@ -290,12 +305,13 @@ public class InfoActivity extends Activity {
 
         sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
         sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
-        sInfo.put("mp08a003", mp08a003.getSelectedItem().toString());
-        sInfo.put("mp08a005", mp08a005.getText().toString());
-        sInfo.put("mp08a008", mp08a008.getText().toString());
-        sInfo.put("mp08a013", mp08a01301.isChecked() ? "1" : mp08a01302.isChecked() ? "2" : "0");
+        sInfo.put(AppMain.ftype + "a003", mp08a003.getSelectedItem().toString());
+        sInfo.put(AppMain.ftype + "a005", mp08a005.getText().toString());
+        sInfo.put(AppMain.ftype + "a008", mp08a008.getText().toString());
+        sInfo.put(AppMain.ftype + "a013", mp08a01301.isChecked() ? "1" : mp08a01302.isChecked() ? "2" : "0");
 
         AppMain.fc.setsInfo(String.valueOf(sInfo));
+        AppMain.ftype = "";
 
         setGPS();
 

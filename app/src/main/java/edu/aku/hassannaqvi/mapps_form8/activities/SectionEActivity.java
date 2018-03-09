@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.mapps_form8.activities;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.mapps_form8.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.R;
+import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySectionEBinding;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -77,11 +79,13 @@ public class SectionEActivity extends AppCompatActivity {
     boolean flag_q4 = false, flag_q8 = false, flag_q12 = false;
 
     String dateToday;
+    ActivitySectionEBinding bl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_e);
+        //setContentView(R.layout.activity_section_e);
+        bl = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
         ButterKnife.bind(this);
 
 
@@ -791,7 +795,7 @@ public class SectionEActivity extends AppCompatActivity {
         form4.put("mp08e012id3", mp08e012id3.getSelectedItem().toString());
         form4.put("mp08e013", mp08e013.getText().toString());
 
-        AppMain.fc.setsE(String.valueOf(form4));
+        AppMain.fc.setS8E(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -800,7 +804,7 @@ public class SectionEActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updatesE();
+        int updcount = db.updates8E();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

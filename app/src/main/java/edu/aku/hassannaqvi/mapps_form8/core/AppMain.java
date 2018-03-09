@@ -94,6 +94,8 @@ public class AppMain extends Application {
     public static String formType = "";
     public static JSONObject sA;
     public static String[] loginMem;
+    public static String ftype = "";
+
 
     public static long installedOn;
     public static int versionCode;

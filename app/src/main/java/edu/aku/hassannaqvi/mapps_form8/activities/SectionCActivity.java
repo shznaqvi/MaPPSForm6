@@ -453,7 +453,7 @@ public class SectionCActivity extends Activity {
                 : "0");
 
 
-        AppMain.fc.setsC(String.valueOf(sC));
+        AppMain.fc.setS8C(String.valueOf(sC));
 
 
         //sRc.put()
@@ -470,7 +470,7 @@ public class SectionCActivity extends Activity {
         Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
         // 2. UPDATE FORM ROWID
-        int updcount = db.updatesC();
+        int updcount = db.updates8C();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

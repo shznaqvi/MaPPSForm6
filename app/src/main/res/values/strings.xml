@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">MaPPS - Form 8: Birth History and Maternal Postpartum Antrhopometric Assessment</string>
+    <string name="app_name">MaPPS - : Maternal And Infant Postpartum Antrhopometric Assessment</string>
+    <string name="app_name8">MaPPS - Form 8: Birth History and Maternal Postpartum Antrhopometric Assessment</string>
+    <string name="app_name7">MaPPS - Form 7: Infant Anthropometric and Abnormality Assessment at Birth (24 hours postpartum)</string>
+    <string name="app_name9">MaPPS - Form 9: Neonatal Anthropometry and Morbidity Assessment (28 days postpartum)</string>
+    <string name="app_name10">MaPPS - Form 10: Infant Anthropometric and Feeding Assessment (3 months postpartum)</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -45,7 +49,7 @@
 
     <!-- Strings related to Sections Below -->
 
-    <!--- Form 4 String -->
+    <!--- Section Info String -->
 
     <string name="mp08a001"> خاندا ن نمبر </string>
     <string name="mp08a002"> شرڪت ڪندڙ جو شناخت نمبر </string>
@@ -66,7 +70,7 @@
     <string name="mp08a01405"> لڏي وئي </string>
     <string name="mp08a01406">Ultrasound not done </string>
 
-    <!--Section A-->
+    <!--Section B-->
 
     <string name="sectionb"> ماءُ جو حال احوال </string>
     <string name="mp08b001"> ما ءَ ڪٿي آهي ؟ </string>
@@ -90,6 +94,8 @@
     <string name="mp08b006e"> جاڙا وفات ڪري ويا </string>
     <string name="mp08b007"> ڇا ماءَ ويم کانپوء اسپتال جي انتهائي نگراني واري جڳهه تي داخل هئي ِ؟ </string>
     <string name="mp08b008"> جيڪڏهن ها ته گهڻن ڏينهن کان (جيڪڏهن 24 ڪلاڪ نه ٿيا آهن ته هڪ ڏينهن ڪري لکو) </string>
+
+    <!-- Section C-->
     <string name="sectionc"> ويم جي جانچ </string>
     <string name="mp08c001"> ويم ڪيئن ٿيو هيو؟ </string>
     <string name="mp08c001a"> پاڻمرادو </string>
@@ -163,6 +169,8 @@
     <string name="mp08c014"> ڇا ننڍي آپريشن ٿي هئي؟ </string>
     <string name="mp08c015"> ڇا توهان کي ويم کان پهرين يا ويم کانپوءِ رت آيو هو؟ </string>
     <string name="mp08c016"> ساڳئي وقت ۾ پيدا ٿيندڙ ٻارن جا شناخت نمبر ڏيو؟ </string>
+
+    <!--Section D-->
     <string name="sectiond"> ٿڃ پيارڻ جي جانچ </string>
     <string name="mp08d001"> پيدائش کان ڪيتري دير بعد اوهان (ٻار جو نالو) کي پنهنجي ڇاتي سان لڳايو؟ جيڪڏهن هڪ ڪلاڪ کان گھٽ آهي ته 1 تي گول لڳايو ۽ نوٽ ڪريو. 1 ڪلاڪ کان 23 ڪلاڪن تائين مڪمل ڪلاڪ نوٽ ڪريو يا وري 2 تي گول لڳايو ۽ مڪمل ڏينهن جو تعداد نوٽ ڪريو </string>
     <string name="mp08d001a"> هڪ ڪلاڪ اندر </string>
@@ -185,6 +193,7 @@
     <string name="mp08d006"> گھڻا دفعا ماء ٻار کي ڏينهن ۽ رات ۾ ٿڃ پياري ٿي؟ </string>
 
 
+    <!-- Section E-->
     <string name="mp08e"> ماء جو قد ۽ وزن جي ماپ </string>
     <string name="mp08esubM1"> Measurer 1 </string>
     <string name="mp08esubM2"> Measurer 2 </string>

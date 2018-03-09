@@ -196,7 +196,7 @@ public class SectionDActivity extends Activity {
         sD.put("mp08d006", bl.mp08d00677.isChecked() ? "77" : bl.mp08d006.getText().toString());
 
 
-        AppMain.fc.setsD(String.valueOf(sD));
+        AppMain.fc.setS8D(String.valueOf(sD));
 
 
         //sRc.put()
@@ -213,7 +213,7 @@ public class SectionDActivity extends Activity {
         Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
         // 2. UPDATE FORM ROWID
-        int updcount = db.updatesD();
+        int updcount = db.updates8D();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
