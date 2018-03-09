@@ -47,6 +47,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -80,6 +81,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     public ArrayList<String> values;
     public Map<String, String> valuesnlabels;
     // UI references.
+    @BindView(R.id.testing)
+    TextView testing;
     @BindView(R.id.login_progress)
     ProgressBar mProgressView;
     @BindView(R.id.login_form)
@@ -191,6 +194,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 //        DB backup
 
         dbBackup();
+
+        if (Integer.valueOf(Arrays.toString(AppMain.versionName.split(".", 0))) < 1) {
+            testing.setVisibility(View.VISIBLE);
+        }
 
     }
 
