@@ -36,7 +36,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorAccent"
                 android:gravity="center"
-                android:text="@string/mp08e"
+                android:text="@string/mp07heading2"
                 android:textSize="40sp" />
 
             <View
@@ -55,81 +55,114 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
+            <!--01-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp08e001"
+                android:text="@string/mp07q22"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp08e001"
+                android:id="@+id/mp07q22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08e001"
+                android:hint="@string/mp07q22"
                 android:inputType="numberDecimal"
                 android:maxLength="5"
                 android:textSize="32sp" />
 
             <Spinner
-                android:id="@+id/mp08e001id1"
+                android:id="@+id/mp07q22id"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08esubM1" />
+                android:hint="@string/mp07q22id" />
+
+            <!--5-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/mp08e005"
+                android:text="@string/mp07q26"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp08e005"
+                android:id="@+id/mp07q26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08e005"
+                android:hint="@string/mp07q26"
                 android:inputType="numberDecimal"
                 android:maxLength="4"
                 android:textSize="32sp" />
 
             <Spinner
-                android:id="@+id/mp08e005id1"
+                android:id="@+id/mp07q26id"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08esubM1" />
+                android:hint="@string/mp07q26id" />
+
+            <!--9-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-
-                android:text="@string/mp08e009"
+                android:text="@string/mp07q30"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp08e009"
+                android:id="@+id/mp07q30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08e009"
+                android:hint="@string/mp07q30"
                 android:inputType="numberDecimal"
                 android:maxLength="4"
                 android:textSize="32sp" />
 
             <Spinner
-                android:id="@+id/mp08e009id1"
+                android:id="@+id/mp07q30id"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08esubM1" />
+                android:hint="@string/mp07q30id" />
+
+            <!--34-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp07q34"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp07q34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp07q34"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:textSize="32sp" />
+
+            <Spinner
+                android:id="@+id/mp07q34id"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp07q34id" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -142,90 +175,118 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
+            <!--2-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-
-                android:text="@string/mp08e002"
+                android:text="@string/mp07q23"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp08e002"
+                android:id="@+id/mp07q23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08e002"
+                android:hint="@string/mp07q23"
                 android:inputType="numberDecimal"
                 android:maxLength="5"
                 android:textSize="32sp" />
 
             <Spinner
-                android:id="@+id/mp08e002id2"
+                android:id="@+id/mp07q23id"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08esubM2" />
+                android:hint="@string/mp07q23id" />
 
 
+            <!--6-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-
-
-                android:text="@string/mp08e006"
+                android:text="@string/mp07q27"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp08e006"
+                android:id="@+id/mp07q27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08e006"
+                android:hint="@string/mp07q27"
                 android:inputType="numberDecimal"
                 android:maxLength="4"
                 android:textSize="32sp" />
 
             <Spinner
-                android:id="@+id/mp08e006id2"
+                android:id="@+id/mp07q27id"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08esubM2" />
+                android:hint="@string/mp07q27id" />
 
 
+            <!--10-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-
-                android:text="@string/mp08e010"
+                android:text="@string/mp07q31"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/mp08e010"
+                android:id="@+id/mp07q31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08e010"
+                android:hint="@string/mp07q31"
                 android:inputType="numberDecimal"
                 android:maxLength="4"
                 android:textSize="32sp" />
 
             <Spinner
-                android:id="@+id/mp08e010id2"
+                android:id="@+id/mp07q31id"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mp08esubM2" />
+                android:hint="@string/mp07q31id" />
 
 
+            <!--35-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp07q35"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp07q35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp07q35"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:textSize="32sp" />
+
+            <Spinner
+                android:id="@+id/mp07q35id"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mp07q35id" />
+
+
+            <!--25-->
             <LinearLayout
-                android:id="@+id/fldGrpmp08e004"
+                android:id="@+id/fldGrpmp07q25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -248,30 +309,68 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/mp08e004"
+                    android:text="@string/mp07q25"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
                 <EditText
-                    android:id="@+id/mp08e004"
+                    android:id="@+id/mp07q25"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mp08e004"
+                    android:hint="@string/mp07q25"
                     android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:textSize="32sp" />
 
                 <Spinner
-                    android:id="@+id/mp08e004id3"
+                    android:id="@+id/mp07q25id"
                     style="@style/Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mp08esubM3" />
+                    android:hint="@string/mp07q25id" />
 
             </LinearLayout>
 
+
+            <!--29-->
             <LinearLayout
-                android:id="@+id/fldGrpmp08e008"
+                android:id="@+id/fldGrpmp07q29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/mp07q29"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/mp07q29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mp07q29"
+                    android:inputType="numberDecimal"
+                    android:maxLength="4"
+                    android:textSize="32sp" />
+
+                <Spinner
+                    android:id="@+id/mp07q29id"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mp07q29id" />
+
+            </LinearLayout>
+
+            <!--33-->
+
+            <LinearLayout
+                android:id="@+id/fldGrpmp07q33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -283,30 +382,31 @@
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
 
-                    android:text="@string/mp08e008"
+                    android:text="@string/mp07q33"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
                 <EditText
-                    android:id="@+id/mp08e008"
+                    android:id="@+id/mp07q33"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mp08e008"
+                    android:hint="@string/mp07q33"
                     android:inputType="numberDecimal"
                     android:maxLength="4"
                     android:textSize="32sp" />
 
                 <Spinner
-                    android:id="@+id/mp08e008id3"
+                    android:id="@+id/mp07q33id"
                     style="@style/Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mp08esubM3" />
-
+                    android:hint="@string/mp07q33id" />
             </LinearLayout>
 
+            <!--37-->
+
             <LinearLayout
-                android:id="@+id/fldGrpmp08e012"
+                android:id="@+id/fldGrpmp07q37"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -318,60 +418,27 @@
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
 
-                    android:text="@string/mp08e012"
+                    android:text="@string/mp07q37"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
                 <EditText
-                    android:id="@+id/mp08e012"
+                    android:id="@+id/mp07q37"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mp08e012"
+                    android:hint="@string/mp07q37"
                     android:inputType="numberDecimal"
                     android:maxLength="4"
                     android:textSize="32sp" />
 
                 <Spinner
-                    android:id="@+id/mp08e012id3"
+                    android:id="@+id/mp07q37id"
                     style="@style/Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mp08esubM3" />
+                    android:hint="@string/mp07q37id" />
             </LinearLayout>
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="@string/mp08f"
-                android:textSize="40sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorPrimary" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/mp08e013"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/mp08e013"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/gl"
-                android:inputType="numberDecimal"
-                android:maxLength="4"
-                android:textSize="32sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -385,6 +452,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
+                    android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e"
                     android:textSize="32sp" />
@@ -397,6 +465,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="2dp"
                     android:layout_weight="1"
+                    android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
                     android:textColor="@color/whiteOverlay"
                     android:textSize="32sp" />

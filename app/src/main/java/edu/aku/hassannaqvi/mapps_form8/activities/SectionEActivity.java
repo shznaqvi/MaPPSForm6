@@ -18,8 +18,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.mapps_form8.core.AppMain;
@@ -78,6 +80,10 @@ public class SectionEActivity extends AppCompatActivity {
 
     boolean flag_q4 = false, flag_q8 = false, flag_q12 = false;
 
+    @BindViews({R.id.mp08e001id1, R.id.mp08e002id2, R.id.mp08e004id3, R.id.mp08e005id1, R.id.mp08e006id2,
+            R.id.mp08e008id3, R.id.mp08e009id1, R.id.mp08e010id2, R.id.mp08e012id3})
+    List<Spinner> grpSpinners;
+
     String dateToday;
     ActivitySectionEBinding bl;
 
@@ -88,41 +94,16 @@ public class SectionEActivity extends AppCompatActivity {
         bl = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
         ButterKnife.bind(this);
 
-
-        mp08e001id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e002id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e004id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e005id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e006id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e008id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e009id1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e010id2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-        mp08e012id3.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
-
+        for (Spinner sp : grpSpinners) {
+            sp.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
+        }
 
     }
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-
-//        if (ValidateForm()) {
-//            try {
-//                SaveDraft();
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//            if (UpdateDB()) {
-        finish();
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
-//            } else {
-//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-//            }
-//        }
+        AppMain.endActivity(this, this);
     }
 
 

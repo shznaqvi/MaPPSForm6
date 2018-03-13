@@ -76,6 +76,23 @@ public abstract class validatorClass {
         }
     }
 
+
+    public static boolean DuplicateItemSelected(Context context, Spinner spin, Spinner spin2, String msg) {
+        if (spin.getSelectedItem().toString().contains(spin2.getSelectedItem().toString())) {
+            Toast.makeText(context, "ERROR(invalid) Users same" + msg, Toast.LENGTH_SHORT).show();
+            ((TextView) spin.getSelectedView()).setText("Users Same");
+            ((TextView) spin2.getSelectedView()).setText("Users Same");
+            ((TextView) spin.getSelectedView()).setTextColor(Color.RED);
+            ((TextView) spin2.getSelectedView()).setTextColor(Color.RED);
+            spin.requestFocus();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(spin.getId()) + ": This data is Required!");
+            return false;
+        } else {
+            ((TextView) spin.getSelectedView()).setError(null);
+            return true;
+        }
+    }
+
     public static boolean EmptyRadioButton(Context context, RadioGroup rdGrp, RadioButton rdBtn, String msg) {
         if (rdGrp.getCheckedRadioButtonId() == -1) {
             Toast.makeText(context, "ERROR(empty): " + msg, Toast.LENGTH_SHORT).show();

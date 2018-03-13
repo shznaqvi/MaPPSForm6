@@ -218,4 +218,63 @@
     <string name="mp08e013">خون / رت جي ٽيسٽ ڪرائڻ </string>
 
 
+    <!-- Mapps Form 7 -->
+
+    <string name="mp07heading1"> نئين ڄاول ٻار جو حال احوال </string>
+    <string name="mp07heading"> ٻار کي نشاندهي نمبر ڏيڻ </string>
+    <string name="mp07q16"> ٻار جي آءِ ڊي لکو </string>
+    <string name="mp07q17"> ڄمڻ جي تاريخ </string>
+    <string name="mp07q18"> ٻار جي جنس </string>
+    <string name="mp07q18a"> مرد </string>
+    <string name="mp07q18b"> عورت </string>
+    <string name="mp07q19"> ڇا ٻارزنده آهي يا وفات ڪري ويوآهي </string>
+    <string name="mp07q19a"> زنده </string>
+    <string name="mp07q19b"> مرده </string>
+    <string name="mp07q20"> جيڪڏهن وفات ڪري ويو ته ڪهڙي تاريخ تي وفات ڪري ويو </string>
+    <string name="mp07q21"> ٻارجونالو </string>
+    <string name="mp07heading2"> قد ۽ وزن جي جانچ </string>
+    <string name="mp07q22"> پهريون وزن لکو </string>
+    <string name="mp07q22id"> پهرين وزن وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q23"> ٻيو وزن لکو </string>
+    <string name="mp07q23id"> ٻئي وزن وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q24"> ڇا وزن ۾ (>.5 kg) جو فرق آيوآهي </string>
+    <string name="mp07q25"> ٽيو وزن لکو </string>
+    <string name="mp07q25id"> ٽيو وزن وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q26"> پهرين قد جي ماپ لکو </string>
+    <string name="mp07q26id"> پهرين قد جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q27"> ٻئي قد جي ماپ لکو </string>
+    <string name="mp07q27id"> ٻئي قد جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q28"> ڇا قد جي ماپ ۾ (>1 cm) جوفرق آيوآهي </string>
+    <string name="mp07q29"> ٽئي قد جي ماپ لکو </string>
+    <string name="mp07q29id"> ٽئي قد جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q30"> پهرين مٿي جي گولائي جي ماپ لکو </string>
+    <string name="mp07q30id"> پهرين مٿي جي گولائي جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q31"> ٻئي مٿي جي گولائي جي ماپ لکو </string>
+    <string name="mp07q31id"> ٻئي مٿي جي گولائي جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q32"> ڇا مٿي جي گولائي جيا ماپ ۾ (>.5cm) جو فرق آيو آهي ؟ </string>
+    <string name="mp07q33"> ٽئي مٿي جي گولائي جي ماپ لکو </string>
+    <string name="mp07q33id"> ٽئي مٿي جي گولائي جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q34"> پهرين کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mp07q34id"> پهرين کاٻي ٻانهن يا / ڏوري جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q35"> ٻئي کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mp07q35id"> ٻئي کاٻي ٻانهن يا / ڏوري جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07q36"> ڇا کاٻي ٻانهن يا /ڏوري جي ماپ ۾ (>.5cm) جو فرق آيو آهي </string>
+    <string name="mp07q37"> ٽئي کاٻي ٻانهن يا /ڏوري جي ماپ لکو </string>
+    <string name="mp07q37id"> ٽئي کاٻي ٻانهن يا / ڏوري جي ماپ وٺندڙ جي آئي ڊي </string>
+    <string name="mp07heading3"> ڄمڻ جي وقت عيبن جو مشاهدو  </string>
+    <string name="mp07sub">ڇا هيٺين حصن ۾ ڪي نقص ڏسڻ ۾ آيا؟ جيڪڏهن ها ته تفصير سان نوٽ لکو ۽ آخر ۾ جانڇ ڪريو</string>
+    <string name="mp07q38"> مٿو </string>
+    <string name="mp07q39"> منهن </string>
+    <string name="mp07q40"> ڳچي </string>
+    <string name="mp07q41"> پٺي جو ڪنڊو </string>
+    <string name="mp07q42"> مٿيون ٻانهون ( ڪلها،ٻانهون،هٿ) </string>
+    <string name="mp07q43"> پيٽ وارو حصو (ڇاتي،معدو، دن جي هيٺيان وارو حصو) </string>
+    <string name="mp07q44"> ٽنگون ( ران/ٻنڍڻ،ٽنگون،پير) </string>
+    <string name="mp07q45"> اندورني عضوا </string>
+    <string name="mp07q46"> ٻيو ڪجھ </string>
+    <string name="mp07q46oth"> وضاحت ڪيو </string>
+    <string name="mp07q47"> ٻيا جملا </string>
+    <string name="mp07q48"> آخري تشخيص </string>
+
+
 </resources>

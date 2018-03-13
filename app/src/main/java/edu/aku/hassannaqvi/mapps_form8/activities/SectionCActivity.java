@@ -490,11 +490,7 @@ public class SectionCActivity extends Activity {
     }
 
     public void BtnEnd() {
-        finish();
-        Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
+        AppMain.endActivity(this, this);
     }
 
     public class checking {
