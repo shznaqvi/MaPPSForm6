@@ -27,6 +27,7 @@ public class Section7BActivity extends AppCompatActivity {
 
         bi.mp07q17.setManager(getSupportFragmentManager());
         bi.mp07q20.setManager(getSupportFragmentManager());
+        bi.setCallback(this);
     }
 
     public Boolean formValidation() {
@@ -126,12 +127,13 @@ public class Section7BActivity extends AppCompatActivity {
 
                 finish();
 
-                if (AppMain.outcome == 1) {
+                startActivity(new Intent(this, Section7DActivity.class));
+                /*if (AppMain.outcome == 1) {
 
                     startActivity(new Intent(this, SectionEActivity.class).putExtra("complete", false));
                 } else {
                     startActivity(new Intent(this, SectionCActivity.class).putExtra("complete", false));
-                }
+                }*/
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

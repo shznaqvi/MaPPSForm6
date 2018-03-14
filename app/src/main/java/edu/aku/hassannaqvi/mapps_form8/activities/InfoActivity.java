@@ -244,9 +244,14 @@ public class InfoActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
+                if (AppMain.formType.equals("8")) {
 
-                Intent intent = new Intent(this, SectionBActivity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(this, SectionBActivity.class);
+                    startActivity(intent);
+                } else if (AppMain.formType.equals("7")) {
+                    Intent intent = new Intent(this, Section7BActivity.class);
+                    startActivity(intent);
+                }
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

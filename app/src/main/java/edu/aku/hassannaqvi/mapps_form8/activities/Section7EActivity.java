@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mapps_form8.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -15,7 +15,7 @@ import edu.aku.hassannaqvi.mapps_form8.validation.validatorClass;
 import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection7EBinding;
 
-public class Section7EActivity extends AppCompatActivity {
+public class Section7EActivity extends Activity {
 
     ActivitySection7EBinding bi;
 
@@ -24,6 +24,7 @@ public class Section7EActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section7_e);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_e);
+        bi.setCallback(this);
 
     }
 

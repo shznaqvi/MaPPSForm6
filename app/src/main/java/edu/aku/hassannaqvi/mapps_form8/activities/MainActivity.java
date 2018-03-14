@@ -25,7 +25,6 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
@@ -78,9 +77,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        if (Integer.valueOf(Arrays.toString(AppMain.versionName.split(".", 0))) < 1) {
+
+        if (Integer.valueOf(AppMain.versionName.split("\\.")[0]) > 0) {
+            testing.setVisibility(View.GONE);
+        } else {
             testing.setVisibility(View.VISIBLE);
         }
+
         // Reset working variables
         AppMain.child_name = "Test";
 

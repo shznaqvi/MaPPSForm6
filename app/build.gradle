@@ -19,13 +19,13 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.mapps_form8"
+            applicationId "edu.aku.hassannaqvi.mappsform8"
             minSdkVersion 22
             targetSdkVersion 22
 
 
             versionCode code
-            versionName "0.2b"
+            versionName "0.2"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
     } else {

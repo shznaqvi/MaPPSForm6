@@ -653,7 +653,7 @@ public class FormsContract {
         public static final String COLUMN_S9D = "s9d";
         public static final String COLUMN_S10B = "s10b";
         public static final String COLUMN_S10C = "s10c";
-        public static final String COLUMN_S10D = "s10e";
+        public static final String COLUMN_S10D = "s10d";
         public static final String COLUMN_S10E = "s10e";
         public static final String COLUMN_S10F = "s10f";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";

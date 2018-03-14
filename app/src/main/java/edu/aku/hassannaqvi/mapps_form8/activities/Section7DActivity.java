@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mapps_form8.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,7 +24,7 @@ import edu.aku.hassannaqvi.mapps_form8.validation.validatorClass;
 import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection7DBinding;
 
-public class Section7DActivity extends AppCompatActivity {
+public class Section7DActivity extends Activity {
     private static final String TAG = Section7DActivity.class.getSimpleName();
 
     ActivitySection7DBinding bi;
@@ -40,6 +40,8 @@ public class Section7DActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_section7_d);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_d);
         ButterKnife.bind(this);
+
+        bi.setCallback(this);
 
         for (Spinner sp : grpSpinners) {
             sp.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
@@ -64,10 +66,12 @@ public class Section7DActivity extends AppCompatActivity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                Intent sece = new Intent(this, EndingActivity.class);
+                /*Intent sece = new Intent(this, EndingActivity.class);
                 sece.putExtra("complete", true);
                 startActivity(sece);
+*/
 
+                startActivity(new Intent(this, Section7EActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
