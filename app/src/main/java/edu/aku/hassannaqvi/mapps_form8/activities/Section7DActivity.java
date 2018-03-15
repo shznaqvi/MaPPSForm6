@@ -59,19 +59,23 @@ public class Section7DActivity extends Activity {
 
         if (ValidateForm()) {
             try {
-                SaveDraft();
+                if (AppMain.formType.equals("7")) {
+                    SaveDraftForm7();
+                } else {
+                    SaveDraft();
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-
-                /*Intent sece = new Intent(this, EndingActivity.class);
-                sece.putExtra("complete", true);
-                startActivity(sece);
-*/
-
-                startActivity(new Intent(this, Section7EActivity.class));
+                if (AppMain.formType.equals("7")) {
+                    startActivity(new Intent(this, Section7EActivity.class));
+                } else if (AppMain.formType.equals("9")) {
+                    startActivity(new Intent(this, Section9DActivity.class));
+                } else {
+                    startActivity(new Intent(this, Section10DActivity.class));
+                }
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -89,7 +93,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q22, 2.5, 8.0, getString(R.string.mp07q22), " kg")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q22, 1.2, 5.0, getString(R.string.mp07q22), " kg")) {
             return false;
         }
 
@@ -103,7 +107,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q26, 2.5, 8.0, getString(R.string.mp07q26), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q26, 38, 60, getString(R.string.mp07q26), " cm")) {
             return false;
         }
 
@@ -118,7 +122,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q30, 2.5, 8.0, getString(R.string.mp07q30), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q30, 28, 40, getString(R.string.mp07q30), " cm")) {
             return false;
         }
 
@@ -132,7 +136,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q34, 2.5, 8.0, getString(R.string.mp07q34), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q34, 7, 15, getString(R.string.mp07q34), " cm")) {
             return false;
         }
 
@@ -146,7 +150,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q23, 2.5, 8.0, getString(R.string.mp07q23), " kg")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q23, 1.2, 5.0, getString(R.string.mp07q23), " kg")) {
             return false;
         }
 
@@ -191,7 +195,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q25, 2.5, 8.0, getString(R.string.mp07q25), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q25, 1.2, 5.0, getString(R.string.mp07q25), " kg")) {
                 return false;
             }
 
@@ -208,7 +212,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q27, 2.5, 8.0, getString(R.string.mp07q27), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q27, 38, 60, getString(R.string.mp07q27), " cm")) {
             return false;
         }
 
@@ -253,7 +257,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q29, 2.5, 8.0, getString(R.string.mp07q29), " cm")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q29, 38, 60, getString(R.string.mp07q29), " cm")) {
                 return false;
             }
 
@@ -271,7 +275,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q31, 2.5, 8.0, getString(R.string.mp07q31), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q31, 28, 40, getString(R.string.mp07q31), " cm")) {
             return false;
         }
 
@@ -316,7 +320,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q33, 2.5, 8.0, getString(R.string.mp07q33), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q33, 28, 40, getString(R.string.mp07q33), " kg")) {
                 return false;
             }
 
@@ -332,7 +336,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q35, 2.5, 8.0, getString(R.string.mp07q35), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q35, 7, 15, getString(R.string.mp07q35), " cm")) {
             return false;
         }
 
@@ -378,7 +382,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q37, 2.5, 8.0, getString(R.string.mp07q37), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q37, 7, 15, getString(R.string.mp07q37), " kg")) {
                 return false;
             }
 
@@ -392,7 +396,7 @@ public class Section7DActivity extends Activity {
         return true;
     }
 
-    private void SaveDraft() throws JSONException {
+    private void SaveDraftForm7() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject form4 = new JSONObject();
@@ -449,10 +453,79 @@ public class Section7DActivity extends Activity {
 
     }
 
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject form4 = new JSONObject();
+
+        form4.put(AppMain.ftype + "q18", bi.mp07q22.getText().toString());
+        form4.put(AppMain.ftype + "q18id", bi.mp07q22id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q19", bi.mp07q23.getText().toString());
+        form4.put(AppMain.ftype + "q19id", bi.mp07q23id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q20", flag_q25 ? "1" : "2");
+
+        form4.put(AppMain.ftype + "q21", bi.mp07q25.getText().toString());
+        form4.put(AppMain.ftype + "q21id", bi.mp07q25id.getSelectedItem().toString());
+
+
+        form4.put(AppMain.ftype + "q22", bi.mp07q26.getText().toString());
+        form4.put(AppMain.ftype + "q22id", bi.mp07q26id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q23", bi.mp07q27.getText().toString());
+        form4.put(AppMain.ftype + "q23id", bi.mp07q27id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q24", flag_q29 ? "1" : "2");
+
+        form4.put(AppMain.ftype + "q25", bi.mp07q29.getText().toString());
+        form4.put(AppMain.ftype + "q25id", bi.mp07q29id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q26", bi.mp07q30.getText().toString());
+        form4.put(AppMain.ftype + "q26id", bi.mp07q30id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q27", bi.mp07q31.getText().toString());
+        form4.put(AppMain.ftype + "q27id", bi.mp07q31id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q28", flag_q33 ? "1" : "2");
+
+        form4.put(AppMain.ftype + "q29", bi.mp07q33.getText().toString());
+        form4.put(AppMain.ftype + "q29id", bi.mp07q33id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q30", bi.mp07q34.getText().toString());
+        form4.put(AppMain.ftype + "q30id", bi.mp07q34id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q31", bi.mp07q35.getText().toString());
+        form4.put(AppMain.ftype + "q31id", bi.mp07q35id.getSelectedItem().toString());
+
+        form4.put(AppMain.ftype + "q32", flag_q37 ? "1" : "2");
+
+        form4.put(AppMain.ftype + "q33", bi.mp07q37.getText().toString());
+        form4.put(AppMain.ftype + "q33id", bi.mp07q37id.getSelectedItem().toString());
+
+
+        if (AppMain.formType.equals("9")) {
+            AppMain.fc.setS9C(String.valueOf(form4));
+        } else if (AppMain.formType.equals("10")) {
+            AppMain.fc.setS10C(String.valueOf(form4));
+        }
+
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+    }
+
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updates7D();
+        int updcount = 0;
+
+        if (AppMain.formType.equals("7")) {
+            updcount = db.updates7D();
+        } else if (AppMain.formType.equals("9")) {
+            updcount = db.updates9C();
+        } else if (AppMain.formType.equals("10")) {
+            updcount = db.updates10C();
+        }
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

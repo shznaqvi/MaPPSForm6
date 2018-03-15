@@ -88,7 +88,20 @@ public class Section7EActivity extends Activity {
             return false;
         }
 
-        return validatorClass.EmptyRadioButton(this, bi.mp07q45, bi.mp07q45a, getString(R.string.mp07q45));
+        if (!validatorClass.EmptyRadioButton(this, bi.mp07q45, bi.mp07q45a, getString(R.string.mp07q45))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bi.mp07q46, bi.mp07q44a, bi.mp07q46x, getString(R.string.mp07q46))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyTextBox(this, bi.mp07q47, getString(R.string.mp07q47))) {
+            return false;
+        }
+
+        return validatorClass.EmptyTextBox(this, bi.mp07q48, getString(R.string.mp07q48));
     }
 
     private void SaveDraft() throws JSONException {
@@ -127,6 +140,11 @@ public class Section7EActivity extends Activity {
         form4.put("mp07q45", bi.mp07q45a.isChecked() ? "1"
                 : bi.mp07q45b.isChecked() ? "2"
                 : "0");
+
+        form4.put("mp07q46", bi.mp07q46a.isChecked() ? "1" : bi.mp07q46b.isChecked() ? "2" : "0");
+        form4.put("mp07q46x", bi.mp07q46x.getText().toString());
+        form4.put("mp07q47", bi.mp07q47.getText().toString());
+        form4.put("mp07q48", bi.mp07q48.getText().toString());
 
         AppMain.fc.setS7E(String.valueOf(form4));
 

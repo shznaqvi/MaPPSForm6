@@ -325,7 +325,7 @@
             </RadioGroup>
 
 
-            <!--<TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -336,13 +336,13 @@
 
 
             <RadioGroup
-                android:id="@+id/mp07q43"
+                android:id="@+id/mp07q46"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/mp07q43a"
+                    android:id="@+id/mp07q46a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -350,7 +350,7 @@
                     android:text="@string/yes" />
 
                 <RadioButton
-                    android:id="@+id/mp07q43b"
+                    android:id="@+id/mp07q46b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -359,7 +359,58 @@
 
 
             </RadioGroup>
--->
+
+            <EditText
+                android:id="@+id/mp07q46x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:hint="@string/mp07q46"
+                android:text='@{mp07q46a.checked ? mp07q46x.getText.toString : ""}'
+                android:textColor="@android:color/black"
+                android:visibility="@{mp07q46a.checked ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp07q47"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp07q47"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.+"
+                android:hint="@string/mp07q47"
+                android:inputType="text"
+                android:maxLines="5"
+                android:textColor="@android:color/black" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp07q48"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp07q48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.+"
+                android:hint="@string/mp07q48"
+                android:inputType="text"
+                android:maxLines="5"
+                android:textColor="@android:color/black" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
