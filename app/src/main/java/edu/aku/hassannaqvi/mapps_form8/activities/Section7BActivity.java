@@ -4,12 +4,21 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+
+import edu.aku.hassannaqvi.mapps_form8.contracts.FormsContract;
 import edu.aku.hassannaqvi.mapps_form8.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mapps_form8.validation.validatorClass;
@@ -19,16 +28,30 @@ import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection7BBinding;
 public class Section7BActivity extends AppCompatActivity {
 
     ActivitySection7BBinding bi;
+    Collection<FormsContract> child;
+    DatabaseHelper db;
+    String maxdate1Week;
+
+    Boolean isChecked = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section7_b);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_b);
+        maxdate1Week = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_WEEK)));
 
         bi.mp07q17.setManager(getSupportFragmentManager());
         bi.mp07q20.setManager(getSupportFragmentManager());
+        bi.mp07q17.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
+        bi.mp07q20.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
+        bi.mp07q17.setMinDate(maxdate1Week);
+
         bi.setCallback(this);
+
+        child = new ArrayList<>();
+        db = new DatabaseHelper(this);
 
         if (AppMain.formType.equals("7")) {
             bi.appHeader.setText(R.string.mp07heading1);
@@ -43,6 +66,55 @@ public class Section7BActivity extends AppCompatActivity {
             bi.mp07q18.clearCheck();
             bi.mp07q21.setText(null);
         }
+
+        bi.mp07q19a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b && AppMain.formType.equals("7")) {
+                    bi.fldGrpName.setVisibility(View.VISIBLE);
+                } else {
+                    bi.fldGrpName.setVisibility(View.GONE);
+                    bi.mp07q21.setText(null);
+                }
+            }
+        });
+
+        bi.mp07q16.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                isChecked = false;
+                bi.fldGrpcheck.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        bi.mp07q17.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                bi.mp07q20.setMinDate(AppMain.convertDateFormat(bi.mp07q17.getText().toString()));
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     public Boolean formValidation() {
@@ -88,10 +160,12 @@ public class Section7BActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sB = new JSONObject();
-        if (AppMain.formType.equals("7")) {
 
-            sB.put("mp07q16", bi.mp07q16.getText().toString());
+        JSONObject sB = new JSONObject();
+
+        if (AppMain.formType.equals("7")) {
+            AppMain.fc.setChildId(bi.mp07q16.getText().toString());
+            //sB.put("mp07q16", bi.mp07q16.getText().toString());
             sB.put("mp07q17", bi.mp07q17.getText().toString());
             sB.put("mp17q18", bi.mp07q18a.isChecked() ? "1"
                     : bi.mp07q18b.isChecked() ? "2"
@@ -169,13 +243,13 @@ public class Section7BActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, Section7DActivity.class));
-                /*if (AppMain.outcome == 1) {
-
-                    startActivity(new Intent(this, SectionEActivity.class).putExtra("complete", false));
+                if (bi.mp07q19a.isChecked()) {
+                    startActivity(new Intent(this, Section7DActivity.class));
                 } else {
-                    startActivity(new Intent(this, SectionCActivity.class).putExtra("complete", false));
-                }*/
+                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                }
+
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -188,6 +262,20 @@ public class Section7BActivity extends AppCompatActivity {
     }
 
     public void BtnCheckID() {
+        if (!bi.mp07q16.getText().toString().trim().isEmpty()) {
+            child = db.checkDuplicateInfant(InfoActivity.id + bi.mp07q16.getText().toString());
+
+            if (child.size() < 1) {
+                isChecked = true;
+                bi.fldGrpcheck.setVisibility(View.VISIBLE);
+
+            } else {
+                Toast.makeText(this, "This ID already exists.. ", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "Please write Infant ID first", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

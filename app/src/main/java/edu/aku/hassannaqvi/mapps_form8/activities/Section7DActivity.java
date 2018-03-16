@@ -107,7 +107,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q26, 38, 60, getString(R.string.mp07q26), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q26, 38.0, 60.0, getString(R.string.mp07q26), " cm")) {
             return false;
         }
 
@@ -122,7 +122,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q30, 28, 40, getString(R.string.mp07q30), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q30, 28.0, 40.0, getString(R.string.mp07q30), " cm")) {
             return false;
         }
 
@@ -136,7 +136,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q34, 7, 15, getString(R.string.mp07q34), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q34, 10.0, 20.0, getString(R.string.mp07q34), " cm")) {
             return false;
         }
 
@@ -212,7 +212,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q27, 38, 60, getString(R.string.mp07q27), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q27, 38.0, 60.0, getString(R.string.mp07q27), " cm")) {
             return false;
         }
 
@@ -257,7 +257,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q29, 38, 60, getString(R.string.mp07q29), " cm")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q29, 38.0, 60.0, getString(R.string.mp07q29), " cm")) {
                 return false;
             }
 
@@ -275,7 +275,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q31, 28, 40, getString(R.string.mp07q31), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q31, 28.0, 40.0, getString(R.string.mp07q31), " cm")) {
             return false;
         }
 
@@ -320,7 +320,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q33, 28, 40, getString(R.string.mp07q33), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q33, 28.0, 40.0, getString(R.string.mp07q33), " kg")) {
                 return false;
             }
 
@@ -336,7 +336,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q35, 7, 15, getString(R.string.mp07q35), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q35, 10.0, 20.0, getString(R.string.mp07q35), " cm")) {
             return false;
         }
 
@@ -382,7 +382,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q37, 7, 15, getString(R.string.mp07q37), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q37, 10.0, 20.0, getString(R.string.mp07q37), " kg")) {
                 return false;
             }
 

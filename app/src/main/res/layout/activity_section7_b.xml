@@ -78,10 +78,7 @@
                         android:text="CHECK"
                         android:textColor="@color/whiteOverlay"
                         android:textSize="28sp"
-                        android:textStyle="bold"
-
-
-                        />
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/mp07q16"
@@ -93,166 +90,174 @@
                         android:maxLength="1" />
                 </LinearLayout>
 
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrpcheck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorAccent"
-                    android:gravity="center"
-                    android:text="@string/mp07heading1"
-                    android:textSize="40sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorPrimary" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/mp07q17"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/mp07q17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="false"
-                    android:hint="@string/mp07q17"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/mp07q18"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <RadioGroup
-                    android:id="@+id/mp07q18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/mp07q18a"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/male" />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorAccent"
+                        android:gravity="center"
+                        android:text="@string/mp07heading1"
+                        android:textSize="40sp" />
 
-                    <RadioButton
-                        android:id="@+id/mp07q18b"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorPrimary" />
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/female" />
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/mp07q17"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/mp07q17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:focusable="false"
+                        android:hint="@string/mp07q17"
+                        android:textColor="@android:color/black"
+                        app:dateFormat="dd-MM-yyyy" />
 
 
-                </RadioGroup>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/mp07q18"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
-            </LinearLayout>
+                    <RadioGroup
+                        android:id="@+id/mp07q18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/mp07q19"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                        <RadioButton
+                            android:id="@+id/mp07q18a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/male" />
 
-            <RadioGroup
-                android:id="@+id/mp07q19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/mp07q19a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/mp07q19a" />
-
-                <RadioButton
-                    android:id="@+id/mp07q19b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/mp07q19b" />
+                        <RadioButton
+                            android:id="@+id/mp07q18b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/female" />
 
 
-            </RadioGroup>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="@{mp07q19b.checked ? View.VISIBLE : View.GONE}">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/mp07q20"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/mp07q20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="false"
-                    android:hint="@string/mp07q20"
-                    android:text='@{mp07q19b.checked ? mp07q20.getText.toString : ""}'
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
+                    </RadioGroup>
 
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/mp07q19"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
-            <LinearLayout
-                android:id="@+id/fldGrpName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="@{mp07q19a.checked ? View.VISIBLE : View.GONE}">
+                    <RadioGroup
+                        android:id="@+id/mp07q19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/mp07q19a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/mp07q19a" />
+
+                        <RadioButton
+                            android:id="@+id/mp07q19b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/mp07q19b" />
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/mp07q21"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    </RadioGroup>
 
-                <EditText
-                    android:id="@+id/mp07q21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:hint="@string/mp07q21"
-                    android:inputType="textCapWords"
-                    android:text='@{mp07q19a.checked ? mp07q21.getText.toString : ""}' />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{mp07q19b.checked ? View.VISIBLE : View.GONE}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/mp07q20"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                            android:id="@+id/mp07q20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:focusable="false"
+                            android:hint="@string/mp07q20"
+                            android:text='@{mp07q19b.checked ? mp07q20.getText.toString : ""}'
+                            android:textColor="@android:color/black"
+                            app:dateFormat="dd-MM-yyyy" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fldGrpName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/mp07q21"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <EditText
+                            android:id="@+id/mp07q21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/mp07q21"
+                            android:inputType="textCapWords" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 

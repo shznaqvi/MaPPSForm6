@@ -77,6 +77,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+        AppMain.ftype = "";
 
         if (Integer.valueOf(AppMain.versionName.split("\\.")[0]) > 0) {
             testing.setVisibility(View.GONE);

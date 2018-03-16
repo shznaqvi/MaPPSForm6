@@ -94,6 +94,7 @@ public class SectionEActivity extends AppCompatActivity {
         bl = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
         ButterKnife.bind(this);
 
+
         for (Spinner sp : grpSpinners) {
             sp.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
         }

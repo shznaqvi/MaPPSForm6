@@ -82,6 +82,9 @@ public class AppMain extends Application {
     private static final long DAYS_IN_8Months = 243;
     public static final long MILLISECONDS_IN_8Months = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_8Months;
 
+    private static final long DAYS_IN_Weeks = 7;
+    public static final long MILLISECONDS_IN_WEEK = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_Weeks;
+
     private static final String TAG = AppMain.class.getSimpleName();
     public static int NoMembers = 7;
     public static String deviceId;

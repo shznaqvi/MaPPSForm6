@@ -43,7 +43,7 @@ public class FormsContract {
     private String s10C = "";
     private String s10D = "";
     private String s10E = "";
-    private String s10F = "";
+    private String childId = "";
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsTime = "";
@@ -145,12 +145,12 @@ public class FormsContract {
         this.s10E = s10E;
     }
 
-    public String getS10F() {
-        return s10F;
+    public String getChildId() {
+        return childId;
     }
 
-    public void setS10F(String s10F) {
-        this.s10F = s10F;
+    public void setChildId(String childId) {
+        this.childId = childId;
     }
 
     public String getFormType() {
@@ -410,7 +410,7 @@ public class FormsContract {
         this.s10C = jsonObject.getString(FormsTable.COLUMN_S10C);
         this.s10D = jsonObject.getString(FormsTable.COLUMN_S10D);
         this.s10E = jsonObject.getString(FormsTable.COLUMN_S10E);
-        this.s10F = jsonObject.getString(FormsTable.COLUMN_S10F);
+        this.childId = jsonObject.getString(FormsTable.COLUMN_CHILD_ID);
 
         this.endingDateTime = jsonObject.getString(FormsTable.COLUMN_ENDINGDATETIME);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_GPSLAT);
@@ -422,6 +422,15 @@ public class FormsContract {
         this.app_version = jsonObject.getString(FormsTable.COLUMN_APP_VERSION);
         this.synced = jsonObject.getString(FormsTable.COLUMN_SYNCED);
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
+
+        return this;
+
+    }
+
+    public FormsContract HydrateC(Cursor cursor) {
+
+        this._ID = cursor.getLong(cursor.getColumnIndex(FormsTable.COLUMN__ID));
+        this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CHILD_ID));
 
         return this;
 
@@ -458,7 +467,7 @@ public class FormsContract {
         this.s10C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10C));
         this.s10D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10D));
         this.s10E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10E));
-        this.s10F = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10F));
+        this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CHILD_ID));
 
         this.endingDateTime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ENDINGDATETIME));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
@@ -494,6 +503,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(FormsTable.COLUMN_SNO, this.sno == null ? JSONObject.NULL : this.sno);
         json.put(FormsTable.COLUMN_FORMTYPE, this.formType == null ? JSONObject.NULL : this.formType);
+        json.put(FormsTable.COLUMN_CHILD_ID, this.childId == null ? JSONObject.NULL : this.childId);
         try {
             if (!this.sInfo.equals("")) {
                 json.put(FormsTable.COLUMN_SINFO, this.sInfo == null ? JSONObject.NULL : new JSONObject(this.sInfo));
@@ -599,12 +609,7 @@ public class FormsContract {
         } catch (Exception e) {
         }
 
-        try {
-            if (!this.s10F.equals("")) {
-                json.put(FormsTable.COLUMN_S10F, this.s10F == null ? JSONObject.NULL : this.s10F);
-            }
-        } catch (Exception e) {
-        }
+
 
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingDateTime == null ? JSONObject.NULL : this.endingDateTime);
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
@@ -640,6 +645,7 @@ public class FormsContract {
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_FORMTYPE = "formtype";
+        public static final String COLUMN_CHILD_ID = "childid";
         public static final String COLUMN_SINFO = "info";
         public static final String COLUMN_S7B = "s7b";
         public static final String COLUMN_S7D = "s7d";
@@ -655,7 +661,7 @@ public class FormsContract {
         public static final String COLUMN_S10C = "s10c";
         public static final String COLUMN_S10D = "s10d";
         public static final String COLUMN_S10E = "s10e";
-        public static final String COLUMN_S10F = "s10f";
+
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";

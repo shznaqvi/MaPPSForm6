@@ -44,14 +44,12 @@ import edu.aku.hassannaqvi.mappsform8.R;
 public class InfoActivity extends Activity {
 
     private static final String TAG = InfoActivity.class.getSimpleName();
-
+    static String id = "";
     List<String> LHWsName;
     DatabaseHelper db;
     HashMap<String, String> LHWs;
     Boolean check = false;
     Collection<EnrolledContract> enrolledParticipant;
-
-
     @BindView(R.id.app_header)
     TextView appHeader;
     @BindView(R.id.mp08a001)
@@ -74,10 +72,8 @@ public class InfoActivity extends Activity {
     RadioButton mp08a01301;
     @BindView(R.id.mp08a01302)
     RadioButton mp08a01302;
-
     @BindView(R.id.fldGrpParticipant)
     LinearLayout fldGrpParticipant;
-
     ArrayList<String> partNames;
     int position;
 
@@ -248,11 +244,10 @@ public class InfoActivity extends Activity {
 
                     Intent intent = new Intent(this, SectionBActivity.class);
                     startActivity(intent);
-                } else if (AppMain.formType.equals("7")) {
+                } else {
                     Intent intent = new Intent(this, Section7BActivity.class);
                     startActivity(intent);
                 }
-
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -305,6 +300,7 @@ public class InfoActivity extends Activity {
         AppMain.fc.setLhwCode(AppMain.Eparticipant.get(position).getLhwCode());
         AppMain.fc.setApp_version(AppMain.versionName + "." + AppMain.versionCode);
 
+        id = AppMain.curCluster + AppMain.Eparticipant.get(position).getLhwCode() + mp08a001.getText().toString() + AppMain.Eparticipant.get(position).getSno();
 
         JSONObject sInfo = new JSONObject();
 
@@ -316,7 +312,7 @@ public class InfoActivity extends Activity {
         sInfo.put(AppMain.ftype + "a013", mp08a01301.isChecked() ? "1" : mp08a01302.isChecked() ? "2" : "0");
 
         AppMain.fc.setsInfo(String.valueOf(sInfo));
-        AppMain.ftype = "";
+        //AppMain.ftype = "";
 
         setGPS();
 

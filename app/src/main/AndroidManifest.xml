@@ -84,7 +84,6 @@
         <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section9DActivity" />
         <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10DActivity" />
         <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10EActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10FActivity"></activity>
     </application>
 
 </manifest>

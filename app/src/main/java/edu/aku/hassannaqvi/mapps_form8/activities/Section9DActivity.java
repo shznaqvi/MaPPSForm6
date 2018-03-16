@@ -133,7 +133,7 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
             return false;
         }
 
-        if (is34AllNo()) {
+        if (!is34AllNo()) {
             if (!validatorClass.EmptyRadioButton(this, bi.mp09q35, bi.mp09q35a, getString(R.string.mp09q35))) {
                 return false;
             }

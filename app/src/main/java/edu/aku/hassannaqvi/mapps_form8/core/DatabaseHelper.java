@@ -61,6 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_ISTATUS + " TEXT," +
             FormsTable.COLUMN_SNO + " TEXT," +
             FormsTable.COLUMN_FORMTYPE + " TEXT," +
+            FormsTable.COLUMN_CHILD_ID + " TEXT," +
             FormsTable.COLUMN_SINFO + " TEXT," +
             FormsTable.COLUMN_S8B + " TEXT," +
             FormsTable.COLUMN_S8C + " TEXT," +
@@ -76,7 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_S10C + " TEXT," +
             FormsTable.COLUMN_S10D + " TEXT," +
             FormsTable.COLUMN_S10E + " TEXT," +
-            FormsTable.COLUMN_S10F + " TEXT," +
+
             FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
@@ -381,7 +382,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_S10C, fc.getS10C());
         values.put(FormsTable.COLUMN_S10D, fc.getS10D());
         values.put(FormsTable.COLUMN_S10E, fc.getS10E());
-        values.put(FormsTable.COLUMN_S10F, fc.getS10F());
+        values.put(FormsTable.COLUMN_CHILD_ID, fc.getChildId());
 
         values.put(FormsTable.COLUMN_ENDINGDATETIME, fc.getEndingDateTime());
         values.put(FormsTable.COLUMN_GPSLAT, fc.getGpsLat());
@@ -761,7 +762,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_S8E, AppMain.fc.getS9D());
+        values.put(FormsTable.COLUMN_S9D, AppMain.fc.getS9D());
 
 // Which row to update, based on the ID
         String selection = " _ID = " + AppMain.fc.getID();
@@ -815,7 +816,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_S10D, AppMain.fc.getS8E());
+        values.put(FormsTable.COLUMN_S10D, AppMain.fc.getS10D());
 
 // Which row to update, based on the ID
         String selection = " _ID = " + AppMain.fc.getID();
@@ -827,6 +828,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null);
         return count;
     }
+
+
+    public int updates10E() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_S10E, AppMain.fc.getS10E());
+
+// Which row to update, based on the ID
+        String selection = " _ID = " + AppMain.fc.getID();
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                null);
+        return count;
+    }
+
+
+
 
 
     public int updateEnding() {
@@ -1112,7 +1135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_S10C,
                 FormsTable.COLUMN_S10D,
                 FormsTable.COLUMN_S10E,
-                FormsTable.COLUMN_S10F,
+                FormsTable.COLUMN_CHILD_ID,
                 FormsTable.COLUMN_ENDINGDATETIME,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -1489,4 +1512,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return alc;
         }
     }
+
+    public Collection<FormsContract> checkDuplicateInfant(String infantid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+
+
+                FormsTable.COLUMN__ID,
+                FormsTable.COLUMN_CHILD_ID,
+
+        };
+
+        String whereClause = FormsTable.COLUMN_CHILD_ID + "=? AND "
+                + FormsTable.COLUMN_ISTATUS + "=?";
+        String[] whereArgs = new String[]{infantid, "1"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.COLUMN__ID + " DESC LIMIT 1";
+
+        Collection<FormsContract> allBL = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract dc = new FormsContract();
+                allBL.add(dc.HydrateC(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allBL;
+    }
+
 }
