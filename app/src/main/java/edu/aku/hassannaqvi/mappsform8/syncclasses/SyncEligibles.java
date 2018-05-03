@@ -58,13 +58,9 @@ public class SyncEligibles extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         String line = "No Response";
-        try {
-            String url = AppMain._HOST_URL + EnrolledContract.EnrolledTable._URI;
-            Log.d(TAG, "doInBackground: URL " + url);
-            return downloadUrl(url);
-        } catch (IOException e) {
-            return "Unable to upload data. Server may be down.";
-        }
+        String url = AppMain._HOST_URL + EnrolledContract.EnrolledTable._URI;
+        Log.d(TAG, "doInBackground: URL " + url);
+        return downloadUrl(url);
     }
 
     @Override
