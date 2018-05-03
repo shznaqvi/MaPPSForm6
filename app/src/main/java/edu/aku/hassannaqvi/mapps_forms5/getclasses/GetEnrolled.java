@@ -33,7 +33,7 @@ import edu.aku.hassannaqvi.mapps_forms5.core.DatabaseHelper;
  */
 public class GetEnrolled extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "GetEnrolled";
+    private static final String TAG = "GetLabSpecimens";
     private Context mContext;
     private ProgressDialog pd;
 
@@ -53,7 +53,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Enrolleds");
+        pd.setTitle("Please wait... Processing Lab Specimens");
         pd.show();
 
     }
@@ -80,17 +80,17 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             json = new JSONArray(result);
             DatabaseHelper db = new DatabaseHelper(mContext);
             db.syncEnrolled(json);
-            Toast.makeText(mContext, "Successfully Synced " + json.length() + " Enrolleds", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Successfully Synced " + json.length() + " Lab Specimens", Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(json.length() + " Enrolleds synced.");
-            pd.setTitle("Enrolleds: Done");
+            pd.setMessage(json.length() + " Lab Specimens synced.");
+            pd.setTitle("Lab Specimens: Done");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Enrolleds Sync Failed");
+            pd.setTitle("Lab Specimens Sync Failed");
             pd.show();
 
         }
