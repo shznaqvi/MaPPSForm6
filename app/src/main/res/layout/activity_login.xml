@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="edu.aku.hassannaqvi.mapps_form8.activities.LoginActivity">
+    tools:context="edu.aku.hassannaqvi.mapps_form8.edu.aku.hassannaqvi.mappsform8.activities.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
