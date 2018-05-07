@@ -436,7 +436,7 @@ public class FormsContract {
 
     }
 
-    public FormsContract Hydrate(Cursor cursor) {
+    public FormsContract Hydrate(Cursor cursor, int type) {
         this.projectName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_PROJECTNAME));
         this.surveyType = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SURVEYTYPE));
         this._ID = cursor.getLong(cursor.getColumnIndex(FormsTable.COLUMN__ID));
@@ -452,21 +452,27 @@ public class FormsContract {
         this.sno = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SNO));
         this.formType = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.s8B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8B));
-        this.s8C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8C));
-        this.s8D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8D));
-        this.s8E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8E));
 
-        this.s7B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S7B));
-        this.s7D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S7D));
-        this.s7E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S7E));
-        this.s9B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9B));
-        this.s9C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9C));
-        this.s9D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9D));
-        this.s10B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10B));
-        this.s10C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10C));
-        this.s10D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10D));
-        this.s10E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10E));
+        if (type == 7 || type == 0) {
+            this.s7B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S7B));
+            this.s7D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S7D));
+            this.s7E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S7E));
+        } else if (type == 8 || type == 0) {
+            this.s8B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8B));
+            this.s8C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8C));
+            this.s8D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8D));
+            this.s8E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S8E));
+        } else if (type == 9 || type == 0) {
+            this.s9B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9B));
+            this.s9C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9C));
+            this.s9D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9D));
+        } else if (type == 10 || type == 0) {
+            this.s10B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10B));
+            this.s10C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10C));
+            this.s10D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10D));
+            this.s10E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10E));
+        }
+
         this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CHILD_ID));
 
         this.endingDateTime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ENDINGDATETIME));
@@ -541,74 +547,73 @@ public class FormsContract {
 
         try {
             if (!this.s7B.equals("")) {
-                json.put(FormsTable.COLUMN_S7B, this.s7B == null ? JSONObject.NULL : this.s7B);
+                json.put(FormsTable.COLUMN_S7B, this.s7B == null ? JSONObject.NULL : new JSONObject(this.s7B));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s7D.equals("")) {
-                json.put(FormsTable.COLUMN_S7D, this.s7D == null ? JSONObject.NULL : this.s7D);
+                json.put(FormsTable.COLUMN_S7D, this.s7D == null ? JSONObject.NULL : new JSONObject(this.s7D));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s7E.equals("")) {
-                json.put(FormsTable.COLUMN_S7E, this.s7E == null ? JSONObject.NULL : this.s7E);
+                json.put(FormsTable.COLUMN_S7E, this.s7E == null ? JSONObject.NULL : new JSONObject(this.s7E));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s9B.equals("")) {
-                json.put(FormsTable.COLUMN_S9B, this.s9B == null ? JSONObject.NULL : this.s9B);
+                json.put(FormsTable.COLUMN_S9B, this.s9B == null ? JSONObject.NULL : new JSONObject(this.s9B));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s9C.equals("")) {
-                json.put(FormsTable.COLUMN_S9C, this.s9C == null ? JSONObject.NULL : this.s9C);
+                json.put(FormsTable.COLUMN_S9C, this.s9C == null ? JSONObject.NULL : new JSONObject(this.s9C));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s9D.equals("")) {
-                json.put(FormsTable.COLUMN_S9D, this.s9D == null ? JSONObject.NULL : this.s9D);
+                json.put(FormsTable.COLUMN_S9D, this.s9D == null ? JSONObject.NULL : new JSONObject(this.s9D));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s10B.equals("")) {
-                json.put(FormsTable.COLUMN_S10B, this.s10B == null ? JSONObject.NULL : this.s10B);
+                json.put(FormsTable.COLUMN_S10B, this.s10B == null ? JSONObject.NULL : new JSONObject(this.s10B));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s10C.equals("")) {
-                json.put(FormsTable.COLUMN_S10C, this.s10C == null ? JSONObject.NULL : this.s10C);
+                json.put(FormsTable.COLUMN_S10C, this.s10C == null ? JSONObject.NULL : new JSONObject(this.s10C));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s10D.equals("")) {
-                json.put(FormsTable.COLUMN_S10D, this.s10D == null ? JSONObject.NULL : this.s10D);
+                json.put(FormsTable.COLUMN_S10D, this.s10D == null ? JSONObject.NULL : new JSONObject(this.s10D));
             }
         } catch (Exception e) {
         }
 
         try {
             if (!this.s10E.equals("")) {
-                json.put(FormsTable.COLUMN_S10E, this.s10E == null ? JSONObject.NULL : this.s10E);
+                json.put(FormsTable.COLUMN_S10E, this.s10E == null ? JSONObject.NULL : new JSONObject(this.s10E));
             }
         } catch (Exception e) {
         }
-
 
 
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingDateTime == null ? JSONObject.NULL : this.endingDateTime);

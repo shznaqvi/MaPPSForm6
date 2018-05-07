@@ -40,7 +40,7 @@ import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.getclasses.GetEnrolled;
 import edu.aku.hassannaqvi.mappsform8.otherclasses.FormsList;
-import edu.aku.hassannaqvi.mappsform8.syncclasses.SyncForms;
+import edu.aku.hassannaqvi.mappsform8.syncclasses.SyncAllData;
 
 
 public class MainActivity extends Activity {
@@ -137,10 +137,8 @@ public class MainActivity extends Activity {
 
 */
         db = new DatabaseHelper(this);
-        Collection<FormsContract> todaysForms = db.getTodayForms();
-        Collection<FormsContract> unsyncedForms6 = db.getUnsyncedForms6();
-
-
+        Collection<FormsContract> todaysForms = db.getTodayForms(0);
+        Collection<FormsContract> unsyncedForms6 = db.getAllForms();
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
 
@@ -473,8 +471,8 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         Log.e(TAG, "syncServer: 2");
         if (networkInfo != null && networkInfo.isConnected()) {
-            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms(this).execute();
+            /*Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+            new SyncForms(this).execute();*/
             //new SyncForms5(this).execute();
 
             /*Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
@@ -482,6 +480,26 @@ public class MainActivity extends Activity {
 */
             /*Toast.makeText(getApplicationContext(), "Syncing Eligibles", Toast.LENGTH_SHORT).show();
             new SyncEligibles(this).execute();*/
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "7.php"),
+                    db.getUnsyncedForms6(7)
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "8.php"),
+                    db.getUnsyncedForms6(8)
+            ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -526,7 +544,10 @@ public class MainActivity extends Activity {
         if (exit) {
             finish(); // finish activity
 
-            startActivity(new Intent(this, LoginActivity.class));
+            Intent ii = new Intent(this, LoginActivity.class);
+            ii.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(ii);
+            finish();
 
         } else {
             Toast.makeText(this, "Press Back again to Exit.",

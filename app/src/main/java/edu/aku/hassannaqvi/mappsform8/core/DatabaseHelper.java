@@ -1118,6 +1118,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_LHWCODE,
                 FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_FORMTYPE,
+                FormsTable.COLUMN_SNO,
                 FormsTable.COLUMN_S8B,
                 FormsTable.COLUMN_S8C,
                 FormsTable.COLUMN_S8D,
@@ -1166,7 +1168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                allFC.add(fc.Hydrate(c));
+                allFC.add(fc.Hydrate(c, 0));
             }
         } finally {
             if (c != null) {
@@ -1179,7 +1181,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<FormsContract> getUnsyncedForms6() {
+    public Collection<FormsContract> getUnsyncedForms6(int type) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1196,10 +1198,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_LHWCODE,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_CHILD_ID,
                 FormsTable.COLUMN_S8B,
                 FormsTable.COLUMN_S8C,
                 FormsTable.COLUMN_S8D,
                 FormsTable.COLUMN_S8E,
+                FormsTable.COLUMN_S7B,
+                FormsTable.COLUMN_S7D,
+                FormsTable.COLUMN_S7E,
                 FormsTable.COLUMN_ENDINGDATETIME,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -1216,7 +1222,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 /*        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' AND "
                 + FormsTable.COLUMN_FORMTYPE + " =?";*/
         String whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_FORMTYPE + " =?";
-        String[] whereArgs = new String[]{"8"};
+        String[] whereArgs = {String.valueOf(type)};
         String groupBy = null;
         String having = null;
 
@@ -1236,7 +1242,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                allFC.add(fc.Hydrate(c));
+                allFC.add(fc.Hydrate(c, type));
             }
         } finally {
             if (c != null) {
@@ -1390,7 +1396,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<FormsContract> getTodayForms() {
+    public Collection<FormsContract> getTodayForms(int type) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1422,7 +1428,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                formList.add(fc.Hydrate(c));
+                formList.add(fc.Hydrate(c, type));
             }
         } finally {
             if (c != null) {
