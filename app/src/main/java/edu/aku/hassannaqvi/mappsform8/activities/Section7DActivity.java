@@ -69,6 +69,9 @@ public class Section7DActivity extends Activity {
             }
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
                 if (AppMain.formType.equals("7")) {
                     startActivity(new Intent(this, Section7EActivity.class));
                 } else if (AppMain.formType.equals("9")) {
