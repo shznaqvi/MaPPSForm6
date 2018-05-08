@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.aku.hassannaqvi.mapps_form7.edu.aku.hassannaqvi.mappsform8.activities.EndingActivity">
+    tools:context="edu.aku.hassannaqvi.mapps_form7.activities.EndingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
