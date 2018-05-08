@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="edu.aku.hassannaqvi.mapps_form8.activities.SplashscreenActivity">
+    tools:context="edu.aku.hassannaqvi.mappsform8.activities.SplashscreenActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -20,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="Mapps LOGO"
             android:paddingTop="72dp"
-            android:src="@drawable/mapps8_icon" />
+            android:src="@drawable/mapps8_icon1" />
 
         <TextView
             android:id="@+id/fullscreen_content"

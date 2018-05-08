@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.aku.hassannaqvi.mappsform8">
 
-    <uses-sdk
-        android:maxSdkVersion="22"
-        android:minSdkVersion="22"
-        android:targetSdkVersion="22" />
+    <!--    <uses-sdk
+            android:maxSdkVersion="22"
+            android:minSdkVersion="22"
+            android:targetSdkVersion="22" />-->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
@@ -23,15 +23,16 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="edu.aku.hassannaqvi.mapps_form8.core.AppMain"
+        android:name="edu.aku.hassannaqvi.mappsform8.core.AppMain"
         android:allowBackup="true"
-        android:icon="@drawable/mapps8_icon"
+        android:icon="@drawable/mapps8_icon1"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SplashscreenActivity"
-            android:screenOrientation="portrait">
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.SplashscreenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,51 +40,71 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.LoginActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.MainActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.EndingActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.otherclasses.FormsList"
+            android:name="edu.aku.hassannaqvi.mappsform8.otherclasses.FormsList"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.core.AndroidDatabaseManager"
+            android:name="edu.aku.hassannaqvi.mappsform8.core.AndroidDatabaseManager"
             android:screenOrientation="portrait" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.InfoActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.InfoActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionEActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.SectionEActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionBActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.SectionBActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionCActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.SectionCActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.SectionDActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.SectionDActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section7BActivity"
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.Section7BActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section7DActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section7EActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section9DActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10DActivity" />
-        <activity android:name="edu.aku.hassannaqvi.mapps_form8.activities.Section10EActivity" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.Section7DActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.Section7EActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.Section9DActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.Section10DActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.hassannaqvi.mappsform8.activities.Section10EActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>

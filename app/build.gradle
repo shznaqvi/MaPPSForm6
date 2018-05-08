@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 27
     def versionPropsFile = file('version.properties')
     dataBinding {
         enabled = true
@@ -40,28 +39,27 @@ android {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile 'com.jakewharton:butterknife:8.8.1'
-    compile 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
+    androidTestImplementation 'junit:junit:4.12'
+    implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.1.0'
+            }
+        }
+    }
 }

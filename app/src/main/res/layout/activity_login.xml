@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="edu.aku.hassannaqvi.mapps_form8.activities.LoginActivity">
+    tools:context="edu.aku.hassannaqvi.mapps_form8.edu.aku.hassannaqvi.mappsform8.activities.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -75,7 +75,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
                 android:contentDescription="Mapps LOGO"
-                android:src="@drawable/mapps8_icon" />
+                android:src="@drawable/mapps8_icon1" />
 
 
             <LinearLayout
@@ -224,6 +224,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="#efefef"
                 android:gravity="center"
                 android:textColor="#565656"
