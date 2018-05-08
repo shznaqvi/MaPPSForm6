@@ -491,7 +491,7 @@ public class MainActivity extends Activity {
                     db.getUnsyncedForms6(7)
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
+           /* Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms",
@@ -500,7 +500,7 @@ public class MainActivity extends Activity {
                     AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "8.php"),
                     db.getUnsyncedForms6(8)
             ).execute();
-
+*/
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
