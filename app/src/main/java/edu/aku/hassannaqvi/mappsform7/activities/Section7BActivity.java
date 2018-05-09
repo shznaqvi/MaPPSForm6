@@ -59,6 +59,9 @@ public class Section7BActivity extends AppCompatActivity {
             bi.fldGrpName.setVisibility(View.VISIBLE);
         } else {
             bi.appHeader.setText(R.string.mp10heading1);
+            bi.fldGrpcheck.setVisibility(View.VISIBLE);
+            bi.fldGrpdob.setVisibility(View.GONE);
+            bi.fldGrpmp07q19.setVisibility(View.VISIBLE);
             bi.fldGrpform7.setVisibility(View.GONE);
             bi.fldGrpName.setVisibility(View.GONE);
             bi.mp07q16.setText(null);
@@ -121,9 +124,6 @@ public class Section7BActivity extends AppCompatActivity {
 
         if (AppMain.formType.equals("7")) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q16, getString(R.string.mp07q16))) {
-                return false;
-            }
 
             if (!validatorClass.EmptyTextBox(this, bi.mp07q17, getString(R.string.mp07q17))) {
                 return false;

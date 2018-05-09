@@ -298,7 +298,7 @@ public class Section7DActivity extends Activity {
         }
 
         if (!flag_q33) {
-            if (q33 > 1) {
+            if (q33 > 0.5) {
                 flag_q33 = true;
 
                 bi.fldGrpmp07q33.setVisibility(View.VISIBLE);
@@ -360,7 +360,7 @@ public class Section7DActivity extends Activity {
         }
 
         if (!flag_q37) {
-            if (q37 > 1) {
+            if (q37 > 0.5) {
                 flag_q37 = true;
 
                 bi.fldGrpmp07q37.setVisibility(View.VISIBLE);
