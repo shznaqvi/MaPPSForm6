@@ -70,12 +70,14 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
         bi.mp10q40.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bi.mp10q40a.isChecked()) {
-                    bi.fldGrpmp10eq41.setVisibility(View.VISIBLE);
-                } else {
-                    bi.fldGrpmp10eq41.setVisibility(View.GONE);
-                    bi.mp10q41.setText(null);
-                    bi.mp10q4199.setChecked(false);
+                if (isAllNo() || isAlldkn()) {
+                    if (bi.mp10q40a.isChecked()) {
+                        bi.fldGrpmp10eq41.setVisibility(View.VISIBLE);
+                    } else {
+                        bi.fldGrpmp10eq41.setVisibility(View.GONE);
+                        bi.mp10q41.setText(null);
+                        bi.mp10q4199.setChecked(false);
+                    }
                 }
             }
         });

@@ -140,6 +140,24 @@
                             android:textColor="@android:color/black"
                             app:dateFormat="dd-MM-yyyy" />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/mp07q1701"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/mp07q1701"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:focusable="false"
+                            android:hint="@string/mp07q1701"
+                            android:textColor="@android:color/black" />
+
 
                         <TextView
                             android:layout_width="match_parent"

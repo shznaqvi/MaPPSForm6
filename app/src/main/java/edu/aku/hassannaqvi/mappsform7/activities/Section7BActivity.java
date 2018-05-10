@@ -47,6 +47,8 @@ public class Section7BActivity extends AppCompatActivity {
         bi.mp07q17.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q20.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q17.setMinDate(maxdate1Week);
+        bi.mp07q1701.setManager(getSupportFragmentManager());
+        bi.mp07q1701.setIs24HourView(true);
 
         bi.setCallback(this);
 
@@ -129,6 +131,9 @@ public class Section7BActivity extends AppCompatActivity {
                 return false;
             }
 
+            if (!validatorClass.EmptyTextBox(this, bi.mp07q1701, getString(R.string.mp07q1701))) {
+                return false;
+            }
             if (!validatorClass.EmptyRadioButton(this, bi.mp07q18, bi.mp07q18a, getString(R.string.mp07q18))) {
                 return false;
             }
@@ -163,6 +168,7 @@ public class Section7BActivity extends AppCompatActivity {
             AppMain.fc.setChildId(bi.mp07q16.getText().toString());
             //sB.put("mp07q16", bi.mp07q16.getText().toString());
             sB.put("mp07q17", bi.mp07q17.getText().toString());
+            sB.put("mp07q1701", bi.mp07q1701.getText().toString());
             sB.put("mp17q18", bi.mp07q18a.isChecked() ? "1"
                     : bi.mp07q18b.isChecked() ? "2"
                     : "0");

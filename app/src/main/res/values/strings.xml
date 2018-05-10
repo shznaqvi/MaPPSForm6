@@ -224,6 +224,7 @@
     <string name="mp07heading"> ٻار کي نشاندهي نمبر ڏيڻ </string>
     <string name="mp07q16"> ٻار جي آءِ ڊي لکو </string>
     <string name="mp07q17"> ڄمڻ جي تاريخ </string>
+    <string name="mp07q1701"> ڄمڻ جو وقت </string>
     <string name="mp07q18"> ٻار جي جنس </string>
     <string name="mp07q18a"> مرد </string>
     <string name="mp07q18b"> عورت </string>
@@ -340,10 +341,10 @@
     <string name="mp10q39d"> سايون ڀاڄيون </string>
     <string name="mp10q39e"> پڪا انب، پڪا پپيتا يا (ٻيا وٽامن اي سان ڀرپور ميوا) </string>
     <string name="mp10q39f"> ٻيا ڪي ميوا يا ڀاڃيون </string>
-    <string name="mp10q39g"> يرو، بڪيون، دل يا ٻين عضون جو گوشت </string>
+    <string name="mp10q39g"> جيرو، بڪيون، دل يا ٻين عضون جو گوشت </string>
     <string name="mp10q39h"> ڪو به گوشت، جھڙوڪ وڏو گوشت، ٻاڪرو، رڍ، ڪڪڙ يا بدڪ </string>
     <string name="mp10q39i"> بيدا </string>
-    <string name="mp10q39j"> ازي يا سُڪل مڇي، هر قسم جي مڇي يا پاڻي وارو کاڌو </string>
+    <string name="mp10q39j"> تازي يا سُڪل مڇي، هر قسم جي مڇي يا پاڻي وارو کاڌو </string>
     <string name="mp10q39k"> ڪو به ٺهيل کاڌو جنهن ۾ ڦليون، مٽر، دال يا ٻج هجي </string>
     <string name="mp10q39l"> گيهه مکڻ، ڌهي يا ٻيا کير مان ٺهيل شيون (کاڌا) </string>
     <string name="mp10q39m"> ڪو به تيل، چربي يا گيهه يا ٻيو ڪو به اهڙو کاڌو جيڪو انهن شين مان ٺهيل هجي </string>

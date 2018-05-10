@@ -484,12 +484,35 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "Forms",
+                    "Forms" + " 7",
                     "updateSyncedForms",
                     FormsContract.class,
                     AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "7.php"),
                     db.getUnsyncedForms6(7)
             ).execute();
+
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms 9", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms" + " 9",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    AppMain._HOST_URL_9 + FormsContract.FormsTable._URL.replace(".php", "9.php"),
+                    db.getUnsyncedForms6(9)
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms 10", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms" + " 10",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    AppMain._HOST_URL_10 + FormsContract.FormsTable._URL.replace(".php", "10.php"),
+                    db.getUnsyncedForms6(10)
+            ).execute();
+
+
 
            /* Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
             new SyncAllData(
