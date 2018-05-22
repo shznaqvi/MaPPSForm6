@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.mapps_form7;
+package edu.aku.hassannaqvi.mappsform7;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

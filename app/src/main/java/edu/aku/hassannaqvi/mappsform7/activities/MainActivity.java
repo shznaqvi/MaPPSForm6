@@ -340,8 +340,8 @@ public class MainActivity extends Activity {
     public void openForm9(View v) {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
-                Intent oF = new Intent(MainActivity.this, InfoActivity.class);
-                AppMain.formType = "9";
+                Intent oF = new Intent(MainActivity.this, InfoActivity.class).putExtra("fType", true);
+//                AppMain.formType = "9";
                 startActivity(oF);
             } else {
 

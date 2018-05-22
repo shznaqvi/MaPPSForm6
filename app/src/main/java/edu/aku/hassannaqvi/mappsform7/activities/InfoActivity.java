@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +37,7 @@ import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import edu.aku.hassannaqvi.mappsform7.R;
 import edu.aku.hassannaqvi.mappsform7.contracts.EnrolledContract;
+import edu.aku.hassannaqvi.mappsform7.contracts.FUPContract;
 import edu.aku.hassannaqvi.mappsform7.contracts.FormsContract;
 import edu.aku.hassannaqvi.mappsform7.contracts.LHWsContract;
 import edu.aku.hassannaqvi.mappsform7.core.AppMain;
@@ -74,8 +76,19 @@ public class InfoActivity extends Activity {
     RadioButton mp08a01302;
     @BindView(R.id.fldGrpParticipant)
     LinearLayout fldGrpParticipant;
+
+    @BindView(R.id.fldGrpmp08a003)
+    LinearLayout fldGrpmp08a003;
+    @BindView(R.id.fldGrpmp08a004)
+    LinearLayout fldGrpmp08a004;
+    @BindView(R.id.mp08a004)
+    Spinner mp08a004;
+
     ArrayList<String> partNames;
     int position;
+    ArrayList<String> childNames;
+    Map<String, FUPContract> childMap;
+    Boolean flagForm9_10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +149,17 @@ public class InfoActivity extends Activity {
             }
         });
 
+//        Get intent
+        flagForm9_10 = getIntent().getBooleanExtra("fType", false);
+        if (flagForm9_10) {
+            this.setTitle("MaPPS - Follow Ups");
+            fldGrpmp08a003.setVisibility(View.GONE);
+            fldGrpmp08a004.setVisibility(View.VISIBLE);
+        } else {
+            fldGrpmp08a003.setVisibility(View.VISIBLE);
+            fldGrpmp08a004.setVisibility(View.GONE);
+        }
+
 
         if (AppMain.formType.equals("7")) {
             AppMain.ftype = "mp07";
@@ -150,6 +174,24 @@ public class InfoActivity extends Activity {
             AppMain.ftype = "mp10";
             this.setTitle(getResources().getString(R.string.app_name10));
         }
+
+    }
+
+    public Boolean populateChildSpinner() {
+
+        childNames = new ArrayList<>();
+        childMap = new HashMap<>();
+
+        Collection<FUPContract> collectionChilds = db.getChildEnrolledByHousehold(AppMain.curCluster, LHWs.get(lhws.getSelectedItem().toString()), mp08a001.getText().toString());
+
+        for (FUPContract childs : collectionChilds) {
+            childNames.add(childs.getChname() + "_" + childs.getChildid());
+            childMap.put(childs.getChname() + "_" + childs.getChildid(), childs);
+        }
+
+        mp08a004.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, childNames));
+
+        return collectionChilds.size() > 0;
 
     }
 
@@ -171,24 +213,35 @@ public class InfoActivity extends Activity {
 
             Toast.makeText(getApplicationContext(), "Participant found", Toast.LENGTH_LONG).show();
 
-            AppMain.Eparticipant = new ArrayList<>();
+            if (flagForm9_10) {
+                if (populateChildSpinner()) {
+                    fldGrpParticipant.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpParticipant.setVisibility(View.GONE);
+                    Toast.makeText(this, "No followups found!!", Toast.LENGTH_SHORT).show();
+                }
 
-            partNames = new ArrayList<>();
+            } else {
+                AppMain.Eparticipant = new ArrayList<>();
 
-            partNames.add("....");
-            AppMain.Eparticipant.add(new EnrolledContract());
+                partNames = new ArrayList<>();
 
-            for (EnrolledContract ec : enrolledParticipant) {
-                AppMain.Eparticipant.add(new EnrolledContract(ec));
+                partNames.add("....");
+                AppMain.Eparticipant.add(new EnrolledContract());
 
-                partNames.add(ec.getWomen_name().replaceFirst(String.valueOf(ec.getWomen_name().charAt(0)),
-                        String.valueOf(ec.getWomen_name().toUpperCase().charAt(0))));
+                fldGrpParticipant.setVisibility(View.VISIBLE);
+
+                for (EnrolledContract ec : enrolledParticipant) {
+                    AppMain.Eparticipant.add(new EnrolledContract(ec));
+
+                    partNames.add(ec.getWomen_name().replaceFirst(String.valueOf(ec.getWomen_name().charAt(0)),
+                            String.valueOf(ec.getWomen_name().toUpperCase().charAt(0))));
+                }
+
+                mp08a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, partNames));
             }
-            fldGrpParticipant.setVisibility(View.VISIBLE);
 
             check = true;
-
-            mp08a003.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, partNames));
 
 
         } else {
@@ -293,20 +346,38 @@ public class InfoActivity extends Activity {
         AppMain.fc.setClustercode(AppMain.curCluster);
         AppMain.fc.setHousehold(mp08a001.getText().toString());
         AppMain.fc.setDeviceID(AppMain.deviceId);
-        AppMain.fc.setSno(AppMain.Eparticipant.get(position).getSno());
+
         AppMain.fc.setFormType(AppMain.formType);
         AppMain.fc.setVillageacode(mp08a007.getText().toString());
-
-        AppMain.fc.setLhwCode(AppMain.Eparticipant.get(position).getLhwCode());
         AppMain.fc.setApp_version(AppMain.versionName + "." + AppMain.versionCode);
 
-        id = AppMain.curCluster + AppMain.Eparticipant.get(position).getLhwCode() + mp08a001.getText().toString() + AppMain.Eparticipant.get(position).getSno();
+        if (flagForm9_10) {
+            AppMain.fc.setSno(childMap.get(mp08a004.getSelectedItem().toString()).getSno());
+            AppMain.fc.setLhwCode(childMap.get(mp08a004.getSelectedItem().toString()).getLhwcode());
+        } else {
+            AppMain.fc.setSno(AppMain.Eparticipant.get(position).getSno());
+            AppMain.fc.setLhwCode(AppMain.Eparticipant.get(position).getLhwCode());
+            id = AppMain.curCluster + AppMain.Eparticipant.get(position).getLhwCode() + mp08a001.getText().toString() + AppMain.Eparticipant.get(position).getSno();
+        }
 
         JSONObject sInfo = new JSONObject();
 
-        sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
-        sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
-        sInfo.put(AppMain.ftype + "a003", mp08a003.getSelectedItem().toString());
+        if (flagForm9_10) {
+            sInfo.put(AppMain.ftype + "a004", mp08a004.getSelectedItem().toString());
+            sInfo.put("muid", childMap.get(mp08a004.getSelectedItem().toString()).getMuid());
+            sInfo.put("uid_f7", childMap.get(mp08a004.getSelectedItem().toString()).getUid_f7());
+            sInfo.put(AppMain.ftype + "a003", childMap.get(mp08a004.getSelectedItem().toString()).getEpname());
+            sInfo.put("childid", childMap.get(mp08a004.getSelectedItem().toString()).getChildid());
+            sInfo.put("chname", childMap.get(mp08a004.getSelectedItem().toString()).getChname());
+            sInfo.put("fupdt", childMap.get(mp08a004.getSelectedItem().toString()).getFupdt());
+            sInfo.put("fupround", childMap.get(mp08a004.getSelectedItem().toString()).getFupround());
+            sInfo.put("gendt", childMap.get(mp08a004.getSelectedItem().toString()).getGendt());
+            sInfo.put("new", childMap.get(mp08a004.getSelectedItem().toString()).getNew());
+        } else {
+            sInfo.put(AppMain.ftype + "a003", mp08a003.getSelectedItem().toString());
+            sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
+            sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
+        }
         sInfo.put(AppMain.ftype + "a005", mp08a005.getText().toString());
         sInfo.put(AppMain.ftype + "a008", mp08a008.getText().toString());
         sInfo.put(AppMain.ftype + "a013", mp08a01301.isChecked() ? "1" : mp08a01302.isChecked() ? "2" : "0");
@@ -369,18 +440,33 @@ public class InfoActivity extends Activity {
 
         //======================= Q 3 ===============
 
-        if (mp08a003.getSelectedItem() == "....") {
-//        if (mp08a003.getSelectedItem().equals("")) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp08a003), Toast.LENGTH_SHORT).show();
-            ((TextView) mp08a003.getSelectedView()).setText("This Data is Required");
-            ((TextView) mp08a003.getSelectedView()).setError("This Data is Required");
-            ((TextView) mp08a003.getSelectedView()).setTextColor(Color.RED);
-            mp08a003.requestFocus();
+        if (flagForm9_10) {
+            if (mp08a004.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp08a004), Toast.LENGTH_SHORT).show();
+                ((TextView) mp08a004.getSelectedView()).setText("This Data is Required");
+                ((TextView) mp08a004.getSelectedView()).setError("This Data is Required");
+                ((TextView) mp08a004.getSelectedView()).setTextColor(Color.RED);
+                mp08a004.requestFocus();
 
-            Log.i(TAG, "mp08a003: This Data is Required!");
-            return false;
+                Log.i(TAG, "mp08a004: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) mp08a004.getSelectedView()).setError(null);
+            }
         } else {
-            ((TextView) mp08a003.getSelectedView()).setError(null);
+            if (mp08a003.getSelectedItem() == "....") {
+//        if (mp08a003.getSelectedItem().equals("")) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp08a003), Toast.LENGTH_SHORT).show();
+                ((TextView) mp08a003.getSelectedView()).setText("This Data is Required");
+                ((TextView) mp08a003.getSelectedView()).setError("This Data is Required");
+                ((TextView) mp08a003.getSelectedView()).setTextColor(Color.RED);
+                mp08a003.requestFocus();
+
+                Log.i(TAG, "mp08a003: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) mp08a003.getSelectedView()).setError(null);
+            }
         }
 
         //======================= Q 2 ===============
@@ -394,16 +480,6 @@ public class InfoActivity extends Activity {
         } else {
             mp08a002.setError(null);
         }
-
-        /*if (mp08a003.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp08a003), Toast.LENGTH_SHORT).show();
-            mp08a003.setError("This data is Required!");
-
-            Log.i(TAG, "mp08a003: This Data is Required!");
-            return false;
-        } else {
-            mp08a003.setError(null);
-        }*/
 
         if (mp08a005.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mp08a005), Toast.LENGTH_SHORT).show();

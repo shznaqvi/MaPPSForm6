@@ -20,6 +20,8 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.mappsform7.contracts.ClustersContract;
 import edu.aku.hassannaqvi.mappsform7.contracts.EnrolledContract;
+import edu.aku.hassannaqvi.mappsform7.contracts.FUPContract;
+import edu.aku.hassannaqvi.mappsform7.contracts.FUPContract.SingleFup;
 import edu.aku.hassannaqvi.mappsform7.contracts.FormsContract;
 import edu.aku.hassannaqvi.mappsform7.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.mappsform7.contracts.LHWsContract;
@@ -149,6 +151,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ClustersContract.ClustersTable.COLUMN_CLUSTERNAME + " TEXT," +
             ClustersContract.ClustersTable.COLUMN_CLUSTERCODE + " TEXT" +
             " );";
+    private static final String SQL_CREATE_FOLLOWUPS = "CREATE TABLE "
+            + SingleFup.TABLE_NAME + "(" +
+            SingleFup.COLUMN_ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SingleFup.COLUMN_ID + " TEXT," +
+            SingleFup.COLUMN_MUID + " TEXT," +
+            SingleFup.COLUMN_UID_F7 + " TEXT," +
+            SingleFup.COLUMN_CLUSTERCODE + " TEXT," +
+            SingleFup.COLUMN_LHWCODE + " TEXT," +
+            SingleFup.COLUMN_HOUSEHOLD + " TEXT," +
+            SingleFup.COLUMN_SNO + " TEXT," +
+            SingleFup.COLUMN_EPNAME + " TEXT," +
+            SingleFup.COLUMN_CHILDID + " TEXT," +
+            SingleFup.COLUMN_CHNAME + " TEXT," +
+            SingleFup.COLUMN_FUPDT + " TEXT," +
+            SingleFup.COLUMN_FUPROUND + " TEXT," +
+            SingleFup.COLUMN_GENDT + " TEXT," +
+            SingleFup.COLUMN_NEW + " TEXT" +
+            " );";
     /**
      * DELETE STRINGS
      */
@@ -164,6 +184,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_PARTICIPANTS =
             "DROP TABLE IF EXISTS " + ParticipantsTable.TABLE_NAME;
+    private static final String SQL_DELETE_FOLLOWUPS =
+            "DROP TABLE IF EXISTS " + SingleFup.TABLE_NAME;
     public static String DB_NAME = "mapps_f2_copy.db";
     private final String TAG = "DatabaseHelper";
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
@@ -181,7 +203,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_CLUSTERS);
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_PARTICIPANTS);
-
+        db.execSQL(SQL_CREATE_FOLLOWUPS);
     }
 
     @Override
@@ -192,6 +214,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_CLUSTERS);
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_PARTICIPANTS);
+        db.execSQL(SQL_DELETE_FOLLOWUPS);
     }
 
     public void syncUsers(JSONArray userlist) {
@@ -242,6 +265,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4, ec.getUid_f4());
 
                 db.insert(EnrolledContract.EnrolledTable.TABLE_NAME, null, values);
+            }
+
+
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncFollowUPS(JSONArray followupslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(SingleFup.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = followupslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectEC = jsonArray.getJSONObject(i);
+
+                FUPContract fup = new FUPContract();
+                fup.Sync(jsonObjectEC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(SingleFup.COLUMN_ID, fup.getId());
+                values.put(SingleFup.COLUMN_MUID, fup.getMuid());
+                values.put(SingleFup.COLUMN_UID_F7, fup.getUid_f7());
+                values.put(SingleFup.COLUMN_CLUSTERCODE, fup.getClustercode());
+                values.put(SingleFup.COLUMN_LHWCODE, fup.getLhwcode());
+                values.put(SingleFup.COLUMN_SNO, fup.getSno());
+                values.put(SingleFup.COLUMN_EPNAME, fup.getEpname());
+                values.put(SingleFup.COLUMN_CHILDID, fup.getChildid());
+                values.put(SingleFup.COLUMN_CHNAME, fup.getChname());
+                values.put(SingleFup.COLUMN_FUPDT, fup.getFupdt());
+                values.put(SingleFup.COLUMN_FUPROUND, fup.getFupround());
+                values.put(SingleFup.COLUMN_GENDT, fup.getGendt());
+                values.put(SingleFup.COLUMN_NEW, fup.getNew());
+                values.put(SingleFup.COLUMN_HOUSEHOLD, fup.getHousehold());
+
+                db.insert(SingleFup.TABLE_NAME, null, values);
             }
 
 
@@ -991,6 +1052,63 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 EnrolledContract ec = new EnrolledContract();
+                allEC.add(ec.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEC;
+    }
+
+    public Collection<FUPContract> getChildEnrolledByHousehold(String clusterCode, String lhwCode, String hhno) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                SingleFup.COLUMN_ROW_ID,
+                SingleFup.COLUMN_ID,
+                SingleFup.COLUMN_MUID,
+                SingleFup.COLUMN_UID_F7,
+                SingleFup.COLUMN_CLUSTERCODE,
+                SingleFup.COLUMN_LHWCODE,
+                SingleFup.COLUMN_SNO,
+                SingleFup.COLUMN_EPNAME,
+                SingleFup.COLUMN_CHILDID,
+                SingleFup.COLUMN_CHNAME,
+                SingleFup.COLUMN_FUPDT,
+                SingleFup.COLUMN_FUPROUND,
+                SingleFup.COLUMN_GENDT,
+                SingleFup.COLUMN_NEW,
+                SingleFup.COLUMN_HOUSEHOLD,
+        };
+
+        String whereClause = SingleFup.COLUMN_CLUSTERCODE + " = ? AND " +
+                SingleFup.COLUMN_LHWCODE + " = ? AND " +
+                SingleFup.COLUMN_HOUSEHOLD + " = ?";
+        String[] whereArgs = new String[]{clusterCode, lhwCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                SingleFup.COLUMN_CHNAME + " ASC";
+
+        Collection<FUPContract> allEC = new ArrayList<>();
+        try {
+            c = db.query(
+                    SingleFup.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FUPContract ec = new FUPContract();
                 allEC.add(ec.Hydrate(c));
             }
         } finally {

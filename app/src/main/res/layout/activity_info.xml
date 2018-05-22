@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.mapps_form7.edu.aku.hassannaqvi.mappsform8.activities.InfoActivity">
+    tools:context=".activities.InfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -99,32 +99,33 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpmp08a003"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/mp08a003"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/mp08a003"
 
-            <!--<EditText-->
-            <!--android:id="@+id/mp08a003"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"-->
-            <!--android:hint="@string/mp08a003"-->
-            <!--android:enabled="false"-->
-            <!--android:inputType="textCapWords" />-->
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-            <Spinner
-                android:id="@+id/mp08a003"
-                style="@style/Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:popupBackground="#ffffff" />
+                <Spinner
+                    android:id="@+id/mp08a003"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:popupBackground="#ffffff" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -143,6 +144,32 @@
                 android:hint="@string/mp08a002"
                 android:inputType="number"
                 android:maxLength="9" />
+
+            <LinearLayout
+                android:id="@+id/fldGrpmp08a004"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/mp08a004"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <Spinner
+                    android:id="@+id/mp08a004"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:popupBackground="#ffffff" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
