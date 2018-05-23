@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.mappsform7.activities.SectionEActivity" />
+            type="edu.aku.hassannaqvi.mappsform07.activities.SectionEActivity" />
     </data>
 
     <ScrollView

@@ -44,9 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:popupBackground="#ffffff"
-
-            />
+            android:popupBackground="#ffffff" />
 
         <TextView
             android:layout_width="match_parent"
@@ -127,24 +125,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/mp08a002"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/mp08a002"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:hint="@string/mp08a002"
-                android:inputType="number"
-                android:maxLength="9" />
-
             <LinearLayout
                 android:id="@+id/fldGrpmp08a004"
                 android:layout_width="match_parent"
@@ -169,7 +149,46 @@
                     android:gravity="center"
                     android:popupBackground="#ffffff" />
 
+                <LinearLayout
+                    android:id="@+id/fldGrpmp08a004a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/motherName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
+
+                    <TextView
+                        android:id="@+id/fupRound"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
+
+                </LinearLayout>
+
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp08a002"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/mp08a002"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="@string/mp08a002"
+                android:inputType="number"
+                android:maxLength="9" />
 
             <TextView
                 android:layout_width="match_parent"

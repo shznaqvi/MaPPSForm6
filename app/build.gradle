@@ -18,7 +18,7 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.mappsform7"
+            applicationId "edu.aku.hassannaqvi.mappsform07"
             minSdkVersion 22
             targetSdkVersion 22
 

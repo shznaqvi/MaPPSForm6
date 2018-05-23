@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.mappsform7.activities.SectionCActivity" />
+            type="edu.aku.hassannaqvi.mappsform07.activities.SectionCActivity" />
     </data>
 
 

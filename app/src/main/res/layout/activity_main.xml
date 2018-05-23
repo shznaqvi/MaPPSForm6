@@ -109,7 +109,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="openForm9"
-            android:text="Form - 9"
+            android:text="FOLLOWUPS"
             android:textSize="28sp" />
 
         <Button
@@ -120,6 +120,7 @@
             android:layout_marginTop="16dp"
             android:onClick="openForm10"
             android:text="Form - 10"
+            android:visibility="gone"
             android:textSize="28sp" />
 
 
