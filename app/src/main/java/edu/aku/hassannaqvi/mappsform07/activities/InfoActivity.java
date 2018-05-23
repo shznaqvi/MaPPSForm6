@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -83,6 +84,11 @@ public class InfoActivity extends Activity {
     LinearLayout fldGrpmp08a004;
     @BindView(R.id.mp08a004)
     Spinner mp08a004;
+
+    @BindView(R.id.btn_Continue)
+    Button btn_Continue;
+    @BindView(R.id.btn_End)
+    Button btn_End;
 
     public static int childSize = 0;
     static ArrayList<String> childNames;
@@ -179,6 +185,19 @@ public class InfoActivity extends Activity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        mp08a013.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.mp08a01301) {
+                    btn_Continue.setVisibility(View.VISIBLE);
+                    btn_End.setVisibility(View.GONE);
+                } else {
+                    btn_Continue.setVisibility(View.GONE);
+                    btn_End.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -344,9 +363,6 @@ public class InfoActivity extends Activity {
     void onBtnContinueClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-//        Intent secba = new Intent(this, ParticipantListActivity.class);
-//        startActivity(secba);
-
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -414,13 +430,13 @@ public class InfoActivity extends Activity {
         AppMain.fc.setHousehold(mp08a001.getText().toString());
         AppMain.fc.setDeviceID(AppMain.deviceId);
 
-        AppMain.fc.setFormType(AppMain.formType);
         AppMain.fc.setVillageacode(mp08a007.getText().toString());
         AppMain.fc.setApp_version(AppMain.versionName + "." + AppMain.versionCode);
 
         if (flagForm9_10) {
             AppMain.fc.setSno(childMap.get(mp08a004.getSelectedItem().toString()).getSno());
             AppMain.fc.setLhwCode(childMap.get(mp08a004.getSelectedItem().toString()).getLhwcode());
+            AppMain.fc.setChildId(childMap.get(mp08a004.getSelectedItem().toString()).getChildid());
 
             if (Integer.valueOf(childMap.get(mp08a004.getSelectedItem().toString()).getFupround()) == 1) {
                 AppMain.formType = "9";
@@ -428,7 +444,11 @@ public class InfoActivity extends Activity {
                 AppMain.formType = "10";
             }
 
+            AppMain.fc.setFormType(AppMain.formType);
+
         } else {
+            AppMain.fc.setFormType(AppMain.formType);
+
             AppMain.fc.setSno(AppMain.Eparticipant.get(position).getSno());
             AppMain.fc.setLhwCode(AppMain.Eparticipant.get(position).getLhwCode());
             id = AppMain.curCluster + AppMain.Eparticipant.get(position).getLhwCode() + mp08a001.getText().toString() + AppMain.Eparticipant.get(position).getSno();
@@ -441,7 +461,6 @@ public class InfoActivity extends Activity {
             sInfo.put("muid", childMap.get(mp08a004.getSelectedItem().toString()).getMuid());
             sInfo.put("uid_f7", childMap.get(mp08a004.getSelectedItem().toString()).getUid_f7());
             sInfo.put(AppMain.ftype + "a003", childMap.get(mp08a004.getSelectedItem().toString()).getEpname());
-            sInfo.put("childid", childMap.get(mp08a004.getSelectedItem().toString()).getChildid());
             sInfo.put("chname", childMap.get(mp08a004.getSelectedItem().toString()).getChname());
             sInfo.put("fupdt", childMap.get(mp08a004.getSelectedItem().toString()).getFupdt());
             sInfo.put("fupround", childMap.get(mp08a004.getSelectedItem().toString()).getFupround());
