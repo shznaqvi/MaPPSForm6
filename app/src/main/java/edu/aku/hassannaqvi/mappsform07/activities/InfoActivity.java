@@ -344,8 +344,10 @@ public class InfoActivity extends Activity {
             }
             if (UpdateDB()) {
 
-                childNames.remove(position);
-                childSize--;
+                if (flagForm9_10) {
+                    childNames.remove(position);
+                    childSize--;
+                }
 
                 finish();
                 Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
@@ -372,8 +374,10 @@ public class InfoActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                childNames.remove(position);
-                childSize--;
+                if (flagForm9_10) {
+                    childNames.remove(position);
+                    childSize--;
+                }
 
                 finish();
                 if (AppMain.formType.equals("8")) {
