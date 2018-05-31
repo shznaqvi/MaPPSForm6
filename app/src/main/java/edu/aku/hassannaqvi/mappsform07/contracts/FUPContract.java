@@ -27,6 +27,7 @@ public class FUPContract {
     private String gendt;
     private String New;
     private String household;
+    private String chdob;
 
 
     public FUPContract() {
@@ -156,6 +157,14 @@ public class FUPContract {
         this.household = household;
     }
 
+    public String getChdob() {
+        return chdob;
+    }
+
+    public void setChdob(String chdob) {
+        this.chdob = chdob;
+    }
+
     public FUPContract Sync(JSONObject jsonObject) throws JSONException {
         this.id = jsonObject.getString(SingleFup.COLUMN_ID);
         this.muid = jsonObject.getString(SingleFup.COLUMN_MUID);
@@ -171,6 +180,7 @@ public class FUPContract {
         this.fupround = jsonObject.getString(SingleFup.COLUMN_FUPROUND);
         this.gendt = jsonObject.getString(SingleFup.COLUMN_GENDT);
         this.New = jsonObject.getString(SingleFup.COLUMN_NEW);
+        this.chdob = jsonObject.getString(SingleFup.COLUMN_CHDOB);
 
         return this;
 
@@ -192,6 +202,7 @@ public class FUPContract {
         this.gendt = cursor.getString(cursor.getColumnIndex(SingleFup.COLUMN_GENDT));
         this.New = cursor.getString(cursor.getColumnIndex(SingleFup.COLUMN_NEW));
         this.household = cursor.getString(cursor.getColumnIndex(SingleFup.COLUMN_HOUSEHOLD));
+        this.chdob = cursor.getString(cursor.getColumnIndex(SingleFup.COLUMN_CHDOB));
 
         return this;
     }
@@ -214,6 +225,7 @@ public class FUPContract {
         json.put(SingleFup.COLUMN_GENDT, this.gendt == null ? JSONObject.NULL : this.gendt);
         json.put(SingleFup.COLUMN_NEW, this.New == null ? JSONObject.NULL : this.New);
         json.put(SingleFup.COLUMN_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);
+        json.put(SingleFup.COLUMN_CHDOB, this.chdob == null ? JSONObject.NULL : this.chdob);
 
 
         return json;
@@ -238,6 +250,7 @@ public class FUPContract {
         public static final String COLUMN_FUPROUND = "fupround";
         public static final String COLUMN_GENDT = "gendt";
         public static final String COLUMN_NEW = "new";
+        public static final String COLUMN_CHDOB = "chdob";
 
         public static final String _URIGET = "childfollowups.php";
     }

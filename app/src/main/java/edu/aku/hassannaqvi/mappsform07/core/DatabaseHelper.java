@@ -164,6 +164,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SingleFup.COLUMN_EPNAME + " TEXT," +
             SingleFup.COLUMN_CHILDID + " TEXT," +
             SingleFup.COLUMN_CHNAME + " TEXT," +
+            SingleFup.COLUMN_CHDOB + " TEXT," +
             SingleFup.COLUMN_FUPDT + " TEXT," +
             SingleFup.COLUMN_FUPROUND + " TEXT," +
             SingleFup.COLUMN_GENDT + " TEXT," +
@@ -297,6 +298,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(SingleFup.COLUMN_CHILDID, fup.getChildid());
                 values.put(SingleFup.COLUMN_CHNAME, fup.getChname());
                 values.put(SingleFup.COLUMN_FUPDT, fup.getFupdt());
+                values.put(SingleFup.COLUMN_CHDOB, fup.getChdob());
                 values.put(SingleFup.COLUMN_FUPROUND, fup.getFupround());
                 values.put(SingleFup.COLUMN_GENDT, fup.getGendt());
                 values.put(SingleFup.COLUMN_NEW, fup.getNew());
@@ -945,7 +947,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                ClustersContract.ClustersTable._ID + " ASC";
+                ClustersContract.ClustersTable.COLUMN_CLUSTERNAME + " ASC";
 
         Collection<ClustersContract> allCC = new ArrayList<>();
         try {
@@ -1082,6 +1084,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 SingleFup.COLUMN_FUPDT,
                 SingleFup.COLUMN_FUPROUND,
                 SingleFup.COLUMN_GENDT,
+                SingleFup.COLUMN_CHDOB,
                 SingleFup.COLUMN_NEW,
                 SingleFup.COLUMN_HOUSEHOLD,
         };

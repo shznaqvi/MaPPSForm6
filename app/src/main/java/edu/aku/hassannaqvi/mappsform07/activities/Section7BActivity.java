@@ -137,6 +137,12 @@ public class Section7BActivity extends AppCompatActivity {
 
             }
         });
+
+//        Get chdob from intent
+        if (AppMain.formType.equals("9") || AppMain.formType.equals("10")) {
+            bi.mp07q20.setMinDate(AppMain.convertDateFormat(getIntent().getStringExtra("chdob")));
+        }
+
     }
 
     public Boolean formValidation() {

@@ -616,7 +616,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     Toast.makeText(getApplicationContext(), "Getting FUP's", Toast.LENGTH_SHORT).show();
                     new GetFollowUps(mContext).execute();
                     Toast.makeText(getApplicationContext(), "Getting Eligibleomization", Toast.LENGTH_SHORT).show();
-                    new GetEnrolled(getApplicationContext()).execute();
+                    new GetEnrolled(mContext).execute();
                 }
             });
 

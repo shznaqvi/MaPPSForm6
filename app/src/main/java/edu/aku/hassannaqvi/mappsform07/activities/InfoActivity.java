@@ -374,20 +374,26 @@ public class InfoActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
+                finish();
+                Intent intent;
+
+                if (AppMain.formType.equals("8")) {
+                    intent = new Intent(this, SectionBActivity.class);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(this, Section7BActivity.class);
+                    if (flagForm9_10) {
+                        intent.putExtra("chdob", childMap.get(mp08a004.getSelectedItem().toString()).getChdob());
+                    }
+                }
+
                 if (flagForm9_10) {
                     childNames.remove(position);
                     childSize--;
                 }
 
-                finish();
-                if (AppMain.formType.equals("8")) {
+                startActivity(intent);
 
-                    Intent intent = new Intent(this, SectionBActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(this, Section7BActivity.class);
-                    startActivity(intent);
-                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

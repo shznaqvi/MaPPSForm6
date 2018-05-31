@@ -148,7 +148,11 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
                 }
 
                 if (bi.mp09q37a.isChecked()) {
-                    return validatorClass.EmptyTextBox(this, bi.mp09q38, getString(R.string.mp09q38));
+                    if (!validatorClass.EmptyTextBox(this, bi.mp09q38, getString(R.string.mp09q38))) {
+                        return false;
+                    }
+
+                    return validatorClass.RangeTextBox(this, bi.mp09q38, 0, 30, getString(R.string.mp09q38), " Days");
 
                 }
             }
