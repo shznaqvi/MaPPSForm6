@@ -59,6 +59,7 @@ import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform07.getclasses.GetClusters;
+import edu.aku.hassannaqvi.mappsform07.getclasses.GetEnrolled;
 import edu.aku.hassannaqvi.mappsform07.getclasses.GetFollowUps;
 import edu.aku.hassannaqvi.mappsform07.getclasses.GetLHWs;
 import edu.aku.hassannaqvi.mappsform07.getclasses.GetUsers;
@@ -614,6 +615,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     new GetLHWs(mContext).execute();
                     Toast.makeText(getApplicationContext(), "Getting FUP's", Toast.LENGTH_SHORT).show();
                     new GetFollowUps(mContext).execute();
+                    Toast.makeText(getApplicationContext(), "Getting Eligibleomization", Toast.LENGTH_SHORT).show();
+                    new GetEnrolled(getApplicationContext()).execute();
                 }
             });
 

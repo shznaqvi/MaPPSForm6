@@ -368,6 +368,7 @@
                 android:hint="@string/mp07q46"
                 android:text='@{mp07q46a.checked ? mp07q46x.getText.toString : ""}'
                 android:textColor="@android:color/black"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890."
                 android:visibility="@{mp07q46a.checked ? View.VISIBLE : View.GONE}" />
 
             <TextView
@@ -384,7 +385,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.+"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890."
                 android:hint="@string/mp07q47"
                 android:inputType="text"
                 android:maxLines="5"
@@ -405,7 +406,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.+"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890."
                 android:hint="@string/mp07q48"
                 android:inputType="text"
                 android:maxLines="5"

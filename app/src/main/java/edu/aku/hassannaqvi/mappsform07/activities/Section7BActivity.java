@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -56,7 +56,7 @@ public class Section7BActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         if (AppMain.formType.equals("7")) {
-            bi.appHeader.setText(R.string.mp07heading1);
+            bi.appHeader.setText(R.string.mp07heading);
             bi.fldGrpform7.setVisibility(View.VISIBLE);
             bi.fldGrpName.setVisibility(View.VISIBLE);
         } else {
@@ -72,11 +72,28 @@ public class Section7BActivity extends AppCompatActivity {
             bi.mp07q21.setText(null);
         }
 
-        bi.mp07q19a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+/*        bi.mp07q19a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b && AppMain.formType.equals("7")) {
                     bi.fldGrpName.setVisibility(View.VISIBLE);
+                } else {
+                    bi.fldGrpName.setVisibility(View.GONE);
+                    bi.mp07q21.setText(null);
+                }
+            }
+        });*/
+
+        bi.mp07q19.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.mp07q19a) {
+                    if (AppMain.formType.equals("7")) {
+                        bi.fldGrpName.setVisibility(View.VISIBLE);
+                    } else {
+                        bi.fldGrpName.setVisibility(View.GONE);
+                        bi.mp07q21.setText(null);
+                    }
                 } else {
                     bi.fldGrpName.setVisibility(View.GONE);
                     bi.mp07q21.setText(null);
