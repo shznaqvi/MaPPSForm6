@@ -450,8 +450,10 @@ public class InfoActivity extends Activity {
 
             if (Integer.valueOf(childMap.get(mp08a004.getSelectedItem().toString()).getFupround()) == 1) {
                 AppMain.formType = "9";
+                AppMain.ftype = "mp09";
             } else {
                 AppMain.formType = "10";
+                AppMain.ftype = "mp10";
             }
 
             AppMain.fc.setFormType(AppMain.formType);
