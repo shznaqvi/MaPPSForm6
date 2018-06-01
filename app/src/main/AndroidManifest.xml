@@ -25,7 +25,7 @@
     <application
         android:name=".core.AppMain"
         android:allowBackup="true"
-        android:icon="@drawable/mapps8_icon1"
+        android:icon="@drawable/mapps7_10_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

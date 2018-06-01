@@ -75,7 +75,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
                 android:contentDescription="Mapps LOGO"
-                android:src="@drawable/mapps8_icon1" />
+                android:src="@drawable/mapps7_10_icon" />
 
 
             <LinearLayout

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -26,6 +28,18 @@ public class Section10DActivity extends Activity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section10_d);
         bi.setCallback(this);
+
+        bi.mp10q34.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.mp10q34a) {
+                    bi.fldGrpmp10d01.setVisibility(View.VISIBLE);
+                } else {
+                    bi.fldGrpmp10d01.setVisibility(View.GONE);
+                    bi.mp10q35.clearCheck();
+                }
+            }
+        });
     }
 
     public void BtnEnd() {
@@ -64,9 +78,10 @@ public class Section10DActivity extends Activity {
             return false;
         }
 
-
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q35, bi.mp10q35a, getString(R.string.mp10q35))) {
-            return false;
+        if (bi.mp10q34a.isChecked()) {
+            if (!validatorClass.EmptyRadioButton(this, bi.mp10q35, bi.mp10q35a, getString(R.string.mp10q35))) {
+                return false;
+            }
         }
 
         if (!validatorClass.EmptyRadioButton(this, bi.mp10q36, bi.mp10q36a, getString(R.string.mp10q36))) {

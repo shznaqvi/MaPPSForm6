@@ -86,47 +86,54 @@
 
             </RadioGroup>
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpmp10d01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/mp10q35"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:orientation="vertical">
 
-
-            <RadioGroup
-                android:id="@+id/mp10q35"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/mp10q35a"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/yes" />
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/mp10q35"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-                <RadioButton
-                    android:id="@+id/mp10q35b"
+                <RadioGroup
+                    android:id="@+id/mp10q35"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/no" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/mp10q3599"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    <RadioButton
+                        android:id="@+id/mp10q35a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/yes" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/mp10q35b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/no" />
+
+                    <RadioButton
+                        android:id="@+id/mp10q3599"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/dkn" />
+
+                </RadioGroup>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"

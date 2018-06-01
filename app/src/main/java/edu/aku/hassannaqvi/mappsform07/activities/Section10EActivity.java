@@ -475,7 +475,7 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
                 : "0");
 
 
-        AppMain.fc.setS10B(String.valueOf(form4));
+        AppMain.fc.setS10E(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
