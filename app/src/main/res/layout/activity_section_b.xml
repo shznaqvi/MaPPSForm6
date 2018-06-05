@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.aku.hassannaqvi.mapps_form8.edu.aku.hassannaqvi.mappsform8.activities.SectionBActivity">
+    tools:context="edu.aku.hassannaqvi.mappsform8.activities.SectionBActivity">
 
     <data>
 
@@ -207,6 +207,26 @@
                 android:hint="@string/mp08b004"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp08b004t"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+
+            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                android:id="@+id/mp08b004t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="false"
+                android:hint="@string/mp08b004t"
+                android:textColor="@android:color/black"
+                app:timeFormat="HH:mm"
+                />
 
 
             <TextView

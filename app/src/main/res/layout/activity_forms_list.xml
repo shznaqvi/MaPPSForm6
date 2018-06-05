@@ -9,7 +9,7 @@
     android:paddingEnd="@dimen/activity_horizontal_margin"
     android:paddingStart="@dimen/activity_horizontal_margin"
     android:paddingTop="4dp"
-    tools:context="edu.aku.hassannaqvi.mapps_form8.edu.aku.hassannaqvi.mappsform8.otherclasses.FormsList">
+    tools:context="edu.aku.hassannaqvi.mappsform8.otherclasses.FormsList">
 
     <TextView
         android:id="@+id/clusterNo"
