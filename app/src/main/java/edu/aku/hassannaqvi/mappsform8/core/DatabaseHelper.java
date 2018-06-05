@@ -909,7 +909,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_HOUSEHOLD,
                 FormsTable.COLUMN_LHWCODE,
                 FormsTable.COLUMN_ISTATUS,
-                FormsTable.COLUMN_LHWCODE,
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SB,
                 FormsTable.COLUMN_SC,
@@ -923,9 +922,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_APP_VERSION,
                 FormsTable.COLUMN_DEVICEID,
                 FormsTable.COLUMN_DEVICETAGID,
-                FormsTable.COLUMN_APP_VERSION,
                 FormsTable.COLUMN_SYNCED,
                 FormsTable.COLUMN_SYNCED_DATE,
+                FormsTable.COLUMN_FORMTYPE,
+                FormsTable.COLUMN_SNO,
         };
         String whereClause = null;
         String[] whereArgs = null;
@@ -933,7 +933,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable.COLUMN__ID + " ASC";
 
         Collection<FormsContract> allFC = new ArrayList<FormsContract>();
         try {
@@ -1003,7 +1003,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable.COLUMN__ID + " ASC";
 
         Collection<FormsContract> allFC = new ArrayList<FormsContract>();
         try {
