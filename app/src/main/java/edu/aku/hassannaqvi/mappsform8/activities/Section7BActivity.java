@@ -160,7 +160,7 @@ public class Section7BActivity extends AppCompatActivity {
         JSONObject sB = new JSONObject();
 
         if (AppMain.formType.equals("7")) {
-            AppMain.fc.setChildId(bi.mp07q16.getText().toString());
+            //AppMain.fc.setChildId(bi.mp07q16.getText().toString());
             //sB.put("mp07q16", bi.mp07q16.getText().toString());
             sB.put("mp07q17", bi.mp07q17.getText().toString());
             sB.put("mp17q18", bi.mp07q18a.isChecked() ? "1"
@@ -181,14 +181,14 @@ public class Section7BActivity extends AppCompatActivity {
         }
 
 
-        if (AppMain.formType.equals("7")) {
+        /*if (AppMain.formType.equals("7")) {
             AppMain.fc.setS7B(String.valueOf(sB));
         } else if (AppMain.formType.equals("9")) {
             AppMain.fc.setS9B(String.valueOf(sB));
         } else if (AppMain.formType.equals("10")) {
             AppMain.fc.setS10B(String.valueOf(sB));
         }
-
+*/
 
         //sRc.put()
 
@@ -205,13 +205,13 @@ public class Section7BActivity extends AppCompatActivity {
 
         int updcount = 0;
         // 2. UPDATE FORM ROWID
-        if (AppMain.formType.equals("7")) {
+        /*if (AppMain.formType.equals("7")) {
             updcount = db.updates7B();
         } else if (AppMain.formType.equals("9")) {
             updcount = db.updates9B();
         } else if (AppMain.formType.equals("10")) {
             updcount = db.updates10B();
-        }
+        }*/
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -259,7 +259,7 @@ public class Section7BActivity extends AppCompatActivity {
 
     public void BtnCheckID() {
         if (!bi.mp07q16.getText().toString().trim().isEmpty()) {
-            child = db.checkDuplicateInfant(InfoActivity.id + bi.mp07q16.getText().toString());
+            //child = db.checkDuplicateInfant(InfoActivity.id + bi.mp07q16.getText().toString());
 
             if (child.size() < 1) {
                 isChecked = true;

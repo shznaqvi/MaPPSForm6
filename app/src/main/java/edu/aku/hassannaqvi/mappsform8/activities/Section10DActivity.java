@@ -101,7 +101,7 @@ public class Section10DActivity extends Activity {
                 : bi.mp10q3799.isChecked() ? "99"
                 : "0");
 
-        AppMain.fc.setS10D(String.valueOf(form4));
+        //AppMain.fc.setS10D(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -110,7 +110,7 @@ public class Section10DActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updates10D();
+        /*int updcount = db.updates10D();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -118,8 +118,9 @@ public class Section10DActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
 
+        return true;
 
     }
 

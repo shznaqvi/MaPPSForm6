@@ -137,7 +137,7 @@ public class MainActivity extends Activity {
 
 */
         db = new DatabaseHelper(this);
-        Collection<FormsContract> todaysForms = db.getTodayForms(0);
+        Collection<FormsContract> todaysForms = db.getTodayForms();
         Collection<FormsContract> unsyncedForms6 = db.getAllForms();
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
@@ -481,7 +481,7 @@ public class MainActivity extends Activity {
             /*Toast.makeText(getApplicationContext(), "Syncing Eligibles", Toast.LENGTH_SHORT).show();
             new SyncEligibles(this).execute();*/
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms",
@@ -490,7 +490,7 @@ public class MainActivity extends Activity {
                     AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "7.php"),
                     db.getUnsyncedForms6(7)
             ).execute();
-
+*/
             Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
@@ -498,7 +498,7 @@ public class MainActivity extends Activity {
                     "updateSyncedForms",
                     FormsContract.class,
                     AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "8.php"),
-                    db.getUnsyncedForms6(8)
+                    db.getUnsyncedForms6()
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

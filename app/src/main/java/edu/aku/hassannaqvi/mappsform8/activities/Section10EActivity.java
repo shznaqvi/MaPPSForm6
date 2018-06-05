@@ -473,7 +473,7 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
                 : "0");
 
 
-        AppMain.fc.setS10B(String.valueOf(form4));
+        //AppMain.fc.setS10B(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -482,7 +482,7 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updates10E();
+        /*int updcount = db.updates10E();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -491,7 +491,9 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
+*/
 
+        return true;
 
     }
 

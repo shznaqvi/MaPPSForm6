@@ -230,7 +230,7 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
         form4.put("mp09q38", bi.mp09q38.getText().toString());
 
 
-        AppMain.fc.setS9D(String.valueOf(form4));
+        //AppMain.fc.setS9D(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -239,7 +239,7 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updates9D();
+        /*int updcount = db.updates9D();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -248,7 +248,8 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
+*/
+        return true;
 
     }
 

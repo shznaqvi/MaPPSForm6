@@ -447,7 +447,7 @@ public class Section7DActivity extends Activity {
         form4.put("mp07q37id", bi.mp07q37id.getSelectedItem().toString());
 
 
-        AppMain.fc.setS7D(String.valueOf(form4));
+        //AppMain.fc.setS7D(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -504,11 +504,13 @@ public class Section7DActivity extends Activity {
         form4.put(AppMain.ftype + "q33id", bi.mp07q37id.getSelectedItem().toString());
 
 
+/*
         if (AppMain.formType.equals("9")) {
             AppMain.fc.setS9C(String.valueOf(form4));
         } else if (AppMain.formType.equals("10")) {
             AppMain.fc.setS10C(String.valueOf(form4));
         }
+*/
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -519,13 +521,13 @@ public class Section7DActivity extends Activity {
 
         int updcount = 0;
 
-        if (AppMain.formType.equals("7")) {
+        /*if (AppMain.formType.equals("7")) {
             updcount = db.updates7D();
         } else if (AppMain.formType.equals("9")) {
             updcount = db.updates9C();
         } else if (AppMain.formType.equals("10")) {
             updcount = db.updates10C();
-        }
+        }*/
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

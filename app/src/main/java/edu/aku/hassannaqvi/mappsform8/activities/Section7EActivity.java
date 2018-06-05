@@ -147,7 +147,7 @@ public class Section7EActivity extends Activity {
         form4.put("mp07q47", bi.mp07q47.getText().toString());
         form4.put("mp07q48", bi.mp07q48.getText().toString());
 
-        AppMain.fc.setS7E(String.valueOf(form4));
+//        AppMain.fc.setS7E(String.valueOf(form4));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -156,7 +156,7 @@ public class Section7EActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updates7E();
+        /*int updcount = db.updates7E();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -164,7 +164,8 @@ public class Section7EActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return true;
 
 
     }
