@@ -207,7 +207,26 @@
                 android:hint="@string/mp08b004"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/mp08b004t"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
+
+            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                android:id="@+id/mp08b004t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="false"
+                android:hint="@string/mp08b004t"
+                android:textColor="@android:color/black"
+                app:timeFormat="hh:mm a"
+                />
 
             <TextView
                 android:layout_width="match_parent"

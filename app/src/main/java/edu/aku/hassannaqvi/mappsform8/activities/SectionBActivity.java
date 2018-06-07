@@ -46,7 +46,8 @@ public class SectionBActivity extends AppCompatActivity {
         bl.mp08b004.setMaxDate(dateToday);
         bl.mp08b002.setMinDate(minDate);
         bl.mp08b004.setMinDate(minDate);
-
+        bl.mp08b004t.setManager(getSupportFragmentManager());
+        //        bl.mp08b004t.setTimeFormat("hh:mm a");
         bl.mp08b001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -111,7 +112,9 @@ public class SectionBActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bl.mp08b004, getString(R.string.mp08b004))) {
             return false;
         }
-
+        if (!validatorClass.EmptyTextBox(this, bl.mp08b004t, getString(R.string.mp08b004t))) {
+            return false;
+        }
         if (!validatorClass.EmptyTextBox(this, bl.mp08b005, getString(R.string.mp08b005))) {
             return false;
         }
@@ -195,6 +198,7 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("mp08b00388x", bl.mp08b00388x.getText().toString());
 
         sB.put("mp08b004", bl.mp08b004.getText().toString());
+        sB.put("mp08b004t", bl.mp08b004t.getText().toString());
         sB.put("mp08b005", bl.mp08b005.getText().toString());
 
 
