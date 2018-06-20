@@ -64,7 +64,7 @@
             android:name="edu.aku.hassannaqvi.mapps_form6.activities.Form6Activity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
-
+        <activity android:name="edu.aku.hassannaqvi.mapps_form6.activities.Form6_Section2Activity"></activity>
     </application>
 
 </manifest>

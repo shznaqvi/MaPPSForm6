@@ -265,7 +265,7 @@ public class MainActivity extends Activity {
                             editor.putString("tagName", m_Text);
                             editor.commit();
 
-                            AppMain.formType = "4";
+                            AppMain.formType = "6";
 
                             Intent oF = new Intent(MainActivity.this, InfoActivity.class);
                             startActivity(oF);
