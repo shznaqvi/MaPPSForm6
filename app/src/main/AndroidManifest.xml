@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.aku.hassannaqvi.mappsform07">
 
-    <!--    <uses-sdk
+    <!--
+            <uses-sdk
             android:maxSdkVersion="22"
             android:minSdkVersion="22"
-            android:targetSdkVersion="22" />-->
+            android:targetSdkVersion="22" />
+    -->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
@@ -105,6 +107,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".activities.Section9EActivity"></activity>
     </application>
 
 </manifest>

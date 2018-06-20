@@ -38,6 +38,7 @@ public class FormsContract {
     private String s9B = "";
     private String s9C = "";
     private String s9D = "";
+    private String s9E = "";
 
     private String s10B = "";
     private String s10C = "";
@@ -379,6 +380,14 @@ public class FormsContract {
         this.tagID = tagID;
     }
 
+    public String getS9E() {
+        return s9E;
+    }
+
+    public void setS9E(String s9E) {
+        this.s9E = s9E;
+    }
+
     public FormsContract Sync(JSONObject jsonObject) throws JSONException {
         this.projectName = jsonObject.getString(FormsTable.COLUMN_PROJECTNAME);
         this.surveyType = jsonObject.getString(FormsTable.COLUMN_SURVEYTYPE);
@@ -406,6 +415,7 @@ public class FormsContract {
         this.s9B = jsonObject.getString(FormsTable.COLUMN_S9B);
         this.s9C = jsonObject.getString(FormsTable.COLUMN_S9C);
         this.s9D = jsonObject.getString(FormsTable.COLUMN_S9D);
+        this.s9E = jsonObject.getString(FormsTable.COLUMN_S9E);
         this.s10B = jsonObject.getString(FormsTable.COLUMN_S10B);
         this.s10C = jsonObject.getString(FormsTable.COLUMN_S10C);
         this.s10D = jsonObject.getString(FormsTable.COLUMN_S10D);
@@ -466,6 +476,7 @@ public class FormsContract {
             this.s9B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9B));
             this.s9C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9C));
             this.s9D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9D));
+            this.s9E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S9E));
         } else if (type == 10 || type == 0) {
             this.s10B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10B));
             this.s10C = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10C));
@@ -588,6 +599,13 @@ public class FormsContract {
         }
 
         try {
+            if (!this.s9E.equals("")) {
+                json.put(FormsTable.COLUMN_S9E, this.s9E == null ? JSONObject.NULL : new JSONObject(this.s9E));
+            }
+        } catch (Exception e) {
+        }
+
+        try {
             if (!this.s10B.equals("")) {
                 json.put(FormsTable.COLUMN_S10B, this.s10B == null ? JSONObject.NULL : new JSONObject(this.s10B));
             }
@@ -662,6 +680,7 @@ public class FormsContract {
         public static final String COLUMN_S9B = "s9b";
         public static final String COLUMN_S9C = "s9c";
         public static final String COLUMN_S9D = "s9d";
+        public static final String COLUMN_S9E = "s9e";
         public static final String COLUMN_S10B = "s10b";
         public static final String COLUMN_S10C = "s10c";
         public static final String COLUMN_S10D = "s10d";
