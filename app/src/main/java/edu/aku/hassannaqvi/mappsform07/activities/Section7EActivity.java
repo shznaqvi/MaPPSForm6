@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
@@ -19,12 +23,24 @@ public class Section7EActivity extends Activity {
 
     ActivitySection7EBinding bi;
 
+    Date dob, today;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section7_e);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_e);
         bi.setCallback(this);
+
+        dob = AppMain.getCalendarDate(AppMain.dob).getTime();
+        today = Calendar.getInstance().getTime();
+
+        if (getDifferenceInHours(dob, today) > 24) {
+            bi.fldGrpmp07q49.setVisibility(View.VISIBLE);
+        } else {
+            bi.fldGrpmp07q49.setVisibility(View.GONE);
+            bi.mp07q49.setText(null);
+        }
 
     }
 
@@ -102,7 +118,16 @@ public class Section7EActivity extends Activity {
             return false;
         }
 
-        return validatorClass.EmptyTextBox(this, bi.mp07q48, getString(R.string.mp07q48));
+        if (!validatorClass.EmptyTextBox(this, bi.mp07q48, getString(R.string.mp07q48))) {
+            return false;
+        }
+
+        if (getDifferenceInHours(dob, today) > 24) {
+
+            return validatorClass.EmptyTextBox(this, bi.mp07q49, getString(R.string.mp07q49));
+        }
+
+        return true;
     }
 
     private void SaveDraft() throws JSONException {
@@ -146,6 +171,7 @@ public class Section7EActivity extends Activity {
         form4.put("mp07q46x", bi.mp07q46x.getText().toString());
         form4.put("mp07q47", bi.mp07q47.getText().toString());
         form4.put("mp07q48", bi.mp07q48.getText().toString());
+        form4.put("mp07q49", bi.mp07q49.getText().toString());
 
         AppMain.fc.setS7E(String.valueOf(form4));
 
@@ -172,6 +198,20 @@ public class Section7EActivity extends Activity {
     @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
+
+    public long getDifferenceInHours(Date startDate, Date endDate) {
+        long difference = endDate.getTime() - startDate.getTime();
+
+        long secondsInMilli = 1000;
+        long minutesInMilli = secondsInMilli * 60;
+        long hoursInMilli = minutesInMilli * 60;
+
+        long differenInHours = difference / hoursInMilli;
+
+        return differenInHours;
+
     }
 
 }
