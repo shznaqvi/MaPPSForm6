@@ -109,7 +109,7 @@ public class Section7EActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q46, bi.mp07q44a, bi.mp07q46x, getString(R.string.mp07q46))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.mp07q46, bi.mp07q46a, bi.mp07q46x, getString(R.string.mp07q46))) {
             return false;
         }
 
