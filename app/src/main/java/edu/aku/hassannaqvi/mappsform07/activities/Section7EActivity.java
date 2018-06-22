@@ -122,9 +122,14 @@ public class Section7EActivity extends Activity {
             return false;
         }
 
+
         if (getDifferenceInHours(dob, today) > 24) {
 
-            return validatorClass.EmptyTextBox(this, bi.mp07q49, getString(R.string.mp07q49));
+            if (!validatorClass.EmptyTextBox(this, bi.mp07q49, getString(R.string.mp07q49))) {
+                return false;
+            }
+
+            return validatorClass.RangeTextBox(this, bi.mp07q49, 1.2, 7.0, getString(R.string.mp07q49), " kg");
         }
 
         return true;
