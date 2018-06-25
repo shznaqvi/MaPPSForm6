@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MaPPS - : Maternal And Infant Postpartum Antrhopometric Assessment</string>
-    <string name="app_name8">MaPPS - Form 8: Birth History and Maternal Postpartum Antrhopometric Assessment</string>
+    <string name="app_name">MaPPS - Form 8: Birth History and Maternal Postpartum Antrhopometric Assessment</string>
+    <string name="app_name8"></string>
     <string name="app_name7">MaPPS - Form 7: Infant Anthropometric and Abnormality Assessment at Birth (24 hours postpartum)</string>
     <string name="app_name9">MaPPS - Form 9: Neonatal Anthropometry and Morbidity Assessment (28 days postpartum)</string>
     <string name="app_name10">MaPPS - Form 10: Infant Anthropometric and Feeding Assessment (3 months postpartum)</string>
