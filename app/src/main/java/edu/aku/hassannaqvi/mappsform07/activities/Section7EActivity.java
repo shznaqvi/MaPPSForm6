@@ -125,11 +125,13 @@ public class Section7EActivity extends Activity {
 
         if (getDifferenceInHours(dob, today) > 24) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q49, getString(R.string.mp07q49))) {
-                return false;
-            }
+            if (!bi.mp07q4977.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.mp07q49, getString(R.string.mp07q49))) {
+                    return false;
+                }
 
-            return validatorClass.RangeTextBox(this, bi.mp07q49, 1.2, 7.0, getString(R.string.mp07q49), " kg");
+                return validatorClass.RangeTextBox(this, bi.mp07q49, 1.2, 7.0, getString(R.string.mp07q49), " kg");
+            }
         }
 
         return true;
@@ -176,7 +178,8 @@ public class Section7EActivity extends Activity {
         form4.put("mp07q46x", bi.mp07q46x.getText().toString());
         form4.put("mp07q47", bi.mp07q47.getText().toString());
         form4.put("mp07q48", bi.mp07q48.getText().toString());
-        form4.put("mp07q49", bi.mp07q49.getText().toString());
+        form4.put("mp07q49", bi.mp07q4977.isChecked() ? "77" : bi.mp07q49.getText().toString());
+
 
         AppMain.fc.setS7E(String.valueOf(form4));
 

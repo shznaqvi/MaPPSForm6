@@ -442,8 +442,19 @@
                     android:layout_marginTop="1dp"
                     android:hint="@string/mp07q49"
                     android:inputType="numberDecimal"
-                    android:maxLines="4"
-                    android:textColor="@android:color/black" />
+                    android:maxLines="3"
+                    android:text='@{mp07q4977.checked ? "" : mp07q49.getText.toString}'
+                    android:textColor="@android:color/black"
+                    android:visibility='@{mp07q4977.checked ? View.GONE : View.VISIBLE}' />
+
+                <CheckBox
+                    android:id="@+id/mp07q4977"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/na"
+
+                    />
 
 
             </LinearLayout>
