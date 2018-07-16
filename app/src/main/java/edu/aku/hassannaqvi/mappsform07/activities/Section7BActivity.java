@@ -192,6 +192,9 @@ public class Section7BActivity extends AppCompatActivity {
             //sB.put("mp07q16", bi.mp07q16.getText().toString());
             sB.put("mp07q17", bi.mp07q17.getText().toString());
             sB.put("mp07q1701", bi.mp07q1701.getText().toString());
+
+            AppMain.dob = (bi.mp07q17.getText().toString() + " " + bi.mp07q1701.getText().toString());
+
             sB.put("mp17q18", bi.mp07q18a.isChecked() ? "1"
                     : bi.mp07q18b.isChecked() ? "2"
                     : "0");

@@ -78,7 +78,7 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                Intent sece = new Intent(this, EndingActivity.class);
+                Intent sece = new Intent(this, Section9EActivity.class);
                 sece.putExtra("complete", true);
                 startActivity(sece);
 

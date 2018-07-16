@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -74,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_S9B + " TEXT," +
             FormsTable.COLUMN_S9C + " TEXT," +
             FormsTable.COLUMN_S9D + " TEXT," +
+            FormsTable.COLUMN_S9E + " TEXT," +
             FormsTable.COLUMN_S10B + " TEXT," +
             FormsTable.COLUMN_S10C + " TEXT," +
             FormsTable.COLUMN_S10D + " TEXT," +
@@ -90,6 +91,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+
+    private static final String SQL_ALTER_FORMS = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_S9E + " TEXT;";
     private static final String SQL_CREATE_PARTICIPANTS = "CREATE TABLE "
             + ParticipantsTable.TABLE_NAME + "("
             + ParticipantsTable.COLUMN_PROJECTNAME + " TEXT,"
@@ -209,13 +214,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_USERS);
+       /* db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_ENROLLED);
         db.execSQL(SQL_DELETE_LHWS);
         db.execSQL(SQL_DELETE_CLUSTERS);
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_PARTICIPANTS);
-        db.execSQL(SQL_DELETE_FOLLOWUPS);
+        db.execSQL(SQL_DELETE_FOLLOWUPS);*/
+
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_ALTER_FORMS);
+        }
     }
 
     public void syncUsers(JSONArray userlist) {
@@ -440,6 +450,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_S9B, fc.getS9B());
         values.put(FormsTable.COLUMN_S9C, fc.getS9C());
         values.put(FormsTable.COLUMN_S9D, fc.getS9D());
+        values.put(FormsTable.COLUMN_S9E, fc.getS9E());
         values.put(FormsTable.COLUMN_S10B, fc.getS10B());
         values.put(FormsTable.COLUMN_S10C, fc.getS10C());
         values.put(FormsTable.COLUMN_S10D, fc.getS10D());
@@ -826,6 +837,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 // New value for one column
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_S9D, AppMain.fc.getS9D());
+
+// Which row to update, based on the ID
+        String selection = " _ID = " + AppMain.fc.getID();
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                null);
+        return count;
+    }
+
+    public int updates9E() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_S9E, AppMain.fc.getS9E());
 
 // Which row to update, based on the ID
         String selection = " _ID = " + AppMain.fc.getID();
@@ -1251,6 +1280,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_S9B,
                 FormsTable.COLUMN_S9C,
                 FormsTable.COLUMN_S9D,
+                FormsTable.COLUMN_S9E,
                 FormsTable.COLUMN_S10B,
                 FormsTable.COLUMN_S10C,
                 FormsTable.COLUMN_S10D,
@@ -1330,6 +1360,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_S9B,
                 FormsTable.COLUMN_S9C,
                 FormsTable.COLUMN_S9D,
+                FormsTable.COLUMN_S9E,
                 FormsTable.COLUMN_S10B,
                 FormsTable.COLUMN_S10C,
                 FormsTable.COLUMN_S10D,

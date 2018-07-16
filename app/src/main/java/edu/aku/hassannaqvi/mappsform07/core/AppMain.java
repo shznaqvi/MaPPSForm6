@@ -127,6 +127,7 @@ public class AppMain extends Application {
     public static JSONObject sA;
     public static String[] loginMem;
     public static String ftype = "";
+    public static String dob = "";
 
 
     public static long installedOn;
@@ -143,7 +144,7 @@ public class AppMain extends Application {
     Location location;
 
     public static Calendar getCalendarDate(String value) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         Calendar calendar = Calendar.getInstance();
         try {
             Date date = sdf.parse(value);
