@@ -176,7 +176,12 @@ public class Section9EActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updates9E();
+        int updcount = 0;
+        if (AppMain.formType.equals("9")) {
+            updcount = db.updates9E();
+        } else if (AppMain.formType.equals("10")) {
+            updcount = db.updates10E();
+        }
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
