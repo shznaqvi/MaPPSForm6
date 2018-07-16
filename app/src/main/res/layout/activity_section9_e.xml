@@ -547,7 +547,7 @@
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:padding="2dp"
                     android:text="@string/nextSection"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/whiteOverlay"
                     android:textSize="32sp"
                     android:visibility="visible" />
 

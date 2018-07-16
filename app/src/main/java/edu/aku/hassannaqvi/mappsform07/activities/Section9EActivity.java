@@ -91,7 +91,6 @@ public class Section9EActivity extends Activity {
                 sece.putExtra("complete", true);
                 startActivity(sece);
 
-
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -104,68 +103,71 @@ public class Section9EActivity extends Activity {
 
         JSONObject form4 = new JSONObject();
 
-        form4.put("mp09q39", bi.mp09q39a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q39", bi.mp09q39a.isChecked() ? "1"
                 : bi.mp09q39b.isChecked() ? "2"
                 : bi.mp09q39c.isChecked() ? "3"
                 : bi.mp09q39d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q40", bi.mp09q40a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q40", bi.mp09q40a.isChecked() ? "1"
                 : bi.mp09q40b.isChecked() ? "2"
                 : bi.mp09q40c.isChecked() ? "3"
                 : bi.mp09q40d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q41", bi.mp09q41a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q41", bi.mp09q41a.isChecked() ? "1"
                 : bi.mp09q41b.isChecked() ? "2"
                 : bi.mp09q41c.isChecked() ? "3"
                 : bi.mp09q41d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q42", bi.mp09q42a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q42", bi.mp09q42a.isChecked() ? "1"
                 : bi.mp09q42b.isChecked() ? "2"
                 : bi.mp09q42c.isChecked() ? "3"
                 : bi.mp09q42d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q43", bi.mp09q43a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q43", bi.mp09q43a.isChecked() ? "1"
                 : bi.mp09q43b.isChecked() ? "2"
                 : bi.mp09q43c.isChecked() ? "3"
                 : bi.mp09q43d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q44", bi.mp09q44a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q44", bi.mp09q44a.isChecked() ? "1"
                 : bi.mp09q44b.isChecked() ? "2"
                 : bi.mp09q44c.isChecked() ? "3"
                 : bi.mp09q44d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q45", bi.mp09q45a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q45", bi.mp09q45a.isChecked() ? "1"
                 : bi.mp09q45b.isChecked() ? "2"
                 : bi.mp09q45c.isChecked() ? "3"
                 : bi.mp09q45d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q46", bi.mp09q46a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q46", bi.mp09q46a.isChecked() ? "1"
                 : bi.mp09q46b.isChecked() ? "2"
                 : bi.mp09q46c.isChecked() ? "3"
                 : bi.mp09q46d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q47", bi.mp09q47a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q47", bi.mp09q47a.isChecked() ? "1"
                 : bi.mp09q47b.isChecked() ? "2"
                 : bi.mp09q47c.isChecked() ? "3"
                 : bi.mp09q47d.isChecked() ? "4"
                 : "0");
 
-        form4.put("mp09q48", bi.mp09q48a.isChecked() ? "1"
+        form4.put(AppMain.ftype + "q48", bi.mp09q48a.isChecked() ? "1"
                 : bi.mp09q48b.isChecked() ? "2"
                 : bi.mp09q48c.isChecked() ? "3"
                 : bi.mp09q48d.isChecked() ? "4"
                 : "0");
 
-
-        AppMain.fc.setS9E(String.valueOf(form4));
+        if (AppMain.formType.equals("9")) {
+            AppMain.fc.setS9E(String.valueOf(form4));
+        } else if (AppMain.formType.equals("10")) {
+            AppMain.fc.setS10E(String.valueOf(form4));
+        }
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

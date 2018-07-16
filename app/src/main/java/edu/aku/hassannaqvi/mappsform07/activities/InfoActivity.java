@@ -456,6 +456,8 @@ public class InfoActivity extends Activity {
                 AppMain.ftype = "mp10";
             }
 
+            AppMain.fround = Integer.valueOf(childMap.get(mp08a004.getSelectedItem().toString()).getFupround());
+
             AppMain.fc.setFormType(AppMain.formType);
 
         } else {
