@@ -28,7 +28,6 @@ public class SectionBActivity extends AppCompatActivity {
     String minDate = AppMain.convertDateFormat("01-07-2017");
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +46,12 @@ public class SectionBActivity extends AppCompatActivity {
         bl.mp08b002.setMinDate(minDate);
         bl.mp08b004.setMinDate(minDate);
         bl.mp08b004t.setManager(getSupportFragmentManager());
+        bl.mp08b00601.setManager(getSupportFragmentManager());
+        bl.mp08b00601.setMaxDate(dateToday);
+        bl.mp08b00601.setMinDate(minDate);
+        bl.mp08b00602.setManager(getSupportFragmentManager());
+        bl.mp08b00602.setMaxDate(dateToday);
+        bl.mp08b00602.setMinDate(minDate);
         //        bl.mp08b004t.setTimeFormat("hh:mm a");
         bl.mp08b001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -64,11 +69,22 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bl.mp08b003a.isChecked() || bl.mp08b003b.isChecked()) {
-
                     bl.fldGrpmp08b006.setVisibility(View.GONE);
                 } else {
                     bl.fldGrpmp08b006.setVisibility(View.VISIBLE);
                     bl.mp08b006.clearCheck();
+
+                    /*if (bl.mp08b003c.isChecked() || bl.mp08b003e.isChecked()) {
+                        bl.mp08b006c.setEnabled(false);
+                        bl.mp08b006d.setEnabled(false);
+                        bl.mp08b006e.setEnabled(false);
+                    } else if (bl.mp08b003d.isChecked()) {
+                        bl.mp08b006a.setEnabled(false);
+                        bl.mp08b006b.setEnabled(false);
+                        bl.mp08b006c.setEnabled(true);
+                        bl.mp08b006d.setEnabled(true);
+                        bl.mp08b006e.setEnabled(true);
+                    }*/
                 }
             }
         });
@@ -128,6 +144,19 @@ public class SectionBActivity extends AppCompatActivity {
             if (!validatorClass.EmptyRadioButton(this, bl.mp08b006, bl.mp08b006a, getString(R.string.mp08b006))) {
                 return false;
             }
+
+            if (!(bl.mp08b006a.isChecked() || bl.mp08b006c.isChecked())) {
+                if (!validatorClass.EmptyTextBox(this, bl.mp08b00601, getString(R.string.mp08b002))) {
+                    return false;
+                }
+
+                if (bl.mp08b006e.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, bl.mp08b00602, getString(R.string.mp08b002))) {
+                        return false;
+                    }
+                }
+            }
+
         }
 
         if (!validatorClass.EmptyRadioButton(this, bl.mp08b007, bl.mp08b007a, getString(R.string.mp08b007))) {
@@ -142,9 +171,6 @@ public class SectionBActivity extends AppCompatActivity {
 
             return validatorClass.RangeTextBox(this, bl.mp08b008, 1, 7, getString(R.string.mp08b008), " days");
         }
-
-
-
 
 
         return true;

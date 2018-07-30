@@ -207,6 +207,7 @@
                 android:hint="@string/mp08b004"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -225,8 +226,7 @@
                 android:focusable="false"
                 android:hint="@string/mp08b004t"
                 android:textColor="@android:color/black"
-                app:timeFormat="hh:mm a"
-                />
+                app:timeFormat="hh:mm a" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -272,6 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
+                        android:enabled="@{mp08b003d.checked ? false : true}"
                         android:text="@string/mp08b006a" />
 
                     <RadioButton
@@ -280,6 +281,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
+                        android:enabled="@{mp08b003d.checked ? false : true}"
                         android:text="@string/mp08b006b" />
 
                     <RadioButton
@@ -288,6 +290,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
+                        android:enabled="@{mp08b003d.checked ? true : mp08b00388.checked ? true : false}"
                         android:text="@string/mp08b006c" />
 
                     <RadioButton
@@ -296,6 +299,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
+                        android:enabled="@{mp08b003d.checked ? true : mp08b00388.checked ? true : false}"
                         android:text="@string/mp08b006d" />
 
                     <RadioButton
@@ -304,10 +308,52 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
+                        android:enabled="@{mp08b003d.checked ? true : mp08b00388.checked ? true : false}"
                         android:text="@string/mp08b006e" />
 
                 </RadioGroup>
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{mp08b006a.checked || mp08b006c.checked ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/mp08b002"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/mp08b00601"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:focusable="false"
+                        android:hint="@string/mp08b002"
+                        android:text='@{mp08b006a.checked || mp08b006c.checked ? "" : mp08b00601.getText.toString}'
+                        android:textColor="@android:color/black"
+                        app:dateFormat="dd-MM-yyyy" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/mp08b00602"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:enabled="@{mp08b006e.checked ? true : false}"
+                        android:focusable="false"
+                        android:hint="@string/mp08b002"
+                        android:text='@{mp08b006e.checked ? mp08b00602.getText.toString : ""}'
+                        android:textColor="@android:color/black"
+                        android:visibility="@{mp08b006e.checked ? View.VISIBLE : View.GONE}"
+                        app:dateFormat="dd-MM-yyyy" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
