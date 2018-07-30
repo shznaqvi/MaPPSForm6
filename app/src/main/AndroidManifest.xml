@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.aku.hassannaqvi.mappsform15_16">
 
-    <!--    <uses-sdk
+    <!--
+            <uses-sdk
             android:maxSdkVersion="22"
             android:minSdkVersion="22"
-            android:targetSdkVersion="22" />-->
+            android:targetSdkVersion="22" />
+    -->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
@@ -23,14 +25,14 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="edu.aku.hassannaqvi.mappsform15_16.core.AppMain"
+        android:name=".core.AppMain"
         android:allowBackup="true"
         android:icon="@drawable/mapps8_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.activities.SplashscreenActivity"
+            android:name=".activities.SplashscreenActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
@@ -40,31 +42,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.activities.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.activities.EndingActivity"
+            android:name=".activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.otherclasses.FormsList"
+            android:name=".otherclasses.FormsList"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.core.AndroidDatabaseManager"
+            android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait" />
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.activities.InfoActivity"
+            android:name=".activities.InfoActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.mappsform15_16.activities.SectionBActivity"
+            android:name=".activities.SectionBActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.SectionC_DActivity"></activity>
     </application>
 
 </manifest>

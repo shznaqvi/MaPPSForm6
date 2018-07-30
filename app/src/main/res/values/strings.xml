@@ -364,4 +364,86 @@
     <string name="mp10q46"> ڪالهه ڏينهن يارات ۾ (نالو) کي تيار ٿيل طاقت واري خوارڪ جو ساشي ڏنو ويو آهي جيڪا عام طرح هر دڪان تي موجو هجي ؟ </string>
 
 
+    <!--Form 15-->
+
+    <string name="mp15b01Heading">شموليت ڪندڙ جي پنهنجي صحت ۽ اضافي خوراڪ جي باري ۾ خيالات</string>
+    <string name="mp15b01">توهان پنهنجي صحت هن تحقيق۾ شرڪت ڪرڻ کانپوءِ ڪيئن محسوس ڪري رهيا آهيو؟</string>
+    <string name="mp15b01a">تمام بهترين</string>
+    <string name="mp15b01b">وچولو</string>
+    <string name="mp15b01c">خراب </string>
+
+    <string name="mp15b02">توهان پنهنجي صحت لاءِمليل طاقت يا اضافي اجزا واري خوراڪ ڪيتري في سيڪڙو استعمال ڪئي ؟</string>
+    <string name="mp15b02a">0%</string>
+    <string name="mp15b02b">%25</string>
+    <string name="mp15b02c">50%</string>
+    <string name="mp15b02d">75%</string>
+    <string name="mp15b02e">100%</string>
+    <string name="mp15b02f">In control group</string>
+
+    <string name="mp15b03">ڇا شرڪت ڪندڙ تحقيق دوران حمل/پيٽ سان ٿيوآهي؟</string>
+    <string name="mp15b03a"> ها</string>
+    <string name="mp15b03b">نه </string>
+
+    <string name="mp15b04">توهان کي دوران حمل /پيٽ سان صحت لاءِمليل طاقت واري خوراڪ يا اضافي اجزا واري خوراڪ ڪيترو في سيڪڙو استعمال ڪئي ؟</string>
+    <string name="mp15b04a">0%</string>
+    <string name="mp15b04b">25%</string>
+    <string name="mp15b04c">50%</string>
+    <string name="mp15b04d">75%</string>
+    <string name="mp15b04e">100%</string>
+
+
+    <string name="mp15b05">توهان حمل کانپوءِ صحت لاءِمليل طاقت واري خوراڪ يا اضافي اجزا واري خوراڪ ڪيترو في سيڪڙو استعمال ڪئي ؟</string>
+    <string name="mp15b05a">0%</string>
+    <string name="mp15b05b">25%</string>
+    <string name="mp15b05c">50%</string>
+    <string name="mp15b05d">75%</string>
+    <string name="mp15b05e">100%</string>
+
+    <string name="mp15b06">توهان روزانو صحت لاءِمليل طاقت واري يااضافي اجزا واري خوراڪ استعمال ڇو نه ڪئي ؟</string>
+    <string name="mp15b06a">وسري وئي </string>
+    <string name="mp15b06b">طبيعت جو خراب محسوس ٿيڻ </string>
+    <string name="mp15b06c"> انهن مان مون کي معضر اثرات مليا </string>
+    <string name="mp15b06d"> مون   کائڻ پسند نه ڪيو</string>
+    <string name="mp15b06e"> مون کي انهن جي ضرورت نه هئي</string>
+    <string name="mp15b06f"> انهن جو ذائقو سٺو نه هو</string>
+    <string name="mp15b06g"> اهي ڏسڻ ۾ سٺيون نه هيون</string>
+    <string name="mp15b06h">مون گورين کان پاسو پي ڪيو</string>
+    <string name="mp15b06i">منهنجي خاندان مونکي   جھليو</string>
+    <string name="mp15b06k"> ٻيو ڪجهه</string>
+    <string name="mp15b06j">ڪابه خبر ناهي</string>
+
+    <string name="mp15b07">ڇا توهان جي ڪڏهن به ڪنهن به طاقت واري يا اضافي اجزا واري خوراڪ استعمال ڪرڻ لاءِ همٿ افزائي ڪئي ؟</string>
+    <string name="mp15b07a"> ها</string>
+    <string name="mp15b07b">نه </string>
+
+    <string name="mp15b08"> ڪنهن اضافي خوراڪ کائڻ لاءِ همٿ افزائي ڪئي ؟</string>
+    <string name="mp15b08a"> مڙس</string>
+    <string name="mp15b08b">سس </string>
+    <string name="mp15b08c">ماءَ</string>
+    <string name="mp15b08d"> ٻيا رشتيدار</string>
+    <string name="mp15b08e"> دوست</string>
+    <string name="mp15b08f">ليڊي هيلٿ ورڪر</string>
+    <string name="mp15b08g">نرس، مڊوائيف</string>
+    <string name="mp15b08h"> ڊاڪٽر</string>
+    <string name="mp15b08i"> استاد</string>
+    <string name="mp15b08j">ٻيو ڪو</string>
+
+    <string name="mp15b09"> ڇا توهانکي ڪڏهن به ڪنهن به طاقت واري يا اضافي اجزا واري خوراڪ استعمال ڪرڻ کان روڪيو؟</string>
+    <string name="mp15b09a"> مڙس</string>
+    <string name="mp15b09b">سس </string>
+    <string name="mp15b09c">ماءَ</string>
+    <string name="mp15b09d"> ٻيا رشتيدار</string>
+    <string name="mp15b09e"> دوست</string>
+    <string name="mp15b09f">ليڊي هيلٿ ورڪر</string>
+    <string name="mp15b09g">نرس، مڊوائيف</string>
+    <string name="mp15b09h"> ڊاڪٽر</string>
+    <string name="mp15b09i"> استاد</string>
+    <string name="mp15b09j">ٻيو ڪو</string>
+
+    <string name="mp15b10">ڇا توهان جي اڃا به خوائش آهي ته روزانو طاقت واري يا اضافي اجزا واري خوراڪ استعمال ڪريان ؟</string>
+    <string name="mp15b10a"> ها</string>
+    <string name="mp15b10b">نه </string>
+    <string name="mp15b10c"> هرروز اضافي طور تي ورتل</string>
+    <string name="mp15b10d"> خبر ناهي</string>
+
 </resources>
