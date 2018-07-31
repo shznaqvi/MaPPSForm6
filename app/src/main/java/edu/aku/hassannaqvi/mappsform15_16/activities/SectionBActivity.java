@@ -1,8 +1,9 @@
 package edu.aku.hassannaqvi.mappsform15_16.activities;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -10,245 +11,142 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import edu.aku.hassannaqvi.mappsform15_16.R;
 import edu.aku.hassannaqvi.mappsform15_16.core.AppMain;
 import edu.aku.hassannaqvi.mappsform15_16.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform15_16.databinding.ActivitySectionBBinding;
+import edu.aku.hassannaqvi.mappsform15_16.validation.ClearClass;
 import edu.aku.hassannaqvi.mappsform15_16.validation.validatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
 
-    ActivitySectionBBinding bl;
 
-    String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
-    String minDate = AppMain.convertDateFormat("01-07-2017");
-
+    ActivitySectionBBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_b);
-        bl = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
+        binding.setCallback(this);
 
-        bl.setCallback(this);
         setupViews();
-    }
-
-    public void setupViews() {
-        bl.mp08b002.setManager(getSupportFragmentManager());
-        bl.mp08b004.setManager(getSupportFragmentManager());
-        bl.mp08b002.setMaxDate(dateToday);
-        bl.mp08b004.setMaxDate(dateToday);
-        bl.mp08b002.setMinDate(minDate);
-        bl.mp08b004.setMinDate(minDate);
-        bl.mp08b004t.setManager(getSupportFragmentManager());
-        bl.mp08b00601.setManager(getSupportFragmentManager());
-        bl.mp08b00601.setMaxDate(dateToday);
-        bl.mp08b00601.setMinDate(minDate);
-        bl.mp08b00602.setManager(getSupportFragmentManager());
-        bl.mp08b00602.setMaxDate(dateToday);
-        bl.mp08b00602.setMinDate(minDate);
-        //        bl.mp08b004t.setTimeFormat("hh:mm a");
-        bl.mp08b001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bl.mp08b001c.isChecked()) {
-                    bl.fldGrpmp08b002.setVisibility(View.VISIBLE);
-                } else {
-                    bl.fldGrpmp08b002.setVisibility(View.GONE);
-                    bl.mp08b002.setText(null);
-                }
-            }
-        });
-
-        bl.mp08b003.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bl.mp08b003a.isChecked() || bl.mp08b003b.isChecked()) {
-                    bl.fldGrpmp08b006.setVisibility(View.GONE);
-                } else {
-                    bl.fldGrpmp08b006.setVisibility(View.VISIBLE);
-                    bl.mp08b006.clearCheck();
-
-                    /*if (bl.mp08b003c.isChecked() || bl.mp08b003e.isChecked()) {
-                        bl.mp08b006c.setEnabled(false);
-                        bl.mp08b006d.setEnabled(false);
-                        bl.mp08b006e.setEnabled(false);
-                    } else if (bl.mp08b003d.isChecked()) {
-                        bl.mp08b006a.setEnabled(false);
-                        bl.mp08b006b.setEnabled(false);
-                        bl.mp08b006c.setEnabled(true);
-                        bl.mp08b006d.setEnabled(true);
-                        bl.mp08b006e.setEnabled(true);
-                    }*/
-                }
-            }
-        });
-
-        bl.mp08b007.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bl.mp08b007b.isChecked()) {
-                    bl.fldGrpmp08b008.setVisibility(View.GONE);
-                    bl.mp08b008.setText(null);
-                } else {
-                    bl.fldGrpmp08b008.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
 
     }
 
+    private void setupViews() {
 
-    public Boolean formValidation() {
+        binding.mp15b02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b001, bl.mp08b001a, getString(R.string.mp08b001))) {
-            return false;
-        }
+                if (i == R.id.mp15b02f) {
 
-        if (bl.mp08b001c.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bl.mp08b002, getString(R.string.mp08b002))) {
-                return false;
-            }
-        }
+                    binding.fldgrpmp15b03.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b03, false);
+                    binding.fldgrpmp15b04.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b04, false);
+                    binding.fldgrpmp15b05.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b05, false);
+                    binding.fldgrpmp15b06.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b06, false);
+                    binding.fldgrpmp15b07.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b07, false);
+                    binding.fldgrpmp15b08.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b08, false);
+                    binding.fldgrpmp15b09.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b09, false);
+                    binding.fldgrpmp15b10.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b10, false);
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b003a, getString(R.string.mp08b003))) {
-            return false;
-        }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b00388, bl.mp08b00388x, getString(R.string.mp08b003) + " - " + getString(R.string.other))) {
-            return false;
-        }
+                } else {
 
-        if (!validatorClass.EmptyTextBox(this, bl.mp08b004, getString(R.string.mp08b004))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bl.mp08b004t, getString(R.string.mp08b004t))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bl.mp08b005, getString(R.string.mp08b005))) {
-            return false;
-        }
-
-        if (!validatorClass.RangeTextBox(this, bl.mp08b005, 3, 42, getString(R.string.mp08b005), " weeks")) {
-            return false;
-        }
-
-        if (!bl.mp08b003a.isChecked() && !bl.mp08b003b.isChecked()) {
-
-            if (!validatorClass.EmptyRadioButton(this, bl.mp08b006, bl.mp08b006a, getString(R.string.mp08b006))) {
-                return false;
-            }
-
-            if (!(bl.mp08b006a.isChecked() || bl.mp08b006c.isChecked())) {
-                if (!validatorClass.EmptyTextBox(this, bl.mp08b00601, getString(R.string.mp08b002))) {
-                    return false;
-                }
-
-                if (bl.mp08b006e.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bl.mp08b00602, getString(R.string.mp08b002))) {
-                        return false;
-                    }
+                    binding.fldgrpmp15b03.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b03, true);
+                    binding.fldgrpmp15b04.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b04, true);
+                    binding.fldgrpmp15b05.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b05, true);
+                    binding.fldgrpmp15b06.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b06, true);
+                    binding.fldgrpmp15b07.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b07, true);
+                    binding.fldgrpmp15b08.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b08, true);
+                    binding.fldgrpmp15b09.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b09, true);
+                    binding.fldgrpmp15b10.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b10, true);
                 }
             }
+        });
 
-        }
-
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b007, bl.mp08b007a, getString(R.string.mp08b007))) {
-            return false;
-        }
-
-
-        if (bl.mp08b007a.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bl.mp08b008, getString(R.string.mp08b008))) {
-                return false;
-            }
-
-            return validatorClass.RangeTextBox(this, bl.mp08b008, 1, 7, getString(R.string.mp08b008), " days");
-        }
-
-
-        return true;
 
     }
 
     public void BtnContinue() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
         if (formValidation()) {
             try {
-                SaveDraft();
+                saveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
+            if(UpdateDB()){
+
+                Toast.makeText(this, "Starting New Section", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(this,SectionC_DActivity.class));
                 finish();
-
-                /*if (AppMain.outcome == 1) {
-
-                    startActivity(new Intent(this, SectionEActivity.class).putExtra("complete", false));
-                } else {
-                    startActivity(new Intent(this, SectionCActivity.class).putExtra("complete", false));
-                }*/
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
+//        if (formValidation()) {
+//            try {S
+////                SaveDraft();
+////            } catch (JSONException e) {
+////                e.printtackTrace();
+//            }
+//            if (UpdateDB()) {
+//                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+//
+//                finish();
+//
+//                /*if (AppMain.outcome == 1) {
+//
+//                    startActivity(new Intent(this, SectionEActivity.class).putExtra("complete", false));
+//                } else {
+//                    startActivity(new Intent(this, SectionCActivity.class).putExtra("complete", false));
+//                }*/
+//            } else {
+//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+//            }
+//        }
 
     }
 
-    private void SaveDraft() throws JSONException {
+    public void saveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sB = new JSONObject();
+        JSONObject sA = new JSONObject();
+        sA.put("mp15b01", binding.mp15b01a.isChecked() ? "1" : binding.mp15b01b.isChecked() ? "2" : binding.mp15b01c.isChecked() ? "3" : "0");
+        sA.put("mp15b02", binding.mp15b02a.isChecked() ? "1" : binding.mp15b02b.isChecked() ? "2" : binding.mp15b02c.isChecked() ? "3" : binding.mp15b02d.isChecked() ? "4" : binding.mp15b02e.isChecked() ? "5" : binding.mp15b02f.isChecked() ? "6" : "0");
+        sA.put("mp15b03", binding.mp15b03a.isChecked() ? "1" : binding.mp15b03b.isChecked() ? "2" : "0");
+        sA.put("mp15b04", binding.mp15b04a.isChecked() ? "1" : binding.mp15b04b.isChecked() ? "2" : binding.mp15b04c.isChecked() ? "3" : binding.mp15b04d.isChecked() ? "4" : "0");
+        sA.put("mp15b05", binding.mp15b05a.isChecked() ? "1" : binding.mp15b05b.isChecked() ? "2" : binding.mp15b05c.isChecked() ? "3" : binding.mp15b05d.isChecked() ? "4" : "0");
+        sA.put("mp15b06", binding.mp15b06a.isChecked() ? "1" : binding.mp15b06b.isChecked() ? "2" : binding.mp15b06c.isChecked() ? "3" : binding.mp15b06d.isChecked() ? "4" : binding.mp15b06e.isChecked() ? "5" : binding.mp15b06f.isChecked() ? "6" : binding.mp15b06g.isChecked() ? "7" : binding.mp15b06h.isChecked() ? "8" : binding.mp15b06i.isChecked() ? "9" : binding.mp15b06j.isChecked() ? "88" : binding.mp15b06k.isChecked() ? "99" : "0");
+        sA.put("mp15b06", binding.mp15b06kx.getText().toString());
+        sA.put("mp15b07", binding.mp15b07a.isChecked() ? "1" : binding.mp15b07b.isChecked() ? "2" : "0");
+        sA.put("mp15b08", binding.mp15b08a.isChecked() ? "1" : binding.mp15b08b.isChecked() ? "2" : binding.mp15b08c.isChecked() ? "3" : binding.mp15b08d.isChecked() ? "4" : binding.mp15b08e.isChecked() ? "5" : binding.mp15b08f.isChecked() ? "6" : binding.mp15b08g.isChecked() ? "7" : binding.mp15b08h.isChecked() ? "8" : binding.mp15b08i.isChecked() ? "9" : binding.mp15b08j.isChecked() ? "88" : "0");
+        sA.put("mp15b08", binding.mp15b08jx.getText().toString());
+        sA.put("mp15b09", binding.mp15b09a.isChecked() ? "1" : binding.mp15b09b.isChecked() ? "2" : binding.mp15b09c.isChecked() ? "3" : binding.mp15b09d.isChecked() ? "4" : binding.mp15b09e.isChecked() ? "5" : binding.mp15b09f.isChecked() ? "6" : binding.mp15b09g.isChecked() ? "7" : binding.mp15b09h.isChecked() ? "8" : binding.mp15b09i.isChecked() ? "9" : binding.mp15b09j.isChecked() ? "88" : "0");
+        sA.put("mp15b09", binding.mp15b09jx.getText().toString());
+        //sCD.put("mp15b09", binding.mp15b01a.isChecked() ? "1" : binding.mp15b01b.isChecked() ? "2" : binding.mp15b01c.isChecked() ? "3" : "0");
+        sA.put("mp15b10", binding.mp15b10a.isChecked() ? "1" : binding.mp15b10b.isChecked() ? "2" : binding.mp15b10c.isChecked() ? "3" : binding.mp15b10d.isChecked() ? "99" : "0");
 
-        sB.put("mp08b001", bl.mp08b001a.isChecked() ? "1"
-                : bl.mp08b001b.isChecked() ? "2"
-                : bl.mp08b001c.isChecked() ? "3" : "0");
-        sB.put("mp08b002", bl.mp08b002.getText().toString());
-
-        sB.put("mp08b003", bl.mp08b003a.isChecked() ? "1"
-                : bl.mp08b003b.isChecked() ? "2"
-                : bl.mp08b003c.isChecked() ? "3"
-                : bl.mp08b003d.isChecked() ? "4"
-                : bl.mp08b003e.isChecked() ? "5"
-                : bl.mp08b00388.isChecked() ? "88"
-                : "0");
-        sB.put("mp08b00388x", bl.mp08b00388x.getText().toString());
-
-        sB.put("mp08b004", bl.mp08b004.getText().toString());
-        sB.put("mp08b004t", bl.mp08b004t.getText().toString());
-        sB.put("mp08b005", bl.mp08b005.getText().toString());
-
-
-        sB.put("mp08b006", bl.mp08b006a.isChecked() ? "1"
-                : bl.mp08b006b.isChecked() ? "2"
-                : bl.mp08b006c.isChecked() ? "3"
-                : bl.mp08b006d.isChecked() ? "4"
-                : bl.mp08b006e.isChecked() ? "5"
-                : "0");
-
-        sB.put("mp08b007", bl.mp08b007a.isChecked() ? "1"
-                : bl.mp08b007b.isChecked() ? "2"
-                : "0");
-        sB.put("mp08b008", bl.mp08b008.getText().toString());
-
-        AppMain.outcome = bl.mp08b003.indexOfChild(findViewById(bl.mp08b003.getCheckedRadioButtonId())) + 1;
-
-
-        AppMain.fc.setsB(String.valueOf(sB));
-
-
-        //sRc.put()
-
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+        AppMain.fc.setsB(String.valueOf(sA));
     }
 
     private boolean UpdateDB() {
@@ -273,14 +171,144 @@ public class SectionBActivity extends AppCompatActivity {
         //return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    public boolean formValidation() {
+
+        if (!validatorClass.EmptyRadioButton(this, binding.mp15b01, binding.mp15b01a, getString(R.string.mp15b01))) {
+
+            binding.mp15b01a.setError("This field is required");
+            binding.mp15b01.requestFocus();
+            return false;
+        } else {
+            binding.mp15b01.clearFocus();
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, binding.mp15b02, binding.mp15b02a, getString(R.string.mp15b01))) {
+
+            binding.mp15b02a.setError("This field is required");
+            binding.mp15b02.requestFocus();
+            return false;
+        } else {
+            binding.mp15b02.clearFocus();
+        }
+
+        if (!binding.mp15b02f.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, binding.mp15b03, binding.mp15b03a, getString(R.string.mp15b03))) {
+                binding.mp15b03a.setError("This field is required");
+                binding.mp15b03.requestFocus();
+                return false;
+            } else {
+                binding.mp15b03.clearFocus();
+            }
+
+            if (!binding.mp15b03b.isChecked()) {
+
+                if (!validatorClass.EmptyRadioButton(this, binding.mp15b04, binding.mp15b04a, getString(R.string.mp15b04))) {
+                    binding.mp15b04a.setError("This field is required");
+                    binding.mp15b04.requestFocus();
+                    return false;
+                } else {
+                    binding.mp15b04.clearFocus();
+                }
+                if (!validatorClass.EmptyRadioButton(this, binding.mp15b05, binding.mp15b05a, getString(R.string.mp15b05))) {
+                    binding.mp15b05a.setError("This field is required");
+                    binding.mp15b05.requestFocus();
+                    return false;
+                } else {
+                    binding.mp15b05.clearFocus();
+                }
+            }
+//
+            if (!validatorClass.EmptyRadioButton(this, binding.mp15b06, binding.mp15b06a, getString(R.string.mp15b06))) {
+                binding.mp15b06a.setError("This field is required");
+                binding.mp15b06.requestFocus();
+                return false;
+            } else {
+                binding.mp15b06.clearFocus();
+            }
+
+            if (binding.mp15b06k.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, binding.mp15b06kx, getString(R.string.mp15b06))) {
+                    return false;
+                }
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, binding.mp15b07, binding.mp15b07a, getString(R.string.mp15b07))) {
+                binding.mp15b07a.setError("This field is required");
+                binding.mp15b07.requestFocus();
+
+                return false;
+            } else {
+                binding.mp15b07.clearFocus();
+            }
+
+            if (!binding.mp15b07b.isChecked()) {
+
+                if (!validatorClass.EmptyRadioButton(this, binding.mp15b08, binding.mp15b08a, getString(R.string.mp15b08))) {
+                    binding.mp15b08a.setError("This field is required");
+                    binding.mp15b08.requestFocus();
+
+                    return false;
+                } else {
+                    binding.mp15b08.clearFocus();
+                }
+
+                if (binding.mp15b08j.isChecked()) {
+
+                    if (!validatorClass.EmptyTextBox(this, binding.mp15b08jx, getString(R.string.mp15b08))) {
+                        binding.mp15b08jx.setError("This field is required");
+                        binding.mp15b08jx.requestFocus();
+                        return false;
+                    } else {
+
+                        binding.mp15b08jx.clearFocus();
+                    }
+                }
+            }
+
+            if (!validatorClass.EmptyRadioButton(this, binding.mp15b09, binding.mp15b09a, getString(R.string.mp15b09))) {
+                binding.mp15b09a.setError("This field is required");
+                binding.mp15b09.requestFocus();
+
+                return false;
+            } else {
+                binding.mp15b09.clearFocus();
+            }
+
+            if (binding.mp15b09j.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, binding.mp15b09jx, getString(R.string.mp15b09))) {
+
+                    binding.mp15b09jx.setError("This field is required");
+                    binding.mp15b09jx.requestFocus();
+                    return false;
+                } else {
+
+                    binding.mp15b09jx.clearFocus();
+                }
+            }
+
+            if (!validatorClass.EmptyRadioButton(this, binding.mp15b10, binding.mp15b10a, getString(R.string.mp15b10))) {
+                binding.mp15b10a.setError("This field is required");
+                binding.mp15b10.requestFocus();
+
+                return false;
+            } else {
+                binding.mp15b10.clearFocus();
+
+            }
+
+
+        }
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+        return true;
+
     }
 
     public void BtnEnd() {
-        AppMain.endActivity(this, this);
+        //AppMain.endActivity(this, this);
     }
-
-
 }

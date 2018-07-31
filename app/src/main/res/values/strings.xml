@@ -364,7 +364,7 @@
     <string name="mp10q46"> ڪالهه ڏينهن يارات ۾ (نالو) کي تيار ٿيل طاقت واري خوارڪ جو ساشي ڏنو ويو آهي جيڪا عام طرح هر دڪان تي موجو هجي ؟ </string>
 
 
-    <!--Form 15-->
+    <!--Form 15 Section A-->
 
     <string name="mp15b01Heading">شموليت ڪندڙ جي پنهنجي صحت ۽ اضافي خوراڪ جي باري ۾ خيالات</string>
     <string name="mp15b01">توهان پنهنجي صحت هن تحقيق۾ شرڪت ڪرڻ کانپوءِ ڪيئن محسوس ڪري رهيا آهيو؟</string>
@@ -445,5 +445,54 @@
     <string name="mp15b10b">نه </string>
     <string name="mp15b10c"> هرروز اضافي طور تي ورتل</string>
     <string name="mp15b10d"> خبر ناهي</string>
+
+
+    <!--========================Form 15 Section C D=================================-->
+    <!--Section C-->
+    <string name="mp15c01Heading">شموليت ڪندڙ جي پنهنجي ٻار جي صحت جي باري ۾ خيالات</string>
+    <string name="mp15c01">توهان پنهنجي ٻار جي صحت هن تحقيق۾ شرڪت ڪرڻ کانپوءِ ڪيئن محسوس ڪري رهيا آهيو؟</string>
+    <string name="mp15c01a">تمام بهترين</string>
+    <string name="mp15c01b">وچولو  </string>
+    <string name="mp15c01c">خراب  </string>
+    <string name="mp15c01d">Not Applicable </string>
+
+    <string name="mp15c02">ڇا توهان کي لڳي ٿو ته توهان جي ٻار جي صحت اضافي اجزا واري خوراڪ کائڻ جي وجھه سان بهتر ٿي آهي؟</string>
+    <string name="mp15c02a">ها</string>
+    <string name="mp15c02b">نه   </string>
+    <string name="mp15c02c">خبر ناهي</string>
+
+
+    <!--Section D-->
+    <string name="mp15d01Heading">مطمئن ٿيڻ </string>
+    <string name="mp15d01">ڇا توهان کي هن تحقيق(مئپس) ۾ شرڪت ڪرڻ پسند آيو؟</string>
+    <string name="mp15d01a"> مون کي بلڪل به پسند نه آيو </string>
+    <string name="mp15d01b">ان مان ڪجهه ڪجهه پسند نه آيو   </string>
+    <string name="mp15d01c">مون کي نه پسند آيو نه ئي نا پسند آيو   </string>
+    <string name="mp15d01d"> ان مان ڪجهه ڪجهه پسند آيو </string>
+    <string name="mp15d01e"> مون کي تما گھڻو پسند آيو  </string>
+
+    <string name="mp15d02">ڇا توهان هن تحيق (مئپس) ۾ ٻيهر شرڪت ڪندا ؟</string>
+    <string name="mp15d02a">ها</string>
+    <string name="mp15d02b">نه   </string>
+    <string name="mp15d02c">خبر ناهي</string>
+
+
+
+    <!--Section 16_B-->
+
+    <string name="mp16b01Heading"> دوري جي تفصيل  </string>
+    <string name="mp16b01"> تحقيق جا سڀ مرحلا مڪمل ٿيا     </string>
+    <string name="mp16b01a"> رضاڪاراڻه علحيدگي</string>
+    <string name="mp16b01b"> تاعبيداري ڪرڻ ڀلجن(فالو اپ مس ٿيڻ)  </string>
+    <string name="mp16b01c">ناڪاري واقعو  </string>
+    <string name="mp16b01d">لاڳاپيل بيماري  </string>
+    <string name="mp16b01e">حادثو يا موت   </string>
+    <string name="mp16b01f">حمل سان نه هئڻ    </string>
+    <string name="mp16b01g"> تحقيق مڪمل ٿي</string>
+    <string name="mp16b01h"> تحقيق مڪمل ٿي</string>
+    <string name="mp16b01i">بيو ڪجه</string>
+
+    <string name="mp16b02"> ملاقات  جي آخري تاريخ</string>
+
 
 </resources>
