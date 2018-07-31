@@ -345,7 +345,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-                        android:enabled="@{mp08b006e.checked ? true : false}"
+                        android:enabled='@{mp08b006e.checked ? true : false}'
                         android:focusable="false"
                         android:hint="@string/mp08b002"
                         android:text='@{mp08b006e.checked ? mp08b00602.getText.toString : ""}'

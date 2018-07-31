@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -48,10 +50,10 @@ public class SectionBActivity extends AppCompatActivity {
         bl.mp08b004t.setManager(getSupportFragmentManager());
         bl.mp08b00601.setManager(getSupportFragmentManager());
         bl.mp08b00601.setMaxDate(dateToday);
-        bl.mp08b00601.setMinDate(minDate);
+
         bl.mp08b00602.setManager(getSupportFragmentManager());
         bl.mp08b00602.setMaxDate(dateToday);
-        bl.mp08b00602.setMinDate(minDate);
+
         //        bl.mp08b004t.setTimeFormat("hh:mm a");
         bl.mp08b001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -98,6 +100,31 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     bl.fldGrpmp08b008.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        bl.mp08b004.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                bl.mp08b00601.setText(null);
+                bl.mp08b00602.setText(null);
+
+                if (!bl.mp08b004.getText().toString().isEmpty()) {
+                    bl.mp08b00601.setMinDate(AppMain.convertDateFormat(bl.mp08b004.getText().toString()));
+                    bl.mp08b00602.setMinDate(AppMain.convertDateFormat(bl.mp08b004.getText().toString()));
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -234,6 +261,9 @@ public class SectionBActivity extends AppCompatActivity {
                 : bl.mp08b006d.isChecked() ? "4"
                 : bl.mp08b006e.isChecked() ? "5"
                 : "0");
+
+        sB.put("mp08b00601", bl.mp08b00601.getText().toString());
+        sB.put("mp08b00602", bl.mp08b00602.getText().toString());
 
         sB.put("mp08b007", bl.mp08b007a.isChecked() ? "1"
                 : bl.mp08b007b.isChecked() ? "2"
