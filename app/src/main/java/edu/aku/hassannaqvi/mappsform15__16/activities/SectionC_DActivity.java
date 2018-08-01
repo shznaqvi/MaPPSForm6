@@ -26,6 +26,7 @@ public class SectionC_DActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c__d);
         bi.setCallback(this);
 
+        this.setTitle(getString(R.string.app_name15));
     }
 
     public boolean formValidation() {
@@ -62,8 +63,6 @@ public class SectionC_DActivity extends AppCompatActivity {
             bi.mp15d02.clearFocus();
         }
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
-
         return true;
     }
 
@@ -78,7 +77,8 @@ public class SectionC_DActivity extends AppCompatActivity {
             }
 
             if (UpdateDB()) {
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, EndingActivity.class)
+                        .putExtra("complete", true));
                 finish();
             }
         }
@@ -92,7 +92,6 @@ public class SectionC_DActivity extends AppCompatActivity {
         int updcount = db.updatesC() == 1 ? db.updatesD() : 0;
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -118,5 +117,10 @@ public class SectionC_DActivity extends AppCompatActivity {
     public void BtnEnd() {
 
         AppMain.endActivity(this, this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }

@@ -29,6 +29,8 @@ public class SectionBActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
         binding.setCallback(this);
 
+        this.setTitle(getString(R.string.app_name15));
+
         setupViews();
 
     }
@@ -86,8 +88,6 @@ public class SectionBActivity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-
         if (formValidation()) {
             try {
                 saveDraft();
@@ -97,8 +97,6 @@ public class SectionBActivity extends AppCompatActivity {
 
             if (UpdateDB()) {
 
-                Toast.makeText(this, "Starting New Section", Toast.LENGTH_SHORT).show();
-
                 startActivity(new Intent(this, SectionC_DActivity.class));
                 finish();
             }
@@ -107,7 +105,6 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public void saveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sB = new JSONObject();
         sB.put("mp15b01", binding.mp15b01a.isChecked() ? "1" : binding.mp15b01b.isChecked() ? "2" : binding.mp15b01c.isChecked() ? "3" : "0");
@@ -134,7 +131,6 @@ public class SectionBActivity extends AppCompatActivity {
         int updcount = db.updatesB();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -276,7 +272,6 @@ public class SectionBActivity extends AppCompatActivity {
 
 
         }
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
         return true;
 
@@ -285,4 +280,10 @@ public class SectionBActivity extends AppCompatActivity {
     public void BtnEnd() {
         AppMain.endActivity(this, this);
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
 }

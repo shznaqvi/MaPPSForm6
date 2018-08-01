@@ -61,17 +61,15 @@ public class EndingActivity extends Activity {
             mp08a01406.setEnabled(true);
         }
 
-        /*if (AppMain.formType.equals("5")) {
-            mp08a01406.setVisibility(View.VISIBLE);
+        if (AppMain.formType.equals("15")) {
+            this.setTitle(getString(R.string.app_name15));
         } else {
-            mp08a01406.setVisibility(View.GONE);
+            this.setTitle(getString(R.string.app_name16));
         }
-*/
     }
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
             SaveDraft();
             if (UpdateDB()) {
@@ -80,9 +78,7 @@ public class EndingActivity extends Activity {
                 AppMain.partiFlag = 0;
 
                 finish();
-                Toast.makeText(this, "Complete Sections", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
-                endSec.putExtra("complete", false);
                 startActivity(endSec);
             }
         }
@@ -102,13 +98,11 @@ public class EndingActivity extends Activity {
     }
 
     private void SaveDraft() {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         AppMain.fc.setIstatus(mp08a01401.isChecked() ? "1" : mp08a01402.isChecked() ? "2" : mp08a01403.isChecked() ? "3"
                 : mp08a01404.isChecked() ? "4" : mp08a01405.isChecked() ? "5" : mp08a01406.isChecked() ? "6" : "0");
         AppMain.fc.setEndingDateTime((DateFormat.format("dd-MM-yyyy HH:mm", new Date())).toString());
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
@@ -117,7 +111,6 @@ public class EndingActivity extends Activity {
         int updcount = db.updateEnding();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

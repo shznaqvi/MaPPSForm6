@@ -9,6 +9,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+
 import edu.aku.hassannaqvi.mappsform15__16.R;
 import edu.aku.hassannaqvi.mappsform15__16.core.AppMain;
 import edu.aku.hassannaqvi.mappsform15__16.core.DatabaseHelper;
@@ -17,7 +19,6 @@ import edu.aku.hassannaqvi.mappsform15__16.validation.validatorClass;
 
 public class Section16_BActivity extends AppCompatActivity {
 
-
     ActivitySection16BBinding bi;
 
     @Override
@@ -25,6 +26,12 @@ public class Section16_BActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section16__b);
         bi.setCallback(this);
+
+        this.setTitle(getString(R.string.app_name16));
+
+        bi.mp16b02.setManager(getSupportFragmentManager());
+        bi.mp16b02.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
+
     }
 
 
@@ -33,8 +40,6 @@ public class Section16_BActivity extends AppCompatActivity {
     }
 
     public void BtnContinue() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-
         if (formValidation()) {
 
             try {
@@ -45,7 +50,8 @@ public class Section16_BActivity extends AppCompatActivity {
 
             if (UpdateDB()) {
 
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, EndingActivity.class)
+                        .putExtra("complete", true));
                 finish();
             }
 
@@ -61,7 +67,6 @@ public class Section16_BActivity extends AppCompatActivity {
         int updcount = db.updatesB();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -74,8 +79,6 @@ public class Section16_BActivity extends AppCompatActivity {
 
     public void saveDraft() throws JSONException {
 
-
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
         JSONObject sB = new JSONObject();
 
         sB.put("mp16b01", bi.mp16b02.getText().toString());
@@ -119,4 +122,10 @@ public class Section16_BActivity extends AppCompatActivity {
 
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
 }

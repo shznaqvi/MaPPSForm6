@@ -35,6 +35,7 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.mappsform15__16.R;
 import edu.aku.hassannaqvi.mappsform15__16.contracts.ClustersContract;
 import edu.aku.hassannaqvi.mappsform15__16.contracts.FormsContract;
+import edu.aku.hassannaqvi.mappsform15__16.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.mappsform15__16.core.AppMain;
 import edu.aku.hassannaqvi.mappsform15__16.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform15__16.getclasses.GetEnrolled;
@@ -445,7 +446,7 @@ public class MainActivity extends Activity {
 
 
     public void openDB(View v) {
-        Intent dbmanager = new Intent(getApplicationContext(), SectionBActivity.class);
+        Intent dbmanager = new Intent(getApplicationContext(), AndroidDatabaseManager.class);
         startActivity(dbmanager);
     }
 
