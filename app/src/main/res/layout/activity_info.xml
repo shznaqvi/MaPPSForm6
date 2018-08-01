@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.mappsform15_16.activities.InfoActivity">
+    tools:context="edu.aku.hassannaqvi.mappsform15__16.activities.InfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
