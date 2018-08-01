@@ -104,11 +104,9 @@ public class EndingActivity extends Activity {
     private void SaveDraft() {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-
         AppMain.fc.setIstatus(mp08a01401.isChecked() ? "1" : mp08a01402.isChecked() ? "2" : mp08a01403.isChecked() ? "3"
                 : mp08a01404.isChecked() ? "4" : mp08a01405.isChecked() ? "5" : mp08a01406.isChecked() ? "6" : "0");
         AppMain.fc.setEndingDateTime((DateFormat.format("dd-MM-yyyy HH:mm", new Date())).toString());
-
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

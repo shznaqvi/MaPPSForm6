@@ -137,18 +137,12 @@ public class InfoActivity extends Activity {
         });
 
 
-        if (AppMain.formType.equals("7")) {
-            AppMain.ftype = "mp07";
-            this.setTitle(getResources().getString(R.string.app_name7));
-        } else if (AppMain.formType.equals("8")) {
-            AppMain.ftype = "mp08";
-            this.setTitle(getResources().getString(R.string.app_name8));
-        } else if (AppMain.formType.equals("9")) {
-            AppMain.ftype = "mp09";
-            this.setTitle(getResources().getString(R.string.app_name9));
-        } else if (AppMain.formType.equals("10")) {
-            AppMain.ftype = "mp10";
-            this.setTitle(getResources().getString(R.string.app_name10));
+        if (AppMain.formType.equals("15")) {
+            AppMain.ftype = "mp15";
+            this.setTitle(getResources().getString(R.string.app_name15));
+        } else if (AppMain.formType.equals("16")) {
+            AppMain.ftype = "mp16";
+            this.setTitle(getResources().getString(R.string.app_name16));
         }
 
     }
@@ -211,11 +205,8 @@ public class InfoActivity extends Activity {
             }
             if (UpdateDB()) {
 
-                finish();
-                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-                Intent endSec = new Intent(this, EndingActivity.class);
-                endSec.putExtra("complete", false);
-                startActivity(endSec);
+                AppMain.endActivity(this, this);
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -227,9 +218,6 @@ public class InfoActivity extends Activity {
     void onBtnContinueClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-//        Intent secba = new Intent(this, ParticipantListActivity.class);
-//        startActivity(secba);
-
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -240,12 +228,12 @@ public class InfoActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                if (AppMain.formType.equals("8")) {
+                if (AppMain.formType.equals("15")) {
 
                     Intent intent = new Intent(this, SectionBActivity.class);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(this, SectionBActivity.class);
+                    Intent intent = new Intent(this, Section16_BActivity.class);
                     startActivity(intent);
                 }
             } else {
@@ -312,7 +300,6 @@ public class InfoActivity extends Activity {
         sInfo.put(AppMain.ftype + "a013", mp08a01301.isChecked() ? "1" : mp08a01302.isChecked() ? "2" : "0");
 
         AppMain.fc.setsInfo(String.valueOf(sInfo));
-        //AppMain.ftype = "";
 
         setGPS();
 

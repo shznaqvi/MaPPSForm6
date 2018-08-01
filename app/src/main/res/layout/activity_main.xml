@@ -39,6 +39,7 @@
             android:textSize="32sp"
             android:textStyle="bold"
             android:visibility="gone" />
+
         <TextView
             android:id="@+id/recordSummary"
             android:layout_width="match_parent"
@@ -82,24 +83,23 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/openForm7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:onClick="openForm7"
-            android:text="Form - 7"
-            android:textSize="28sp"
-            android:visibility="gone" />
-
-        <Button
             android:id="@+id/openForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:onClick="openForm"
-            android:text="Form - 8"
+            android:onClick="openForm15"
+            android:text="Form - 15"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/openForm7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:onClick="openForm16"
+            android:text="Form - 16"
             android:textSize="28sp" />
 
         <Button

@@ -29,8 +29,7 @@ public class Section16_BActivity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-
-
+        AppMain.endActivity(this, this);
     }
 
     public void BtnContinue() {
@@ -44,9 +43,9 @@ public class Section16_BActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if(UpdateDB()){
+            if (UpdateDB()) {
 
-                startActivity(new Intent(this,EndingActivity.class));
+                startActivity(new Intent(this, EndingActivity.class));
                 finish();
             }
 
@@ -56,12 +55,9 @@ public class Section16_BActivity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-//Long rowId;
+
         DatabaseHelper db = new DatabaseHelper(this);
 
-
-        Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-        // 2. UPDATE FORM ROWID
         int updcount = db.updatesB();
 
         if (updcount == 1) {
@@ -85,7 +81,7 @@ public class Section16_BActivity extends AppCompatActivity {
         sB.put("mp16b01", bi.mp16b02.getText().toString());
         sB.put("mp16b02", bi.mp16b01a.isChecked() ? "1" : bi.mp16b01b.isChecked() ? "2" : bi.mp16b01c.isChecked() ? "3" : bi.mp16b01d.isChecked() ? "4" : bi.mp16b01e.isChecked() ? "5" : bi.mp16b01f.isChecked() ? "6" : bi.mp16b01g.isChecked() ? "7" : bi.mp16b01h.isChecked() ? "8" : bi.mp16b01i.isChecked() ? "88" : "0");
         sB.put("mp16b02", bi.mp16b01ix.getText().toString());
-        AppMain.fc.setsD(String.valueOf(sB));
+        AppMain.fc.setsB(String.valueOf(sB));
     }
 
     public boolean formValidation() {

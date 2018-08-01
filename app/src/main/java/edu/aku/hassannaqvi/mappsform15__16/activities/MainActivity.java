@@ -246,11 +246,11 @@ public class MainActivity extends Activity {
 
     }
 
-    public void openForm(View v) {
+    public void openForm15(View v) {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
                 Intent oF = new Intent(MainActivity.this, InfoActivity.class);
-                AppMain.formType = "8";
+                AppMain.formType = "15";
                 startActivity(oF);
             } else {
 
@@ -272,7 +272,7 @@ public class MainActivity extends Activity {
                             editor.putString("tagName", m_Text);
                             editor.commit();
 
-                            AppMain.formType = "8";
+                            AppMain.formType = "15";
 
                             Intent oF = new Intent(MainActivity.this, InfoActivity.class);
                             startActivity(oF);
@@ -293,10 +293,10 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void openForm7(View v) {
+    public void openForm16(View v) {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
-                AppMain.formType = "7";
+                AppMain.formType = "16";
                 Intent oF = new Intent(MainActivity.this, InfoActivity.class);
                 startActivity(oF);
             } else {
@@ -316,7 +316,7 @@ public class MainActivity extends Activity {
                             editor.putString("tagName", m_Text);
                             editor.commit();
 
-                            AppMain.formType = "8";
+                            AppMain.formType = "16";
                             Intent oF = new Intent(MainActivity.this, InfoActivity.class);
                             startActivity(oF);
                         }
@@ -481,23 +481,23 @@ public class MainActivity extends Activity {
             /*Toast.makeText(getApplicationContext(), "Syncing Eligibles", Toast.LENGTH_SHORT).show();
             new SyncEligibles(this).execute();*/
 
-            /*Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms",
                     "updateSyncedForms",
                     FormsContract.class,
-                    AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "7.php"),
-                    db.getUnsyncedForms6(7)
+                    AppMain._HOST_URL_15 + FormsContract.FormsTable._URL.replace(".php", "15.php"),
+                    db.getUnsyncedForms6()
             ).execute();
-*/
+
             Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms",
                     "updateSyncedForms",
                     FormsContract.class,
-                    AppMain._HOST_URL_8 + FormsContract.FormsTable._URL.replace(".php", "8.php"),
+                    AppMain._HOST_URL_16 + FormsContract.FormsTable._URL.replace(".php", "16.php"),
                     db.getUnsyncedForms6()
             ).execute();
 

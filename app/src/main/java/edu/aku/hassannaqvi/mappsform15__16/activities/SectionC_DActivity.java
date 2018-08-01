@@ -17,7 +17,6 @@ import edu.aku.hassannaqvi.mappsform15__16.validation.validatorClass;
 
 public class SectionC_DActivity extends AppCompatActivity {
 
-
     ActivitySectionCDBinding bi;
 
     @Override
@@ -27,9 +26,7 @@ public class SectionC_DActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c__d);
         bi.setCallback(this);
 
-
     }
-
 
     public boolean formValidation() {
 
@@ -73,8 +70,6 @@ public class SectionC_DActivity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-
         if (formValidation()) {
             try {
                 saveDraft();
@@ -82,24 +77,19 @@ public class SectionC_DActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if(UpdateDB()){
-                startActivity(new Intent(this,EndingActivity.class));
+            if (UpdateDB()) {
+                startActivity(new Intent(this, EndingActivity.class));
                 finish();
             }
-
         }
-
 
     }
 
     private boolean UpdateDB() {
-//Long rowId;
+
         DatabaseHelper db = new DatabaseHelper(this);
 
-
-        Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-        // 2. UPDATE FORM ROWID
-        int updcount = db.updatesB();
+        int updcount = db.updatesC() == 1 ? db.updatesD() : 0;
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -109,27 +99,24 @@ public class SectionC_DActivity extends AppCompatActivity {
             return false;
         }
 
-
-        //return true;
     }
 
     public void saveDraft() throws JSONException {
 
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+        JSONObject sC = new JSONObject();
+        JSONObject sD = new JSONObject();
 
-        JSONObject sCD = new JSONObject();
+        sC.put("mp15c01", bi.mp15c01a.isChecked() ? "1" : bi.mp15c01b.isChecked() ? "2" : bi.mp15c01c.isChecked() ? "3" : bi.mp15c01d.isChecked() ? "4" : "0");
+        sC.put("mp15c02", bi.mp15c02a.isChecked() ? "1" : bi.mp15c02b.isChecked() ? "2" : bi.mp15c02c.isChecked() ? "99" : "0");
+        sD.put("mp15d01", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "3" : bi.mp15d01d.isChecked() ? "4" : bi.mp15d01e.isChecked() ? "5" : "0");
+        sD.put("mp15d01", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "99" : "0");
 
-        sCD.put("mp15c01", bi.mp15c01a.isChecked() ? "1" : bi.mp15c01b.isChecked() ? "2" : bi.mp15c01c.isChecked() ? "3" : bi.mp15c01d.isChecked() ? "4" : "0");
-        sCD.put("mp15c02", bi.mp15c02a.isChecked() ? "1" : bi.mp15c02b.isChecked() ? "2" : bi.mp15c02c.isChecked() ? "99" : "0");
-        sCD.put("mp15d01", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "3" : bi.mp15d01d.isChecked() ? "4" : bi.mp15d01e.isChecked() ? "5" : "0");
-        sCD.put("mp15d01", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "99" : "0");
-
-
-        AppMain.fc.setsC(String.valueOf(sCD));
+        AppMain.fc.setsC(String.valueOf(sC));
+        AppMain.fc.setsD(String.valueOf(sD));
     }
 
     public void BtnEnd() {
 
-
+        AppMain.endActivity(this, this);
     }
 }
