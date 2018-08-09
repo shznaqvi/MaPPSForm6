@@ -83,6 +83,41 @@ public class SectionBActivity extends AppCompatActivity {
             }
         });
 
+        binding.mp15b03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (i == R.id.mp15b03b) {
+                    binding.fldgrpmp15b04.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b04, false);
+                    binding.fldgrpmp15b05.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b05, false);
+                } else {
+                    binding.fldgrpmp15b04.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b04, true);
+                    binding.fldgrpmp15b05.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b05, true);
+
+                }
+
+
+            }
+        });
+
+        binding.mp15b07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if(i == R.id.mp15b07b){
+                    binding.fldgrpmp15b08.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b08,false);
+                }else {
+                    binding.fldgrpmp15b08.setVisibility(View.VISIBLE);
+                    ClearClass.ClearAllFields(binding.fldgrpmp15b08,true);
+                }
+            }
+        });
+
 
     }
 

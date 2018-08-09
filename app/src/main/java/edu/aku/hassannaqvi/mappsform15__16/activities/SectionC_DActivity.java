@@ -108,7 +108,7 @@ public class SectionC_DActivity extends AppCompatActivity {
         sC.put("mp15c01", bi.mp15c01a.isChecked() ? "1" : bi.mp15c01b.isChecked() ? "2" : bi.mp15c01c.isChecked() ? "3" : bi.mp15c01d.isChecked() ? "4" : "0");
         sC.put("mp15c02", bi.mp15c02a.isChecked() ? "1" : bi.mp15c02b.isChecked() ? "2" : bi.mp15c02c.isChecked() ? "99" : "0");
         sD.put("mp15d01", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "3" : bi.mp15d01d.isChecked() ? "4" : bi.mp15d01e.isChecked() ? "5" : "0");
-        sD.put("mp15d01", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "99" : "0");
+        sD.put("mp15d02", bi.mp15d01a.isChecked() ? "1" : bi.mp15d01b.isChecked() ? "2" : bi.mp15d01c.isChecked() ? "99" : "0");
 
         AppMain.fc.setsC(String.valueOf(sC));
         AppMain.fc.setsD(String.valueOf(sD));

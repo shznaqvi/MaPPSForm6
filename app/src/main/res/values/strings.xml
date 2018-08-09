@@ -182,14 +182,14 @@
     <!--Section 16_B-->
 
     <string name="mp16b01Heading"> دوري جي تفصيل  </string>
-    <string name="mp16b01"> تحقيق جا سڀ مرحلا مڪمل ٿيا     </string>
-    <string name="mp16b01a"> رضاڪاراڻه علحيدگي</string>
-    <string name="mp16b01b"> تاعبيداري ڪرڻ ڀلجن(فالو اپ مس ٿيڻ)  </string>
-    <string name="mp16b01c">ناڪاري واقعو  </string>
-    <string name="mp16b01d">لاڳاپيل بيماري  </string>
-    <string name="mp16b01e">حادثو يا موت   </string>
-    <string name="mp16b01f">حمل سان نه هئڻ    </string>
-    <string name="mp16b01g"> تحقيق مڪمل ٿي</string>
+    <string name="mp16b01"> شرڪت ڪندڙ جي تحقيق ۾ شرڪت ڪرڻ ڇو ختم ٿي رھي آھي؟   </string>
+    <string name="mp16b01a">  تحقيق جا سڀ مرحلا مڪمل ٿيا     </string>
+    <string name="mp16b01b">رضاڪاراڻه علحيدگي   </string>
+    <string name="mp16b01c">   تاعبيداري ڪرڻ ڀلجن(فالو اپ مس ٿيڻ) </string>
+    <string name="mp16b01d">ناڪاري واقعو  </string>
+    <string name="mp16b01e">لاڳاپيل بيماري    </string>
+    <string name="mp16b01f">حادثو يا موت    </string>
+    <string name="mp16b01g"> حمل سان نه هئڻ  </string>
     <string name="mp16b01h"> تحقيق مڪمل ٿي</string>
     <string name="mp16b01i">بيو ڪجه</string>
 
