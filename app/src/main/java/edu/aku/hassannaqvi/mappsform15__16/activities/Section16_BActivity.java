@@ -121,6 +121,10 @@ public class Section16_BActivity extends AppCompatActivity {
             }
         }
 
+        if(!validatorClass.EmptyTextBox(this,bi.mp16b03,"Notes must not be empty")){
+            return false;
+        }
+
         return true;
     }
 
