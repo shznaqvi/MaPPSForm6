@@ -148,12 +148,12 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("mp15b04", binding.mp15b04a.isChecked() ? "1" : binding.mp15b04b.isChecked() ? "2" : binding.mp15b04c.isChecked() ? "3" : binding.mp15b04d.isChecked() ? "4" : "0");
         sB.put("mp15b05", binding.mp15b05a.isChecked() ? "1" : binding.mp15b05b.isChecked() ? "2" : binding.mp15b05c.isChecked() ? "3" : binding.mp15b05d.isChecked() ? "4" : "0");
         sB.put("mp15b06", binding.mp15b06a.isChecked() ? "1" : binding.mp15b06b.isChecked() ? "2" : binding.mp15b06c.isChecked() ? "3" : binding.mp15b06d.isChecked() ? "4" : binding.mp15b06e.isChecked() ? "5" : binding.mp15b06f.isChecked() ? "6" : binding.mp15b06g.isChecked() ? "7" : binding.mp15b06h.isChecked() ? "8" : binding.mp15b06i.isChecked() ? "9" : binding.mp15b06j.isChecked() ? "88" : binding.mp15b06k.isChecked() ? "99" : "0");
-        sB.put("mp15b06", binding.mp15b06kx.getText().toString());
+        sB.put("mp15b06x", binding.mp15b06kx.getText().toString());
         sB.put("mp15b07", binding.mp15b07a.isChecked() ? "1" : binding.mp15b07b.isChecked() ? "2" : "0");
         sB.put("mp15b08", binding.mp15b08a.isChecked() ? "1" : binding.mp15b08b.isChecked() ? "2" : binding.mp15b08c.isChecked() ? "3" : binding.mp15b08d.isChecked() ? "4" : binding.mp15b08e.isChecked() ? "5" : binding.mp15b08f.isChecked() ? "6" : binding.mp15b08g.isChecked() ? "7" : binding.mp15b08h.isChecked() ? "8" : binding.mp15b08i.isChecked() ? "9" : binding.mp15b08j.isChecked() ? "88" : "0");
-        sB.put("mp15b08", binding.mp15b08jx.getText().toString());
+        sB.put("mp15b08x", binding.mp15b08jx.getText().toString());
         sB.put("mp15b09", binding.mp15b09a.isChecked() ? "1" : binding.mp15b09b.isChecked() ? "2" : binding.mp15b09c.isChecked() ? "3" : binding.mp15b09d.isChecked() ? "4" : binding.mp15b09e.isChecked() ? "5" : binding.mp15b09f.isChecked() ? "6" : binding.mp15b09g.isChecked() ? "7" : binding.mp15b09h.isChecked() ? "8" : binding.mp15b09i.isChecked() ? "9" : binding.mp15b09j.isChecked() ? "88" : "0");
-        sB.put("mp15b09", binding.mp15b09jx.getText().toString());
+        sB.put("mp15b09x", binding.mp15b09jx.getText().toString());
         sB.put("mp15b10", binding.mp15b10a.isChecked() ? "1" : binding.mp15b10b.isChecked() ? "2" : binding.mp15b10c.isChecked() ? "3" : binding.mp15b10d.isChecked() ? "99" : "0");
 
         AppMain.fc.setsB(String.valueOf(sB));
