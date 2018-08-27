@@ -488,7 +488,7 @@ public class MainActivity extends Activity {
                     "Forms",
                     "updateSyncedForms",
                     FormsContract.class,
-                    AppMain._HOST_URL_15 + FormsContract.FormsTable._URL.replace(".php", "15.php"),
+                    AppMain._HOST_URL_15_16 + FormsContract.FormsTable._URL.replace(".php", "15.php"),
                     db.getUnsyncedForms15()
             ).execute();
 
@@ -498,7 +498,7 @@ public class MainActivity extends Activity {
                     "Forms",
                     "updateSyncedForms",
                     FormsContract.class,
-                    AppMain._HOST_URL_16 + FormsContract.FormsTable._URL.replace(".php", "16.php"),
+                    AppMain._HOST_URL_15_16 + FormsContract.FormsTable._URL.replace(".php", "16.php"),
                     db.getUnsyncedForms16()
             ).execute();
 
