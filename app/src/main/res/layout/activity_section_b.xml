@@ -158,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/mp15b02"
+                    android:text="@string/mp15b03"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -243,7 +243,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="ھا" />
+                        android:text="Yes" />
 
                     <RadioButton
                         android:id="@+id/mp15b04b"
@@ -852,7 +852,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b12b" />
+                        android:text="@string/mp15b12h" />
 
                     <RadioButton
                         android:id="@+id/mp15b12i"
@@ -1020,7 +1020,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b14b" />
+                        android:text="@string/mp15b14h" />
 
                     <RadioButton
                         android:id="@+id/mp15b14i"
@@ -1045,7 +1045,6 @@
                         android:layout_height="wrap_content"
                         android:text='@{mp15b14j.checked? mp15b14jx.getText.toString : ""}'
                         android:visibility='@{mp15b14j.checked? View.VISIBLE : View.GONE}' />
-
 
                 </RadioGroup>
 
@@ -1181,7 +1180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b16b" />
+                        android:text="@string/mp15b16h" />
 
                     <RadioButton
                         android:id="@+id/mp15b16i"
@@ -1417,7 +1416,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b19a" />
+                        android:text="@string/mp15b20a" />
 
                     <RadioButton
                         android:id="@+id/mp15b20b"
@@ -1425,7 +1424,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b19b" />
+                        android:text="@string/mp15b20b" />
 
                     <RadioButton
                         android:id="@+id/mp15b20c"
@@ -1433,7 +1432,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b19c" />
+                        android:text="@string/mp15b20c" />
 
                 </RadioGroup>
 
@@ -1547,7 +1546,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b19a" />
+                        android:text="@string/mp15b22a" />
 
                     <RadioButton
                         android:id="@+id/mp15b22b"
@@ -1555,7 +1554,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b22a" />
+                        android:text="@string/mp15b22b" />
 
                     <RadioButton
                         android:id="@+id/mp15b22c"
