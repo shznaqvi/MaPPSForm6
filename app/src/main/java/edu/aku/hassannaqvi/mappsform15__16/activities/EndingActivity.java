@@ -36,6 +36,8 @@ public class EndingActivity extends Activity {
     RadioButton mp08a01405;
     @BindView(R.id.mp08a01406)
     RadioButton mp08a01406;
+//    @BindView(R.id.mp08a01408)
+//    RadioButton mp08a01408;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

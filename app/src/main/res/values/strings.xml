@@ -63,6 +63,7 @@
     <string name="mp08a01404"> ٻن دورن کان پوء به ڪير به موجوده نه هو </string>
     <string name="mp08a01405"> لڏي وئي </string>
     <string name="mp08a01406">Ultrasound not done </string>
+    <string name="mp08a01407">شرڪت ڪندڙ وفات وئي   </string>
 
     <!--Form 15 Section A-->
 
@@ -77,7 +78,7 @@
     <string name="mp15b02a">ھا </string>
     <string name="mp15b02b">نہ </string>
 
-    <string name="mp15b03">توهان پنهنجي صحت لاءِمليل طاقت يا اضافي اجزا واري خوراڪ ڪيتري في سيڪڙو استعمال ڪئي ؟</string>
+    <string name="mp15b03">حمل کان پھرين واري مرحلي ۾  توهان پنهنجي صحت لاءِمليل طاقت يا اضافي اجزا واري خوراڪ ڪيتري في سيڪڙو استعمال ڪئي ؟</string>
     <string name="mp15b03a">0%</string>
     <string name="mp15b03b">%25</string>
     <string name="mp15b03c">50%</string>
@@ -85,8 +86,10 @@
     <string name="mp15b03e">100%</string>
 
     <string name="mp15b04">ڇا شرڪت ڪندڙ تحقيق دوران حمل/پيٽ سان ٿي آهي؟</string>
-    <string name="mp15b04a"> No, in intervention</string>
-    <string name="mp15b04b">No, in control </string>
+    <string name="mp15b04a">  انٽروينشن ۾ ها</string>
+    <string name="mp15b04b">  ڪنٽرول ۾ ها </string>
+    <string name="mp15b04c">نه انٽروينشن ۾ </string>
+    <string name="mp15b04d">نه ڪنٽرول ۾ </string>
 
     <string name="mp15b05">توهان کي دوران حمل/پيٽ سان صحت لاءِمليل طاقت واري خوراڪ يا اضافي اجزا واري خوراڪ ڪيترو سيڪڙو استعمال ڪئي ؟</string>
     <string name="mp15b05a">0%</string>
@@ -107,39 +110,39 @@
     <string name="mp15b07a">ھا </string>
     <string name="mp15b07b">نہ </string>
 
+    <string name="mp15b08">ڇا توهان اهو چاهيو پيا ته ڪو توهان کي حمل يا اميد جي دوران آئرن يا فولڪ ائسڊ فراهم ڪري ها؟</string>
+    <string name="mp15b08a"> ها</string>
+    <string name="mp15b08b">نه </string>
 
-    <string name="mp15b08">حمل جي دوران توهان کي آئرن يا فولڪ ائسڊ جون گوريون ڪنهن مُهيا ڪيون؟</string>
-    <string name="mp15b08a">سرڪاري اسپتال             </string>
-    <string name="mp15b08b">بنيادي  صحت جو ڪز </string>
-    <string name="mp15b08c">ڊسپينسري </string>
-    <string name="mp15b08d">ليڊي هيلٿ ورڪر </string>
-    <string name="mp15b08e">پرائيوٽ اسپتال </string>
-    <string name="mp15b08f">ميڊيڪل اسٽور</string>
-    <string name="mp15b08g">مڙس  </string>
-    <string name="mp15b08h">سس  </string>
-    <string name="mp15b08i">ماءَ </string>
-    <string name="mp15b08j">ٻيا رشتيدار</string>
-    <string name="mp15b08k">دوست </string>
-    <string name="mp15b08l">حڪيم  </string>
-    <string name="mp15b08m">ٻيو ڪجه </string>
 
-    <string name="mp15b09">توهان ڇا ٿا سجهو ته حمل دوران  آئرن يا فولڪ ائسڊ جو ٽڪيون جيڪي توهان کي فراهم ڪيون ويون هُيون انهن جو  ڪيترو سيڪڙو توهان استعمال هيٺ آنديون ؟</string>
-    <string name="mp15b09a">0%</string>
-    <string name="mp15b09b">25%</string>
-    <string name="mp15b09c">50%</string>
-    <string name="mp15b09d">75%</string>
-    <string name="mp15b09e">100%</string>
+    <string name="mp15b09">حمل جي دوران توهان کي آئرن يا فولڪ ائسڊ جون گوريون ڪنهن مُهيا ڪيون؟</string>
+    <string name="mp15b09a">سرڪاري اسپتال             </string>
+    <string name="mp15b09b">بنيادي  صحت جو ڪز </string>
+    <string name="mp15b09c">ڊسپينسري </string>
+    <string name="mp15b09d">ليڊي هيلٿ ورڪر </string>
+    <string name="mp15b09e">پرائيوٽ اسپتال </string>
+    <string name="mp15b09f">ميڊيڪل اسٽور</string>
+    <string name="mp15b09g">مڙس  </string>
+    <string name="mp15b09h">سس  </string>
+    <string name="mp15b09i">ماءَ </string>
+    <string name="mp15b09j">ٻيا رشتيدار</string>
+    <string name="mp15b09k">دوست </string>
+    <string name="mp15b09l">حڪيم  </string>
+    <string name="mp15b09m">ٻيو ڪجه </string>
 
-    <string name="mp15b10"> توهان ڇا ٿا سجهو ته حمل کان پوء آئرن يا فولڪ ائسڊ جو ٽڪيون جيڪي توهان کي فراهم ڪيون ويون هُيون انهن جو  ڪيترو سيڪڙو توهان استعمال هيٺ آنديون ؟</string>
+    <string name="mp15b10">توهان ڇا ٿا سجهو ته حمل دوران  آئرن يا فولڪ ائسڊ جو ٽڪيون جيڪي توهان کي فراهم ڪيون ويون هُيون انهن جو  ڪيترو سيڪڙو توهان استعمال هيٺ آنديون ؟</string>
     <string name="mp15b10a">0%</string>
     <string name="mp15b10b">25%</string>
     <string name="mp15b10c">50%</string>
     <string name="mp15b10d">75%</string>
     <string name="mp15b10e">100%</string>
 
-    <string name="mp15b11">ڇا توهان اهو چاهيو پيا ته ڪو توهان کي حمل يا اميد جي دوران آئرن يا فولڪ ائسڊ فراهم ڪري ها؟</string>
-    <string name="mp15b11a"> ها</string>
-    <string name="mp15b11b">نه </string>
+    <string name="mp15b11"> توهان ڇا ٿا سجهو ته حمل کان پوء آئرن يا فولڪ ائسڊ جو ٽڪيون جيڪي توهان کي فراهم ڪيون ويون هُيون انهن جو  ڪيترو سيڪڙو توهان استعمال هيٺ آنديون ؟</string>
+    <string name="mp15b11a">0%</string>
+    <string name="mp15b11b">25%</string>
+    <string name="mp15b11c">50%</string>
+    <string name="mp15b11d">75%</string>
+    <string name="mp15b11e">100%</string>
 
     <string name="mp15b12">اهي ڪهڙا سبب هُئا جن جي ڪري توهان ايم  اين پوريء ريت نه وٺي سگهيا؟ </string>
     <string name="mp15b12a">وسري وئي       </string>
@@ -265,7 +268,7 @@
     <string name="mp16b01f"> ڪنهن به بنيادي بيماريءسان ڪا  لاڳاپيل بيماري</string>
     <string name="mp16b01g">  موت   </string>
     <string name="mp16b01h"> پريڪنسيپشن/حمل کان پهرين وارو  مرحلو مڪمل ڪيو ۽ حامله ڪون ٿي </string>
-    <string name="mp16b01i"> Study has ended </string>
+    <string name="mp16b01i"> تحقيق مڪمل ٿي </string>
     <string name="mp16b01j">بيو ڪجه</string>
 
     <string name="mp16b02"> ملاقات  جي آخري تاريخ</string>

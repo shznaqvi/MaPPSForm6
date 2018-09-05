@@ -66,8 +66,21 @@
                 android:id="@+id/mp08a01406"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mp08a01406"
-                android:visibility="gone" />
+                android:text="@string/mp08a01407" />
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/mp08a01406"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/mp08a01406"-->
+                <!--android:visibility="gone" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/mp08a01407"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/mp08a01406"-->
+                <!--android:visibility="gone" />-->
 
 
         </RadioGroup>
