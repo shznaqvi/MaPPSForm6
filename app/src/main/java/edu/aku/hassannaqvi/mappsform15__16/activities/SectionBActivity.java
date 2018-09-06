@@ -369,7 +369,8 @@ public class SectionBActivity extends AppCompatActivity {
 
             if (UpdateDB()) {
 
-                startActivity(new Intent(this, SectionC_DActivity.class));
+                startActivity(new Intent(this, EndingActivity.class)
+                        .putExtra("complete", true));
                 finish();
             }
         }
@@ -528,43 +529,6 @@ public class SectionBActivity extends AppCompatActivity {
             if (!validatorClass.EmptyRadioButton(this, binding.mp15b22, binding.mp15b22a, getString(R.string.mp15b22))) {
                 return false;
             }
-        } else {
-            if (!validatorClass.EmptyRadioButton(this, binding.mp15b08, binding.mp15b08a, getString(R.string.mp15b08))) {
-
-                return false;
-            }
-
-            if (!validatorClass.EmptyRadioButton(this, binding.mp15b21, binding.mp15b21a, getString(R.string.mp15b21))) {
-                return false;
-            }
-
-            if (!validatorClass.EmptyRadioButton(this, binding.mp15b22, binding.mp15b22a, getString(R.string.mp15b22))) {
-                return false;
-            }
-
-
-//            if (!validatorClass.EmptyRadioButton(this, binding.mp15b07, binding.mp15b07a, getString(R.string.mp15b07))) {
-//
-//                return false;
-//            }
-//
-//            if (binding.mp15b07a.isChecked()) {
-//
-//                if (!validatorClass.EmptyRadioButton(this, binding.mp15b09, binding.mp15b09a, getString(R.string.mp15b09))) {
-//
-//                    return false;
-//                }
-//                if (!validatorClass.EmptyRadioButton(this, binding.mp15b10, binding.mp15b10a, getString(R.string.mp15b10))) {
-//
-//                    return false;
-//                }
-//
-//                if (!validatorClass.EmptyRadioButton(this, binding.mp15b11, binding.mp15b11a, getString(R.string.mp15b11))) {
-//                    return false;
-//                }
-//
-//
-//            }
         }
 
         //============if it is yes, in control skip to Q7==============================================
@@ -655,7 +619,9 @@ public class SectionBActivity extends AppCompatActivity {
                 if (!validatorClass.EmptyRadioButton(this, binding.mp15b22, binding.mp15b22a, getString(R.string.mp15b22))) {
                     return false;
                 }
-            } else {
+            }
+            if(binding.mp15b07b.isChecked()){
+
                 if (!validatorClass.EmptyRadioButton(this, binding.mp15b08, binding.mp15b08a, getString(R.string.mp15b08))) {
 
                     return false;
@@ -668,6 +634,7 @@ public class SectionBActivity extends AppCompatActivity {
                     return false;
                 }
             }
+//
         }
 
         //=======if it is No, in intervention skip to Q12========================================

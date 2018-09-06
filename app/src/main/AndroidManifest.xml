@@ -68,10 +68,6 @@
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.SectionC_DActivity"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".activities.Section16_BActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
