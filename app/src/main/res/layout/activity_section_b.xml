@@ -532,7 +532,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/mp15b08b" />
+                        android:text="@string/mp15b09b" />
 
                     <RadioButton
                         android:id="@+id/mp15b09c"

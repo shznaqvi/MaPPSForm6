@@ -202,11 +202,11 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-                if(i == R.id.mp15b06a
+                if (i == R.id.mp15b06a
                         || i == R.id.mp15b06b
                         || i == R.id.mp15b06c
                         || i == R.id.mp15b06d
-                        || i == R.id.mp15b06e){
+                        || i == R.id.mp15b06e) {
 
                     binding.fldgrpmp15b07.setVisibility(View.GONE);
                     ClearClass.ClearAllFields(binding.fldgrpmp15b07, false);
@@ -388,10 +388,10 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("mp15b06", binding.mp15b06a.isChecked() ? "1" : binding.mp15b06b.isChecked() ? "2" : binding.mp15b06c.isChecked() ? "3" : binding.mp15b06d.isChecked() ? "4" : binding.mp15b06e.isChecked() ? "5" : "0");
         sB.put("mp15b07", binding.mp15b07a.isChecked() ? "1" : binding.mp15b07b.isChecked() ? "2" : "0");
         sB.put("mp15b08", binding.mp15b08a.isChecked() ? "1" : binding.mp15b08b.isChecked() ? "2" : "0");
-        sB.put("mp15b09", binding.mp15b09c.isChecked() ? "3" : binding.mp15b09d.isChecked() ? "4" :
-                binding.mp15b09e.isChecked() ? "5" : binding.mp15b09f.isChecked() ? "6" : binding.mp15b09g.isChecked() ? "7" :
-                        binding.mp15b09h.isChecked() ? "8" : binding.mp15b09i.isChecked() ? "9" : binding.mp15b09j.isChecked() ? "10" :
-                                binding.mp15b09k.isChecked() ? "11" : binding.mp15b09l.isChecked() ? "12" : binding.mp15b09m.isChecked() ? "88" : "0");
+        sB.put("mp15b09", binding.mp15b09a.isChecked() ? "1" : binding.mp15b09b.isChecked() ? "2" :
+                binding.mp15b09c.isChecked() ? "3" : binding.mp15b09d.isChecked() ? "4" : binding.mp15b09e.isChecked() ? "5" :
+                        binding.mp15b09f.isChecked() ? "6" : binding.mp15b09g.isChecked() ? "7" : binding.mp15b09h.isChecked() ? "8" :
+                                binding.mp15b09i.isChecked() ? "9" : binding.mp15b09j.isChecked() ? "10" : binding.mp15b09k.isChecked() ? "11" : binding.mp15b09l.isChecked() ? "12" : binding.mp15b09m.isChecked() ? "88" : "0");
         sB.put("mp15b09x", binding.mp15b09mx.getText().toString());
         sB.put("mp15b10", binding.mp15b10a.isChecked() ? "1" : binding.mp15b10b.isChecked() ? "2" : binding.mp15b10c.isChecked() ? "3"
                 : binding.mp15b10d.isChecked() ? "4" : binding.mp15b10e.isChecked() ? "5" : "0");
@@ -620,7 +620,7 @@ public class SectionBActivity extends AppCompatActivity {
                     return false;
                 }
             }
-            if(binding.mp15b07b.isChecked()){
+            if (binding.mp15b07b.isChecked()) {
 
                 if (!validatorClass.EmptyRadioButton(this, binding.mp15b08, binding.mp15b08a, getString(R.string.mp15b08))) {
 
