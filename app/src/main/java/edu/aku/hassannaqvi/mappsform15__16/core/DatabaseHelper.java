@@ -677,7 +677,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                ClustersContract.ClustersTable._ID + " ASC";
+                ClustersContract.ClustersTable.COLUMN_CLUSTERNAME + " ASC";
 
         Collection<ClustersContract> allCC = new ArrayList<>();
         try {

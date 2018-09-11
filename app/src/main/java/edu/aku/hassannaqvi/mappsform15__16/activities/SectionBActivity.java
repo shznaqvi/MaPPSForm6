@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -32,6 +33,125 @@ public class SectionBActivity extends AppCompatActivity {
         this.setTitle(getString(R.string.app_name15));
 
         setupViews();
+
+
+        binding.mp15b12k.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12a.setChecked(false);
+                    binding.mp15b12b.setChecked(false);
+                    binding.mp15b12c.setChecked(false);
+                    binding.mp15b12d.setChecked(false);
+                    binding.mp15b12e.setChecked(false);
+                    binding.mp15b12f.setChecked(false);
+                    binding.mp15b12g.setChecked(false);
+                    binding.mp15b12h.setChecked(false);
+                    binding.mp15b12i.setChecked(false);
+                    binding.mp15b12j.setChecked(false);
+                    binding.mp15b12jx.setText(null);
+                }
+
+            }
+        });
+
+        binding.mp15b12a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12e.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12g.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12h.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+        binding.mp15b12i.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                }
+            }
+        });
+
+        binding.mp15b12j.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b) {
+                    binding.mp15b12k.setChecked(false);
+                    binding.mp15b12jx.setVisibility(View.VISIBLE);
+                } else {
+                    binding.mp15b12jx.setVisibility(View.GONE);
+                    binding.mp15b12jx.setText(null);
+                }
+            }
+        });
+
 
     }
 
@@ -397,8 +517,18 @@ public class SectionBActivity extends AppCompatActivity {
                 : binding.mp15b10d.isChecked() ? "4" : binding.mp15b10e.isChecked() ? "5" : "0");
         sB.put("mp15b11", binding.mp15b11a.isChecked() ? "1" : binding.mp15b11b.isChecked() ? "2" : binding.mp15b11c.isChecked() ? "3"
                 : binding.mp15b11d.isChecked() ? "4" : binding.mp15b11e.isChecked() ? "5" : "0");
-        sB.put("mp15b12", binding.mp15b12a.isChecked() ? "1" : binding.mp15b12b.isChecked() ? "2" : binding.mp15b12c.isChecked() ? "3" : binding.mp15b12d.isChecked() ? "4" : binding.mp15b12e.isChecked() ? "5" : binding.mp15b12f.isChecked() ? "6" : binding.mp15b12g.isChecked() ? "7" : binding.mp15b12h.isChecked() ? "8" : binding.mp15b12i.isChecked() ? "9" : binding.mp15b12j.isChecked() ? "88" : binding.mp15b12k.isChecked() ? "99" : "0");
+        sB.put("mp15b12a", binding.mp15b12a.isChecked() ? "1" : "0");
+        sB.put("mp15b12b", binding.mp15b12b.isChecked() ? "2" : "0");
+        sB.put("mp15b12c", binding.mp15b12c.isChecked() ? "3" : "0");
+        sB.put("mp15b12d", binding.mp15b12d.isChecked() ? "4" : "0");
+        sB.put("mp15b12e", binding.mp15b12e.isChecked() ? "5" : "0");
+        sB.put("mp15b12f", binding.mp15b12f.isChecked() ? "6" : "0");
+        sB.put("mp15b12g", binding.mp15b12g.isChecked() ? "7" : "0");
+        sB.put("mp15b12h", binding.mp15b12h.isChecked() ? "8" : "0");
+        sB.put("mp15b12i", binding.mp15b12i.isChecked() ? "9" : "0");
+        sB.put("mp15b12j", binding.mp15b12j.isChecked() ? "88" : "0");
         sB.put("mp15b12x", binding.mp15b12jx.getText().toString());
+        sB.put("mp15b12k", binding.mp15b12k.isChecked() ? "99" : "0");
         sB.put("mp15b13", binding.mp15b13a.isChecked() ? "1" : binding.mp15b13b.isChecked() ? "2" : "0");
         sB.put("mp15b14", binding.mp15b14a.isChecked() ? "1" : binding.mp15b14b.isChecked() ? "2" : binding.mp15b14c.isChecked() ? "3" : binding.mp15b14d.isChecked() ? "4" : binding.mp15b14e.isChecked() ? "5" : binding.mp15b14f.isChecked() ? "6" : binding.mp15b14g.isChecked() ? "7" : binding.mp15b14h.isChecked() ? "8" : binding.mp15b14i.isChecked() ? "9" : binding.mp15b14j.isChecked() ? "88" : "0");
         sB.put("mp15b14x", binding.mp15b14jx.getText().toString());
@@ -464,7 +594,7 @@ public class SectionBActivity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButton(this, binding.mp15b12, binding.mp15b12a, getString(R.string.mp15b12))) {
+            if (!validatorClass.EmptyCheckBox(this, binding.fldgrpmp15b12, binding.mp15b12a, getString(R.string.mp15b12))) {
                 return false;
             }
 
@@ -545,6 +675,11 @@ public class SectionBActivity extends AppCompatActivity {
 
                     return false;
                 }
+                if (binding.mp15b09m.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, binding.mp15b09mx, getString(R.string.mp15b09))) {
+                        return false;
+                    }
+                }
                 if (!validatorClass.EmptyRadioButton(this, binding.mp15b10, binding.mp15b10a, getString(R.string.mp15b10))) {
 
                     return false;
@@ -553,8 +688,7 @@ public class SectionBActivity extends AppCompatActivity {
                 if (!validatorClass.EmptyRadioButton(this, binding.mp15b11, binding.mp15b11a, getString(R.string.mp15b11))) {
                     return false;
                 }
-
-                if (!validatorClass.EmptyRadioButton(this, binding.mp15b12, binding.mp15b12a, getString(R.string.mp15b12))) {
+                if (!validatorClass.EmptyCheckBox(this, binding.fldgrpmp15b12, binding.mp15b12a, getString(R.string.mp15b12))) {
                     return false;
                 }
 
@@ -641,7 +775,7 @@ public class SectionBActivity extends AppCompatActivity {
 
         if (binding.mp15b04c.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, binding.mp15b12, binding.mp15b12a, getString(R.string.mp15b12))) {
+            if (!validatorClass.EmptyCheckBox(this, binding.fldgrpmp15b12, binding.mp15b12a, getString(R.string.mp15b12))) {
                 return false;
             }
 
