@@ -482,20 +482,20 @@ public class MainActivity extends Activity {
             /*Toast.makeText(getApplicationContext(), "Syncing Eligibles", Toast.LENGTH_SHORT).show();
             new SyncEligibles(this).execute();*/
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms 7", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Forms 15", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "Forms",
+                    "Forms 15",
                     "updateSyncedForms",
                     FormsContract.class,
                     AppMain._HOST_URL_15 + FormsContract.FormsTable._URL.replace(".php", "15.php"),
                     db.getUnsyncedForms6()
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Forms 16", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "Forms",
+                    "Forms 16",
                     "updateSyncedForms",
                     FormsContract.class,
                     AppMain._HOST_URL_16 + FormsContract.FormsTable._URL.replace(".php", "16.php"),
