@@ -488,8 +488,8 @@ public class MainActivity extends Activity {
                     "Forms 15",
                     "updateSyncedForms",
                     FormsContract.class,
-                    AppMain._HOST_URL_15 + FormsContract.FormsTable._URL.replace(".php", "15.php"),
-                    db.getUnsyncedForms6()
+                    AppMain._HOST_URL_15_16 + FormsContract.FormsTable._URL.replace(".php", "15.php"),
+                    db.getUnsyncedForms15()
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Forms 16", Toast.LENGTH_SHORT).show();
@@ -498,8 +498,8 @@ public class MainActivity extends Activity {
                     "Forms 16",
                     "updateSyncedForms",
                     FormsContract.class,
-                    AppMain._HOST_URL_16 + FormsContract.FormsTable._URL.replace(".php", "16.php"),
-                    db.getUnsyncedForms6()
+                    AppMain._HOST_URL_15_16 + FormsContract.FormsTable._URL.replace(".php", "16.php"),
+                    db.getUnsyncedForms16()
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
