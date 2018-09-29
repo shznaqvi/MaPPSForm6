@@ -121,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
             EnrolledTable.COLUMN_NAME_SNO + " TEXT," +
             EnrolledTable.COLUMN_NAME_WOMEN_NAME + " TEXT," +
-            EnrolledTable.COLUMN_NAME_UID_F4 + " TEXT" +
+            EnrolledTable.COLUMN_NAME_S1 + " TEXT" +
 
             " );";
     private static final String SQL_CREATE_LHWS = "CREATE TABLE "
@@ -228,7 +228,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(EnrolledTable.COLUMN_NAME_HOUSEHOLD, ec.getHouseHold());
                 values.put(EnrolledTable.COLUMN_NAME_WOMEN_NAME, ec.getWomen_name());
                 values.put(EnrolledTable.COLUMN_NAME_SNO, ec.getSno());
-                values.put(EnrolledTable.COLUMN_NAME_UID_F4, ec.getUid_f4());
+                values.put(EnrolledTable.COLUMN_NAME_S1, ec.getS1());
 
                 db.insert(EnrolledTable.TABLE_NAME, null, values);
             }
@@ -756,7 +756,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledTable.COLUMN_NAME_SNO,
                 EnrolledTable.COLUMN_NAME_SUBAREACODE,
                 EnrolledTable.COLUMN_NAME_LHWCODE,
-                EnrolledTable.COLUMN_NAME_UID_F4,
+                EnrolledTable.COLUMN_NAME_S1,
                 EnrolledTable.COLUMN_NAME_HOUSEHOLD
 
         };
@@ -807,7 +807,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledTable.COLUMN_NAME_LHWCODE,
                 EnrolledTable.COLUMN_NAME_HOUSEHOLD,
                 EnrolledTable.COLUMN_NAME_SNO,
-                EnrolledTable.COLUMN_NAME_UID_F4,
+                EnrolledTable.COLUMN_NAME_S1,
                 EnrolledTable.COLUMN_NAME_WOMEN_NAME
         };
 
@@ -855,7 +855,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledTable.COLUMN_NAME_LHWCODE,
                 EnrolledTable.COLUMN_NAME_HOUSEHOLD,
                 EnrolledTable.COLUMN_NAME_SNO,
-                EnrolledTable.COLUMN_NAME_UID_F4,
+                EnrolledTable.COLUMN_NAME_S1,
                 EnrolledTable.COLUMN_NAME_WOMEN_NAME
         };
 
