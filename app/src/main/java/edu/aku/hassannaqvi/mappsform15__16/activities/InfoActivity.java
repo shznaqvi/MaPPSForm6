@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -72,6 +73,8 @@ public class InfoActivity extends Activity {
     RadioButton mp08a01301;
     @BindView(R.id.mp08a01302)
     RadioButton mp08a01302;
+    @BindView(R.id.btn_Continue)
+    Button btn_Continue;
     @BindView(R.id.fldGrpParticipant)
     LinearLayout fldGrpParticipant;
     ArrayList<String> partNames;
@@ -119,7 +122,17 @@ public class InfoActivity extends Activity {
             }
         });
 
+        mp08a013.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i == R.id.mp08a01302){
+                    btn_Continue.setVisibility(View.GONE);
+                }else{
+                    btn_Continue.setVisibility(View.VISIBLE);
 
+                }
+            }
+        });
         mp08a003.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
