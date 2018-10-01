@@ -108,7 +108,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             Log.d(TAG, "downloadUrl: " + myurl);
             conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(20000 /* milliseconds */);
+            conn.setConnectTimeout(15000 /* milliseconds */);
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
             conn.setDoInput(true);
