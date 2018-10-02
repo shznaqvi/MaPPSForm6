@@ -125,9 +125,9 @@ public class InfoActivity extends Activity {
         mp08a013.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i == R.id.mp08a01302){
+                if (i == R.id.mp08a01302) {
                     btn_Continue.setVisibility(View.GONE);
-                }else{
+                } else {
                     btn_Continue.setVisibility(View.VISIBLE);
 
                 }
@@ -287,6 +287,7 @@ public class InfoActivity extends Activity {
 
         AppMain.fc = new FormsContract();
 
+        AppMain.fc.setSurveyType(AppMain.ftype.equals("mp15") ? "Exit Questionnaire" : "End of Study Participation");
         AppMain.fc.setTagID(sharedPref.getString("tagName", null));
         AppMain.fc.setFormDate((DateFormat.format("dd-MM-yyyy HH:mm", new Date())).toString());
         AppMain.fc.setInterviewer01(AppMain.loginMem[1]);
