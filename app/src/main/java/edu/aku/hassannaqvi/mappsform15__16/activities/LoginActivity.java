@@ -191,14 +191,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         });
 
 //        DB backup
-
-        dbBackup();
-
         if (Integer.valueOf(AppMain.versionName.split("\\.")[0]) > 0) {
             testing.setVisibility(View.GONE);
         } else {
             testing.setVisibility(View.VISIBLE);
+
         }
+
+        dbBackup();
+
+
 
     }
 
