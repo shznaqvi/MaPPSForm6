@@ -61,8 +61,7 @@ public class Form11bActivity extends AppCompatActivity {
     private void saveDraft() throws JSONException {
 
         JSONObject Json = GeneratorClass.getContainerJSON(bi.fldgrpf11b, true);
-
-        //InfoActivity.fc_4_5.setSa3(String.valueOf(Json));
+        //AppMain.fc.setSB(String.valueOf(Json));
 
         Log.d("F5-BA", String.valueOf(Json));
     }
@@ -155,5 +154,5 @@ public class Form11bActivity extends AppCompatActivity {
         return true;
     }
 
-    
+
 }
