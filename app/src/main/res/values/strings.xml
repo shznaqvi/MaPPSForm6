@@ -425,4 +425,15 @@
     <string name="mp10q46"> ڪالهه ڏينهن يارات ۾ (نالو) کي تيار ٿيل طاقت واري خوارڪ جو ساشي ڏنو ويو آهي جيڪا عام طرح هر دڪان تي موجو هجي ؟ </string>
 
 
+    <!--Form 11-->
+    <string name="mp11bHeading"> ماءُ جو وزن ۽ قد ماپڻ</string>
+    <string name="mp11b01">قد جي ماپ لکو</string>
+    <string name="mp11b02">قد جي ماپ لکو</string>
+    <string name="mp11b03">ڇا قد جي ماپ ۾ (>1 cm) جوفرق آيوآهي</string>
+    <string name="mp11b04">وزن لکو</string>
+    <string name="mp11b05">وزن لکو</string>
+    <string name="mp11b06">ڇا وزن۾(>.5 kg) فرق آيوآهي</string>
+    <string name="mp11b07">کاٻي ٻانهن يا /ڏوري جي ماپ لکو</string>
+    <string name="mp11b08">ڇا کاٻي ٻانهن يا /ڏوري جي  ماپ ۾ (>.5cm)  آيوآهيجوفرق</string>
+
 </resources>

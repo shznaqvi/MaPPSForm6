@@ -62,6 +62,12 @@ public abstract class validatorClass {
         }
     }
 
+    public static String getIDComponent(View view) {
+        String[] idName = (view).getResources().getResourceName((view).getId()).split("id/");
+
+        return idName[1];
+    }
+
     public static boolean EmptySpinner(Context context, Spinner spin, String msg) {
         if (spin.getSelectedItem() == "....") {
             Toast.makeText(context, "ERROR(Empty)" + msg, Toast.LENGTH_SHORT).show();
@@ -72,6 +78,19 @@ public abstract class validatorClass {
             return false;
         } else {
             ((TextView) spin.getSelectedView()).setError(null);
+            return true;
+        }
+    }
+
+    public static boolean PatternTextBox(Context context, EditText txt, String msg, String pattern, String pat_type) {
+        if (!txt.getText().toString().matches(pattern)) {
+            Toast.makeText(context, "ERROR(Invalid): " + msg, Toast.LENGTH_SHORT).show();
+            txt.setError("Required: " + pat_type);    // Set Error on last radio button
+            txt.requestFocus();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": Required: " + pat_type);
+            return false;
+        } else {
+            txt.setError(null);
             return true;
         }
     }
