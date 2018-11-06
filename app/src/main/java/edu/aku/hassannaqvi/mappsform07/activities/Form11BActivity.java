@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.mappsform07.JSON.GeneratorClass;
@@ -31,11 +30,7 @@ public class Form11BActivity extends AppCompatActivity {
     public void BtnContinue() {
         if (formValidation()) {
 
-            try {
-                saveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            saveDraft();
 
             if (UpdateDB()) {
 
