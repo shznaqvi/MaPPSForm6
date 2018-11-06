@@ -45,6 +45,7 @@ public class FormsContract {
     private String s10D = "";
     private String s10E = "";
     private String s10E2 = "";
+    private String s11B = "";
     private String childId = "";
     private String gpsLat = "";
     private String gpsLng = "";
@@ -397,6 +398,14 @@ public class FormsContract {
         this.s10E2 = s10E2;
     }
 
+    public String getS11B() {
+        return s11B;
+    }
+
+    public void setS11B(String s11B) {
+        this.s11B = s11B;
+    }
+
     public FormsContract Sync(JSONObject jsonObject) throws JSONException {
         this.projectName = jsonObject.getString(FormsTable.COLUMN_PROJECTNAME);
         this.surveyType = jsonObject.getString(FormsTable.COLUMN_SURVEYTYPE);
@@ -430,6 +439,7 @@ public class FormsContract {
         this.s10D = jsonObject.getString(FormsTable.COLUMN_S10D);
         this.s10E = jsonObject.getString(FormsTable.COLUMN_S10E);
         this.s10E2 = jsonObject.getString(FormsTable.COLUMN_S10E2);
+        this.s11B = jsonObject.getString(FormsTable.COLUMN_S11B);
         this.childId = jsonObject.getString(FormsTable.COLUMN_CHILD_ID);
 
         this.endingDateTime = jsonObject.getString(FormsTable.COLUMN_ENDINGDATETIME);
@@ -493,6 +503,8 @@ public class FormsContract {
             this.s10D = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10D));
             this.s10E = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10E));
             this.s10E2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S10E2));
+        } else if (type == 11 || type == 0) {
+            this.s11B = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S11B));
         }
 
         this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CHILD_ID));
@@ -651,6 +663,13 @@ public class FormsContract {
         } catch (Exception e) {
         }
 
+        try {
+            if (!this.s11B.equals("")) {
+                json.put(FormsTable.COLUMN_S11B, this.s11B == null ? JSONObject.NULL : new JSONObject(this.s11B));
+            }
+        } catch (Exception e) {
+        }
+
 
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingDateTime == null ? JSONObject.NULL : this.endingDateTime);
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
@@ -704,6 +723,7 @@ public class FormsContract {
         public static final String COLUMN_S10D = "s10d";
         public static final String COLUMN_S10E = "s10e";
         public static final String COLUMN_S10E2 = "s10e2";
+        public static final String COLUMN_S11B = "s11B";
 
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPSLAT = "gpslat";

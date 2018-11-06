@@ -243,6 +243,9 @@ public class InfoActivity extends Activity {
         } else if (AppMain.formType.equals("10")) {
             AppMain.ftype = "mp10";
             this.setTitle(getResources().getString(R.string.app_name10));
+        } else if (AppMain.formType.equals("11")) {
+            AppMain.ftype = "mp11";
+            this.setTitle(getResources().getString(R.string.app_name11));
         }
 
     }
@@ -379,6 +382,9 @@ public class InfoActivity extends Activity {
 
                 if (AppMain.formType.equals("8")) {
                     intent = new Intent(this, SectionBActivity.class);
+                    startActivity(intent);
+                } else if (AppMain.formType.equals("11")) {
+                    intent = new Intent(this, Form11BActivity.class);
                     startActivity(intent);
                 } else {
                     intent = new Intent(this, Section7BActivity.class);

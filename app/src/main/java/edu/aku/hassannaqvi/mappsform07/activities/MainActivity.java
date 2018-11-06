@@ -432,6 +432,54 @@ public class MainActivity extends Activity {
     }
 
 
+    public void openForm11(View v) {
+        if (!AppMain.curCluster.equals("")) {
+            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
+                Intent oF = new Intent(MainActivity.this, InfoActivity.class);
+                AppMain.formType = "11";
+                startActivity(oF);
+            } else {
+
+                builder = new AlertDialog.Builder(MainActivity.this);
+                ImageView img = new ImageView(getApplicationContext());
+                img.setImageResource(R.drawable.tagimg);
+                img.setPadding(0, 15, 0, 15);
+                builder.setCustomTitle(img);
+
+                final EditText input = new EditText(MainActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        if (!m_Text.equals("")) {
+                            editor.putString("tagName", m_Text);
+                            editor.commit();
+
+                            AppMain.formType = "11";
+
+                            Intent oF = new Intent(MainActivity.this, InfoActivity.class);
+                            startActivity(oF);
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        } else {
+            Toast.makeText(this, "Sync cluster's from login page", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     public void openMembers(View v) {
         //Intent iMem = new Intent(this, FamilyMembersActivity.class);
         //startActivity(iMem);
@@ -511,6 +559,15 @@ public class MainActivity extends Activity {
                     db.getUnsyncedForms6(10)
             ).execute();
 
+            Toast.makeText(getApplicationContext(), "Syncing Forms 11", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms" + " 11",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    AppMain._HOST_URL_11 + FormsContract.FormsTable._URL.replace(".php", "11.php"),
+                    db.getUnsyncedForms6(11)
+            ).execute();
 
 
            /* Toast.makeText(getApplicationContext(), "Syncing Forms 8", Toast.LENGTH_SHORT).show();

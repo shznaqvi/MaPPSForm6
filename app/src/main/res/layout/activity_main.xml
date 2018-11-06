@@ -113,14 +113,12 @@
             android:textSize="28sp" />
 
         <Button
-            android:id="@+id/openForm10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:onClick="openForm10"
-            android:text="Form - 10"
-            android:visibility="gone"
+            android:onClick="openForm11"
+            android:text="Form - 11"
             android:textSize="28sp" />
 
 

@@ -4,6 +4,7 @@
     <string name="app_name7">MaPPS - Form 7: Infant Anthropometric and Abnormality Assessment at Birth (24 hours postpartum)</string>
     <string name="app_name9">MaPPS - Form 9: Neonatal Anthropometry and Morbidity Assessment (28 days postpartum)</string>
     <string name="app_name10">MaPPS - Form 10: Infant Anthropometric and Feeding Assessment (3 months postpartum)</string>
+    <string name="app_name11">MaPPS - Form 11: Maternal Postpartum Clinical Assessment (6 months)</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

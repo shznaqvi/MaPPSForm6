@@ -8,7 +8,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.mappsform07.activities.Form11bActivity" />
+            type="edu.aku.hassannaqvi.mappsform07.activities.Form11BActivity" />
     </data>
 
 

@@ -51,6 +51,7 @@ public class AppMain extends Application {
     public static final String _PROJECT_FOLDER_9 = "mapps/form9/api/";
 
     public static final String _PROJECT_FOLDER_10 = "mapps/form10/api/";
+    public static final String _PROJECT_FOLDER_11 = "mapps/form11/api/";
 
 
     public static final String _HOST_URL = "http://" + _IP + ":" + _PORT + "/" + _PROJECT_FOLDER_2;
@@ -80,6 +81,10 @@ public class AppMain extends Application {
                     + ":" + _PORT
                     + "/" + _PROJECT_FOLDER_10;
 
+    public static final String _HOST_URL_11 =
+            "http://" + _IP
+                    + ":" + _PORT
+                    + "/" + _PROJECT_FOLDER_11;
 
 
     // Retrieve FileName.php from Contract class Abstract _URI

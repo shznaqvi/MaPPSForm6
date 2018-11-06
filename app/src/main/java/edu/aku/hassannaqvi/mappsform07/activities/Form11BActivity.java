@@ -2,8 +2,8 @@ package edu.aku.hassannaqvi.mappsform07.activities;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -12,19 +12,19 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.mappsform07.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivityForm11bBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivityForm11BBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Form11bActivity extends AppCompatActivity {
+public class Form11BActivity extends AppCompatActivity {
 
 
-    ActivityForm11bBinding bi;
+    ActivityForm11BBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_form11b);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_form11_b);
         bi.setCallback(this);
     }
 
@@ -58,10 +58,10 @@ public class Form11bActivity extends AppCompatActivity {
         return true;
     }
 
-    private void saveDraft() throws JSONException {
+    private void saveDraft() {
 
         JSONObject Json = GeneratorClass.getContainerJSON(bi.fldgrpf11b, true);
-        //AppMain.fc.setSB(String.valueOf(Json));
+        AppMain.fc.setS11B(String.valueOf(Json));
 
         Log.d("F5-BA", String.valueOf(Json));
     }
@@ -147,11 +147,7 @@ public class Form11bActivity extends AppCompatActivity {
             return false;
         }
 
-        if (!validatorClass.PatternTextBox(this, bi.mp11b12, getString(R.string.mp11b07), "^(\\d{2,2}\\.\\d{1,1})$", "XX.X")) {
-            return false;
-        }
-
-        return true;
+        return validatorClass.PatternTextBox(this, bi.mp11b12, getString(R.string.mp11b07), "^(\\d{2,2}\\.\\d{1,1})$", "XX.X");
     }
 
 
