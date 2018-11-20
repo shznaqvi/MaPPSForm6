@@ -18,14 +18,13 @@
 
 
         <LinearLayout
-            android:layoutDirection="rtl"
             android:id="@+id/fldgrpf11b"
-            android:padding="10dp"
-            android:animateLayoutChanges="true"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:animateLayoutChanges="true"
+            android:layoutDirection="rtl"
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
             <TextView
@@ -42,9 +41,9 @@
 
             <!--Q01-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -58,22 +57,20 @@
 
                 <EditText
                     android:id="@+id/mp11b01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xxx.x cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
+                    android:maxLength="5" />
 
 
             </LinearLayout>
 
             <!--Q02-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -87,22 +84,20 @@
 
                 <EditText
                     android:id="@+id/mp11b02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xxx.x cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
+                    android:maxLength="5" />
 
 
             </LinearLayout>
 
             <!--Q03-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -115,30 +110,28 @@
                     android:textColor="@android:color/white" />
 
                 <RadioGroup
-                    android:orientation="vertical"
                     android:id="@+id/mp11b03"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
 
                     <RadioButton
-                        android:text="@string/yes"
-                        android:layout_marginBottom="1dp"
                         android:id="@+id/mp11b03a"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/yes" />
 
                     <RadioButton
-                        android:text="@string/no"
-                        android:layout_marginBottom="1dp"
                         android:id="@+id/mp11b03b"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/no" />
 
 
                 </RadioGroup>
-
-
 
 
             </LinearLayout>
@@ -146,9 +139,9 @@
 
             <!--Q04-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -162,22 +155,20 @@
 
                 <EditText
                     android:id="@+id/mp11b04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xxx.x cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
+                    android:maxLength="5" />
 
 
             </LinearLayout>
 
             <!--Q05-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -191,22 +182,20 @@
 
                 <EditText
                     android:id="@+id/mp11b05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xxx.x kg"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
+                    android:maxLength="5" />
 
 
             </LinearLayout>
 
             <!--Q06-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -220,22 +209,20 @@
 
                 <EditText
                     android:id="@+id/mp11b06"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xxx.x kg"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
+                    android:maxLength="5" />
 
 
             </LinearLayout>
 
             <!--Q07-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -248,39 +235,37 @@
                     android:textColor="@android:color/white" />
 
                 <RadioGroup
-                    android:orientation="vertical"
                     android:id="@+id/mp11b07"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
 
                     <RadioButton
-                        android:text="@string/yes"
-                        android:layout_marginBottom="1dp"
                         android:id="@+id/mp11b07a"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/yes" />
 
                     <RadioButton
-                        android:text="@string/no"
-                        android:layout_marginBottom="1dp"
                         android:id="@+id/mp11b07b"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/no" />
 
 
                 </RadioGroup>
-
-
 
 
             </LinearLayout>
 
             <!--Q08-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -295,21 +280,20 @@
 
                 <EditText
                     android:id="@+id/mp11b08"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xxx.x kg"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:maxLength="5" />
 
 
             </LinearLayout>
 
             <!--Q09-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -323,21 +307,20 @@
 
                 <EditText
                     android:id="@+id/mp11b09"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xx.x cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:maxLength="4" />
 
 
             </LinearLayout>
 
             <!--Q10-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -351,21 +334,20 @@
 
                 <EditText
                     android:id="@+id/mp11b10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xx.x cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:maxLength="4" />
 
 
             </LinearLayout>
 
             <!--Q11-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -378,38 +360,37 @@
                     android:textColor="@android:color/white" />
 
                 <RadioGroup
-                    android:orientation="vertical"
                     android:id="@+id/mp11b11"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
 
                     <RadioButton
-                        android:text="@string/yes"
-                        android:layout_marginBottom="1dp"
                         android:id="@+id/mp11b11a"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/yes" />
 
                     <RadioButton
-                        android:text="@string/no"
-                        android:layout_marginBottom="1dp"
                         android:id="@+id/mp11b11b"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/no" />
 
 
                 </RadioGroup>
-
 
 
             </LinearLayout>
 
             <!--Q12-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -423,19 +404,14 @@
 
                 <EditText
                     android:id="@+id/mp11b12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="xx.x cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:maxLength="4" />
 
 
             </LinearLayout>
-
-
-
-
 
 
             <!--================End Buttons======================-->
@@ -472,16 +448,10 @@
                     android:textSize="32sp" />
 
 
-
             </LinearLayout>
 
 
         </LinearLayout>
-
-
-
-
-
 
 
     </ScrollView>
