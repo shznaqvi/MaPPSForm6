@@ -390,6 +390,8 @@ public class InfoActivity extends Activity {
                     intent = new Intent(this, Section7BActivity.class);
                     if (flagForm9_10) {
                         intent.putExtra("chdob", childMap.get(mp08a004.getSelectedItem().toString()).getChdob());
+                    } else {
+                        intent.putExtra("fdate_f4", AppMain.Eparticipant.get(position).getFdate_f4());
                     }
                 }
 
