@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -81,7 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_S10E + " TEXT," +
             FormsTable.COLUMN_S10E2 + " TEXT," +
             FormsTable.COLUMN_S11B + " TEXT," +
-
             FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
@@ -143,13 +142,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             EnrolledContract.EnrolledTable.COLUMN_NAME_SUBAREACODE + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_LHWCODE + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD + " TEXT," +
-            EnrolledContract.EnrolledTable.COLUMN_SYNCED + " TEXT,"
-            + EnrolledContract.EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_SYNCED + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_SNO + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_WOMEN_NAME + " TEXT," +
-            EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4 + " TEXT" +
-
+            EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4 + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_FDATE_F4 + " TEXT" +
             " );";
+    private static final String SQL_ALTER_ENROLLED2 = "ALTER TABLE " +
+            EnrolledContract.EnrolledTable.TABLE_NAME + " ADD COLUMN " +
+            EnrolledContract.EnrolledTable.COLUMN_FDATE_F4 + " TEXT;";
     private static final String SQL_CREATE_LHWS = "CREATE TABLE "
             + LHWsContract.LHWsTable.TABLE_NAME + "(" +
             LHWsContract.LHWsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -237,6 +239,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(SQL_ALTER_FORMS2);
             case 3:
                 db.execSQL(SQL_ALTER_FORMS3);
+            case 4:
+                db.execSQL(SQL_ALTER_ENROLLED2);
         }
     }
 
@@ -286,6 +290,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(EnrolledContract.EnrolledTable.COLUMN_NAME_WOMEN_NAME, ec.getWomen_name());
                 values.put(EnrolledContract.EnrolledTable.COLUMN_NAME_SNO, ec.getSno());
                 values.put(EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4, ec.getUid_f4());
+                values.put(EnrolledContract.EnrolledTable.COLUMN_FDATE_F4, ec.getFdate_f4());
 
                 db.insert(EnrolledContract.EnrolledTable.TABLE_NAME, null, values);
             }
@@ -1106,6 +1111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledContract.EnrolledTable.COLUMN_NAME_SUBAREACODE,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_LHWCODE,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4,
+                EnrolledContract.EnrolledTable.COLUMN_FDATE_F4,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD
 
         };
@@ -1215,6 +1221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_SNO,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4,
+                EnrolledContract.EnrolledTable.COLUMN_FDATE_F4,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_WOMEN_NAME
         };
 
@@ -1263,6 +1270,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_SNO,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4,
+                EnrolledContract.EnrolledTable.COLUMN_FDATE_F4,
                 EnrolledContract.EnrolledTable.COLUMN_NAME_WOMEN_NAME
         };
 

@@ -23,6 +23,7 @@ public class EnrolledContract {
     private String women_name;
     private String sno;
     private String uid_f4;
+    private String fdate_f4;
 
     public EnrolledContract() {
     }
@@ -35,6 +36,7 @@ public class EnrolledContract {
         this.women_name = ec.getWomen_name();
         this.sno = ec.getSno();
         this.uid_f4 = ec.getUid_f4();
+        this.fdate_f4 = ec.getFdate_f4();
     }
 
     public EnrolledContract Sync(JSONObject jsonObject) throws JSONException {
@@ -45,6 +47,7 @@ public class EnrolledContract {
         this.women_name = jsonObject.getString(EnrolledTable.COLUMN_NAME_WOMEN_NAME);
         this.sno = jsonObject.getString(EnrolledTable.COLUMN_NAME_SNO);
         this.uid_f4 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F4);
+        this.fdate_f4 = jsonObject.getString(EnrolledTable.COLUMN_FDATE_F4);
         return this;
 
     }
@@ -57,6 +60,7 @@ public class EnrolledContract {
         this.women_name = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_WOMEN_NAME));
         this.sno = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_SNO));
         this.uid_f4 = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_NAME_UID_F4));
+        this.fdate_f4 = cursor.getString(cursor.getColumnIndex(EnrolledTable.COLUMN_FDATE_F4));
         return this;
     }
 
@@ -116,9 +120,16 @@ public class EnrolledContract {
         this.lhwCode = lhwCode;
     }
 
-    public String
-    getSno() {
+    public String getSno() {
         return sno;
+    }
+
+    public String getFdate_f4() {
+        return fdate_f4;
+    }
+
+    public void setFdate_f4(String fdate_f4) {
+        this.fdate_f4 = fdate_f4;
     }
 
     public JSONObject toJSONObject() throws JSONException {
@@ -132,6 +143,7 @@ public class EnrolledContract {
         json.put(EnrolledTable.COLUMN_NAME_WOMEN_NAME, this.women_name);
         json.put(EnrolledTable.COLUMN_NAME_SNO, this.sno);
         json.put(EnrolledTable.COLUMN_NAME_UID_F4, this.uid_f4);
+        json.put(EnrolledTable.COLUMN_FDATE_F4, this.fdate_f4);
 
         return json;
     }
@@ -150,6 +162,7 @@ public class EnrolledContract {
         public static final String COLUMN_NAME_WOMEN_NAME = "epname";
         public static final String COLUMN_NAME_SNO = "sno";
         public static final String COLUMN_NAME_UID_F4 = "uid_f4";
+        public static final String COLUMN_FDATE_F4 = "fdate_f4";
 
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";

@@ -46,7 +46,7 @@ public class Section7BActivity extends AppCompatActivity {
         bi.mp07q20.setManager(getSupportFragmentManager());
         bi.mp07q17.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q20.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
-        bi.mp07q17.setMinDate(maxdate1Week);
+        bi.mp07q17.setMinDate(getIntent().getBooleanExtra("flag", false) ? maxdate1Week : AppMain.convertDateFormat(getIntent().getStringExtra("fdate_f4")));
         bi.mp07q1701.setManager(getSupportFragmentManager());
         bi.mp07q1701.setIs24HourView(true);
 

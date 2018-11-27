@@ -387,9 +387,12 @@ public class InfoActivity extends Activity {
                     intent = new Intent(this, Form11BActivity.class);
                     startActivity(intent);
                 } else {
-                    intent = new Intent(this, Section7BActivity.class);
+                    intent = new Intent(this, Section7BActivity.class)
+                            .putExtra("flag", flagForm9_10);
                     if (flagForm9_10) {
                         intent.putExtra("chdob", childMap.get(mp08a004.getSelectedItem().toString()).getChdob());
+                    } else {
+                        intent.putExtra("fdate_f4", AppMain.Eparticipant.get(position).getFdate_f4());
                     }
                 }
 
@@ -490,6 +493,7 @@ public class InfoActivity extends Activity {
             sInfo.put(AppMain.ftype + "a003", mp08a003.getSelectedItem().toString());
             sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
             sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
+            sInfo.put("fdate_f4", AppMain.Eparticipant.get(position).getFdate_f4());
         }
         sInfo.put(AppMain.ftype + "a005", mp08a005.getText().toString());
         sInfo.put(AppMain.ftype + "a008", mp08a008.getText().toString());
