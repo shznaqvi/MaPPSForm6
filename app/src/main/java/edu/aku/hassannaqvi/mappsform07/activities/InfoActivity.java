@@ -387,11 +387,10 @@ public class InfoActivity extends Activity {
                     intent = new Intent(this, Form11BActivity.class);
                     startActivity(intent);
                 } else {
-                    intent = new Intent(this, Section7BActivity.class);
+                    intent = new Intent(this, Section7BActivity.class)
+                            .putExtra("fdate_f4", AppMain.Eparticipant.get(position).getFdate_f4());
                     if (flagForm9_10) {
                         intent.putExtra("chdob", childMap.get(mp08a004.getSelectedItem().toString()).getChdob());
-                    } else {
-                        intent.putExtra("fdate_f4", AppMain.Eparticipant.get(position).getFdate_f4());
                     }
                 }
 
