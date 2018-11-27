@@ -493,6 +493,7 @@ public class InfoActivity extends Activity {
             sInfo.put(AppMain.ftype + "a003", mp08a003.getSelectedItem().toString());
             sInfo.put("luid", AppMain.Eparticipant.get(position).getLUID());
             sInfo.put("uid_f4", AppMain.Eparticipant.get(position).getUid_f4());
+            sInfo.put("fdate_f4", AppMain.Eparticipant.get(position).getFdate_f4());
         }
         sInfo.put(AppMain.ftype + "a005", mp08a005.getText().toString());
         sInfo.put(AppMain.ftype + "a008", mp08a008.getText().toString());
