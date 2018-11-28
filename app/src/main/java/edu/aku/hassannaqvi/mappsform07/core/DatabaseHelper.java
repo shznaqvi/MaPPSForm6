@@ -977,7 +977,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public int updates11() {
+    public int updates11B() {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column

@@ -68,6 +68,10 @@ public class FormsContract {
         this.formType = formType;
     }
 
+    public void setSurveyType(String surveyType) {
+        this.surveyType = surveyType;
+    }
+
     public String getS7B() {
         return s7B;
     }

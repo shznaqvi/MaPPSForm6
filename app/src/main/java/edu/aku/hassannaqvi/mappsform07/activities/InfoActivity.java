@@ -504,6 +504,10 @@ public class InfoActivity extends Activity {
 
         setGPS();
 
+        if (AppMain.formType.equals("11")) {
+            AppMain.fc.setSurveyType("Form-11 Maternal Postpartum Clinical Assessment (6 Months)");
+        }
+
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
