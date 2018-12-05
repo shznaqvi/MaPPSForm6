@@ -52,6 +52,8 @@ public class Form11BActivity extends AppCompatActivity {
         bi.mp11b12id.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, AppMain.loginMem));
 
         bi.mp11b02id.setEnabled(false);
+        bi.mp11b06id.setEnabled(false);
+        bi.mp11b09id.setEnabled(false);
 
         bi.mp11b01id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -68,6 +70,54 @@ public class Form11BActivity extends AppCompatActivity {
                         }
                     }
                     bi.mp11b02id.setAdapter(new ArrayAdapter<String>(Form11BActivity.this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.mp11b05id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (i > 0) {
+                    bi.mp11b06id.setEnabled(true);
+                    String[] users = new String[AppMain.loginMem.length - 1];
+                    int j = 0;
+                    for (String s : AppMain.loginMem) {
+                        if (!s.equals(bi.mp11b05id.getSelectedItem().toString())) {
+                            users[j] = s;
+                            j++;
+                        }
+                    }
+                    bi.mp11b06id.setAdapter(new ArrayAdapter<String>(Form11BActivity.this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.mp11b08id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (i > 0) {
+                    bi.mp11b09id.setEnabled(true);
+                    String[] users = new String[AppMain.loginMem.length - 1];
+                    int j = 0;
+                    for (String s : AppMain.loginMem) {
+                        if (!s.equals(bi.mp11b08id.getSelectedItem().toString())) {
+                            users[j] = s;
+                            j++;
+                        }
+                    }
+                    bi.mp11b09id.setAdapter(new ArrayAdapter<String>(Form11BActivity.this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
                 }
             }
 
