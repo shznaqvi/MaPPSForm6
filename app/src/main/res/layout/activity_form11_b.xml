@@ -55,13 +55,36 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b01"
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xxx.x cm"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b01id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b01"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xxx.x cm"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5" />
+
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
@@ -82,19 +105,43 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b02"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xxx.x cm"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b02id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b02"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xxx.x cm"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5" />
+
+
+                </LinearLayout>
+
+
 
 
             </LinearLayout>
 
             <!--Q03-->
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fldgrpmp11b03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -139,6 +186,8 @@
 
             <!--Q04-->
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fldgrpmp11b01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -153,13 +202,32 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b04"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xxx.x cm"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b04id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b04"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xxx.x cm"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -180,13 +248,32 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b05"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xxx.x kg"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b05id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b05"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xxx.x kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -207,19 +294,40 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b06"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xxx.x kg"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b06id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b06"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xxx.x kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
             <!--Q07-->
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fldgrpmp11b06"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -263,6 +371,8 @@
 
             <!--Q08-->
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fldgrpmp11b05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -278,13 +388,33 @@
                     android:textColor="@android:color/white" />
 
 
-                <EditText
-                    android:id="@+id/mp11b08"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xxx.x kg"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b08id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b08"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xxx.x kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5" />
+
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
@@ -305,13 +435,35 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b09"
+
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xx.x cm"
-                    android:inputType="numberDecimal"
-                    android:maxLength="4" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b09id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b09"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xx.x cm"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4" />
+
+
+                </LinearLayout>
+
+
 
 
             </LinearLayout>
@@ -332,19 +484,40 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b10"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xx.x cm"
-                    android:inputType="numberDecimal"
-                    android:maxLength="4" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b10id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xx.x cm"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
             <!--Q11-->
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fldgrpmp11b08"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -388,6 +561,8 @@
 
             <!--Q12-->
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fldgrpmp11b07"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -402,13 +577,34 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/mp11b12"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="xx.x cm"
-                    android:inputType="numberDecimal"
-                    android:maxLength="4" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/mp11b12id"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                    <EditText
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/mp11b12"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:hint="xx.x cm"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4" />
+
+
+                </LinearLayout>
+
+
 
 
             </LinearLayout>
