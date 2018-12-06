@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -53,7 +51,7 @@ public class Form11BActivity extends AppCompatActivity {
 
         bi.mp11b02id.setEnabled(false);
         bi.mp11b06id.setEnabled(false);
-        bi.mp11b09id.setEnabled(false);
+        bi.mp11b10id.setEnabled(false);
 
         bi.mp11b01id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -103,21 +101,21 @@ public class Form11BActivity extends AppCompatActivity {
             }
         });
 
-        bi.mp11b08id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.mp11b09id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (i > 0) {
-                    bi.mp11b09id.setEnabled(true);
+                    bi.mp11b10id.setEnabled(true);
                     String[] users = new String[AppMain.loginMem.length - 1];
                     int j = 0;
                     for (String s : AppMain.loginMem) {
-                        if (!s.equals(bi.mp11b08id.getSelectedItem().toString())) {
+                        if (!s.equals(bi.mp11b09id.getSelectedItem().toString())) {
                             users[j] = s;
                             j++;
                         }
                     }
-                    bi.mp11b09id.setAdapter(new ArrayAdapter<String>(Form11BActivity.this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
+                    bi.mp11b10id.setAdapter(new ArrayAdapter<String>(Form11BActivity.this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
                 }
             }
 
@@ -128,6 +126,12 @@ public class Form11BActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, "You can't go back!", Toast.LENGTH_SHORT).show();
     }
 
     public void BtnContinue() {
@@ -160,7 +164,7 @@ public class Form11BActivity extends AppCompatActivity {
         if (updcount == 1) {
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
 
@@ -207,20 +211,15 @@ public class Form11BActivity extends AppCompatActivity {
             return false;
         }
 
-        double result1 = Double.parseDouble(bi.mp11b01.getText().toString()) - Double.parseDouble(bi.mp11b02.getText().toString());
+        double result1 = Math.abs(Double.parseDouble(bi.mp11b01.getText().toString()) - Double.parseDouble(bi.mp11b02.getText().toString()));
 
         if (result1 > 1) {
-            bi.fldgrpmp11b03.setVisibility(View.GONE);
-            bi.fldgrpmp11b01.setVisibility(View.GONE);
-            bi.mp11b03a.setChecked(true);
-        } else {
-            bi.fldgrpmp11b03.setVisibility(View.VISIBLE);
+            bi.mp11b01.setEnabled(false);
+            bi.mp11b02.setEnabled(false);
+            bi.mp11b01id.setEnabled(false);
+            bi.mp11b02id.setEnabled(false);
+            //bi.fldgrpmp11b03.setVisibility(View.GONE);
             bi.fldgrpmp11b01.setVisibility(View.VISIBLE);
-            bi.mp11b03a.setChecked(false);
-
-            if (!validatorClass.EmptyRadioButton(this, bi.mp11b03, bi.mp11b03a, getString(R.string.mp11b03))) {
-                return false;
-            }
 
             if (!validatorClass.EmptyTextBox(this, bi.mp11b04, getString(R.string.mp11b01))) {
                 return false;
@@ -234,6 +233,21 @@ public class Form11BActivity extends AppCompatActivity {
             if (!validatorClass.EmptySpinner(this, bi.mp11b04id, getString(R.string.mp11b02))) {
                 return false;
             }
+
+        } else {
+            bi.mp11b01.setEnabled(true);
+            bi.mp11b02.setEnabled(true);
+            bi.mp11b01id.setEnabled(true);
+            bi.mp11b02id.setEnabled(true);
+           // bi.fldgrpmp11b03.setVisibility(View.VISIBLE);
+            bi.fldgrpmp11b01.setVisibility(View.GONE);
+
+//
+//            if (!validatorClass.EmptyRadioButton(this, bi.mp11b03, bi.mp11b03a, getString(R.string.mp11b03))) {
+//                return false;
+//            }
+
+
 
         }
 
@@ -267,20 +281,15 @@ public class Form11BActivity extends AppCompatActivity {
             return false;
         }
 
-        double result2 = Double.parseDouble(bi.mp11b05.getText().toString()) - Double.parseDouble(bi.mp11b06.getText().toString());
+        double result2 = Math.abs(Double.parseDouble(bi.mp11b05.getText().toString()) - Double.parseDouble(bi.mp11b06.getText().toString()));
 
         if (result2 > 0.5) {
-            bi.fldgrpmp11b06.setVisibility(View.GONE);
-            bi.fldgrpmp11b05.setVisibility(View.GONE);
-            bi.mp11b07a.setChecked(true);
-        } else {
-            bi.fldgrpmp11b06.setVisibility(View.VISIBLE);
+            bi.mp11b05.setEnabled(false);
+            bi.mp11b06.setEnabled(false);
+            bi.mp11b05id.setEnabled(false);
+            bi.mp11b06id.setEnabled(false);
+           // bi.fldgrpmp11b06.setVisibility(View.GONE);
             bi.fldgrpmp11b05.setVisibility(View.VISIBLE);
-            bi.mp11b07a.setChecked(false);
-
-            if (!validatorClass.EmptyRadioButton(this, bi.mp11b07, bi.mp11b07a, getString(R.string.mp11b06))) {
-                return false;
-            }
 
             if (!validatorClass.EmptyTextBox(this, bi.mp11b08, getString(R.string.mp11b05))) {
                 return false;
@@ -296,6 +305,21 @@ public class Form11BActivity extends AppCompatActivity {
             if (!validatorClass.EmptySpinner(this, bi.mp11b08id, getString(R.string.mp11b02))) {
                 return false;
             }
+
+
+        } else {
+            bi.mp11b05.setEnabled(true);
+            bi.mp11b06.setEnabled(true);
+            bi.mp11b05id.setEnabled(true);
+            bi.mp11b06id.setEnabled(true);
+           // bi.fldgrpmp11b06.setVisibility(View.VISIBLE);
+            bi.fldgrpmp11b05.setVisibility(View.GONE);
+
+
+//            if (!validatorClass.EmptyRadioButton(this, bi.mp11b07, bi.mp11b07a, getString(R.string.mp11b06))) {
+//                return false;
+//            }
+
 
 
         }
@@ -332,20 +356,15 @@ public class Form11BActivity extends AppCompatActivity {
             return false;
         }
 
-        double result3 = Double.parseDouble(bi.mp11b09.getText().toString()) - Double.parseDouble(bi.mp11b10.getText().toString());
+        double result3 = Math.abs(Double.parseDouble(bi.mp11b09.getText().toString()) - Double.parseDouble(bi.mp11b10.getText().toString()));
 
         if (result3 > 0.5) {
-            bi.fldgrpmp11b08.setVisibility(View.GONE);
-            bi.fldgrpmp11b07.setVisibility(View.GONE);
-            bi.mp11b11a.setChecked(true);
-        } else {
-            bi.fldgrpmp11b08.setVisibility(View.VISIBLE);
+            bi.mp11b10.setEnabled(false);
+            bi.mp11b09.setEnabled(false);
+            bi.mp11b09id.setEnabled(false);
+            bi.mp11b10id.setEnabled(false);
+          //  bi.fldgrpmp11b08.setVisibility(View.GONE);
             bi.fldgrpmp11b07.setVisibility(View.VISIBLE);
-            bi.mp11b11a.setChecked(false);
-
-            if (!validatorClass.EmptyRadioButton(this, bi.mp11b11, bi.mp11b11a, getString(R.string.mp11b08))) {
-                return false;
-            }
 
             if (!validatorClass.EmptyTextBox(this, bi.mp11b12, getString(R.string.mp11b07))) {
                 return false;
@@ -361,6 +380,24 @@ public class Form11BActivity extends AppCompatActivity {
             if (!validatorClass.EmptySpinner(this, bi.mp11b12id, getString(R.string.mp11b07))) {
                 return false;
             }
+
+        } else {
+            bi.mp11b10.setEnabled(true);
+            bi.mp11b09.setEnabled(true);
+            bi.mp11b09id.setEnabled(true);
+            bi.mp11b10id.setEnabled(true);
+           // bi.fldgrpmp11b08.setVisibility(View.VISIBLE);
+            bi.fldgrpmp11b07.setVisibility(View.GONE);
+
+
+
+
+
+//            if (!validatorClass.EmptyRadioButton(this, bi.mp11b11, bi.mp11b11a, getString(R.string.mp11b08))) {
+//                return false;
+//            }
+
+
 
         }
 
