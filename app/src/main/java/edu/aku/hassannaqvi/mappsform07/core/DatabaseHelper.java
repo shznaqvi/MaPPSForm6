@@ -985,13 +985,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_S11B, AppMain.fc.getS11B());
 
 // Which row to update, based on the ID
-        String selection = " _ID = " + AppMain.fc.getID();
+        String selection = FormsTable.COLUMN__ID + "=?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 

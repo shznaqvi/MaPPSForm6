@@ -161,12 +161,8 @@ public class Form11BActivity extends AppCompatActivity {
 
         int updcount = db.updates11B();
 
-        if (updcount == 1) {
-            return true;
-        } else {
-           // Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        // Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+        return updcount == 1;
 
     }
 
@@ -239,14 +235,13 @@ public class Form11BActivity extends AppCompatActivity {
             bi.mp11b02.setEnabled(true);
             bi.mp11b01id.setEnabled(true);
             bi.mp11b02id.setEnabled(true);
-           // bi.fldgrpmp11b03.setVisibility(View.VISIBLE);
+            // bi.fldgrpmp11b03.setVisibility(View.VISIBLE);
             bi.fldgrpmp11b01.setVisibility(View.GONE);
 
 //
 //            if (!validatorClass.EmptyRadioButton(this, bi.mp11b03, bi.mp11b03a, getString(R.string.mp11b03))) {
 //                return false;
 //            }
-
 
 
         }
@@ -288,7 +283,7 @@ public class Form11BActivity extends AppCompatActivity {
             bi.mp11b06.setEnabled(false);
             bi.mp11b05id.setEnabled(false);
             bi.mp11b06id.setEnabled(false);
-           // bi.fldgrpmp11b06.setVisibility(View.GONE);
+            // bi.fldgrpmp11b06.setVisibility(View.GONE);
             bi.fldgrpmp11b05.setVisibility(View.VISIBLE);
 
             if (!validatorClass.EmptyTextBox(this, bi.mp11b08, getString(R.string.mp11b05))) {
@@ -312,14 +307,13 @@ public class Form11BActivity extends AppCompatActivity {
             bi.mp11b06.setEnabled(true);
             bi.mp11b05id.setEnabled(true);
             bi.mp11b06id.setEnabled(true);
-           // bi.fldgrpmp11b06.setVisibility(View.VISIBLE);
+            // bi.fldgrpmp11b06.setVisibility(View.VISIBLE);
             bi.fldgrpmp11b05.setVisibility(View.GONE);
 
 
 //            if (!validatorClass.EmptyRadioButton(this, bi.mp11b07, bi.mp11b07a, getString(R.string.mp11b06))) {
 //                return false;
 //            }
-
 
 
         }
@@ -363,7 +357,7 @@ public class Form11BActivity extends AppCompatActivity {
             bi.mp11b09.setEnabled(false);
             bi.mp11b09id.setEnabled(false);
             bi.mp11b10id.setEnabled(false);
-          //  bi.fldgrpmp11b08.setVisibility(View.GONE);
+            //  bi.fldgrpmp11b08.setVisibility(View.GONE);
             bi.fldgrpmp11b07.setVisibility(View.VISIBLE);
 
             if (!validatorClass.EmptyTextBox(this, bi.mp11b12, getString(R.string.mp11b07))) {
@@ -377,26 +371,20 @@ public class Form11BActivity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.EmptySpinner(this, bi.mp11b12id, getString(R.string.mp11b07))) {
-                return false;
-            }
+            return validatorClass.EmptySpinner(this, bi.mp11b12id, getString(R.string.mp11b07));
 
         } else {
             bi.mp11b10.setEnabled(true);
             bi.mp11b09.setEnabled(true);
             bi.mp11b09id.setEnabled(true);
             bi.mp11b10id.setEnabled(true);
-           // bi.fldgrpmp11b08.setVisibility(View.VISIBLE);
+            // bi.fldgrpmp11b08.setVisibility(View.VISIBLE);
             bi.fldgrpmp11b07.setVisibility(View.GONE);
-
-
-
 
 
 //            if (!validatorClass.EmptyRadioButton(this, bi.mp11b11, bi.mp11b11a, getString(R.string.mp11b08))) {
 //                return false;
 //            }
-
 
 
         }
