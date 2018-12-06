@@ -161,9 +161,11 @@ public class Form11BActivity extends AppCompatActivity {
 
         int updcount = db.updates11B();
 
-        // Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        return updcount == 1;
+        if (updcount > 0)
+            return true;
 
+        Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+        return false;
     }
 
     private void saveDraft() {
