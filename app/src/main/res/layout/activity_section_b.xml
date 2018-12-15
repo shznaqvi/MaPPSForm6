@@ -312,63 +312,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/fldGrpmp08b006b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/mp08b002"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/mp08b006b01x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="false"
-                    android:hint="@string/mp08b002"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fldGrpmp08b006c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/mp08b002"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/mp08b006b02x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="false"
-                    android:hint="@string/mp08b002"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
-
-
-            </LinearLayout>
 
 
             <TextView
