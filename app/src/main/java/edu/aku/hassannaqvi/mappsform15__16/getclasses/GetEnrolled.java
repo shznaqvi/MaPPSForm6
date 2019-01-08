@@ -63,7 +63,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         String line = "No Response";
-        return downloadUrl(AppMain._HOST_URL_3 + EnrolledContract.EnrolledTable._URIGET);
+        return downloadUrl(AppMain._HOST_URL_4 + EnrolledContract.EnrolledTable._URIGET);
 
     }
 

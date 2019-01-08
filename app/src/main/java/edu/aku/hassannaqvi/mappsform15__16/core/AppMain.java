@@ -54,6 +54,10 @@ public class AppMain extends Application {
             "http://" + _IP
                     + ":" + _PORT
                     + "/" + _PROJECT_FOLDER_3;
+    public static final String _HOST_URL_4 =
+            "http://" + _IP
+                    + ":" + _PORT
+                    + "/" + _PROJECT_FOLDER_4;
 
     public static final String _HOST_URL_15_16 =
             "http://" + _IP
