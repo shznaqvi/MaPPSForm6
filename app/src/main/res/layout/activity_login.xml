@@ -97,9 +97,7 @@
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textColor="#efefef"
-
                     android:textSize="28sp" />
-                <!--android:text="test1234"-->
 
 
                 <EditText
@@ -115,9 +113,8 @@
                     android:maxLines="1"
                     android:singleLine="true"
                     android:textAlignment="center"
-
                     android:textSize="28sp" />
-                <!--android:text="test1234"-->
+
 
             </LinearLayout>
 
@@ -139,10 +136,8 @@
                     android:padding="2px"
                     android:singleLine="true"
                     android:textAlignment="center"
-
                     android:textColor="#efefef"
                     android:textSize="28sp" />
-                <!--android:text="dmu@aku"-->
 
 
                 <EditText
@@ -157,10 +152,8 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-
                     android:textAlignment="center"
                     android:textSize="28sp" />
-                <!--android:text="aku?dmu"-->
 
 
             </LinearLayout>

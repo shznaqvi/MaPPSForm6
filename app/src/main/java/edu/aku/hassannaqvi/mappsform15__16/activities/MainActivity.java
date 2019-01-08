@@ -247,6 +247,7 @@ public class MainActivity extends Activity {
 
     }
 
+
     public void openForm15(View v) {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
@@ -272,9 +273,7 @@ public class MainActivity extends Activity {
                         if (!m_Text.equals("")) {
                             editor.putString("tagName", m_Text);
                             editor.commit();
-
                             AppMain.formType = "15";
-
                             Intent oF = new Intent(MainActivity.this, InfoActivity.class);
                             startActivity(oF);
                         }
@@ -463,6 +462,7 @@ public class MainActivity extends Activity {
             areaCode.setError("Error(Empty): Data Required");
         }
     }
+
 
     public void syncServer(View view) {
         Log.e(TAG, "syncServer: 1");
