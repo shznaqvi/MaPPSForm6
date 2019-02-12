@@ -34,6 +34,8 @@ public class Section7DActivity extends Activity {
             R.id.mp07q29id, R.id.mp07q30id, R.id.mp07q31id, R.id.mp07q33id, R.id.mp07q34id, R.id.mp07q35id, R.id.mp07q37id})
     List<Spinner> grpSpinners;
 
+    boolean fup_flag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +48,15 @@ public class Section7DActivity extends Activity {
         for (Spinner sp : grpSpinners) {
             sp.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(AppMain.loginMem)));
         }
+
+//        Get Intent Values
+        fup_flag = getIntent().getBooleanExtra("fup_flag", false);
+
     }
 
     public void BtnEnd() {
-
         AppMain.endActivity(this, this);
     }
-
 
     public void BtnContinue() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
@@ -87,16 +91,19 @@ public class Section7DActivity extends Activity {
 
     }
 
-
     public boolean ValidateForm() {
 
-        // Weight 1
+        Range weight = getWeight(fup_flag);
+        Range height = getHeight(fup_flag);
+        Range hCircum = getHC(fup_flag);
+        Range mArm = getMArm(fup_flag);
 
+        // Weight 1
         if (!validatorClass.EmptyTextBox(this, bi.mp07q22, getString(R.string.mp07q22))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q22, 1.2, 7.0, getString(R.string.mp07q22), " kg")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q22, weight.getMinRange(), weight.getMaxRange(), getString(R.string.mp07q22), " kg")) {
             return false;
         }
 
@@ -110,7 +117,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q26, 45.0, 62.0, getString(R.string.mp07q26), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q26, height.getMinRange(), height.getMaxRange(), getString(R.string.mp07q26), " cm")) {
             return false;
         }
 
@@ -124,7 +131,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q30, 31.5, 42.0, getString(R.string.mp07q30), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q30, hCircum.getMinRange(), hCircum.getMaxRange(), getString(R.string.mp07q30), " cm")) {
             return false;
         }
 
@@ -138,7 +145,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q34, 6.0, 14.0, getString(R.string.mp07q34), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q34, mArm.getMinRange(), mArm.getMaxRange(), getString(R.string.mp07q34), " cm")) {
             return false;
         }
 
@@ -152,7 +159,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q23, 1.2, 7.0, getString(R.string.mp07q23), " kg")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q23, weight.getMinRange(), weight.getMaxRange(), getString(R.string.mp07q23), " kg")) {
             return false;
         }
 
@@ -197,7 +204,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q25, 1.2, 7.0, getString(R.string.mp07q25), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q25, weight.getMinRange(), weight.getMaxRange(), getString(R.string.mp07q25), " kg")) {
                 return false;
             }
 
@@ -214,7 +221,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q27, 45.0, 62.0, getString(R.string.mp07q27), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q27, height.getMinRange(), height.getMaxRange(), getString(R.string.mp07q27), " cm")) {
             return false;
         }
 
@@ -259,7 +266,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q29, 45.0, 62.0, getString(R.string.mp07q29), " cm")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q29, height.getMinRange(), height.getMaxRange(), getString(R.string.mp07q29), " cm")) {
                 return false;
             }
 
@@ -277,7 +284,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q31, 31.5, 42.0, getString(R.string.mp07q31), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q31, hCircum.getMinRange(), hCircum.getMaxRange(), getString(R.string.mp07q31), " cm")) {
             return false;
         }
 
@@ -322,7 +329,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q33, 31.5, 42.0, getString(R.string.mp07q33), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q33, hCircum.getMinRange(), hCircum.getMaxRange(), getString(R.string.mp07q33), " kg")) {
                 return false;
             }
 
@@ -338,7 +345,7 @@ public class Section7DActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q35, 6.0, 14.0, getString(R.string.mp07q35), " cm")) {
+        if (!validatorClass.RangeTextBox(this, bi.mp07q35, mArm.getMinRange(), mArm.getMaxRange(), getString(R.string.mp07q35), " cm")) {
             return false;
         }
 
@@ -384,7 +391,7 @@ public class Section7DActivity extends Activity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q37, 6.0, 14.0, getString(R.string.mp07q37), " kg")) {
+            if (!validatorClass.RangeTextBox(this, bi.mp07q37, mArm.getMinRange(), mArm.getMaxRange(), getString(R.string.mp07q37), " kg")) {
                 return false;
             }
 
@@ -543,5 +550,49 @@ public class Section7DActivity extends Activity {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
+    public Range getWeight(boolean fup_flag) {
+        if (fup_flag)
+            return new Range(3.5, 12.0);
+        else
+            return new Range(1.5, 4.5);
+    }
+
+    public Range getHeight(boolean fup_flag) {
+        if (fup_flag)
+            return new Range(51.0, 76.0);
+        else
+            return new Range(42.0, 62.0);
+    }
+
+    public Range getHC(boolean fup_flag) {
+        if (fup_flag)
+            return new Range(32.0, 52.0);
+        else
+            return new Range(29.0, 42.0);
+    }
+
+    public Range getMArm(boolean fup_flag) {
+        if (fup_flag)
+            return new Range(9.0, 24.0);
+        else
+            return new Range(6.0, 14.0);
+    }
+
+    private class Range {
+        private double minRange, maxRange;
+
+        public Range(double minRange, double maxRange) {
+            this.minRange = minRange;
+            this.maxRange = maxRange;
+        }
+
+        public double getMinRange() {
+            return minRange;
+        }
+
+        public double getMaxRange() {
+            return maxRange;
+        }
+    }
 
 }

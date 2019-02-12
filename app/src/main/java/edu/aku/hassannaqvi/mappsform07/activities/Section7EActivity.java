@@ -130,7 +130,7 @@ public class Section7EActivity extends Activity {
                     return false;
                 }
 
-                return validatorClass.RangeTextBox(this, bi.mp07q49, 1.2, 7.0, getString(R.string.mp07q49), " kg");
+                return validatorClass.RangeTextBox(this, bi.mp07q49, 1.5, 4.5, getString(R.string.mp07q49), " kg");
             }
         }
 

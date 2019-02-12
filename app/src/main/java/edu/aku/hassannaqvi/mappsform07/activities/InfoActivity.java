@@ -388,7 +388,7 @@ public class InfoActivity extends Activity {
                     startActivity(intent);
                 } else {
                     intent = new Intent(this, Section7BActivity.class)
-                            .putExtra("flag", flagForm9_10);
+                            .putExtra("fup_flag", flagForm9_10);
                     if (flagForm9_10) {
                         intent.putExtra("chdob", childMap.get(mp08a004.getSelectedItem().toString()).getChdob());
                     } else {

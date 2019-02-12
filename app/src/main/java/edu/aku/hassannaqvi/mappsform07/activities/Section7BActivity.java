@@ -33,6 +33,7 @@ public class Section7BActivity extends AppCompatActivity {
     String maxdate1Week;
 
     Boolean isChecked = false;
+    boolean fup_flag;
 
 
     @Override
@@ -40,13 +41,16 @@ public class Section7BActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section7_b);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_b);
+
+        fup_flag = getIntent().getBooleanExtra("fup_flag", false);
+
         maxdate1Week = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_WEEK)));
 
         bi.mp07q17.setManager(getSupportFragmentManager());
         bi.mp07q20.setManager(getSupportFragmentManager());
         bi.mp07q17.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q20.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
-        bi.mp07q17.setMinDate(getIntent().getBooleanExtra("flag", false) ? maxdate1Week : AppMain.convertDateFormat(getIntent().getStringExtra("fdate_f4")));
+        bi.mp07q17.setMinDate(fup_flag ? maxdate1Week : AppMain.convertDateFormat(getIntent().getStringExtra("fdate_f4")));
         bi.mp07q1701.setManager(getSupportFragmentManager());
         bi.mp07q1701.setIs24HourView(true);
 
@@ -272,7 +276,8 @@ public class Section7BActivity extends AppCompatActivity {
                 finish();
 
                 if (bi.mp07q19a.isChecked()) {
-                    startActivity(new Intent(this, Section7DActivity.class));
+                    startActivity(new Intent(this, Section7DActivity.class)
+                            .putExtra("fup_flag", fup_flag));
                 } else {
                     startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
                 }

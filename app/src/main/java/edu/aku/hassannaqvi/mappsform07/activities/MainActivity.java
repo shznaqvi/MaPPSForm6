@@ -364,7 +364,8 @@ public class MainActivity extends Activity {
 
 //                            AppMain.formType = "9";
 
-                            Intent oF = new Intent(MainActivity.this, InfoActivity.class);
+                            Intent oF = new Intent(MainActivity.this, InfoActivity.class)
+                                    .putExtra("fType", true);
                             startActivity(oF);
                         }
                     }
