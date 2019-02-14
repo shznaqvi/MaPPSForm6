@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -139,9 +139,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + EnrolledContract.EnrolledTable.TABLE_NAME + "(" +
             EnrolledContract.EnrolledTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_LUID + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_LUID1 + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_SUBAREACODE + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_LHWCODE + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD1 + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_SYNCED + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
             EnrolledContract.EnrolledTable.COLUMN_NAME_SNO + " TEXT," +
@@ -185,6 +187,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SingleFup.COLUMN_GENDT + " TEXT," +
             SingleFup.COLUMN_NEW + " TEXT" +
             " );";
+    private static final String SQL_ALTER_ENROLLED3 = "ALTER TABLE " +
+            EnrolledContract.EnrolledTable.TABLE_NAME + " ADD COLUMN " +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD + " TEXT;";
+    private static final String SQL_ALTER_ENROLLED4 = "ALTER TABLE " +
+            EnrolledContract.EnrolledTable.TABLE_NAME + " ADD COLUMN " +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_LUID + " TEXT;";
+
     /**
      * DELETE STRINGS
      */
@@ -241,6 +250,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(SQL_ALTER_FORMS3);
             case 4:
                 db.execSQL(SQL_ALTER_ENROLLED2);
+            case 5:
+                db.execSQL(SQL_ALTER_ENROLLED3);
+                db.execSQL(SQL_ALTER_ENROLLED4);
         }
     }
 

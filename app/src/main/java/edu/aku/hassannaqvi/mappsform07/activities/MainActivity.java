@@ -38,6 +38,7 @@ import edu.aku.hassannaqvi.mappsform07.contracts.FormsContract;
 import edu.aku.hassannaqvi.mappsform07.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
+import edu.aku.hassannaqvi.mappsform07.getclasses.GetEnrolled;
 import edu.aku.hassannaqvi.mappsform07.otherclasses.FormsList;
 import edu.aku.hassannaqvi.mappsform07.syncclasses.SyncAllData;
 
@@ -604,9 +605,8 @@ public class MainActivity extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
 
             // Sync Randomization
-/*            Toast.makeText(getApplicationContext(), "Getting Eligibleomization", Toast.LENGTH_SHORT).show();
-            new GetEnrolled(this).execute();*/
-
+            Toast.makeText(getApplicationContext(), "Getting Eligibleomization", Toast.LENGTH_SHORT).show();
+            new GetEnrolled(this).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -614,6 +614,7 @@ public class MainActivity extends Activity {
             editor.putString("LastDownSyncServer", dtToday);
 
             editor.apply();
+
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
