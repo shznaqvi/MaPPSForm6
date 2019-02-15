@@ -46,8 +46,8 @@ public class EnrolledContract {
         this.houseHold = jsonObject.getString(EnrolledTable.COLUMN_NAME_HOUSEHOLD);
         this.women_name = jsonObject.getString(EnrolledTable.COLUMN_NAME_WOMEN_NAME);
         this.sno = jsonObject.getString(EnrolledTable.COLUMN_NAME_SNO);
-        /*this.uid_f4 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F4);
-        this.fdate_f4 = jsonObject.getString(EnrolledTable.COLUMN_FDATE_F4);*/
+        /*this.uid_f4 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F4);*/
+        this.fdate_f4 = jsonObject.getString(EnrolledTable.COLUMN_FDATE_F4);
         return this;
 
     }
