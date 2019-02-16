@@ -153,7 +153,7 @@ public class EnrolledContract {
 
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String _URIGET = "getenrolled.php";
+        public static final String _URIGET = "geteligibles.php";
     }
 
 }
