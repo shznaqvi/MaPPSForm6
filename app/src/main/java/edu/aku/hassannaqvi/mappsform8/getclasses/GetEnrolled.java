@@ -23,6 +23,7 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import edu.aku.hassannaqvi.mappsform8.contracts.EnrolledContract;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
@@ -53,7 +54,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Enrolleds");
+        pd.setTitle("Please wait... Processing Enrolled's");
         pd.show();
 
     }
@@ -76,17 +77,17 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             json = new JSONArray(result);
             DatabaseHelper db = new DatabaseHelper(mContext);
             db.syncEnrolled(json);
-            Toast.makeText(mContext, "Successfully Synced " + json.length() + " Enrolleds", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Successfully Synced " + json.length() + " Enrolled's", Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(json.length() + " Enrolleds synced.");
-            pd.setTitle("Enrolleds: Done");
+            pd.setMessage(json.length() + " Enrolled's synced.");
+            pd.setTitle("Enrolled's: Done");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Enrolleds Sync Failed");
+            pd.setTitle("Enrolled's Sync Failed");
             pd.show();
 
         }
@@ -107,8 +108,8 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             URL url = new URL(myurl);
             Log.d(TAG, "downloadUrl: " + myurl);
             conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(15000 /* milliseconds */);
+            conn.setReadTimeout(31000);//milliseconds
+            conn.setConnectTimeout(41000); //milliseconds
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
             conn.setDoInput(true);
@@ -143,7 +144,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             int HttpResult = conn.getResponseCode();
             if (HttpResult == HttpURLConnection.HTTP_OK) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(
-                        conn.getInputStream(), "utf-8"));
+                        conn.getInputStream(), StandardCharsets.UTF_8));
                 StringBuffer sb = new StringBuffer();
 
                 while ((line = br.readLine()) != null) {
@@ -170,7 +171,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
 
     public String readIt(InputStream stream, int len) throws IOException {
         Reader reader = null;
-        reader = new InputStreamReader(stream, "UTF-8");
+        reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
         char[] buffer = new char[len];
         reader.read(buffer);
         return new String(buffer);

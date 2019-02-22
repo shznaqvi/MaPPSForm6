@@ -44,7 +44,7 @@ public class EnrolledContract {
         this.houseHold = jsonObject.getString(EnrolledTable.COLUMN_NAME_HOUSEHOLD);
         this.women_name = jsonObject.getString(EnrolledTable.COLUMN_NAME_WOMEN_NAME);
         this.sno = jsonObject.getString(EnrolledTable.COLUMN_NAME_SNO);
-        this.uid_f4 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F4);
+//        this.uid_f4 = jsonObject.getString(EnrolledTable.COLUMN_NAME_UID_F4);
         return this;
 
     }
@@ -143,17 +143,20 @@ public class EnrolledContract {
         public static final String TABLE_NAME = "enrolled";
 
         public static final String _ID = "id";
-        public static final String COLUMN_NAME_LUID = "l_uid";
+        public static final String COLUMN_NAME_LUID = "uid";
+        public static final String COLUMN_NAME_LUID1 = "l_uid";
         public static final String COLUMN_NAME_SUBAREACODE = "clustercode";
         public static final String COLUMN_NAME_LHWCODE = "lhwcode";
-        public static final String COLUMN_NAME_HOUSEHOLD = "household";
+        public static final String COLUMN_NAME_HOUSEHOLD = "hhno";
+        public static final String COLUMN_NAME_HOUSEHOLD1 = "household";
         public static final String COLUMN_NAME_WOMEN_NAME = "epname";
         public static final String COLUMN_NAME_SNO = "sno";
         public static final String COLUMN_NAME_UID_F4 = "uid_f4";
 
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String _URIGET = "pregnancies.php";
+        //        public static final String _URIGET = "pregnancies.php";
+        public static final String _URIGET = "getenrolled.php";
     }
 
 }

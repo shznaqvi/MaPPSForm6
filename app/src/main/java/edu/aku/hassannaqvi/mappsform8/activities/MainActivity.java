@@ -524,9 +524,8 @@ public class MainActivity extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
 
             // Sync Randomization
-            Toast.makeText(getApplicationContext(), "Getting Eligibleomization", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Getting Eligible's", Toast.LENGTH_SHORT).show();
             new GetEnrolled(this).execute();
-
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

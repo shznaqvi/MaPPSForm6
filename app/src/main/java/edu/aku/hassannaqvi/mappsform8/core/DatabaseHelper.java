@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -111,18 +111,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + ParticipantsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final String SQL_CREATE_ENROLLED = "CREATE TABLE "
-            + EnrolledTable.TABLE_NAME + "(" +
-            EnrolledTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            EnrolledTable.COLUMN_NAME_LUID + " TEXT," +
-            EnrolledTable.COLUMN_NAME_SUBAREACODE + " TEXT," +
-            EnrolledTable.COLUMN_NAME_LHWCODE + " TEXT," +
-            EnrolledTable.COLUMN_NAME_HOUSEHOLD + " TEXT," +
-            EnrolledTable.COLUMN_SYNCED + " TEXT,"
-            + EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
-            EnrolledTable.COLUMN_NAME_SNO + " TEXT," +
-            EnrolledTable.COLUMN_NAME_WOMEN_NAME + " TEXT," +
-            EnrolledTable.COLUMN_NAME_UID_F4 + " TEXT" +
-
+            + EnrolledContract.EnrolledTable.TABLE_NAME + "(" +
+            EnrolledContract.EnrolledTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_LUID + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_LUID1 + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_SUBAREACODE + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_LHWCODE + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD1 + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_SYNCED + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_SYNCED_DATE + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_SNO + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_WOMEN_NAME + " TEXT," +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_UID_F4 + " TEXT" +
             " );";
     private static final String SQL_CREATE_LHWS = "CREATE TABLE "
             + LHWsContract.LHWsTable.TABLE_NAME + "(" +
@@ -138,6 +139,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ClustersContract.ClustersTable.COLUMN_CLUSTERNAME + " TEXT," +
             ClustersContract.ClustersTable.COLUMN_CLUSTERCODE + " TEXT" +
             " );";
+    private static final String SQL_ALTER_ENROLLED2 = "ALTER TABLE " +
+            EnrolledContract.EnrolledTable.TABLE_NAME + " ADD COLUMN " +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_HOUSEHOLD + " TEXT;";
+    private static final String SQL_ALTER_ENROLLED3 = "ALTER TABLE " +
+            EnrolledContract.EnrolledTable.TABLE_NAME + " ADD COLUMN " +
+            EnrolledContract.EnrolledTable.COLUMN_NAME_LUID + " TEXT;";
     /**
      * DELETE STRINGS
      */
@@ -175,12 +182,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_USERS);
+        /*db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_ENROLLED);
         db.execSQL(SQL_DELETE_LHWS);
         db.execSQL(SQL_DELETE_CLUSTERS);
         db.execSQL(SQL_DELETE_FORMS);
-        db.execSQL(SQL_DELETE_PARTICIPANTS);
+        db.execSQL(SQL_DELETE_PARTICIPANTS);*/
+
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_ALTER_ENROLLED2);
+                db.execSQL(SQL_ALTER_ENROLLED3);
+        }
     }
 
     public void syncUsers(JSONArray userlist) {
