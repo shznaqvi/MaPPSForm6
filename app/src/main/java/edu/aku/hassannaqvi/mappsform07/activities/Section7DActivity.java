@@ -552,28 +552,28 @@ public class Section7DActivity extends Activity {
 
     public Range getWeight(boolean fup_flag) {
         if (fup_flag)
-            return new Range(3.5, 12.0);
+            return new Range(2.0, 12.0);
         else
             return new Range(1.5, 4.5);
     }
 
     public Range getHeight(boolean fup_flag) {
         if (fup_flag)
-            return new Range(51.0, 76.0);
+            return new Range(45.0, 76.0);
         else
             return new Range(42.0, 62.0);
     }
 
     public Range getHC(boolean fup_flag) {
         if (fup_flag)
-            return new Range(32.0, 52.0);
+            return new Range(30.0, 52.0);
         else
             return new Range(29.0, 42.0);
     }
 
     public Range getMArm(boolean fup_flag) {
         if (fup_flag)
-            return new Range(9.0, 24.0);
+            return new Range(6.0, 24.0);
         else
             return new Range(6.0, 14.0);
     }
