@@ -43,16 +43,18 @@ public class SectionBActivity extends AppCompatActivity {
     public void setupViews() {
         bl.mp08b002.setManager(getSupportFragmentManager());
         bl.mp08b004.setManager(getSupportFragmentManager());
+        bl.mp08b00601.setManager(getSupportFragmentManager());
+        bl.mp08b00602.setManager(getSupportFragmentManager());
+        bl.mp08b004t.setManager(getSupportFragmentManager());
         bl.mp08b002.setMaxDate(dateToday);
         bl.mp08b004.setMaxDate(dateToday);
         bl.mp08b002.setMinDate(minDate);
         bl.mp08b004.setMinDate(minDate);
-        bl.mp08b004t.setManager(getSupportFragmentManager());
-        bl.mp08b00601.setManager(getSupportFragmentManager());
         bl.mp08b00601.setMaxDate(dateToday);
-
-        bl.mp08b00602.setManager(getSupportFragmentManager());
         bl.mp08b00602.setMaxDate(dateToday);
+
+
+        //bl.mp08b00602.setMaxDate(dateToday);
 
         //        bl.mp08b004t.setTimeFormat("hh:mm a");
         bl.mp08b001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -112,12 +114,12 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                bl.mp08b00601.setText(null);
-                bl.mp08b00602.setText(null);
+                //  bl.mp08b00601.setText(null);
+                // bl.mp08b00602.setText(null);
 
-                if (!bl.mp08b004.getText().toString().isEmpty()) {
-                    bl.mp08b00601.setMinDate(AppMain.convertDateFormat(bl.mp08b004.getText().toString()));
-                    bl.mp08b00602.setMinDate(AppMain.convertDateFormat(bl.mp08b004.getText().toString()));
+                if (!bl.mp08b004.getText().toString().equals("")) {
+                    bl.mp08b00601.setMinDate(AppMain.convertDateFormat(charSequence.toString()));
+                    bl.mp08b00602.setMinDate(AppMain.convertDateFormat(charSequence.toString()));
                 }
 
             }
