@@ -42,14 +42,6 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
         mContext = context;
     }
 
-    public static void longInfo(String str) {
-        if (str.length() > 4000) {
-            Log.i(TAG + "LongInfo", str.substring(0, 4000));
-            longInfo(str.substring(4000));
-        } else
-            Log.i(TAG + "LongInfo", str);
-    }
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -121,14 +113,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             conn.connect();
             JSONArray jsonSync = new JSONArray();
             DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-            DatabaseHelper db = new DatabaseHelper(mContext);
-                /*ollection<EnrolledContract> Enrolleds = db.getAllEnrolled();
-                Log.d(TAG, String.valueOf(Enrolleds.size()));
-                for (EnrolledContract fc : Enrolleds) {
 
-                    jsonSync.put(fc.toJSONObject());
-
-                }*/
             JSONObject json = new JSONObject();
             try {
                 json.put("cluster", AppMain.curCluster);
@@ -137,7 +122,6 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             }
             Log.d(TAG, "downloadUrl: " + json.toString());
             wr.writeBytes(json.toString());
-            longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
             wr.flush();
             wr.close();
 
