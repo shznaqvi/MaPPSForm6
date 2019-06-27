@@ -12,10 +12,8 @@ import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -111,7 +109,8 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
 
             // Starts the query
             conn.connect();
-            JSONArray jsonSync = new JSONArray();
+
+            /*JSONArray jsonSync = new JSONArray();
             DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
             JSONObject json = new JSONObject();
@@ -123,7 +122,7 @@ public class GetEnrolled extends AsyncTask<Void, Void, String> {
             Log.d(TAG, "downloadUrl: " + json.toString());
             wr.writeBytes(json.toString());
             wr.flush();
-            wr.close();
+            wr.close();*/
 
             int HttpResult = conn.getResponseCode();
             if (HttpResult == HttpURLConnection.HTTP_OK) {
