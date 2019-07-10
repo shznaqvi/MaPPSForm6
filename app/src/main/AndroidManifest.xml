@@ -37,11 +37,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name="edu.aku.hassannaqvi.mapps_form6.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name="edu.aku.hassannaqvi.mapps_form6.activities.Form6ActivitySection4"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+
         <activity
             android:name="edu.aku.hassannaqvi.mapps_form6.activities.MainActivity"
             android:screenOrientation="portrait"

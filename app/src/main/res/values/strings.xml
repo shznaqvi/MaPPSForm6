@@ -124,4 +124,64 @@
     <string name="mp05c006">Expected date of delivery</string>
     <string name="mp05c007">Date of Ultrasound</string>
 
+
+    <!-- Form 6 Section 4 -->
+    <string name="mp064h"> آخر ۾، آئون توھان کان ڪجھ سوال پڇڻ چاھيندس جيڪي اُنھن علامتن يا حالتن جي باري ۾ ھوندا جيڪي حمل جي شروعات کان وٺي توھان کي درپيش آيون </string>
+
+    <string name="mp06a"> ها </string>
+    <string name="mp06b"> نه </string>
+    <string name="mp06h1"> ڇا حمل جي دوران توهان کي هيٺ ڏنلن مان ڪا پيچيدگي ٿي هئي ؟ </string>
+    <string name="mp06h2"> پيچيدگي جو وقت </string>
+    <string name="mp06h2a"> وقت 1 </string>
+    <string name="mp06h2b"> وقت 2 </string>
+    <string name="mp06h2c"> وقت 3 </string>
+    <string name="mp06h3"> علاج/سار سنڀال ورتي؟ </string>
+    <string name="mp06h4"> علاج/سار سنڀال ڪٿان حاصل ڪئي؟ </string>
+    <string name="mp06h4a"> نجي ڪلينڪ </string>
+    <string name="mp06h4b"> نجي اسپتال </string>
+    <string name="mp06h4c"> بي ايڇ يو/آر ايڇ سي </string>
+    <string name="mp06h4d"> تعلقه اسپتال </string>
+    <string name="mp06h4e"> ٽرشري اسپتال </string>
+    <string name="mp06h4f"> ايل ايڇ ڊبليو </string>
+    <string name="mp06h4g"> ٻٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="mp06h5"> اسپتال ۾ گذاريل ڏينھن جو تعداد </string>
+
+    <string name="mp06h"> نشانيون ۽ حالتون </string>
+
+    <string name="mp0601"> پيٽ جو سور </string>
+    <string name="mp0602"> پيٽ جي ھيٺين حصي ۾ سور </string>
+    <string name="mp0603"> متلي </string>
+    <string name="mp0604"> الٽي </string>
+    <string name="mp0605"> قبضي </string>
+    <string name="mp0606"> دست </string>
+    <string name="mp0607"> مٿي جو سور </string>
+    <string name="mp0608"> شديد مٿي جو سور </string>
+    <string name="mp0609"> بخار </string>
+    <string name="mp0610"> نزلو، زُڪام ۽ کنگھ </string>
+    <string name="mp0611"> ساه کڻڻ ۾ تڪليف </string>
+    <string name="mp0612"> چھري يا پيرن تي سوڄ </string>
+    <string name="mp0613"> اکين آڏو ڌنڌلاڻ </string>
+    <string name="mp0614"> جهٽڪا يا دورا پوڻ </string>
+    <string name="mp0615"> بيهوشي </string>
+    <string name="mp0616"> ٻچيداني مان بدبوء دار پاڻي جو اچڻ </string>
+    <string name="mp0617"> بڇيداني مان خون جو هلڻ </string>
+    <string name="mp0618"> ڪپڙن جو آلو ٿيڻ </string>
+    <string name="mp0619"> بستري جو آلو ٿيڻ </string>
+    <string name="mp0620"> فرش جو آلو ٿيڻ </string>
+    <string name="mp0621"> خون هلڻ ڪري هوش جو وڃڻ </string>
+    <string name="mp0622"> ٻار جي چرپر گھٽجڻ </string>
+    <string name="mp0623"> شديد الٽين جي ڪري اسپتال ۾ داخل ٿي </string>
+    <string name="mp0624"> حمل جي ڪري شگرجوٿيڻ يامٺي پيشاب جوٿيڻ </string>
+    <string name="mp0625"> حمل جي ڪري رت جودٻاءَ وڌڻ </string>
+    <string name="mp0626"> وقت کان اڳ ۾ ويم جا سورٿيڻ </string>
+    <string name="mp0627"> پيٽ ۾ ٻارجي دل جي ڌڙڪن يا چرپرگهٽ ٿيڻ </string>
+    <string name="mp0628"> ٻار جو قدبت معمول کان گهٽجڻ (حمل جي مهينن جي حساب سان) </string>
+    <string name="mp0629"> سائي </string>
+    <string name="mp0630"> رت چاڙاھڻ </string>
+    <string name="mp0631"> وينوفر جي ڊرپ يا سُئي لڳرائڻ </string>
+    <string name="mp0632"> حمل جي دوران ڪا ٻئي حالت جنھن ۾ علاج يا اسپتال وغيره ڏانھن اُماڻڻ جي ضرورت پئي ھجي. </string>
+
+
+
+
 </resources>

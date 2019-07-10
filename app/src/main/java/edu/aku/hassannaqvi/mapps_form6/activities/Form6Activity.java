@@ -91,6 +91,7 @@ public class Form6Activity extends AppCompatActivity {
     /* @BindView(R.id.mp04e001) RadioGroup mp04e001;
      @BindView(R.id.mp04e00101) RadioButton mp04e00101;
      @BindView(R.id.mp04e00102) RadioButton mp04e00102;*/
+
     @BindView(R.id.mp04e002)
     RadioGroup mp04e002;
     @BindView(R.id.mp04e00201)
