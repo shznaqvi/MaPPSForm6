@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layoutDirection="rtl"
+        android:id="@+id/lvmain"
         android:orientation="vertical"
         android:paddingEnd="16dp">
 
@@ -959,6 +960,36 @@
 
         </RadioGroup>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/mp0630"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <RadioGroup
+            android:id="@+id/mp0630"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/mp063001"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mp06a" />
+
+            <RadioButton
+                android:id="@+id/mp063002"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mp06b" />
+
+
+        </RadioGroup>
+
 
 
 
@@ -1038,6 +1069,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="20dp"
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e"
                 android:textSize="32sp" />
@@ -1045,6 +1077,7 @@
             <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
 
             <Button
+                android:layout_marginLeft="10dp"
                 android:id="@+id/btn_Continue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
