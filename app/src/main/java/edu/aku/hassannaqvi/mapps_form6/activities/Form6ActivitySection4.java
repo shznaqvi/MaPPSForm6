@@ -393,12 +393,14 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
         if (lst2.equals("01") && b == true) {
 
-            show_alert(lst6,compoundButton);
+            boolean f=false;
+           f= show_alert(lst6,compoundButton);
 
-            if(!HMmp060.containsKey(lst6))
-            {
-                compoundButton.setChecked(false);
-            }
+           if(f==true && !HMmp060.containsKey(lst6))
+           {
+               compoundButton.setChecked(false);
+           }
+
         } else {
             if (HMmp060.containsKey(lst6))
                 HMmp060.remove(lst6);
@@ -425,7 +427,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
     }
 
 
-    public void show_alert(final String vname, final CompoundButton cm) {
+    public boolean show_alert(final String vname, final CompoundButton cm) {
         final AlertDialog b = new AlertDialog.Builder(this).create();
         LayoutInflater layoutInflater = getLayoutInflater();
         View v = layoutInflater.inflate(R.layout.alertdialogue, null);
@@ -493,8 +495,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
 
 
-                cm.setChecked(false);
-
+               cm.setChecked(false);
+// ALI plesed checked
 
                 b.dismiss();
 
@@ -603,11 +605,12 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
 
 
+
                 b.dismiss();
 
             }
         });
-
+        return true;
 
     }
 
