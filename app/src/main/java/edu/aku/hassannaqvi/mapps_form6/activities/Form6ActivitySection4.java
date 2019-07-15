@@ -264,8 +264,111 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
     @BindView(R.id.lvmain)
     LinearLayout lvmain;
+    //lvmp0601
 
-//endregion
+    @BindView(R.id.lvmp0601)
+    LinearLayout lvmp0601;
+
+    @BindView(R.id.lvmp0602)
+    LinearLayout lvmp0602;
+
+    @BindView(R.id.lvmp0603)
+    LinearLayout lvmp0603;
+
+    @BindView(R.id.lvmp0604)
+    LinearLayout lvmp0604;
+
+    @BindView(R.id.lvmp0605)
+    LinearLayout lvmp0605;
+
+    @BindView(R.id.lvmp0606)
+    LinearLayout lvmp0606;
+
+    @BindView(R.id.lvmp0607)
+    LinearLayout lvmp0607;
+
+    @BindView(R.id.lvmp0608)
+    LinearLayout lvmp0608;
+
+    @BindView(R.id.lvmp0609)
+    LinearLayout lvmp0609;
+
+    @BindView(R.id.lvmp0610)
+    LinearLayout lvmp0610;
+
+    @BindView(R.id.lvmp0611)
+    LinearLayout lvmp0611;
+
+    @BindView(R.id.lvmp0612)
+    LinearLayout lvmp0612;
+
+    @BindView(R.id.lvmp0613)
+    LinearLayout lvmp0613;
+
+    @BindView(R.id.lvmp0614)
+    LinearLayout lvmp0614;
+
+    @BindView(R.id.lvmp0615)
+    LinearLayout lvmp0615;
+
+    @BindView(R.id.lvmp0616)
+    LinearLayout lvmp0616;
+
+    @BindView(R.id.lvmp0617)
+    LinearLayout lvmp0617;
+
+    @BindView(R.id.lvmp0618)
+    LinearLayout lvmp0618;
+
+    @BindView(R.id.lvmp0619)
+    LinearLayout lvmp0619;
+
+    @BindView(R.id.lvmp0620)
+    LinearLayout lvmp0620;
+
+    @BindView(R.id.lvmp0621)
+    LinearLayout lvmp0621;
+
+    @BindView(R.id.lvmp0622)
+    LinearLayout lvmp0622;
+
+    @BindView(R.id.lvmp0623)
+    LinearLayout lvmp0623;
+
+    @BindView(R.id.lvmp0624)
+    LinearLayout lvmp0624;
+
+    @BindView(R.id.lvmp0625)
+    LinearLayout lvmp0625;
+
+    @BindView(R.id.lvmp0626)
+    LinearLayout lvmp0626;
+
+    @BindView(R.id.lvmp0627)
+    LinearLayout lvmp0627;
+
+    @BindView(R.id.lvmp0628)
+    LinearLayout lvmp0628;
+
+    @BindView(R.id.lvmp0629)
+    LinearLayout lvmp0629;
+
+    @BindView(R.id.lvmp0630)
+    LinearLayout lvmp0630;
+
+    @BindView(R.id.lvmp0631)
+    LinearLayout lvmp0631;
+
+    @BindView(R.id.lvmp0632)
+    LinearLayout lvmp0632;
+
+    HashMap<String,LinearLayout> Hm_Lv=new HashMap<>();
+    
+    
+           
+
+
+    //endregion
 
 
     @Override
@@ -378,11 +481,52 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
 
 //endregion
+        
+        
+        //region  hasmap
+
+        Hm_Lv.put("mp0601",lvmp0601);
+        Hm_Lv.put(	"mp0602",lvmp0602);
+        Hm_Lv.put(	"mp0603",lvmp0603);
+        Hm_Lv.put(	"mp0604",lvmp0604);
+        Hm_Lv.put(	"mp0605",lvmp0605);
+        Hm_Lv.put(	"mp0606",lvmp0606);
+        Hm_Lv.put(	"mp0607",lvmp0607);
+        Hm_Lv.put(	"mp0608",lvmp0608);
+        Hm_Lv.put(	"mp0609",lvmp0609);
+        Hm_Lv.put(	"mp0610",lvmp0610);
+        Hm_Lv.put(	"mp0611",lvmp0611);
+        Hm_Lv.put(	"mp0612",lvmp0612);
+        Hm_Lv.put(	"mp0613",lvmp0613);
+        Hm_Lv.put(	"mp0614",lvmp0614);
+        Hm_Lv.put(	"mp0615",lvmp0615);
+        Hm_Lv.put(	"mp0616",lvmp0616);
+        Hm_Lv.put(	"mp0617",lvmp0617);
+        Hm_Lv.put(	"mp0618",lvmp0618);
+        Hm_Lv.put(	"mp0619",lvmp0619);
+        Hm_Lv.put(	"mp0620",lvmp0620);
+        Hm_Lv.put(	"mp0621",lvmp0621);
+        Hm_Lv.put(	"mp0622",lvmp0622);
+        Hm_Lv.put(	"mp0623",lvmp0623);
+        Hm_Lv.put(	"mp0624",lvmp0624);
+        Hm_Lv.put(	"mp0625",lvmp0625);
+        Hm_Lv.put(	"mp0626",lvmp0626);
+        Hm_Lv.put(	"mp0627",lvmp0627);
+        Hm_Lv.put(	"mp0628",lvmp0628);
+        Hm_Lv.put(	"mp0629",lvmp0629);
+        Hm_Lv.put(	"mp0630",lvmp0630);
+        Hm_Lv.put(	"mp0631",lvmp0631);
+        Hm_Lv.put(	"mp0632",lvmp0632);
+      
+
+        //endregion
 
 
     }
 
-
+    private static String removeLastChar(String str) {
+        return str.substring(0, str.length() - 2);
+    }
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
@@ -390,22 +534,28 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         String id = compoundButton.getResources().getResourceName(compoundButton.getId());
         String lst6 = id.substring(Math.max(id.length() - 8, 0));
         String lst2 = id.substring(Math.max(id.length() - 2, 0));
+        String lst8 = removeLastChar(lst6);
 
         if (lst2.equals("01") && b == true) {
 
-            boolean f=false;
-           f= show_alert(lst6,compoundButton);
 
-           if(f==true && !HMmp060.containsKey(lst6))
-           {
-               compoundButton.setChecked(false);
-           }
 
-        } else {
-            if (HMmp060.containsKey(lst6))
-                HMmp060.remove(lst6);
+            Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+         //   Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+
 
         }
+        else
+        {
+            Hm_Lv.get(lst8).removeAllViews();
+           // Hm_Lv.get(lst8).setVisibility(View.GONE);
+            compoundButton.requestFocus();
+        }
+
 
 
         //   Log.d("", "onCheckedChanged: "+id);
@@ -415,10 +565,13 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
             @Override
             public void onClick(View view) {
 
-                if (!checvalidation(lvmain)) {
-                    Log.d("taq", HMmp060 + "");
-                }
+              //  if (!checvalidation(lvmain)) {
+                //    Log.d("taq", HMmp060 + "");;
+               // }
 
+                check_get_data(lvmp0601);
+
+             //   check_get_data(lvmp0602);
             }
 
         });
@@ -513,7 +666,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                 if (!mp06h2a.isChecked() && !mp06h2b.isChecked() && !mp06h2c.isChecked()) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): " + getString(R.string.mp06h2a), Toast.LENGTH_SHORT).show();
-                    mp06h2a.setError("This data is Required!");
+                    mp06h2a.setError("This data is Required!");;
 
                     return;
                 } else {
@@ -538,7 +691,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                 if (!mp06h301.isChecked() && !mp06h302.isChecked()) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                    mp06h301.setError("This data is Required!");
+                    mp06h301.setError("This data is Required!");;
 
                     return;
                 } else {
@@ -555,7 +708,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
                         && !mp06h406.isChecked() && !mp06h407.isChecked()
                 ) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                    mp06h401.setError("This data is Required!");
+                    mp06h401.setError("This data is Required!");;
 
                     return;
                 } else {
@@ -582,7 +735,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                         if (mp06h407x.getText().toString().isEmpty()) {
                             Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                            mp06h407x.setError("This data is Required!");
+                            mp06h407x.setError("This data is Required!");;
                             return;
                         } else {
                             obj_mp060.mp06h407x = mp06h407x.getText().toString();
@@ -593,7 +746,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                 if (mp06h5.getText().toString().isEmpty()) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): " + getString(R.string.mp06h5), Toast.LENGTH_SHORT).show();
-                    mp06h5.setError("This data is Required!");
+                    mp06h5.setError("This data is Required!");;
 
                     return;
                 } else {
@@ -612,6 +765,147 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         });
         return true;
 
+    }
+
+    public void showLV(final String vname,LinearLayout lv) {
+       // final AlertDialog b = new AlertDialog.Builder(this).create();
+
+
+        LayoutInflater layoutInflater = getLayoutInflater();
+        View v = layoutInflater.inflate(R.layout.alertdialogue, null);
+        lv.addView(v);
+       // b.setView(v);
+       // b.show();
+       // b.setCancelable(false);
+
+
+         CheckBox mp06h2a, mp06h2b, mp06h2c;
+         RadioButton
+                mp06h301,
+                mp06h302,
+                mp06h401,
+                mp06h402,
+                mp06h403,
+                mp06h404,
+                mp06h405,
+                mp06h406,
+                mp06h407;
+         final EditText mp06h407x,
+                mp06h5;
+
+        Button btn_End, btn_Continue;
+
+        mp06h2a = v.findViewById(R.id.mp06h2a);
+        mp06h2b = v.findViewById(R.id.mp06h2b);
+        mp06h2c = v.findViewById(R.id.mp06h2c);
+
+        mp06h301 = v.findViewById(R.id.mp06h301);
+        mp06h302 = v.findViewById(R.id.mp06h302);
+        mp06h401 = v.findViewById(R.id.mp06h401);
+        mp06h402 = v.findViewById(R.id.mp06h402);
+        mp06h403 = v.findViewById(R.id.mp06h403);
+        mp06h404 = v.findViewById(R.id.mp06h404);
+        mp06h405 = v.findViewById(R.id.mp06h405);
+        mp06h406 = v.findViewById(R.id.mp06h406);
+        mp06h407 = v.findViewById(R.id.mp06h407);
+
+        mp06h407x = v.findViewById(R.id.mp06h407x);
+        mp06h5 = v.findViewById(R.id.mp06h5);
+
+        btn_End = v.findViewById(R.id.btn_End);
+        btn_Continue = v.findViewById(R.id.btn_Continue);
+
+         mp060 obj_mp060 = new mp060();
+
+
+        mp06h407.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (compoundButton.isChecked()) {
+                    mp06h407x.setVisibility(View.VISIBLE);
+                } else {
+                    mp06h407x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        //final boolean status_chect=false;
+
+
+
+
+
+
+    }
+
+
+
+    public  boolean check_get_data(LinearLayout lvParant)
+    {
+
+
+        try {
+            View view_lv=lvParant.getChildAt(0);
+            LinearLayout lv=((LinearLayout) view_lv);
+            int checkboxcount=0;
+            int Chectcheckboxcount=0;
+
+            for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
+                View view = lv.getChildAt(i);
+
+                if (view instanceof RadioGroup) {
+                    int id = ((RadioGroup) view).getCheckedRadioButtonId();
+                    if (id == -1) {
+                        ((RadioGroup) view).requestFocus();
+
+                        Toast.makeText(Form6ActivitySection4.this, "Some filed are missing", Toast.LENGTH_LONG).show();
+
+                        return false;
+                    }
+                }
+
+                if (view instanceof CheckBox) {
+
+                    CheckBox cb= ((CheckBox) view);
+
+                    checkboxcount++;
+                    if(cb.isChecked())
+                    {
+                        Chectcheckboxcount++;
+                    }
+                    if (checkboxcount==2 && Chectcheckboxcount==0) {
+                        cb.requestFocus();
+                        cb.setError("This Filed is required");;
+
+                        Toast.makeText(Form6ActivitySection4.this, "Some filed are missing", Toast.LENGTH_LONG).show();
+
+                        return false;
+                    }
+
+                }
+
+                if(view instanceof EditText)
+                {
+                    EditText ed=((EditText) view);
+                    if(ed.getVisibility()==View.VISIBLE)
+                    {
+                        if(ed.getText().toString().length()==0)
+                        {
+                            ed.setError("Please enter");;
+                            ed.requestFocus();
+                            return false;
+                        }
+                    }
+                }
+
+            }
+            return true;
+        } catch (Exception e) {
+
+        }
+        finally {
+            return  false;
+        }
     }
 
     public  boolean checvalidation(LinearLayout lv) {
