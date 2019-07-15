@@ -3,12 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaPPSForm6.iml" filepath="$PROJECT_DIR$/MaPPSForm6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/MaPPSForm6.iml" filepath="$PROJECT_DIR$/.idea/MaPPSForm6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MaPPSForm6.iml" filepath="$PROJECT_DIR$/MaPPSForm6.iml" />
       <module fileurl="file://E:/Android/MaPPSForm6/MaPPSForm6.iml" filepath="E:/Android/MaPPSForm6/MaPPSForm6.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://E:/Android/MaPPSForm6/app/app.iml" filepath="E:/Android/MaPPSForm6/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

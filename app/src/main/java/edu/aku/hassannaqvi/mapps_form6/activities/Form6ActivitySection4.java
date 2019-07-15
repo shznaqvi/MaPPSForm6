@@ -392,12 +392,19 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         String lst2 = id.substring(Math.max(id.length() - 2, 0));
 
         if (lst2.equals("01") && b == true) {
+
             show_alert(lst6,compoundButton);
+
+            if(!HMmp060.containsKey(lst6))
+            {
+                compoundButton.setChecked(false);
+            }
         } else {
             if (HMmp060.containsKey(lst6))
                 HMmp060.remove(lst6);
 
         }
+
 
         //   Log.d("", "onCheckedChanged: "+id);
 
@@ -418,7 +425,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
     }
 
 
-    public void show_alert(final String vname,final  CompoundButton cm) {
+    public void show_alert(final String vname, final CompoundButton cm) {
         final AlertDialog b = new AlertDialog.Builder(this).create();
         LayoutInflater layoutInflater = getLayoutInflater();
         View v = layoutInflater.inflate(R.layout.alertdialogue, null);
@@ -477,12 +484,21 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
             }
         });
 
+        //final boolean status_chect=false;
 
         btn_End.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
                 cm.setChecked(false);
+
+
                 b.dismiss();
+
+
             }
         });
 
@@ -499,6 +515,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                     return;
                 } else {
+
+
                     if (mp06h2a.isChecked()) {
                         obj_mp060.mp06h2a = "1";
                     } else {
@@ -582,6 +600,9 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
 
                 HMmp060.put(vname, obj_mp060);
+
+
+
                 b.dismiss();
 
             }
