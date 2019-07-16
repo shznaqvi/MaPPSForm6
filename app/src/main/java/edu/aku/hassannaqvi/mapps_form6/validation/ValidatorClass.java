@@ -249,6 +249,74 @@ public abstract class ValidatorClass {
         return true;
     }
 
+
+    public static void getdata(Context context, LinearLayout lv) {
+
+        for (int i = 0; i < lv.getChildCount(); i++) {
+            View view = lv.getChildAt(i);
+
+            if (view.getVisibility() == View.GONE || !view.isEnabled())
+                continue;
+
+            // use tag for some situations
+            if (view.getTag() != null && view.getTag().equals("-1")) {
+                if (view instanceof EditText)
+                    ((EditText) view).setError(null);
+                else if (view instanceof LinearLayout)
+                    ClearClass.ClearAllFields(view, null);
+                else if (view instanceof CheckBox)
+                    ((CheckBox) view).setError(null);
+                continue;
+            } else if (view instanceof RadioGroup) {
+
+                View v = ((RadioGroup) view).getChildAt(0);
+                if (v != null) {
+
+                    String asNamed = getString(context, getIDComponent(view));
+
+                    if (!EmptyRadioButton(context, (RadioGroup) view, (RadioButton) v, asNamed)) {
+                      //  return false;
+                    }
+                }
+            } else if (view instanceof Spinner) {
+                if (!EmptySpinner(context, (Spinner) view, getString(context, getIDComponent(view)))) {
+                   // return false;
+                }
+            } else if (view instanceof EditText) {
+                if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
+                   // return false;
+                }
+            } else if (view instanceof CheckBox) {
+                if (!((CheckBox) view).isChecked()) {
+                    ((CheckBox) view).setError(getString(context, getIDComponent(view)));
+                    Toast.makeText(context, "ERROR(empty): " + getString(context, getIDComponent(view)), Toast.LENGTH_SHORT).show();
+                   // return false;
+                }
+            } else if (view instanceof LinearLayout) {
+
+                int length = ((LinearLayout) view).getChildCount();
+
+                if (length > 0) {
+                    if (((LinearLayout) view).getChildAt(0) instanceof CheckBox) {
+                        if (!EmptyCheckBox(context, ((LinearLayout) view),
+                                (CheckBox) ((LinearLayout) view).getChildAt(0),
+                                getString(context, getIDComponent(((LinearLayout) view).getChildAt(0))))) {
+                          //  return false;
+                        }
+                    } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
+                        //return false;
+                    }
+                } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
+                  //  return false;
+                }
+            }
+        }
+      //  return true;
+    }
+
+
+
+
     public static String getIDComponent(View view) {
         String[] idName = (view).getResources().getResourceName((view).getId()).split("id/");
 
