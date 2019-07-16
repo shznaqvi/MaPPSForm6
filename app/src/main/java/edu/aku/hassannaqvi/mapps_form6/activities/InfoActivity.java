@@ -34,12 +34,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.contracts.EnrolledContract;
 import edu.aku.hassannaqvi.mapps_form6.contracts.FormsContract;
 import edu.aku.hassannaqvi.mapps_form6.contracts.LHWsContract;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform4.R;
 
 public class InfoActivity extends Activity {
 
@@ -201,7 +201,7 @@ public class InfoActivity extends Activity {
             if (UpdateDB()) {
 
                 finish();
-                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+
                 Intent endSec = new Intent(this, EndingActivity.class);
                 endSec.putExtra("complete", false);
                 startActivity(endSec);
@@ -214,7 +214,7 @@ public class InfoActivity extends Activity {
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
 
 //        Intent secba = new Intent(this, ParticipantListActivity.class);
 //        startActivity(secba);
@@ -226,7 +226,7 @@ public class InfoActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
 
                 finish();
 
@@ -265,7 +265,7 @@ public class InfoActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -299,7 +299,6 @@ public class InfoActivity extends Activity {
 
         setGPS();
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
 

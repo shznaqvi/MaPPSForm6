@@ -12,9 +12,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.contracts.FormsContract;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform4.R;
 
 public class FormsList extends Activity {
 

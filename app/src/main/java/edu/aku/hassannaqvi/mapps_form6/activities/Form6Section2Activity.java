@@ -9,92 +9,79 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mapps_form6.validation.validatorClass;
-import edu.aku.hassannaqvi.mappsform4.R;
-import edu.aku.hassannaqvi.mappsform4.databinding.ActivityForm6Section2Binding;
+import edu.aku.hassannaqvi.mapps_form6.databinding.ActivityForm6Section2Binding;
+import edu.aku.hassannaqvi.mapps_form6.validation.ValidatorClass;
 
 
-public class Form6_Section2Activity extends Activity {
+public class Form6Section2Activity extends Activity {
 
     ActivityForm6Section2Binding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_form6__section2);
+        //setContentView(R.layout.activity_form6_section2);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_form6__section2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_form6_section2);
         bi.setCallback(this);
     }
 
     public boolean ValidateForm() {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c001, bi.mp06c001a, getString(R.string.mp06c001))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c001, bi.mp06c001a, getString(R.string.mp06c001))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c002, bi.mp06c002a, getString(R.string.mp06c002))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c002, bi.mp06c002a, getString(R.string.mp06c002))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c003, bi.mp06c003a, getString(R.string.mp06c003))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c003, bi.mp06c003a, getString(R.string.mp06c003))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c004, bi.mp06c004a, getString(R.string.mp06c004))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c004, bi.mp06c004a, getString(R.string.mp06c004))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c005, bi.mp06c005a, getString(R.string.mp06c005))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c005, bi.mp06c005a, getString(R.string.mp06c005))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c006, bi.mp06c006a, getString(R.string.mp06c006))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c006, bi.mp06c006a, getString(R.string.mp06c006))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c007, bi.mp06c007a, getString(R.string.mp06c007))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c007, bi.mp06c007a, getString(R.string.mp06c007))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c008, bi.mp06c008a, getString(R.string.mp06c008))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c008, bi.mp06c008a, getString(R.string.mp06c008))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp06c009, bi.mp06c009a, getString(R.string.mp06c009))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp06c009, bi.mp06c009a, getString(R.string.mp06c009))) {
             return false;
         }
 
-        return validatorClass.EmptyRadioButton(this, bi.mp06c010, bi.mp06c010a, getString(R.string.mp06c010));
+        return ValidatorClass.EmptyRadioButton(this, bi.mp06c010, bi.mp06c010a, getString(R.string.mp06c010));
     }
 
     public void BtnEnd() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-//        if (ValidateForm()) {
-//            try {
-//                SaveDraft();
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//            if (UpdateDB()) {
         finish();
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
-//            } else {
-//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-//            }
-//        }
 
     }
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
         if (ValidateForm()) {
             try {
@@ -103,12 +90,8 @@ public class Form6_Section2Activity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                Intent sece = new Intent(this, EndingActivity.class);
-                sece.putExtra("complete", true);
-                startActivity(sece);
-
+                startActivity(new Intent(this, Form6Section4Activity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -118,7 +101,7 @@ public class Form6_Section2Activity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
 
         JSONObject form4 = new JSONObject();
 
@@ -185,7 +168,6 @@ public class Form6_Section2Activity extends Activity {
 
         AppMain.fc.setsB(String.valueOf(form4));
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
 

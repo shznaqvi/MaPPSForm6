@@ -21,9 +21,9 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform4.R;
 
 public class Form6Activity extends AppCompatActivity {
 
@@ -101,7 +101,7 @@ public class Form6Activity extends AppCompatActivity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
 
 //        if (ValidateForm()) {
 //            try {
@@ -111,7 +111,7 @@ public class Form6Activity extends AppCompatActivity {
 //            }
 //            if (UpdateDB()) {
         finish();
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
@@ -125,7 +125,6 @@ public class Form6Activity extends AppCompatActivity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
         if (ValidateForm()) {
             try {
@@ -134,9 +133,9 @@ public class Form6Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                Intent sece = new Intent(this, Form6_Section2Activity.class);
+
+                Intent sece = new Intent(this, Form6Section2Activity.class);
                 sece.putExtra("complete", true);
                 startActivity(sece);
 
@@ -734,7 +733,7 @@ public class Form6Activity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
 
         JSONObject form4 = new JSONObject();
 
@@ -774,7 +773,6 @@ public class Form6Activity extends AppCompatActivity {
 
         AppMain.fc.setsA(String.valueOf(form4));
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
 

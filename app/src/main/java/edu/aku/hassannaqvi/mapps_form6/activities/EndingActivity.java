@@ -17,9 +17,9 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform4.R;
 
 public class EndingActivity extends Activity {
 
@@ -74,7 +74,7 @@ public class EndingActivity extends Activity {
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -109,7 +109,6 @@ public class EndingActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
 
         AppMain.fc.setIstatus(mp06a01401.isChecked() ? "1" : mp06a01402.isChecked() ? "2" : mp06a01403.isChecked() ? "3"
@@ -117,7 +116,6 @@ public class EndingActivity extends Activity {
         AppMain.fc.setEndingDateTime((DateFormat.format("dd-MM-yyyy HH:mm", new Date())).toString());
 
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {

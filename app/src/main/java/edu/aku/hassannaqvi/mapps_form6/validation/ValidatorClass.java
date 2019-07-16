@@ -14,11 +14,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Field;
+
+import edu.aku.hassannaqvi.mapps_form6.R;
+
 /**
  * Created by ali.azaz on 12/04/17.
  */
 
-public abstract class validatorClass {
+public abstract class ValidatorClass {
 
     public static boolean EmptyTextBox(Context context, EditText txt, String msg) {
         if (TextUtils.isEmpty(txt.getText().toString())) {
@@ -214,13 +218,13 @@ public abstract class validatorClass {
                     return false;
                 }
             } else if (view instanceof EditText) {
-                    if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
-                        return false;
-                    }
+                if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
+                    return false;
+                }
             } else if (view instanceof CheckBox) {
                 if (!((CheckBox) view).isChecked()) {
                     ((CheckBox) view).setError(getString(context, getIDComponent(view)));
-                    FancyToast.makeText(context, "ERROR(empty): " + getString(context, getIDComponent(view)), FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+                    Toast.makeText(context, "ERROR(empty): " + getString(context, getIDComponent(view)), Toast.LENGTH_SHORT).show();
                     return false;
                 }
             } else if (view instanceof LinearLayout) {
@@ -243,6 +247,31 @@ public abstract class validatorClass {
             }
         }
         return true;
+    }
+
+    public static String getIDComponent(View view) {
+        String[] idName = (view).getResources().getResourceName((view).getId()).split("id/");
+
+        return idName[1];
+    }
+
+    private static String getString(Context context, String idName) {
+
+        Field[] fields = R.string.class.getFields();
+        for (final Field field : fields) {
+
+            if (field.getName().split("R$string.")[0].equals(idName)) {
+                try {
+                    int id = field.getInt(R.string.class); //id of string
+
+                    return context.getString(id);
+
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return "";
     }
 
 }

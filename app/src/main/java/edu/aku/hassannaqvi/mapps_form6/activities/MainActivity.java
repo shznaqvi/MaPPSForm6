@@ -32,6 +32,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.contracts.ClustersContract;
 import edu.aku.hassannaqvi.mapps_form6.contracts.FormsContract;
 import edu.aku.hassannaqvi.mapps_form6.core.AndroidDatabaseManager;
@@ -40,7 +41,6 @@ import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mapps_form6.getclasses.GetEnrolled;
 import edu.aku.hassannaqvi.mapps_form6.otherclasses.FormsList;
 import edu.aku.hassannaqvi.mapps_form6.syncclasses.SyncForms;
-import edu.aku.hassannaqvi.mappsform4.R;
 
 
 public class MainActivity extends Activity {

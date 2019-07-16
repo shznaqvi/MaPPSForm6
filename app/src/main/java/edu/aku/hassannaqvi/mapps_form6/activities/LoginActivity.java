@@ -55,12 +55,12 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mapps_form6.getclasses.GetClusters;
 import edu.aku.hassannaqvi.mapps_form6.getclasses.GetLHWs;
 import edu.aku.hassannaqvi.mapps_form6.getclasses.GetUsers;
-import edu.aku.hassannaqvi.mappsform4.R;
 
 
 /**
@@ -143,7 +143,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     .getPackageManager()
                     .getPackageInfo("edu.aku.hassannaqvi.mappsform4", 0)
                     .versionName;
-            txtinstalldate.setText("Ver. " + AppMain.versionName + "." + String.valueOf(AppMain.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(AppMain.installedOn)) + " )");
+            txtinstalldate.setText("Ver. " + AppMain.versionName + "." + AppMain.versionCode + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(AppMain.installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -201,10 +201,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         if (sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date())) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
                 editor.commit();
             }
