@@ -362,10 +362,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
     @BindView(R.id.lvmp0632)
     LinearLayout lvmp0632;
 
-    HashMap<String,LinearLayout> Hm_Lv=new HashMap<>();
-
-
-
+    HashMap<String, LinearLayout> Hm_Lv = new HashMap<>();
 
 
     //endregion
@@ -487,38 +484,38 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
         //region  hasmap
 
-        Hm_Lv.put("mp0601",lvmp0601);
-        Hm_Lv.put(	"mp0602",lvmp0602);
-        Hm_Lv.put(	"mp0603",lvmp0603);
-        Hm_Lv.put(	"mp0604",lvmp0604);
-        Hm_Lv.put(	"mp0605",lvmp0605);
-        Hm_Lv.put(	"mp0606",lvmp0606);
-        Hm_Lv.put(	"mp0607",lvmp0607);
-        Hm_Lv.put(	"mp0608",lvmp0608);
-        Hm_Lv.put(	"mp0609",lvmp0609);
-        Hm_Lv.put(	"mp0610",lvmp0610);
-        Hm_Lv.put(	"mp0611",lvmp0611);
-        Hm_Lv.put(	"mp0612",lvmp0612);
-        Hm_Lv.put(	"mp0613",lvmp0613);
-        Hm_Lv.put(	"mp0614",lvmp0614);
-        Hm_Lv.put(	"mp0615",lvmp0615);
-        Hm_Lv.put(	"mp0616",lvmp0616);
-        Hm_Lv.put(	"mp0617",lvmp0617);
-        Hm_Lv.put(	"mp0618",lvmp0618);
-        Hm_Lv.put(	"mp0619",lvmp0619);
-        Hm_Lv.put(	"mp0620",lvmp0620);
-        Hm_Lv.put(	"mp0621",lvmp0621);
-        Hm_Lv.put(	"mp0622",lvmp0622);
-        Hm_Lv.put(	"mp0623",lvmp0623);
-        Hm_Lv.put(	"mp0624",lvmp0624);
-        Hm_Lv.put(	"mp0625",lvmp0625);
-        Hm_Lv.put(	"mp0626",lvmp0626);
-        Hm_Lv.put(	"mp0627",lvmp0627);
-        Hm_Lv.put(	"mp0628",lvmp0628);
-        Hm_Lv.put(	"mp0629",lvmp0629);
-        Hm_Lv.put(	"mp0630",lvmp0630);
-        Hm_Lv.put(	"mp0631",lvmp0631);
-        Hm_Lv.put(	"mp0632",lvmp0632);
+        Hm_Lv.put("mp0601", lvmp0601);
+        Hm_Lv.put("mp0602", lvmp0602);
+        Hm_Lv.put("mp0603", lvmp0603);
+        Hm_Lv.put("mp0604", lvmp0604);
+        Hm_Lv.put("mp0605", lvmp0605);
+        Hm_Lv.put("mp0606", lvmp0606);
+        Hm_Lv.put("mp0607", lvmp0607);
+        Hm_Lv.put("mp0608", lvmp0608);
+        Hm_Lv.put("mp0609", lvmp0609);
+        Hm_Lv.put("mp0610", lvmp0610);
+        Hm_Lv.put("mp0611", lvmp0611);
+        Hm_Lv.put("mp0612", lvmp0612);
+        Hm_Lv.put("mp0613", lvmp0613);
+        Hm_Lv.put("mp0614", lvmp0614);
+        Hm_Lv.put("mp0615", lvmp0615);
+        Hm_Lv.put("mp0616", lvmp0616);
+        Hm_Lv.put("mp0617", lvmp0617);
+        Hm_Lv.put("mp0618", lvmp0618);
+        Hm_Lv.put("mp0619", lvmp0619);
+        Hm_Lv.put("mp0620", lvmp0620);
+        Hm_Lv.put("mp0621", lvmp0621);
+        Hm_Lv.put("mp0622", lvmp0622);
+        Hm_Lv.put("mp0623", lvmp0623);
+        Hm_Lv.put("mp0624", lvmp0624);
+        Hm_Lv.put("mp0625", lvmp0625);
+        Hm_Lv.put("mp0626", lvmp0626);
+        Hm_Lv.put("mp0627", lvmp0627);
+        Hm_Lv.put("mp0628", lvmp0628);
+        Hm_Lv.put("mp0629", lvmp0629);
+        Hm_Lv.put("mp0630", lvmp0630);
+        Hm_Lv.put("mp0631", lvmp0631);
+        Hm_Lv.put("mp0632", lvmp0632);
 
 
         //endregion
@@ -540,34 +537,26 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         String lst8 = removeLastChar(lst6);
 
 
-        if(compoundButton.getId()==R.id.mp060101 || compoundButton.getId()==R.id.mp060102)
-        {
-            if(mp060101.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060101 || compoundButton.getId() == R.id.mp060102) {
+            if (mp060101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp060201 || compoundButton.getId()==R.id.mp060202)
-        {
-            if(mp060201.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060201 || compoundButton.getId() == R.id.mp060202) {
+            if (mp060201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -575,17 +564,13 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp060301 || compoundButton.getId()==R.id.mp060302)
-        {
-            if(mp060301.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060301 || compoundButton.getId() == R.id.mp060302) {
+            if (mp060301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -593,17 +578,13 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp060401 || compoundButton.getId()==R.id.mp060402)
-        {
-            if(mp060401.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060401 || compoundButton.getId() == R.id.mp060402) {
+            if (mp060401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -611,84 +592,64 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp060501 || compoundButton.getId()==R.id.mp060502)
-        {
-            if(mp060501.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060501 || compoundButton.getId() == R.id.mp060502) {
+            if (mp060501.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp060601 || compoundButton.getId()==R.id.mp060602)
-        {
-            if(mp060601.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060601 || compoundButton.getId() == R.id.mp060602) {
+            if (mp060601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp060701 || compoundButton.getId()==R.id.mp060702)
-        {
-            if(mp060701.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060701 || compoundButton.getId() == R.id.mp060702) {
+            if (mp060701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp060801 || compoundButton.getId()==R.id.mp060802)
-        {
-            if(mp060801.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060801 || compoundButton.getId() == R.id.mp060802) {
+            if (mp060801.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp060901 || compoundButton.getId()==R.id.mp060902)
-        {
-            if(mp060901.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp060901 || compoundButton.getId() == R.id.mp060902) {
+            if (mp060901.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -696,17 +657,13 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp061001 || compoundButton.getId()==R.id.mp061002)
-        {
-            if(mp061001.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061001 || compoundButton.getId() == R.id.mp061002) {
+            if (mp061001.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -714,33 +671,25 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp061101 || compoundButton.getId()==R.id.mp061102)
-        {
-            if(mp061101.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061101 || compoundButton.getId() == R.id.mp061102) {
+            if (mp061101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp061201 || compoundButton.getId()==R.id.mp061202)
-        {
-            if(mp061201.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061201 || compoundButton.getId() == R.id.mp061202) {
+            if (mp061201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -748,82 +697,62 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp061301 || compoundButton.getId()==R.id.mp061302)
-        {
-            if(mp061301.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061301 || compoundButton.getId() == R.id.mp061302) {
+            if (mp061301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp061401 || compoundButton.getId()==R.id.mp061402)
-        {
-            if(mp061401.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061401 || compoundButton.getId() == R.id.mp061402) {
+            if (mp061401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp061501 || compoundButton.getId()==R.id.mp061502)
-        {
-            if(mp061501.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061501 || compoundButton.getId() == R.id.mp061502) {
+            if (mp061501.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp061601 || compoundButton.getId()==R.id.mp061602)
-        {
-            if(mp061601.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061601 || compoundButton.getId() == R.id.mp061602) {
+            if (mp061601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp061701 || compoundButton.getId()==R.id.mp061702)
-        {
-            if(mp061701.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061701 || compoundButton.getId() == R.id.mp061702) {
+            if (mp061701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -831,18 +760,13 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-
-        if(compoundButton.getId()==R.id.mp061801 || compoundButton.getId()==R.id.mp061802)
-        {
-            if(mp061801.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061801 || compoundButton.getId() == R.id.mp061802) {
+            if (mp061801.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -850,34 +774,26 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp061901 || compoundButton.getId()==R.id.mp061902)
-        {
-            if(mp061901.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp061901 || compoundButton.getId() == R.id.mp061902) {
+            if (mp061901.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp062001 || compoundButton.getId()==R.id.mp062002)
-        {
-            if(mp062001.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062001 || compoundButton.getId() == R.id.mp062002) {
+            if (mp062001.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -885,100 +801,76 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp062101 || compoundButton.getId()==R.id.mp062102)
-        {
-            if(mp062101.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062101 || compoundButton.getId() == R.id.mp062102) {
+            if (mp062101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp062201 || compoundButton.getId()==R.id.mp062202)
-        {
-            if(mp062201.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062201 || compoundButton.getId() == R.id.mp062202) {
+            if (mp062201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp062301 || compoundButton.getId()==R.id.mp062302)
-        {
-            if(mp062301.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062301 || compoundButton.getId() == R.id.mp062302) {
+            if (mp062301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp062401 || compoundButton.getId()==R.id.mp062402)
-        {
-            if(mp062401.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062401 || compoundButton.getId() == R.id.mp062402) {
+            if (mp062401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp062501 || compoundButton.getId()==R.id.mp062502)
-        {
-            if(mp062501.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062501 || compoundButton.getId() == R.id.mp062502) {
+            if (mp062501.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp062601 || compoundButton.getId()==R.id.mp062602)
-        {
-            if(mp062601.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062601 || compoundButton.getId() == R.id.mp062602) {
+            if (mp062601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -986,17 +878,13 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp062701 || compoundButton.getId()==R.id.mp062702)
-        {
-            if(mp062701.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062701 || compoundButton.getId() == R.id.mp062702) {
+            if (mp062701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -1004,50 +892,38 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp062801 || compoundButton.getId()==R.id.mp062802)
-        {
-            if(mp062801.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062801 || compoundButton.getId() == R.id.mp062802) {
+            if (mp062801.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
 
-        if(compoundButton.getId()==R.id.mp062901 || compoundButton.getId()==R.id.mp062902)
-        {
-            if(mp062901.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp062901 || compoundButton.getId() == R.id.mp062902) {
+            if (mp062901.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp063001 || compoundButton.getId()==R.id.mp063002)
-        {
-            if(mp063001.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp063001 || compoundButton.getId() == R.id.mp063002) {
+            if (mp063001.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
@@ -1055,40 +931,30 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         }
 
 
-        if(compoundButton.getId()==R.id.mp063101 || compoundButton.getId()==R.id.mp063102)
-        {
-            if(mp063101.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp063101 || compoundButton.getId() == R.id.mp063102) {
+            if (mp063101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-        if(compoundButton.getId()==R.id.mp063201 || compoundButton.getId()==R.id.mp063202)
-        {
-            if(mp063201.isChecked())
-            {
+        if (compoundButton.getId() == R.id.mp063201 || compoundButton.getId() == R.id.mp063202) {
+            if (mp063201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            }
-            else
-            {
+            } else {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
             }
         }
-
-
 
 
         btn_Continue.setOnClickListener(new View.OnClickListener() {
@@ -1102,138 +968,105 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
 */
 
-                if(check_get_data(lvmp0601)==false)
-                {
+                if (check_get_data(lvmp0601) == false) {
                     return;
                 }
 
-                if(check_get_data(lvmp0602)==false)
-                {
+                if (check_get_data(lvmp0602) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0603)==false)
-                {
+                if (check_get_data(lvmp0603) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0604)==false)
-                {
+                if (check_get_data(lvmp0604) == false) {
                     return;
                 }
 
-                if(check_get_data(lvmp0605)==false)
-                {
+                if (check_get_data(lvmp0605) == false) {
                     return;
                 }
 
-                if(check_get_data(lvmp0606)==false)
-                {
+                if (check_get_data(lvmp0606) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0607)==false)
-                {
-                    return;
-                }  if(check_get_data(lvmp0608)==false)
-                {
+                if (check_get_data(lvmp0607) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0609)==false)
-                {
+                if (check_get_data(lvmp0608) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0610)==false)
-                {
+                if (check_get_data(lvmp0609) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0611)==false)
-                {
+                if (check_get_data(lvmp0610) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0612)==false)
-                {
+                if (check_get_data(lvmp0611) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0613)==false)
-                {
+                if (check_get_data(lvmp0612) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0614)==false)
-                {
+                if (check_get_data(lvmp0613) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0615)==false)
-                {
+                if (check_get_data(lvmp0614) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0616)==false)
-                {
+                if (check_get_data(lvmp0615) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0617)==false)
-                {
+                if (check_get_data(lvmp0616) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0618)==false)
-                {
+                if (check_get_data(lvmp0617) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0619)==false)
-                {
+                if (check_get_data(lvmp0618) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0620)==false)
-                {
+                if (check_get_data(lvmp0619) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0621)==false)
-                {
+                if (check_get_data(lvmp0620) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0622)==false)
-                {
+                if (check_get_data(lvmp0621) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0623)==false)
-                {
+                if (check_get_data(lvmp0622) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0624)==false)
-                {
+                if (check_get_data(lvmp0623) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0625)==false)
-                {
+                if (check_get_data(lvmp0624) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0626)==false)
-                {
+                if (check_get_data(lvmp0625) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0627)==false)
-                {
+                if (check_get_data(lvmp0626) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0628)==false)
-                {
+                if (check_get_data(lvmp0627) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0629)==false)
-                {
+                if (check_get_data(lvmp0628) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0630)==false)
-                {
+                if (check_get_data(lvmp0629) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0631)==false)
-                {
+                if (check_get_data(lvmp0630) == false) {
                     return;
                 }
-                if(check_get_data(lvmp0632)==false)
-                {
+                if (check_get_data(lvmp0631) == false) {
                     return;
                 }
-
-
+                if (check_get_data(lvmp0632) == false) {
+                    return;
+                }
 
 
             }
@@ -1310,9 +1143,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
             public void onClick(View view) {
 
 
-
-
-               cm.setChecked(false);
+                cm.setChecked(false);
 // ALI plesed checked
 
                 b.dismiss();
@@ -1330,7 +1161,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                 if (!mp06h2a.isChecked() && !mp06h2b.isChecked() && !mp06h2c.isChecked()) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): " + getString(R.string.mp06h2a), Toast.LENGTH_SHORT).show();
-                    mp06h2a.setError("This data is Required!");;
+                    mp06h2a.setError("This data is Required!");
+                    ;
 
                     return;
                 } else {
@@ -1355,7 +1187,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                 if (!mp06h301.isChecked() && !mp06h302.isChecked()) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                    mp06h301.setError("This data is Required!");;
+                    mp06h301.setError("This data is Required!");
+                    ;
 
                     return;
                 } else {
@@ -1372,7 +1205,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
                         && !mp06h406.isChecked() && !mp06h407.isChecked()
                 ) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                    mp06h401.setError("This data is Required!");;
+                    mp06h401.setError("This data is Required!");
+                    ;
 
                     return;
                 } else {
@@ -1399,7 +1233,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                         if (mp06h407x.getText().toString().isEmpty()) {
                             Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                            mp06h407x.setError("This data is Required!");;
+                            mp06h407x.setError("This data is Required!");
+                            ;
                             return;
                         } else {
                             obj_mp060.mp06h407x = mp06h407x.getText().toString();
@@ -1410,7 +1245,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
                 if (mp06h5.getText().toString().isEmpty()) {
                     Toast.makeText(Form6ActivitySection4.this, "ERROR(empty): " + getString(R.string.mp06h5), Toast.LENGTH_SHORT).show();
-                    mp06h5.setError("This data is Required!");;
+                    mp06h5.setError("This data is Required!");
+                    ;
 
                     return;
                 } else {
@@ -1421,8 +1257,6 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
                 HMmp060.put(vname, obj_mp060);
 
 
-
-
                 b.dismiss();
 
             }
@@ -1431,20 +1265,20 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
     }
 
-    public void showLV(final String vname,LinearLayout lv) {
-       // final AlertDialog b = new AlertDialog.Builder(this).create();
+    public void showLV(final String vname, LinearLayout lv) {
+        // final AlertDialog b = new AlertDialog.Builder(this).create();
 
 
         LayoutInflater layoutInflater = getLayoutInflater();
         View v = layoutInflater.inflate(R.layout.alertdialogue, null);
         lv.addView(v);
-       // b.setView(v);
-       // b.show();
-       // b.setCancelable(false);
+        // b.setView(v);
+        // b.show();
+        // b.setCancelable(false);
 
 
-         CheckBox mp06h2a, mp06h2b, mp06h2c;
-         RadioButton
+        CheckBox mp06h2a, mp06h2b, mp06h2c;
+        RadioButton
                 mp06h301,
                 mp06h302,
                 mp06h401,
@@ -1454,7 +1288,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
                 mp06h405,
                 mp06h406,
                 mp06h407;
-         final EditText mp06h407x,
+        final EditText mp06h407x,
                 mp06h5;
 
         Button btn_End, btn_Continue;
@@ -1479,7 +1313,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         btn_End = v.findViewById(R.id.btn_End);
         btn_Continue = v.findViewById(R.id.btn_Continue);
 
-         mp060 obj_mp060 = new mp060();
+        mp060 obj_mp060 = new mp060();
 
 
         mp06h407.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -1496,90 +1330,82 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         //final boolean status_chect=false;
 
 
-
-
-
-
     }
 
 
+    public boolean check_get_data(LinearLayout lvParant) {
 
-    public  boolean check_get_data(LinearLayout lvParant)
-    {
-
-int a=0;
+        int a = 0;
         try {
 
             View view_lv;
 
 
-              view_lv = lvParant.getChildAt(0);
-                LinearLayout lv = ((LinearLayout) view_lv);
-                int checkboxcount = 0;
-                int Chectcheckboxcount = 0;
+            view_lv = lvParant.getChildAt(0);
+            LinearLayout lv = ((LinearLayout) view_lv);
+            int checkboxcount = 0;
+            int Chectcheckboxcount = 0;
 
-                for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
-                    View view = lv.getChildAt(i);
+            for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
+                View view = lv.getChildAt(i);
 
-                    if (view instanceof RadioGroup) {
-                        int id = ((RadioGroup) view).getCheckedRadioButtonId();
-                        if (id == -1) {
-                            ((RadioGroup) view).requestFocus();
+                if (view instanceof RadioGroup) {
+                    int id = ((RadioGroup) view).getCheckedRadioButtonId();
+                    if (id == -1) {
+                        ((RadioGroup) view).requestFocus();
 
 
-                            Toast.makeText(Form6ActivitySection4.this, "RB: Some filed are missing", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Form6ActivitySection4.this, "RB: Some filed are missing", Toast.LENGTH_LONG).show();
 
-                            return false;
-                        }
+                        return false;
                     }
+                }
 
-                    if (view instanceof CheckBox) {
+                if (view instanceof CheckBox) {
 
-                        CheckBox cb = ((CheckBox) view);
+                    CheckBox cb = ((CheckBox) view);
 
-                        checkboxcount++;
-                        if (cb.isChecked()) {
-                            Chectcheckboxcount++;
-                        }
-                        if (checkboxcount == 2 && Chectcheckboxcount == 0) {
-                            cb.requestFocus();
-                            cb.setError("This Filed is required");
-                            ;
-
-                            Toast.makeText(Form6ActivitySection4.this, "Checkboxs: Some filed are missing" + cb.getText(), Toast.LENGTH_LONG).show();
-
-                            return false;
-                        }
-
+                    checkboxcount++;
+                    if (cb.isChecked()) {
+                        Chectcheckboxcount++;
                     }
+                    if (checkboxcount == 2 && Chectcheckboxcount == 0) {
+                        cb.requestFocus();
+                        cb.setError("This Filed is required");
+                        ;
 
-                    if (view instanceof EditText) {
-                        EditText ed = ((EditText) view);
-                        if (ed.getVisibility() == View.VISIBLE) {
-                            if (ed.getText().toString().length() == 0) {
-                                ed.setError("Please enter");
-                                ;
-                                ed.requestFocus();
-                                return false;
-                            }
-                        }
+                        Toast.makeText(Form6ActivitySection4.this, "Checkboxs: Some filed are missing" + cb.getText(), Toast.LENGTH_LONG).show();
+
+                        return false;
                     }
 
                 }
 
+                if (view instanceof EditText) {
+                    EditText ed = ((EditText) view);
+                    if (ed.getVisibility() == View.VISIBLE) {
+                        if (ed.getText().toString().length() == 0) {
+                            ed.setError("Please enter");
+                            ;
+                            ed.requestFocus();
+                            return false;
+                        }
+                    }
+                }
+
+            }
+
             return true;
 
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
 
-            Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();
-        }
-        finally {
-            return  false;
+            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+        } finally {
+            return false;
         }
     }
 
-    public  boolean checvalidation(LinearLayout lv) {
+    public boolean checvalidation(LinearLayout lv) {
 
         /// Checkbox Celar*************************************
 
@@ -1593,28 +1419,25 @@ int a=0;
                     if (id == -1) {
                         ((RadioGroup) view).requestFocus();
 
-                      //  Toast.makeText(Form6ActivitySection4.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
+                        //  Toast.makeText(Form6ActivitySection4.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
 
-                      //  return false;
+                        //  return false;
                     }
 
                 }
-                if(view instanceof LinearLayout)
-                {
-                  //  Boolean lvb=check_get_data(((LinearLayout)view));
+                if (view instanceof LinearLayout) {
+                    //  Boolean lvb=check_get_data(((LinearLayout)view));
 
 
-
-                               }
+                }
 
 
             }
             return true;
         } catch (Exception e) {
 
-        }
-        finally {
-            return  false;
+        } finally {
+            return false;
         }
 
 
