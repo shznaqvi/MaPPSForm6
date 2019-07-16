@@ -264,7 +264,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
     @BindView(R.id.lvmain)
     LinearLayout lvmain;
-    //lvmp0601
+    //lvmp0602
 
     @BindView(R.id.lvmp0601)
     LinearLayout lvmp0601;
@@ -363,9 +363,9 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
     LinearLayout lvmp0632;
 
     HashMap<String,LinearLayout> Hm_Lv=new HashMap<>();
-    
-    
-           
+
+
+
 
 
     //endregion
@@ -483,8 +483,8 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
 
 //endregion
-        
-        
+
+
         //region  hasmap
 
         Hm_Lv.put("mp0601",lvmp0601);
@@ -519,7 +519,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         Hm_Lv.put(	"mp0630",lvmp0630);
         Hm_Lv.put(	"mp0631",lvmp0631);
         Hm_Lv.put(	"mp0632",lvmp0632);
-      
+
 
         //endregion
 
@@ -1095,13 +1095,147 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
             @Override
             public void onClick(View view) {
 
-              //  if (!checvalidation(lvmain)) {
-                //    Log.d("taq", HMmp060 + "");;
-               // }
+              /*  if (checvalidation(lvmain)==false) {
 
-                check_get_data(lvmp0601);
+                    return;
+                }
 
-             //   check_get_data(lvmp0602);
+*/
+
+                if(check_get_data(lvmp0601)==false)
+                {
+                    return;
+                }
+
+                if(check_get_data(lvmp0602)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0603)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0604)==false)
+                {
+                    return;
+                }
+
+                if(check_get_data(lvmp0605)==false)
+                {
+                    return;
+                }
+
+                if(check_get_data(lvmp0606)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0607)==false)
+                {
+                    return;
+                }  if(check_get_data(lvmp0608)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0609)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0610)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0611)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0612)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0613)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0614)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0615)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0616)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0617)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0618)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0619)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0620)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0621)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0622)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0623)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0624)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0625)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0626)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0627)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0628)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0629)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0630)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0631)==false)
+                {
+                    return;
+                }
+                if(check_get_data(lvmp0632)==false)
+                {
+                    return;
+                }
+
+
+
+
             }
 
         });
@@ -1373,65 +1507,72 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
     public  boolean check_get_data(LinearLayout lvParant)
     {
 
-
+int a=0;
         try {
-            View view_lv=lvParant.getChildAt(0);
-            LinearLayout lv=((LinearLayout) view_lv);
-            int checkboxcount=0;
-            int Chectcheckboxcount=0;
 
-            for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
-                View view = lv.getChildAt(i);
+            View view_lv;
 
-                if (view instanceof RadioGroup) {
-                    int id = ((RadioGroup) view).getCheckedRadioButtonId();
-                    if (id == -1) {
-                        ((RadioGroup) view).requestFocus();
 
-                        Toast.makeText(Form6ActivitySection4.this, "Some filed are missing", Toast.LENGTH_LONG).show();
+              view_lv = lvParant.getChildAt(0);
+                LinearLayout lv = ((LinearLayout) view_lv);
+                int checkboxcount = 0;
+                int Chectcheckboxcount = 0;
 
-                        return false;
-                    }
-                }
+                for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
+                    View view = lv.getChildAt(i);
 
-                if (view instanceof CheckBox) {
+                    if (view instanceof RadioGroup) {
+                        int id = ((RadioGroup) view).getCheckedRadioButtonId();
+                        if (id == -1) {
+                            ((RadioGroup) view).requestFocus();
 
-                    CheckBox cb= ((CheckBox) view);
 
-                    checkboxcount++;
-                    if(cb.isChecked())
-                    {
-                        Chectcheckboxcount++;
-                    }
-                    if (checkboxcount==2 && Chectcheckboxcount==0) {
-                        cb.requestFocus();
-                        cb.setError("This Filed is required");;
+                            Toast.makeText(Form6ActivitySection4.this, "RB: Some filed are missing", Toast.LENGTH_LONG).show();
 
-                        Toast.makeText(Form6ActivitySection4.this, "Some filed are missing", Toast.LENGTH_LONG).show();
-
-                        return false;
-                    }
-
-                }
-
-                if(view instanceof EditText)
-                {
-                    EditText ed=((EditText) view);
-                    if(ed.getVisibility()==View.VISIBLE)
-                    {
-                        if(ed.getText().toString().length()==0)
-                        {
-                            ed.setError("Please enter");;
-                            ed.requestFocus();
                             return false;
                         }
                     }
+
+                    if (view instanceof CheckBox) {
+
+                        CheckBox cb = ((CheckBox) view);
+
+                        checkboxcount++;
+                        if (cb.isChecked()) {
+                            Chectcheckboxcount++;
+                        }
+                        if (checkboxcount == 2 && Chectcheckboxcount == 0) {
+                            cb.requestFocus();
+                            cb.setError("This Filed is required");
+                            ;
+
+                            Toast.makeText(Form6ActivitySection4.this, "Checkboxs: Some filed are missing" + cb.getText(), Toast.LENGTH_LONG).show();
+
+                            return false;
+                        }
+
+                    }
+
+                    if (view instanceof EditText) {
+                        EditText ed = ((EditText) view);
+                        if (ed.getVisibility() == View.VISIBLE) {
+                            if (ed.getText().toString().length() == 0) {
+                                ed.setError("Please enter");
+                                ;
+                                ed.requestFocus();
+                                return false;
+                            }
+                        }
+                    }
+
                 }
 
-            }
             return true;
-        } catch (Exception e) {
 
+        } catch (Exception e)
+        {
+
+            Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();
         }
         finally {
             return  false;
@@ -1452,11 +1593,19 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
                     if (id == -1) {
                         ((RadioGroup) view).requestFocus();
 
-                        Toast.makeText(Form6ActivitySection4.this, "Some filed are missing", Toast.LENGTH_LONG).show();
+                      //  Toast.makeText(Form6ActivitySection4.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
 
-                        return false;
+                      //  return false;
                     }
+
                 }
+                if(view instanceof LinearLayout)
+                {
+                  //  Boolean lvb=check_get_data(((LinearLayout)view));
+
+
+
+                               }
 
 
             }

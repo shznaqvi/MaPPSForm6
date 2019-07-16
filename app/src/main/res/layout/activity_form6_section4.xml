@@ -1501,7 +1501,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nextSection"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:textSize="32sp" />
             <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
 
