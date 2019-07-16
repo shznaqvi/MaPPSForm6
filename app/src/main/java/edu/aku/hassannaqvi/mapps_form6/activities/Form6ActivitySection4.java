@@ -379,7 +379,9 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
 
         //region RB click evernts
 
+
         mp060101.setOnCheckedChangeListener(this);
+
         mp060102.setOnCheckedChangeListener(this);
 
         mp060201.setOnCheckedChangeListener(this);
@@ -527,6 +529,7 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
     private static String removeLastChar(String str) {
         return str.substring(0, str.length() - 2);
     }
+
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
@@ -536,29 +539,556 @@ public class Form6ActivitySection4 extends AppCompatActivity implements RadioBut
         String lst2 = id.substring(Math.max(id.length() - 2, 0));
         String lst8 = removeLastChar(lst6);
 
-        if (lst2.equals("01") && b == true) {
 
-
-
-            Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+        if(compoundButton.getId()==R.id.mp060101 || compoundButton.getId()==R.id.mp060102)
+        {
+            if(mp060101.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-         //   Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
-
-
-
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
         }
-        else
+
+        if(compoundButton.getId()==R.id.mp060201 || compoundButton.getId()==R.id.mp060202)
         {
-            Hm_Lv.get(lst8).removeAllViews();
-           // Hm_Lv.get(lst8).setVisibility(View.GONE);
-            compoundButton.requestFocus();
+            if(mp060201.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp060301 || compoundButton.getId()==R.id.mp060302)
+        {
+            if(mp060301.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp060401 || compoundButton.getId()==R.id.mp060402)
+        {
+            if(mp060401.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp060501 || compoundButton.getId()==R.id.mp060502)
+        {
+            if(mp060501.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp060601 || compoundButton.getId()==R.id.mp060602)
+        {
+            if(mp060601.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp060701 || compoundButton.getId()==R.id.mp060702)
+        {
+            if(mp060701.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp060801 || compoundButton.getId()==R.id.mp060802)
+        {
+            if(mp060801.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp060901 || compoundButton.getId()==R.id.mp060902)
+        {
+            if(mp060901.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp061001 || compoundButton.getId()==R.id.mp061002)
+        {
+            if(mp061001.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp061101 || compoundButton.getId()==R.id.mp061102)
+        {
+            if(mp061101.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp061201 || compoundButton.getId()==R.id.mp061202)
+        {
+            if(mp061201.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp061301 || compoundButton.getId()==R.id.mp061302)
+        {
+            if(mp061301.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp061401 || compoundButton.getId()==R.id.mp061402)
+        {
+            if(mp061401.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp061501 || compoundButton.getId()==R.id.mp061502)
+        {
+            if(mp061501.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp061601 || compoundButton.getId()==R.id.mp061602)
+        {
+            if(mp061601.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp061701 || compoundButton.getId()==R.id.mp061702)
+        {
+            if(mp061701.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
         }
 
 
 
-        //   Log.d("", "onCheckedChanged: "+id);
+        if(compoundButton.getId()==R.id.mp061801 || compoundButton.getId()==R.id.mp061802)
+        {
+            if(mp061801.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp061901 || compoundButton.getId()==R.id.mp061902)
+        {
+            if(mp061901.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp062001 || compoundButton.getId()==R.id.mp062002)
+        {
+            if(mp062001.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp062101 || compoundButton.getId()==R.id.mp062102)
+        {
+            if(mp062101.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp062201 || compoundButton.getId()==R.id.mp062202)
+        {
+            if(mp062201.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp062301 || compoundButton.getId()==R.id.mp062302)
+        {
+            if(mp062301.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp062401 || compoundButton.getId()==R.id.mp062402)
+        {
+            if(mp062401.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp062501 || compoundButton.getId()==R.id.mp062502)
+        {
+            if(mp062501.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp062601 || compoundButton.getId()==R.id.mp062602)
+        {
+            if(mp062601.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp062701 || compoundButton.getId()==R.id.mp062702)
+        {
+            if(mp062701.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp062801 || compoundButton.getId()==R.id.mp062802)
+        {
+            if(mp062801.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+        if(compoundButton.getId()==R.id.mp062901 || compoundButton.getId()==R.id.mp062902)
+        {
+            if(mp062901.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp063001 || compoundButton.getId()==R.id.mp063002)
+        {
+            if(mp063001.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
+        if(compoundButton.getId()==R.id.mp063101 || compoundButton.getId()==R.id.mp063102)
+        {
+            if(mp063101.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+        if(compoundButton.getId()==R.id.mp063201 || compoundButton.getId()==R.id.mp063202)
+        {
+            if(mp063201.isChecked())
+            {
+                Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+
+                showLV(lst6, Hm_Lv.get(lst8));
+
+            }
+            else
+            {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+            }
+        }
+
+
 
 
         btn_Continue.setOnClickListener(new View.OnClickListener() {
