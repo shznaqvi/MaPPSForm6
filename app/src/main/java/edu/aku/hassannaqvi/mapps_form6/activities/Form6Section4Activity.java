@@ -530,11 +530,11 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
                 boolean ff=checvalidation(lvmain);
-                if (ff==false) {
 
+
+                if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, lvmain) == false) {
                     return;
                 }
-
 
 
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, lvmp06d01) == false) {
@@ -1522,7 +1522,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         /// Checkbox Celar*************************************
 
-        try {
+
 
             for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
                 View view = lv.getChildAt(i);
@@ -1548,15 +1548,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             }
 
             return true;
-        } catch (Exception e) {
-            Toast.makeText(Form6Section4Activity.this, "ERROR ", Toast.LENGTH_LONG).show();
 
-
-        } finally {
-            //Toast.makeText(Form6Section4Activity.this, "ERROR in Finaly ", Toast.LENGTH_LONG).show();
-
-            return true;
-        }
 
 
     }
