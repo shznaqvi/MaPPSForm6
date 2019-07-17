@@ -77,12 +77,21 @@
 
     </RadioGroup>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/mp06dh4lv"
+
+        >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/colorPrimary"
-        android:text="@string/mp06dh3"
+        android:text="@string/mp06dh4"
+        android:id="@+id/mp06dh4txt"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white" />
 
@@ -144,10 +153,18 @@
         android:layout_height="wrap_content"
         android:hint="@string/mp06dh4g"
         android:textSize="22sp"
+        android:digits="[a-zA-Z ]+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
         android:visibility="gone" />
+    </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/mp06dh5lv"
+        >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -164,10 +181,10 @@
         android:hint="@string/mp06dh5"
 
         android:inputType="number"
-        android:maxLength="2"
+        android:maxLength="5"
         android:textSize="22sp" />
 
-
+    </LinearLayout>
 </LinearLayout>
 
 

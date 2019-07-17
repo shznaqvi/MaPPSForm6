@@ -1470,6 +1470,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
         CheckBox mp06dh2a, mp06dh2b, mp06dh2c;
+      final   LinearLayout mp06dh4lv,mp06dh5lv;
         RadioButton
                 mp06dh301,
                 mp06dh302,
@@ -1484,6 +1485,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 mp06dh5;
 
         Button btn_End, btn_Continue;
+        mp06dh4lv=v.findViewById(R.id.mp06dh4lv);
+        mp06dh5lv=v.findViewById(R.id.mp06dh5lv);
 
         mp06dh2a = v.findViewById(R.id.mp06dh2a);
         mp06dh2b = v.findViewById(R.id.mp06dh2b);
@@ -1514,7 +1517,39 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             }
         });
 
+        mp06dh301.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (compoundButton.isChecked()) {
+                    mp06dh4lv.setVisibility(View.VISIBLE);
+                    mp06dh5lv.setVisibility(View.VISIBLE);
+                } else {
+                    mp06dh4lv.setVisibility(View.GONE);
+                    mp06dh5lv.setVisibility(View.GONE);
+
+                }
+            }
+        });
+        mp06dh302.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (compoundButton.isChecked()) {
+                    mp06dh4lv.setVisibility(View.GONE);
+                    mp06dh5lv.setVisibility(View.GONE);
+                } else {
+
+
+                    mp06dh4lv.setVisibility(View.VISIBLE);
+                    mp06dh5lv.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
+
     }
+
+
+
 
 
 
