@@ -528,6 +528,13 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             @Override
             public void onClick(View view) {
 
+                if (checvalidation(lvmain)==false) {
+
+                    return;
+                }
+
+
+
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, lvmp06d01) == false) {
                     return;
                 }
@@ -666,10 +673,10 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     e.printStackTrace();
                 }
 
-               /* startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
+               startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
                         .putExtra("complete", true));
 
-                        */
+
 
             }
 
@@ -1523,9 +1530,9 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     if (id == -1) {
                         view.requestFocus();
 
-                        //  Toast.makeText(Form6Section4Activity.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
+                          Toast.makeText(Form6Section4Activity.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
 
-                        //  return false;
+                          return false;
                     }
 
                 }
@@ -1586,6 +1593,101 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
         }
+
+        form6.put("mp06d01",mp06d0101.isChecked()?"1":mp06d0102.isChecked()?"2":"0" );
+        form6.put("mp06d02",mp06d0201.isChecked()?"1":mp06d0202.isChecked()?"2":"0" );
+        form6.put("mp06d03",mp06d0301.isChecked()?"1":mp06d0302.isChecked()?"2":"0" );
+        form6.put("mp06d04",mp06d0401.isChecked()?"1":mp06d0402.isChecked()?"2":"0" );
+        form6.put("mp06d05",mp06d0501.isChecked()?"1":mp06d0502.isChecked()?"2":"0" );
+        form6.put("mp06d06",mp06d0601.isChecked()?"1":mp06d0602.isChecked()?"2":"0" );
+        form6.put("mp06d07",mp06d0701.isChecked()?"1":mp06d0702.isChecked()?"2":"0" );
+        form6.put("mp06d08",mp06d0801.isChecked()?"1":mp06d0802.isChecked()?"2":"0" );
+        form6.put("mp06d09",mp06d0901.isChecked()?"1":mp06d0902.isChecked()?"2":"0" );
+        form6.put("mp06d10",mp06d1001.isChecked()?"1":mp06d1002.isChecked()?"2":"0" );
+        form6.put("mp06d11",mp06d1101.isChecked()?"1":mp06d1102.isChecked()?"2":"0" );
+        form6.put("mp06d12",mp06d1201.isChecked()?"1":mp06d1202.isChecked()?"2":"0" );
+        form6.put("mp06d13",mp06d1301.isChecked()?"1":mp06d1302.isChecked()?"2":"0" );
+        form6.put("mp06d14",mp06d1401.isChecked()?"1":mp06d1402.isChecked()?"2":"0" );
+        form6.put("mp06d15",mp06d1501.isChecked()?"1":mp06d1502.isChecked()?"2":"0" );
+        form6.put("mp06d16",mp06d1601.isChecked()?"1":mp06d1602.isChecked()?"2":"0" );
+        form6.put("mp06d17",mp06d1701.isChecked()?"1":mp06d1702.isChecked()?"2":"0" );
+        form6.put("mp06d18",mp06d1801.isChecked()?"1":mp06d1802.isChecked()?"2":"0" );
+        form6.put("mp06d19",mp06d1901.isChecked()?"1":mp06d1902.isChecked()?"2":"0" );
+        form6.put("mp06d20",mp06d2001.isChecked()?"1":mp06d2002.isChecked()?"2":"0" );
+        form6.put("mp06d21",mp06d2101.isChecked()?"1":mp06d2102.isChecked()?"2":"0" );
+        form6.put("mp06d22",mp06d2201.isChecked()?"1":mp06d2202.isChecked()?"2":"0" );
+        form6.put("mp06d23",mp06d2301.isChecked()?"1":mp06d2302.isChecked()?"2":"0" );
+        form6.put("mp06d24",mp06d2401.isChecked()?"1":mp06d2402.isChecked()?"2":"0" );
+        form6.put("mp06d25",mp06d2501.isChecked()?"1":mp06d2502.isChecked()?"2":"0" );
+        form6.put("mp06d26",mp06d2601.isChecked()?"1":mp06d2602.isChecked()?"2":"0" );
+        form6.put("mp06d27",mp06d2701.isChecked()?"1":mp06d2702.isChecked()?"2":"0" );
+        form6.put("mp06d28",mp06d2801.isChecked()?"1":mp06d2802.isChecked()?"2":"0" );
+        form6.put("mp06d29",mp06d2901.isChecked()?"1":mp06d2902.isChecked()?"2":"0" );
+        form6.put("mp06d30",mp06d3001.isChecked()?"1":mp06d3002.isChecked()?"2":"0" );
+        form6.put("mp06d31",mp06d3101.isChecked()?"1":mp06d3102.isChecked()?"2":"0" );
+        form6.put("mp06d32",mp06d3201.isChecked()?"1":mp06d3202.isChecked()?"2":"0" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
