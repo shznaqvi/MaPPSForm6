@@ -528,7 +528,9 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             @Override
             public void onClick(View view) {
 
-                if (checvalidation(lvmain)==false) {
+
+                boolean ff=checvalidation(lvmain);
+                if (ff==false) {
 
                     return;
                 }
@@ -1544,11 +1546,16 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
             }
+
             return true;
         } catch (Exception e) {
+            Toast.makeText(Form6Section4Activity.this, "ERROR ", Toast.LENGTH_LONG).show();
+
 
         } finally {
-            return false;
+            //Toast.makeText(Form6Section4Activity.this, "ERROR in Finaly ", Toast.LENGTH_LONG).show();
+
+            return true;
         }
 
 
