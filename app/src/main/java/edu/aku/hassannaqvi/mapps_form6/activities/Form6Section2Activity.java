@@ -74,7 +74,7 @@ public class Form6Section2Activity extends Activity {
 
         finish();
 
-        Intent endSec = new Intent(this, Form6Section4Activity.class);
+        Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
 
