@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection10EBinding;
-import edu.aku.hassannaqvi.mappsform8.validation.validatorClass;
+import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
 public class Section10EActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
 
@@ -113,145 +113,145 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
 
     public boolean ValidateForm() {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38a, bi.mp10q38aa, getString(R.string.mp10q38a))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38a, bi.mp10q38aa, getString(R.string.mp10q38a))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38b, bi.mp10q38ba, getString(R.string.mp10q38b))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38b, bi.mp10q38ba, getString(R.string.mp10q38b))) {
             return false;
         }
 
         if (bi.mp10q38ba.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp10q38bx, getString(R.string.mp10q38b) + " times")) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp10q38bx, getString(R.string.mp10q38b) + " times")) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp10q38bx, 1, 10, getString(R.string.mp10q38b), " times")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp10q38bx, 1, 10, getString(R.string.mp10q38b), " times")) {
                 return false;
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38c, bi.mp10q38ca, getString(R.string.mp10q38c))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38c, bi.mp10q38ca, getString(R.string.mp10q38c))) {
             return false;
         }
 
         if (bi.mp10q38ca.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp10q38cx, getString(R.string.mp10q38c) + " times")) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp10q38cx, getString(R.string.mp10q38c) + " times")) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp10q38cx, 1, 10, getString(R.string.mp10q38c), " times")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp10q38cx, 1, 10, getString(R.string.mp10q38c), " times")) {
                 return false;
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38d, bi.mp10q38da, getString(R.string.mp10q38d))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38d, bi.mp10q38da, getString(R.string.mp10q38d))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38e, bi.mp10q38ea, getString(R.string.mp10q38e))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38e, bi.mp10q38ea, getString(R.string.mp10q38e))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38f, bi.mp10q38fa, getString(R.string.mp10q38f))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38f, bi.mp10q38fa, getString(R.string.mp10q38f))) {
             return false;
         }
 
         if (bi.mp10q38fa.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp10q38fx, getString(R.string.mp10q38f) + " times")) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp10q38fx, getString(R.string.mp10q38f) + " times")) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp10q38fx, 1, 10, getString(R.string.mp10q38f), " times")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp10q38fx, 1, 10, getString(R.string.mp10q38f), " times")) {
                 return false;
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38g, bi.mp10q38ga, getString(R.string.mp10q38g))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38g, bi.mp10q38ga, getString(R.string.mp10q38g))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38h, bi.mp10q38ha, getString(R.string.mp10q38h))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38h, bi.mp10q38ha, getString(R.string.mp10q38h))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q38i, bi.mp10q38ia, bi.mp10q38ix, getString(R.string.mp10q38i))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q38i, bi.mp10q38ia, bi.mp10q38ix, getString(R.string.mp10q38i))) {
             return false;
         }
 
         //==== 39
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39a, bi.mp10q39aa, getString(R.string.mp10q39a))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39a, bi.mp10q39aa, getString(R.string.mp10q39a))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39b, bi.mp10q39ba, getString(R.string.mp10q39b))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39b, bi.mp10q39ba, getString(R.string.mp10q39b))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39c, bi.mp10q39ca, getString(R.string.mp10q39c))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39c, bi.mp10q39ca, getString(R.string.mp10q39c))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39d, bi.mp10q39da, getString(R.string.mp10q39d))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39d, bi.mp10q39da, getString(R.string.mp10q39d))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39e, bi.mp10q39ea, getString(R.string.mp10q39e))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39e, bi.mp10q39ea, getString(R.string.mp10q39e))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39f, bi.mp10q39fa, getString(R.string.mp10q39f))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39f, bi.mp10q39fa, getString(R.string.mp10q39f))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39g, bi.mp10q39ga, getString(R.string.mp10q39g))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39g, bi.mp10q39ga, getString(R.string.mp10q39g))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39h, bi.mp10q39ha, getString(R.string.mp10q39h))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39h, bi.mp10q39ha, getString(R.string.mp10q39h))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39i, bi.mp10q39ia, getString(R.string.mp10q39i))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39i, bi.mp10q39ia, getString(R.string.mp10q39i))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39j, bi.mp10q39ja, getString(R.string.mp10q39j))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39j, bi.mp10q39ja, getString(R.string.mp10q39j))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39k, bi.mp10q39ka, getString(R.string.mp10q39k))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39k, bi.mp10q39ka, getString(R.string.mp10q39k))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39l, bi.mp10q39la, getString(R.string.mp10q39l))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39l, bi.mp10q39la, getString(R.string.mp10q39l))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39m, bi.mp10q39ma, getString(R.string.mp10q39m))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39m, bi.mp10q39ma, getString(R.string.mp10q39m))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39n, bi.mp10q39na, getString(R.string.mp10q39n))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39n, bi.mp10q39na, getString(R.string.mp10q39n))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39o, bi.mp10q39oa, getString(R.string.mp10q39o))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39o, bi.mp10q39oa, getString(R.string.mp10q39o))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39p, bi.mp10q39pa, getString(R.string.mp10q39p))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39p, bi.mp10q39pa, getString(R.string.mp10q39p))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q39q, bi.mp10q39qa, getString(R.string.mp10q39q))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q39q, bi.mp10q39qa, getString(R.string.mp10q39q))) {
             return false;
         }
 
         if (isAllNo() || isAlldkn() || (!isoneYes())) {
-            if (!validatorClass.EmptyRadioButton(this, bi.mp10q40, bi.mp10q40a, getString(R.string.mp10q40))) {
+            if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q40, bi.mp10q40a, getString(R.string.mp10q40))) {
                 return false;
             }
         }
@@ -267,33 +267,33 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
 
         if (isoneYes()) {
             if (!bi.mp10q4199.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.mp10q41, getString(R.string.mp10q41))) {
+                if (!ValidatorClass.EmptyTextBox(this, bi.mp10q41, getString(R.string.mp10q41))) {
                     return false;
                 }
 
-                if (!validatorClass.RangeTextBox(this, bi.mp10q41, 1, 10, getString(R.string.mp10q41), " times")) {
+                if (!ValidatorClass.RangeTextBox(this, bi.mp10q41, 1, 10, getString(R.string.mp10q41), " times")) {
                     return false;
                 }
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q42, bi.mp10q42a, getString(R.string.mp10q42))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q42, bi.mp10q42a, getString(R.string.mp10q42))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q43, bi.mp10q43a, getString(R.string.mp10q43))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q43, bi.mp10q43a, getString(R.string.mp10q43))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q44, bi.mp10q44a, getString(R.string.mp10q44))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q44, bi.mp10q44a, getString(R.string.mp10q44))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp10q45, bi.mp10q45a, getString(R.string.mp10q45))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp10q45, bi.mp10q45a, getString(R.string.mp10q45))) {
             return false;
         }
 
-        return validatorClass.EmptyRadioButton(this, bi.mp10q46, bi.mp10q46a, getString(R.string.mp10q46));
+        return ValidatorClass.EmptyRadioButton(this, bi.mp10q46, bi.mp10q46a, getString(R.string.mp10q46));
 
     }
 

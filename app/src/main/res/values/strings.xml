@@ -219,6 +219,53 @@
     <string name="mp08e013">خون / رت جي ٽيسٽ ڪرائڻ </string>
 
 
+    <!--Section F-->
+    <string name="mp08fHeading">ANC Attendance Assessment</string>
+    <string name="mp08fsubHeading">شرڪت ڪندڙ جي سامھون واضع ڪريو ته ميپس ٽرائل ۾ ٿيڻ وارا دورا حمل جي معائني ۾ نه ڳڻيا ويندا. حمل جي معائني وارو دورو ھڪ اھڙو دورو آھي جنھن ۾ حمل جي دوران علاج/سارسنڀال حاصل ڪئي ويندي آھي.(ھي ٽرائل جو حصو نه آھي)</string>
+    <string name="mp08f01">ھن پيٽ تي ڇا توھان ڪنھن کان حمل جو معائنو/علاج  ڪرايو؟</string>
+    <string name="mp08f02">ڪنھن کان ڪرايو؟</string>
+    <string name="mp08f02a"> ڊاڪٽر</string>
+    <string name="mp08f02b">نرس/مڊوائيف</string>
+    <string name="mp08f02c">ايل ايڇ وي                                </string>
+    <string name="mp08f02d">دائي                                </string>
+    <string name="mp08f02e"> ايل ايڇ ڊبليو                           </string>
+    <string name="mp08f02f">. ھوميوپيٿ </string>
+    <string name="mp08f02g">حڪيم                             </string>
+    <string name="mp08f02h">ڊسپينسري/ڪمپونڊر</string>
+
+    <string name="mp08f03">حمل جو معائنو/علاج  ڪٿان ڪرايو؟</string>
+    <string name="mp08f03a">توھانجي گھر</string>
+    <string name="mp08f03b">ڪنھن ٻئي جي گھر</string>
+    <string name="mp08f03c">. سرڪاري اسپتال</string>
+    <string name="mp08f03d">آر ايڇ سي/ايم ايڇ سي                </string>
+    <string name="mp08f03e">. بي ايڇ يو/ايف ڊبليو سي</string>
+    <string name="mp08f03f">ٻئي ڪا لوڪل اسپتال</string>
+    <string name="mp08f03g">. نجي اسپتال /ڪلينڪ</string>
+    <string name="mp08f03h">. نجي ڊاڪٽر </string>
+    <string name="mp08f03i">ھوميوپيٿ/ڊسپينسر</string>
+    <string name="mp08f03j">ڪمپونڊر</string>
+    <string name="mp08f03k">ٻئي ڪا نجي اسپتال </string>
+    <string name="mp08f03l">حڪيم                             </string>
+
+    <string name="mp08f04">توھان گھڻا مھينا حمل سان ھئا جڏھن توھان حمل جي دوران علاج/سار سنڀال حاصل ڪئي ھُئي؟</string>
+    <string name="mp08f04a">1st ANC</string>
+    <string name="mp08f04b">2nd ANC</string>
+    <string name="mp08f04c">3rd ANC</string>
+    <string name="mp08f04d">4th ANC</string>
+
+    <string name="mp08f05">ڪيترا ڀيرا توھان حمل جي دوران علاج/ سار سنڀال حاصل ڪئي ھُئي؟</string>
+    <string name="mp08f06">توھان جي حمل جي معائني جي دوري دوران ڇا ھيٺين مان ڪجھ به گھٽ ۾ گھٽ ھڪ ڀيرو توھان سان ٿيو؟</string>
+    <string name="mp08f06a">رت جي دوري جي ماپ ڪئي</string>
+    <string name="mp08f06b">قد وزن جي ماپ ڪئي اسڪيل تي</string>
+    <string name="mp08f06c">پيشاب جو نمونو ورتو</string>
+    <string name="mp08f06d">رت جو نمونو ورتو</string>
+    <string name="mp08f06e">الٽراسائونڊ ڪيو</string>
+
+    <string name="mp08f07">ڇا ڪنھن به حمل جي معائني جي دوري دوران اوھان کي مشورو ڏنو ويو ته حمل تي ڪي مسئلا ٿي سگھن ٿا اُنھن جو احتياط ڪريو؟</string>
+    <string name="mp08f08">ڇا توھان کي ڌُڏ ۾ يا ٻانھن ۾ ڪا سُئي ھنئي وئي ھُئي ٻار کي جھٽڪن کان بچائڻ لاءِ؟ (پيدائش کان پوءِ تشنج کان بچاءُ لاءِ)</string>
+
+    <string name="mp08f09">ڪيترا ڀيرا توھان کي سُئي لڳي؟</string>
+    <string name="mp08f10">حمل جي دوران ڇا توھان آنڊن جي ڪيڙن لاءِ ڪا دوا ورتي؟</string>
     <!-- Mapps Form 7 -->
 
     <string name="mp07heading1"> نئين ڄاول ٻار جو حال احوال </string>

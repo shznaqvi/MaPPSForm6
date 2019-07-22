@@ -13,7 +13,7 @@ import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection7EBinding;
-import edu.aku.hassannaqvi.mappsform8.validation.validatorClass;
+import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
 public class Section7EActivity extends Activity {
 
@@ -61,48 +61,48 @@ public class Section7EActivity extends Activity {
 
     public boolean ValidateForm() {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q38, bi.mp07q38a, getString(R.string.mp07q38))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q38, bi.mp07q38a, getString(R.string.mp07q38))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q39, bi.mp07q39a, getString(R.string.mp07q39))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q39, bi.mp07q39a, getString(R.string.mp07q39))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q40, bi.mp07q40a, getString(R.string.mp07q40))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q40, bi.mp07q40a, getString(R.string.mp07q40))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q41, bi.mp07q41a, getString(R.string.mp07q40))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q41, bi.mp07q41a, getString(R.string.mp07q40))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q42, bi.mp07q42a, getString(R.string.mp07q42))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q42, bi.mp07q42a, getString(R.string.mp07q42))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q43, bi.mp07q43a, getString(R.string.mp07q43))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q43, bi.mp07q43a, getString(R.string.mp07q43))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q44, bi.mp07q44a, getString(R.string.mp07q44))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q44, bi.mp07q44a, getString(R.string.mp07q44))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q45, bi.mp07q45a, getString(R.string.mp07q45))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q45, bi.mp07q45a, getString(R.string.mp07q45))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q46, bi.mp07q44a, bi.mp07q46x, getString(R.string.mp07q46))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q46, bi.mp07q44a, bi.mp07q46x, getString(R.string.mp07q46))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q47, getString(R.string.mp07q47))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q47, getString(R.string.mp07q47))) {
             return false;
         }
 
-        return validatorClass.EmptyTextBox(this, bi.mp07q48, getString(R.string.mp07q48));
+        return ValidatorClass.EmptyTextBox(this, bi.mp07q48, getString(R.string.mp07q48));
     }
 
     private void SaveDraft() throws JSONException {

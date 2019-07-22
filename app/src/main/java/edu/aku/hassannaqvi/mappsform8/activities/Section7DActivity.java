@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection7DBinding;
-import edu.aku.hassannaqvi.mappsform8.validation.validatorClass;
+import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
 public class Section7DActivity extends Activity {
     private static final String TAG = Section7DActivity.class.getSimpleName();
@@ -92,75 +92,75 @@ public class Section7DActivity extends Activity {
 
         // Weight 1
 
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q22, getString(R.string.mp07q22))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q22, getString(R.string.mp07q22))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q22, 1.2, 7.0, getString(R.string.mp07q22), " kg")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q22, 1.2, 7.0, getString(R.string.mp07q22), " kg")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q22id, getString(R.string.mp07q22id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q22id, getString(R.string.mp07q22id))) {
             return false;
         }
 
         // Height 1
 
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q26, getString(R.string.mp07q26))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q26, getString(R.string.mp07q26))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q26, 45.0, 62.0, getString(R.string.mp07q26), " cm")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q26, 45.0, 62.0, getString(R.string.mp07q26), " cm")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q26id, getString(R.string.mp07q26id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q26id, getString(R.string.mp07q26id))) {
             return false;
         }
 
         // Head circumference 1
 
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q30, getString(R.string.mp07q30))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q30, getString(R.string.mp07q30))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q30, 31.5, 42.0, getString(R.string.mp07q30), " cm")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q30, 31.5, 42.0, getString(R.string.mp07q30), " cm")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q30id, getString(R.string.mp07q30id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q30id, getString(R.string.mp07q30id))) {
             return false;
         }
 
         // Left middle upper arm 1
 
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q34, getString(R.string.mp07q34))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q34, getString(R.string.mp07q34))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q34, 6.0, 14.0, getString(R.string.mp07q34), " cm")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q34, 6.0, 14.0, getString(R.string.mp07q34), " cm")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q34id, getString(R.string.mp07q34id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q34id, getString(R.string.mp07q34id))) {
             return false;
         }
 
 
         // Weight 2
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q23, getString(R.string.mp07q23))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q23, getString(R.string.mp07q23))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q23, 1.2, 7.0, getString(R.string.mp07q23), " kg")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q23, 1.2, 7.0, getString(R.string.mp07q23), " kg")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q23id, getString(R.string.mp07q23id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q23id, getString(R.string.mp07q23id))) {
             return false;
         }
 
-        if (!validatorClass.DuplicateItemSelected(this, bi.mp07q22id, bi.mp07q23id, getString(R.string.mp07q23))) {
+        if (!ValidatorClass.DuplicateItemSelected(this, bi.mp07q22id, bi.mp07q23id, getString(R.string.mp07q23))) {
             return false;
         }
 
@@ -193,15 +193,15 @@ public class Section7DActivity extends Activity {
 
 //            4
         if (flag_q25) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q25, getString(R.string.mp07q25))) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp07q25, getString(R.string.mp07q25))) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q25, 1.2, 7.0, getString(R.string.mp07q25), " kg")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp07q25, 1.2, 7.0, getString(R.string.mp07q25), " kg")) {
                 return false;
             }
 
-            if (!validatorClass.EmptySpinner(this, bi.mp07q25id, getString(R.string.mp07q25id))) {
+            if (!ValidatorClass.EmptySpinner(this, bi.mp07q25id, getString(R.string.mp07q25id))) {
                 return false;
             }
 
@@ -210,19 +210,19 @@ public class Section7DActivity extends Activity {
         //============= End of weights
 
         // Height 2
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q27, getString(R.string.mp07q27))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q27, getString(R.string.mp07q27))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q27, 45.0, 62.0, getString(R.string.mp07q27), " cm")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q27, 45.0, 62.0, getString(R.string.mp07q27), " cm")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q27id, getString(R.string.mp07q27id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q27id, getString(R.string.mp07q27id))) {
             return false;
         }
 
-        if (!validatorClass.DuplicateItemSelected(this, bi.mp07q26id, bi.mp07q27id, getString(R.string.mp07q26))) {
+        if (!ValidatorClass.DuplicateItemSelected(this, bi.mp07q26id, bi.mp07q27id, getString(R.string.mp07q26))) {
             return false;
         }
 
@@ -255,15 +255,15 @@ public class Section7DActivity extends Activity {
 
 //            4
         if (flag_q29) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q29, getString(R.string.mp07q29))) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp07q29, getString(R.string.mp07q29))) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q29, 45.0, 62.0, getString(R.string.mp07q29), " cm")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp07q29, 45.0, 62.0, getString(R.string.mp07q29), " cm")) {
                 return false;
             }
 
-            if (!validatorClass.EmptySpinner(this, bi.mp07q29id, getString(R.string.mp07q29id))) {
+            if (!ValidatorClass.EmptySpinner(this, bi.mp07q29id, getString(R.string.mp07q29id))) {
                 return false;
             }
 
@@ -273,19 +273,19 @@ public class Section7DActivity extends Activity {
         // End of Height 3
 
         // Head 2
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q31, getString(R.string.mp07q31))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q31, getString(R.string.mp07q31))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q31, 31.5, 42.0, getString(R.string.mp07q31), " cm")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q31, 31.5, 42.0, getString(R.string.mp07q31), " cm")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q31id, getString(R.string.mp07q31id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q31id, getString(R.string.mp07q31id))) {
             return false;
         }
 
-        if (!validatorClass.DuplicateItemSelected(this, bi.mp07q30id, bi.mp07q31id, getString(R.string.mp07q30))) {
+        if (!ValidatorClass.DuplicateItemSelected(this, bi.mp07q30id, bi.mp07q31id, getString(R.string.mp07q30))) {
             return false;
         }
 
@@ -318,15 +318,15 @@ public class Section7DActivity extends Activity {
 
 //            4
         if (flag_q33) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q33, getString(R.string.mp07q33))) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp07q33, getString(R.string.mp07q33))) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q33, 31.5, 42.0, getString(R.string.mp07q33), " kg")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp07q33, 31.5, 42.0, getString(R.string.mp07q33), " kg")) {
                 return false;
             }
 
-            if (!validatorClass.EmptySpinner(this, bi.mp07q33id, getString(R.string.mp07q33id))) {
+            if (!ValidatorClass.EmptySpinner(this, bi.mp07q33id, getString(R.string.mp07q33id))) {
                 return false;
             }
 
@@ -334,19 +334,19 @@ public class Section7DActivity extends Activity {
 
 
         // arm 2
-        if (!validatorClass.EmptyTextBox(this, bi.mp07q35, getString(R.string.mp07q25))) {
+        if (!ValidatorClass.EmptyTextBox(this, bi.mp07q35, getString(R.string.mp07q25))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.mp07q35, 6.0, 14.0, getString(R.string.mp07q35), " cm")) {
+        if (!ValidatorClass.RangeTextBox(this, bi.mp07q35, 6.0, 14.0, getString(R.string.mp07q35), " cm")) {
             return false;
         }
 
-        if (!validatorClass.EmptySpinner(this, bi.mp07q35id, getString(R.string.mp07q35id))) {
+        if (!ValidatorClass.EmptySpinner(this, bi.mp07q35id, getString(R.string.mp07q35id))) {
             return false;
         }
 
-        if (!validatorClass.DuplicateItemSelected(this, bi.mp07q34id, bi.mp07q35id, getString(R.string.mp07q34))) {
+        if (!ValidatorClass.DuplicateItemSelected(this, bi.mp07q34id, bi.mp07q35id, getString(R.string.mp07q34))) {
             return false;
         }
 
@@ -380,15 +380,15 @@ public class Section7DActivity extends Activity {
 
 //            4
         if (flag_q37) {
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q37, getString(R.string.mp07q37))) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp07q37, getString(R.string.mp07q37))) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.mp07q37, 6.0, 14.0, getString(R.string.mp07q37), " kg")) {
+            if (!ValidatorClass.RangeTextBox(this, bi.mp07q37, 6.0, 14.0, getString(R.string.mp07q37), " kg")) {
                 return false;
             }
 
-            return validatorClass.EmptySpinner(this, bi.mp07q37id, getString(R.string.mp07q37id));
+            return ValidatorClass.EmptySpinner(this, bi.mp07q37id, getString(R.string.mp07q37id));
 
         }
 

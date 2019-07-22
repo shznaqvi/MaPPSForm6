@@ -23,7 +23,7 @@ import edu.aku.hassannaqvi.mappsform8.contracts.FormsContract;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySection7BBinding;
-import edu.aku.hassannaqvi.mappsform8.validation.validatorClass;
+import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
 public class Section7BActivity extends AppCompatActivity {
 
@@ -121,30 +121,30 @@ public class Section7BActivity extends AppCompatActivity {
 
         if (AppMain.formType.equals("7")) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q16, getString(R.string.mp07q16))) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp07q16, getString(R.string.mp07q16))) {
                 return false;
             }
 
-            if (!validatorClass.EmptyTextBox(this, bi.mp07q17, getString(R.string.mp07q17))) {
+            if (!ValidatorClass.EmptyTextBox(this, bi.mp07q17, getString(R.string.mp07q17))) {
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButton(this, bi.mp07q18, bi.mp07q18a, getString(R.string.mp07q18))) {
+            if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q18, bi.mp07q18a, getString(R.string.mp07q18))) {
                 return false;
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.mp07q19, bi.mp07q19a, getString(R.string.mp07q19))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bi.mp07q19, bi.mp07q19a, getString(R.string.mp07q19))) {
             return false;
         }
 
         if (bi.mp07q19a.isChecked()) {
             if (AppMain.formType.equals("7")) {
-                return validatorClass.EmptyTextBox(this, bi.mp07q21, getString(R.string.mp07q21));
+                return ValidatorClass.EmptyTextBox(this, bi.mp07q21, getString(R.string.mp07q21));
             }
 
         } else {
-            return validatorClass.EmptyTextBox(this, bi.mp07q20, getString(R.string.mp07q20));
+            return ValidatorClass.EmptyTextBox(this, bi.mp07q20, getString(R.string.mp07q20));
         }
 
 

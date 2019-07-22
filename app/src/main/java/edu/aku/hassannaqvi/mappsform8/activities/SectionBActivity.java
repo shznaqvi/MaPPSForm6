@@ -20,7 +20,7 @@ import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySectionBBinding;
-import edu.aku.hassannaqvi.mappsform8.validation.validatorClass;
+import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
 
@@ -136,51 +136,51 @@ public class SectionBActivity extends AppCompatActivity {
 
     public Boolean formValidation() {
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b001, bl.mp08b001a, getString(R.string.mp08b001))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bl.mp08b001, bl.mp08b001a, getString(R.string.mp08b001))) {
             return false;
         }
 
         if (bl.mp08b001c.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bl.mp08b002, getString(R.string.mp08b002))) {
+            if (!ValidatorClass.EmptyTextBox(this, bl.mp08b002, getString(R.string.mp08b002))) {
                 return false;
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b003a, getString(R.string.mp08b003))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b003a, getString(R.string.mp08b003))) {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b00388, bl.mp08b00388x, getString(R.string.mp08b003) + " - " + getString(R.string.other))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bl.mp08b003, bl.mp08b00388, bl.mp08b00388x, getString(R.string.mp08b003) + " - " + getString(R.string.other))) {
             return false;
         }
 
-        if (!validatorClass.EmptyTextBox(this, bl.mp08b004, getString(R.string.mp08b004))) {
+        if (!ValidatorClass.EmptyTextBox(this, bl.mp08b004, getString(R.string.mp08b004))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bl.mp08b004t, getString(R.string.mp08b004t))) {
+        if (!ValidatorClass.EmptyTextBox(this, bl.mp08b004t, getString(R.string.mp08b004t))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bl.mp08b005, getString(R.string.mp08b005))) {
+        if (!ValidatorClass.EmptyTextBox(this, bl.mp08b005, getString(R.string.mp08b005))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bl.mp08b005, 3, 42, getString(R.string.mp08b005), " weeks")) {
+        if (!ValidatorClass.RangeTextBox(this, bl.mp08b005, 3, 42, getString(R.string.mp08b005), " weeks")) {
             return false;
         }
 
         if (!bl.mp08b003a.isChecked() && !bl.mp08b003b.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, bl.mp08b006, bl.mp08b006a, getString(R.string.mp08b006))) {
+            if (!ValidatorClass.EmptyRadioButton(this, bl.mp08b006, bl.mp08b006a, getString(R.string.mp08b006))) {
                 return false;
             }
 
             if (!(bl.mp08b006a.isChecked() || bl.mp08b006c.isChecked())) {
-                if (!validatorClass.EmptyTextBox(this, bl.mp08b00601, getString(R.string.mp08b002))) {
+                if (!ValidatorClass.EmptyTextBox(this, bl.mp08b00601, getString(R.string.mp08b002))) {
                     return false;
                 }
 
                 if (bl.mp08b006e.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bl.mp08b00602, getString(R.string.mp08b002))) {
+                    if (!ValidatorClass.EmptyTextBox(this, bl.mp08b00602, getString(R.string.mp08b002))) {
                         return false;
                     }
                 }
@@ -188,17 +188,17 @@ public class SectionBActivity extends AppCompatActivity {
 
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.mp08b007, bl.mp08b007a, getString(R.string.mp08b007))) {
+        if (!ValidatorClass.EmptyRadioButton(this, bl.mp08b007, bl.mp08b007a, getString(R.string.mp08b007))) {
             return false;
         }
 
 
         if (bl.mp08b007a.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bl.mp08b008, getString(R.string.mp08b008))) {
+            if (!ValidatorClass.EmptyTextBox(this, bl.mp08b008, getString(R.string.mp08b008))) {
                 return false;
             }
 
-            return validatorClass.RangeTextBox(this, bl.mp08b008, 1, 7, getString(R.string.mp08b008), " days");
+            return ValidatorClass.RangeTextBox(this, bl.mp08b008, 1, 7, getString(R.string.mp08b008), " days");
         }
 
 
