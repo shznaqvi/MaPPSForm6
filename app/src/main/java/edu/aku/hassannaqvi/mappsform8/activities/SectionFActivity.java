@@ -40,7 +40,7 @@ public class SectionFActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionEActivity.class).putExtra("complete", false));
+                startActivity(new Intent(this, Form6Section4Activity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

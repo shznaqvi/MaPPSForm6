@@ -122,8 +122,8 @@ public class SectionEActivity extends AppCompatActivity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                Intent sece = new Intent(this, EndingActivity.class);
-                sece.putExtra("complete", true);
+                Intent sece = new Intent(this, SectionFActivity.class);
+
                 startActivity(sece);
 
 

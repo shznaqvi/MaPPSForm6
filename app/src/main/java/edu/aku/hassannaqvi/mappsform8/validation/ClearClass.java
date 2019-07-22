@@ -1,6 +1,5 @@
-package edu.aku.hassannaqvi.mappsform8.validation;
+package edu.aku.hassannaqvi.mapps_form6.validation;
 
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -15,16 +14,15 @@ import android.widget.RadioGroup;
 
 public class ClearClass {
 
-    public static void ClearRadioButton(LinearLayout container, RadioGroup rdGrp) {
-        if (rdGrp.getCheckedRadioButtonId() == -1) {
+    public static void ClearRadioButton(RadioGroup rdGrp, boolean flag) {
 
-            rdGrp.clearCheck();
+        rdGrp.clearCheck();
+        rdGrp.setEnabled(flag);
 
-            for (int i = 0; i < container.getChildCount(); i++) {
-                View v = container.getChildAt(i);
-                if (v instanceof RadioButton) {
-                    v.setEnabled(false);
-                }
+        for (int i = 0; i < rdGrp.getChildCount(); i++) {
+            View v = rdGrp.getChildAt(i);
+            if (v instanceof RadioButton) {
+                v.setEnabled(flag);
             }
         }
     }
@@ -67,6 +65,7 @@ public class ClearClass {
         }
     }
 
+
     public static void ClearAllFields(View container, Boolean flag) {
         for (int i = 0; i < ((ViewGroup) container).getChildCount(); i++) {
             View v = ((ViewGroup) container).getChildAt(i);
@@ -93,12 +92,10 @@ public class ClearClass {
                     v.setEnabled(flag);
 
             } else if (v instanceof RadioButton) {
+                ((RadioButton) v).setChecked(false);
                 if (flag != null)
                     v.setEnabled(flag);
-            } else if (v instanceof CardView) {
-                ClearAllFields(v, flag);
-            } else if (v instanceof LinearLayout) {
-                ClearAllFields(v, flag);
+
             }
 
         }
