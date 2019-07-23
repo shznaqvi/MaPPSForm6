@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -64,6 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SINFO + " TEXT," +
             FormsTable.COLUMN_SA + " TEXT," +
             FormsTable.COLUMN_SB + " TEXT," +
+            FormsTable.COLUMN_SC + " TEXT," +
             FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
@@ -80,6 +81,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_ALTER_FORMS = "ALTER TABLE " +
             FormsTable.TABLE_NAME + " ADD COLUMN " +
             FormsTable.COLUMN_SB + " TEXT;";
+    private static final String SQL_ALTER_FORMS_C = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_SC + " TEXT;";
 
     private static final String SQL_CREATE_PARTICIPANTS = "CREATE TABLE "
             + ParticipantsTable.TABLE_NAME + "("
@@ -189,6 +193,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         switch (i) {
             case 1:
                 db.execSQL(SQL_ALTER_FORMS);
+            case 2:
+                db.execSQL(SQL_ALTER_FORMS_C);
         }
     }
 
@@ -367,6 +373,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SINFO, fc.getsInfo());
         values.put(FormsTable.COLUMN_SA, fc.getsA());
         values.put(FormsTable.COLUMN_SB, fc.getsB());
+        values.put(FormsTable.COLUMN_SC, fc.getsC());
         values.put(FormsTable.COLUMN_ENDINGDATETIME, fc.getEndingDateTime());
         values.put(FormsTable.COLUMN_GPSLAT, fc.getGpsLat());
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
@@ -600,6 +607,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 // New value for one column
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_SB, AppMain.fc.getsB());
+
+// Which row to update, based on the ID
+        String selection = " _ID = " + AppMain.fc.getID();
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                null);
+        return count;
+    }
+
+    public int updatesC() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_SC, AppMain.fc.getsC());
 
 // Which row to update, based on the ID
         String selection = " _ID = " + AppMain.fc.getID();
@@ -884,6 +909,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SA,
                 FormsTable.COLUMN_SB,
+                FormsTable.COLUMN_SC,
                 FormsTable.COLUMN_ENDINGDATETIME,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -949,6 +975,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SA,
                 FormsTable.COLUMN_SB,
+                FormsTable.COLUMN_SC,
                 FormsTable.COLUMN_ENDINGDATETIME,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -1017,6 +1044,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SA,
                 FormsTable.COLUMN_SB,
+                FormsTable.COLUMN_SC,
                 FormsTable.COLUMN_ENDINGDATETIME,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
