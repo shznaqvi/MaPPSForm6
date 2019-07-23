@@ -15,7 +15,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -524,6 +528,15 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             @Override
             public void onClick(View view) {
 
+
+                boolean ff=checvalidation(lvmain);
+
+
+                if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, lvmain) == false) {
+                    return;
+                }
+
+
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, lvmp06d01) == false) {
                     return;
                 }
@@ -621,8 +634,51 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     return;
                 }
 
-                startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
+
+                get_data(lvmp06d01);
+                        get_data(lvmp06d02);
+                get_data(lvmp06d03);
+                        get_data(lvmp06d04);
+                get_data(lvmp06d05);
+                        get_data(lvmp06d06);
+                get_data(lvmp06d07);
+                        get_data(lvmp06d08);
+                get_data(lvmp06d09);
+                        get_data(lvmp06d10);
+                get_data(lvmp06d11);
+                        get_data(lvmp06d12);
+                get_data(lvmp06d13);
+                        get_data(lvmp06d14);
+                get_data(lvmp06d15);
+                        get_data(lvmp06d16);
+                get_data(lvmp06d17);
+                        get_data(lvmp06d18);
+                get_data(lvmp06d19);
+                        get_data(lvmp06d20);
+                get_data(lvmp06d21);
+                        get_data(lvmp06d22);
+                get_data(lvmp06d23);
+                        get_data(lvmp06d24);
+                get_data(lvmp06d25);
+                        get_data(lvmp06d26);
+                get_data(lvmp06d27);
+                        get_data(lvmp06d28);
+                get_data(lvmp06d29);
+                        get_data(lvmp06d30);
+                get_data(lvmp06d31);
+                        get_data(lvmp06d32);
+
+
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+               startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
                         .putExtra("complete", true));
+
+
 
             }
 
@@ -640,401 +696,644 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         String lst8 = removeLastChar(lst6);
 
 
-        if (compoundButton.getId() == R.id.mp06d0101 || compoundButton.getId() == R.id.mp06d0102) {
+        if (compoundButton.getId() == R.id.mp06d0101 ) {
             if (mp06d0101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
-                Hm_Lv.get(lst8).removeAllViews();
-                // Hm_Lv.get(lst8).setVisibility(View.GONE);
-                compoundButton.requestFocus();
             }
         }
 
-        if (compoundButton.getId() == R.id.mp06d0201 || compoundButton.getId() == R.id.mp06d0202) {
+
+        if (compoundButton.getId() == R.id.mp06d0102 ) {
+            if (mp06d0102.isChecked()) {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+
+            }
+        }
+
+        if (compoundButton.getId() == R.id.mp06d0201 ) {
             if (mp06d0201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0202 ) {
+            if (mp06d0202.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0301 || compoundButton.getId() == R.id.mp06d0302) {
+
+        if (compoundButton.getId() == R.id.mp06d0301 ) {
             if (mp06d0301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0302 ) {
+            if (mp06d0302.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0401 || compoundButton.getId() == R.id.mp06d0402) {
+
+
+
+        if (compoundButton.getId() == R.id.mp06d0401 ) {
             if (mp06d0401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0402 ) {
+            if (mp06d0402.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0501 || compoundButton.getId() == R.id.mp06d0502) {
+
+        if (compoundButton.getId() == R.id.mp06d0501 ) {
             if (mp06d0501.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0502 ) {
+            if (mp06d0502.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0601 || compoundButton.getId() == R.id.mp06d0602) {
+
+        if (compoundButton.getId() == R.id.mp06d0601 ) {
             if (mp06d0601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0602 ) {
+            if (mp06d0602.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0701 || compoundButton.getId() == R.id.mp06d0702) {
+
+        if (compoundButton.getId() == R.id.mp06d0701 ) {
             if (mp06d0701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0702 ) {
+            if (mp06d0702.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0801 || compoundButton.getId() == R.id.mp06d0802) {
+
+        if (compoundButton.getId() == R.id.mp06d0801 ) {
             if (mp06d0801.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0802 ) {
+            if (mp06d0802.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d0901 || compoundButton.getId() == R.id.mp06d0902) {
+        if (compoundButton.getId() == R.id.mp06d0901 ) {
             if (mp06d0901.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d0902 ) {
+            if (mp06d0902.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1001 || compoundButton.getId() == R.id.mp06d1002) {
+
+        if (compoundButton.getId() == R.id.mp06d1001 ) {
             if (mp06d1001.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1002 ) {
+            if (mp06d1002.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1101 || compoundButton.getId() == R.id.mp06d1102) {
+        if (compoundButton.getId() == R.id.mp06d1101 ) {
             if (mp06d1101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1102 ) {
+            if (mp06d1102.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1201 || compoundButton.getId() == R.id.mp06d1202) {
+
+
+        if (compoundButton.getId() == R.id.mp06d1201 ) {
             if (mp06d1201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1202 ) {
+            if (mp06d1202.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1301 || compoundButton.getId() == R.id.mp06d1302) {
+
+        if (compoundButton.getId() == R.id.mp06d1301 ) {
             if (mp06d1301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1302 ) {
+            if (mp06d1302.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1401 || compoundButton.getId() == R.id.mp06d1402) {
+
+        if (compoundButton.getId() == R.id.mp06d1401 ) {
             if (mp06d1401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1402 ) {
+            if (mp06d1402.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1501 || compoundButton.getId() == R.id.mp06d1502) {
+
+        if (compoundButton.getId() == R.id.mp06d1501 ) {
             if (mp06d1501.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1502 ) {
+            if (mp06d1502.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1601 || compoundButton.getId() == R.id.mp06d1602) {
+
+
+
+        if (compoundButton.getId() == R.id.mp06d1601 ) {
             if (mp06d1601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1602 ) {
+            if (mp06d1602.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1701 || compoundButton.getId() == R.id.mp06d1702) {
+
+        if (compoundButton.getId() == R.id.mp06d1701 ) {
             if (mp06d1701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1702 ) {
+            if (mp06d1702.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1801 || compoundButton.getId() == R.id.mp06d1802) {
+
+        if (compoundButton.getId() == R.id.mp06d1801 ) {
             if (mp06d1801.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1802 ) {
+            if (mp06d1802.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d1901 || compoundButton.getId() == R.id.mp06d1902) {
+
+        if (compoundButton.getId() == R.id.mp06d1901 ) {
             if (mp06d1901.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d1902 ) {
+            if (mp06d1902.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2001 || compoundButton.getId() == R.id.mp06d2002) {
+
+        if (compoundButton.getId() == R.id.mp06d2001 ) {
             if (mp06d2001.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2002 ) {
+            if (mp06d2002.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2101 || compoundButton.getId() == R.id.mp06d2102) {
+
+        if (compoundButton.getId() == R.id.mp06d2101 ) {
             if (mp06d2101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2102 ) {
+            if (mp06d2102.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2201 || compoundButton.getId() == R.id.mp06d2202) {
+
+        if (compoundButton.getId() == R.id.mp06d2201 ) {
             if (mp06d2201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2202 ) {
+            if (mp06d2202.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2301 || compoundButton.getId() == R.id.mp06d2302) {
+
+        if (compoundButton.getId() == R.id.mp06d2301 ) {
             if (mp06d2301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2302 ) {
+            if (mp06d2302.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2401 || compoundButton.getId() == R.id.mp06d2402) {
+
+        if (compoundButton.getId() == R.id.mp06d2401 ) {
             if (mp06d2401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2402 ) {
+            if (mp06d2402.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2501 || compoundButton.getId() == R.id.mp06d2502) {
+
+        if (compoundButton.getId() == R.id.mp06d2501 ) {
             if (mp06d2501.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2502 ) {
+            if (mp06d2502.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2601 || compoundButton.getId() == R.id.mp06d2602) {
+
+        if (compoundButton.getId() == R.id.mp06d2601 ) {
             if (mp06d2601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2602 ) {
+            if (mp06d2602.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2701 || compoundButton.getId() == R.id.mp06d2702) {
+
+        if (compoundButton.getId() == R.id.mp06d2701 ) {
             if (mp06d2701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2702 ) {
+            if (mp06d2702.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2801 || compoundButton.getId() == R.id.mp06d2802) {
+
+        if (compoundButton.getId() == R.id.mp06d2801 ) {
             if (mp06d2801.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2802 ) {
+            if (mp06d2802.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d2901 || compoundButton.getId() == R.id.mp06d2902) {
+
+        if (compoundButton.getId() == R.id.mp06d2901 ) {
             if (mp06d2901.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d2902 ) {
+            if (mp06d2902.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d3001 || compoundButton.getId() == R.id.mp06d3002) {
+
+        if (compoundButton.getId() == R.id.mp06d3001 ) {
             if (mp06d3001.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d3002 ) {
+            if (mp06d3002.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d3101 || compoundButton.getId() == R.id.mp06d3102) {
+
+        if (compoundButton.getId() == R.id.mp06d3101 ) {
             if (mp06d3101.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
+            }
+        }
+
+
+        if (compoundButton.getId() == R.id.mp06d3102 ) {
+            if (mp06d3102.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
+
             }
         }
-        if (compoundButton.getId() == R.id.mp06d3201 || compoundButton.getId() == R.id.mp06d3202) {
+
+        if (compoundButton.getId() == R.id.mp06d3201 ) {
             if (mp06d3201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
-            } else {
-                Hm_Lv.get(lst8).removeAllViews();
-                // Hm_Lv.get(lst8).setVisibility(View.GONE);
-                compoundButton.requestFocus();
             }
         }
 
+
+        if (compoundButton.getId() == R.id.mp06d3202 ) {
+            if (mp06d3202.isChecked()) {
+                Hm_Lv.get(lst8).removeAllViews();
+                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                compoundButton.requestFocus();
+
+            }
+        }
+
+
+
+
+
+
     }
 
-    public boolean show_alert(final String vname, final CompoundButton cm) {
-        final AlertDialog b = new AlertDialog.Builder(this).create();
-        LayoutInflater layoutInflater = getLayoutInflater();
-        View v = layoutInflater.inflate(R.layout.alertdialogue, null);
-        b.setView(v);
-        b.show();
-        b.setCancelable(false);
+    public void get_data( final LinearLayout v) {
+
+        mp060 obj_mp06d0 = new mp060();
+        String id = v.getResources().getResourceName(v.getId());
+        String lst6 = id.substring(Math.max(id.length() - 9, 0));
+        String vname = lst6;
+        if(v.getChildCount()==0)
+        {
+            obj_mp06d0.mp06dh2a="0";
+            obj_mp06d0.mp06dh2b="0";
+            obj_mp06d0.mp06dh2c="0";
+            obj_mp06d0.mp06dh3="0";
+            obj_mp06d0.mp06dh4="0";
+            obj_mp06d0.mp06dh5="0";
+            obj_mp06d0.mp06dh407x="0";
+            HMmp06d0.put(vname, obj_mp06d0);
+            
+            return;
+        }
+
 
 
         final CheckBox mp06dh2a, mp06dh2b, mp06dh2c;
@@ -1070,52 +1369,16 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         mp06dh407x = v.findViewById(R.id.mp06dh407x);
         mp06dh5 = v.findViewById(R.id.mp06dh5);
 
-        btn_End = v.findViewById(R.id.btn_End);
-        btn_Continue = v.findViewById(R.id.btn_Continue);
-
-        final mp060 obj_mp06d0 = new mp060();
 
 
-        mp06dh407.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (compoundButton.isChecked()) {
-                    mp06dh407x.setVisibility(View.VISIBLE);
-                } else {
-                    mp06dh407x.setVisibility(View.GONE);
-                }
-            }
-        });
-
-        //final boolean status_chect=false;
-
-        btn_End.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
 
-                cm.setChecked(false);
-// ALI plesed checked
-
-                b.dismiss();
 
 
-            }
-        });
 
 
-        btn_Continue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                // validation dialog
 
-                if (!mp06dh2a.isChecked() && !mp06dh2b.isChecked() && !mp06dh2c.isChecked()) {
-                    Toast.makeText(Form6Section4Activity.this, "ERROR(empty): " + getString(R.string.mp06dh2a), Toast.LENGTH_SHORT).show();
-                    mp06dh2a.setError("This data is Required!");
-
-                    return;
-                } else {
 
 
                     if (mp06dh2a.isChecked()) {
@@ -1133,31 +1396,17 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     } else {
                         obj_mp06d0.mp06dh2c = "0";
                     }
-                }
 
-                if (!mp06dh301.isChecked() && !mp06dh302.isChecked()) {
-                    Toast.makeText(Form6Section4Activity.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                    mp06dh301.setError("This data is Required!");
 
-                    return;
-                } else {
+
                     if (mp06dh301.isChecked()) {
                         obj_mp06d0.mp06dh3 = "1";
                     }
                     if (mp06dh302.isChecked()) {
                         obj_mp06d0.mp06dh3 = "2";
                     }
-                }
 
-                if (!mp06dh401.isChecked() && !mp06dh402.isChecked()
-                        && !mp06dh403.isChecked() && !mp06dh404.isChecked() && !mp06dh405.isChecked()
-                        && !mp06dh406.isChecked() && !mp06dh407.isChecked()
-                ) {
-                    Toast.makeText(Form6Section4Activity.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                    mp06dh401.setError("This data is Required!");
 
-                    return;
-                } else {
                     if (mp06dh401.isChecked()) {
                         obj_mp06d0.mp06dh4 = "1";
                     }
@@ -1179,35 +1428,32 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     if (mp06dh407.isChecked()) {
                         obj_mp06d0.mp06dh4 = "7";
 
-                        if (mp06dh407x.getText().toString().isEmpty()) {
-                            Toast.makeText(Form6Section4Activity.this, "ERROR(empty): ", Toast.LENGTH_SHORT).show();
-                            mp06dh407x.setError("This data is Required!");
-                            return;
-                        } else {
+                        if (!mp06dh407x.getText().toString().isEmpty()) {
                             obj_mp06d0.mp06dh407x = mp06dh407x.getText().toString();
                         }
+                        else
+                        {
+                            obj_mp06d0.mp06dh407x = "0";
+                        }
+
+
+
+
+                }
+                    else
+                    {
+                        obj_mp06d0.mp06dh407x = "0";
                     }
 
-                }
-
-                if (mp06dh5.getText().toString().isEmpty()) {
-                    Toast.makeText(Form6Section4Activity.this, "ERROR(empty): " + getString(R.string.mp06dh5), Toast.LENGTH_SHORT).show();
-                    mp06dh5.setError("This data is Required!");
-
-                    return;
-                } else {
+                if (!mp06dh5.getText().toString().isEmpty()) {
                     obj_mp06d0.mp06dh5 = mp06dh5.getText().toString();
                 }
-
 
                 HMmp06d0.put(vname, obj_mp06d0);
 
 
-                b.dismiss();
+             int a=0;
 
-            }
-        });
-        return true;
 
     }
 
@@ -1224,6 +1470,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
         CheckBox mp06dh2a, mp06dh2b, mp06dh2c;
+      final   LinearLayout mp06dh4lv,mp06dh5lv;
         RadioButton
                 mp06dh301,
                 mp06dh302,
@@ -1238,6 +1485,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 mp06dh5;
 
         Button btn_End, btn_Continue;
+        mp06dh4lv=v.findViewById(R.id.mp06dh4lv);
+        mp06dh5lv=v.findViewById(R.id.mp06dh5lv);
 
         mp06dh2a = v.findViewById(R.id.mp06dh2a);
         mp06dh2b = v.findViewById(R.id.mp06dh2b);
@@ -1268,83 +1517,47 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             }
         });
 
-    }
-
-    public boolean check_get_data(LinearLayout lvParant) {
-
-        int a = 0;
-        try {
-
-            View view_lv;
-
-
-            view_lv = lvParant.getChildAt(0);
-            LinearLayout lv = ((LinearLayout) view_lv);
-            int checkboxcount = 0;
-            int Chectcheckboxcount = 0;
-
-            for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
-                View view = lv.getChildAt(i);
-
-                if (view instanceof RadioGroup) {
-                    int id = ((RadioGroup) view).getCheckedRadioButtonId();
-                    if (id == -1) {
-                        view.requestFocus();
-
-
-                        Toast.makeText(Form6Section4Activity.this, "RB: Some filed are missing", Toast.LENGTH_LONG).show();
-
-                        return false;
-                    }
-                }
-
-                if (view instanceof CheckBox) {
-
-                    CheckBox cb = ((CheckBox) view);
-
-                    checkboxcount++;
-                    if (cb.isChecked()) {
-                        Chectcheckboxcount++;
-                    }
-                    if (checkboxcount == 2 && Chectcheckboxcount == 0) {
-                        cb.requestFocus();
-                        cb.setError("This Filed is required");
-
-                        Toast.makeText(Form6Section4Activity.this, "Checkboxs: Some filed are missing" + cb.getText(), Toast.LENGTH_LONG).show();
-
-                        return false;
-                    }
+        mp06dh301.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (compoundButton.isChecked()) {
+                    mp06dh4lv.setVisibility(View.VISIBLE);
+                    mp06dh5lv.setVisibility(View.VISIBLE);
+                } else {
+                    mp06dh4lv.setVisibility(View.GONE);
+                    mp06dh5lv.setVisibility(View.GONE);
 
                 }
-
-                if (view instanceof EditText) {
-                    EditText ed = ((EditText) view);
-                    if (ed.getVisibility() == View.VISIBLE) {
-                        if (ed.getText().toString().length() == 0) {
-                            ed.setError("Please enter");
-                            ed.requestFocus();
-                            return false;
-                        }
-                    }
-                }
-
             }
+        });
+        mp06dh302.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (compoundButton.isChecked()) {
+                    mp06dh4lv.setVisibility(View.GONE);
+                    mp06dh5lv.setVisibility(View.GONE);
+                } else {
 
-            return true;
 
-        } catch (Exception e) {
+                    mp06dh4lv.setVisibility(View.VISIBLE);
+                    mp06dh5lv.setVisibility(View.VISIBLE);
 
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-        } finally {
-            return false;
-        }
+                }
+            }
+        });
+
     }
+
+
+
+
+
 
     public boolean checvalidation(LinearLayout lv) {
 
         /// Checkbox Celar*************************************
 
-        try {
+
 
             for (int i = 0, count = lv.getChildCount(); i < count; ++i) {
                 View view = lv.getChildAt(i);
@@ -1354,9 +1567,9 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     if (id == -1) {
                         view.requestFocus();
 
-                        //  Toast.makeText(Form6Section4Activity.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
+                          Toast.makeText(Form6Section4Activity.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
 
-                        //  return false;
+                          return false;
                     }
 
                 }
@@ -1368,12 +1581,146 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
             }
-            return true;
-        } catch (Exception e) {
 
-        } finally {
-            return false;
+            return true;
+
+
+
+    }
+
+    public void saveDrafts() throws JSONException
+    {
+        JSONObject form6 = new JSONObject();
+        String mp06dh2a;
+        String mp06dh2b;
+        String mp06dh2c;
+
+
+        String mp06dh3;
+        String mp06dh4;
+        String mp06dh407x;
+
+        String mp06dh5;
+
+        for(Map.Entry<String, mp060> entry : HMmp06d0.entrySet()) {
+            String key = entry.getKey();
+            mp060 obj_mp060 = entry.getValue();
+
+            mp06dh2a=obj_mp060.mp06dh2a;
+            mp06dh2b=obj_mp060.mp06dh2b;
+            mp06dh2c=obj_mp060.mp06dh2c;
+            mp06dh3=obj_mp060.mp06dh3;
+            mp06dh4=obj_mp060.mp06dh4;
+            mp06dh407x=obj_mp060.mp06dh407x;
+            mp06dh5=obj_mp060.mp06dh5;
+
+            key=key.substring(2);
+
+            form6.put(key+"02a",mp06dh2a);
+            form6.put(key+"02b",mp06dh2b);
+            form6.put(key+"02c",mp06dh2c);
+
+            form6.put(key+"03",mp06dh3);
+            form6.put(key+"04",mp06dh4);
+            form6.put(key+"04x",mp06dh407x);
+            form6.put(key+"05",mp06dh5);
+
+
         }
+
+        form6.put("mp06d01",mp06d0101.isChecked()?"1":mp06d0102.isChecked()?"2":"0" );
+        form6.put("mp06d02",mp06d0201.isChecked()?"1":mp06d0202.isChecked()?"2":"0" );
+        form6.put("mp06d03",mp06d0301.isChecked()?"1":mp06d0302.isChecked()?"2":"0" );
+        form6.put("mp06d04",mp06d0401.isChecked()?"1":mp06d0402.isChecked()?"2":"0" );
+        form6.put("mp06d05",mp06d0501.isChecked()?"1":mp06d0502.isChecked()?"2":"0" );
+        form6.put("mp06d06",mp06d0601.isChecked()?"1":mp06d0602.isChecked()?"2":"0" );
+        form6.put("mp06d07",mp06d0701.isChecked()?"1":mp06d0702.isChecked()?"2":"0" );
+        form6.put("mp06d08",mp06d0801.isChecked()?"1":mp06d0802.isChecked()?"2":"0" );
+        form6.put("mp06d09",mp06d0901.isChecked()?"1":mp06d0902.isChecked()?"2":"0" );
+        form6.put("mp06d10",mp06d1001.isChecked()?"1":mp06d1002.isChecked()?"2":"0" );
+        form6.put("mp06d11",mp06d1101.isChecked()?"1":mp06d1102.isChecked()?"2":"0" );
+        form6.put("mp06d12",mp06d1201.isChecked()?"1":mp06d1202.isChecked()?"2":"0" );
+        form6.put("mp06d13",mp06d1301.isChecked()?"1":mp06d1302.isChecked()?"2":"0" );
+        form6.put("mp06d14",mp06d1401.isChecked()?"1":mp06d1402.isChecked()?"2":"0" );
+        form6.put("mp06d15",mp06d1501.isChecked()?"1":mp06d1502.isChecked()?"2":"0" );
+        form6.put("mp06d16",mp06d1601.isChecked()?"1":mp06d1602.isChecked()?"2":"0" );
+        form6.put("mp06d17",mp06d1701.isChecked()?"1":mp06d1702.isChecked()?"2":"0" );
+        form6.put("mp06d18",mp06d1801.isChecked()?"1":mp06d1802.isChecked()?"2":"0" );
+        form6.put("mp06d19",mp06d1901.isChecked()?"1":mp06d1902.isChecked()?"2":"0" );
+        form6.put("mp06d20",mp06d2001.isChecked()?"1":mp06d2002.isChecked()?"2":"0" );
+        form6.put("mp06d21",mp06d2101.isChecked()?"1":mp06d2102.isChecked()?"2":"0" );
+        form6.put("mp06d22",mp06d2201.isChecked()?"1":mp06d2202.isChecked()?"2":"0" );
+        form6.put("mp06d23",mp06d2301.isChecked()?"1":mp06d2302.isChecked()?"2":"0" );
+        form6.put("mp06d24",mp06d2401.isChecked()?"1":mp06d2402.isChecked()?"2":"0" );
+        form6.put("mp06d25",mp06d2501.isChecked()?"1":mp06d2502.isChecked()?"2":"0" );
+        form6.put("mp06d26",mp06d2601.isChecked()?"1":mp06d2602.isChecked()?"2":"0" );
+        form6.put("mp06d27",mp06d2701.isChecked()?"1":mp06d2702.isChecked()?"2":"0" );
+        form6.put("mp06d28",mp06d2801.isChecked()?"1":mp06d2802.isChecked()?"2":"0" );
+        form6.put("mp06d29",mp06d2901.isChecked()?"1":mp06d2902.isChecked()?"2":"0" );
+        form6.put("mp06d30",mp06d3001.isChecked()?"1":mp06d3002.isChecked()?"2":"0" );
+        form6.put("mp06d31",mp06d3101.isChecked()?"1":mp06d3102.isChecked()?"2":"0" );
+        form6.put("mp06d32",mp06d3201.isChecked()?"1":mp06d3202.isChecked()?"2":"0" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.Form6Section4Activity"
+            android:name=".activities.SplashscreenActivity"
             android:theme="@style/AppTheme1"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -67,14 +67,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
-        <activity
+      <activity
             android:name=".activities.Form6Section2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-        <!--<activity
+        <activity
             android:name=".activities.Form6Section4Activity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />-->
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
