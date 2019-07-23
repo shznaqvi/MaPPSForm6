@@ -155,7 +155,7 @@
     <string name="mp06dh4d"> تعلقه اسپتال </string>
     <string name="mp06dh4e"> ٽرشري اسپتال </string>
     <string name="mp06dh4f"> ايل ايڇ ڊبليو </string>
-    <string name="mp06dh4g"> ٻٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="mp06dh4g"> ٻيو ڪجھ وضاحت ڪريو </string>
     <string name="mp06dh5"> اسپتال ۾ گذاريل ڏينھن جو تعداد </string>
     <string name="mp06dh"> نشانيون ۽ حالتون </string>
     <string name="mp06d01"> پيٽ جو سور </string>
@@ -190,6 +190,4 @@
     <string name="mp06d30"> رت چاڙاھڻ </string>
     <string name="mp06d31"> وينوفر جي ڊرپ يا سُئي لڳرائڻ </string>
     <string name="mp06d32"> حمل جي دوران ڪا ٻئي حالت جنھن ۾ علاج يا اسپتال وغيره ڏانھن اُماڻڻ جي ضرورت پئي ھجي. </string>
-
-
 </resources>

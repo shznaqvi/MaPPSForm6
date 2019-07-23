@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.mapps_form6.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,7 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.mapps_form6.R;
 import edu.aku.hassannaqvi.mapps_form6.core.AppMain;
 import edu.aku.hassannaqvi.mapps_form6.core.DatabaseHelper;
+import edu.aku.hassannaqvi.mapps_form6.other.MinMaxFilter;
 import edu.aku.hassannaqvi.mapps_form6.other.mp060;
 import edu.aku.hassannaqvi.mapps_form6.validation.ValidatorClass;
 
@@ -669,20 +671,20 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 get_data(lvmp06d31);
                 get_data(lvmp06d32);
 
+
                 try {
                     saveDrafts();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
                 if (UpdateDB()) {
                     startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
                             .putExtra("complete", true));
 
                 } else {
-                    Toast.makeText(Form6Section4Activity.this, "Error in updating DB", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(Form6Section4Activity.this, "Error in updating Db", Toast.LENGTH_SHORT).show();
                 }
+
 
             }
 
@@ -1449,7 +1451,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         CheckBox mp06dh2a, mp06dh2b, mp06dh2c;
         final LinearLayout mp06dh4lv, mp06dh5lv;
-        RadioButton
+        final RadioButton
                 mp06dh301,
                 mp06dh302,
                 mp06dh401,
@@ -1482,6 +1484,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         mp06dh407x = v.findViewById(R.id.mp06dh407x);
         mp06dh5 = v.findViewById(R.id.mp06dh5);
+        mp06dh5.setFilters(new InputFilter[]{new MinMaxFilter("1", "30")});
 
 
         mp06dh407.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -1491,6 +1494,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     mp06dh407x.setVisibility(View.VISIBLE);
                 } else {
                     mp06dh407x.setVisibility(View.GONE);
+                    mp06dh407x.setText("");
                 }
             }
         });
@@ -1503,7 +1507,17 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     mp06dh5lv.setVisibility(View.VISIBLE);
                 } else {
                     mp06dh4lv.setVisibility(View.GONE);
+
                     mp06dh5lv.setVisibility(View.GONE);
+                    mp06dh401.setChecked(false);
+                    mp06dh402.setChecked(false);
+                    mp06dh403.setChecked(false);
+                    mp06dh404.setChecked(false);
+                    mp06dh405.setChecked(false);
+                    mp06dh406.setChecked(false);
+                    mp06dh407.setChecked(false);
+                    mp06dh407x.setText("");
+                    mp06dh5.setText("");
 
                 }
             }
@@ -1514,6 +1528,16 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 if (compoundButton.isChecked()) {
                     mp06dh4lv.setVisibility(View.GONE);
                     mp06dh5lv.setVisibility(View.GONE);
+                    mp06dh401.setChecked(false);
+                    mp06dh402.setChecked(false);
+                    mp06dh403.setChecked(false);
+                    mp06dh404.setChecked(false);
+                    mp06dh405.setChecked(false);
+                    mp06dh406.setChecked(false);
+                    mp06dh407.setChecked(false);
+                    mp06dh407x.setText("");
+                    mp06dh5.setText("");
+
                 } else {
 
 
@@ -1559,23 +1583,6 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
     }
-
-    private boolean UpdateDB() {
-        DatabaseHelper db = new DatabaseHelper(this);
-
-        int updcount = db.updatesC();
-
-        if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-
-
-    }
-
 
     public void saveDrafts() throws JSONException {
         JSONObject form6 = new JSONObject();
@@ -1651,6 +1658,22 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
         AppMain.fc.setsC(String.valueOf(form6));
+
+
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updatesC();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
 
     }
