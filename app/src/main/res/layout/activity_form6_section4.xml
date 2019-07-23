@@ -7,7 +7,7 @@
         android:id="@+id/lvmain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layoutDirection="rtl"
+        android:layoutDirection="ltr"
         android:orientation="vertical"
         android:paddingEnd="16dp">
 
@@ -1438,7 +1438,6 @@
                 android:id="@+id/btn_End"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e"
@@ -1448,9 +1447,9 @@
 
             <Button
                 android:id="@+id/btn_Continue"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="@string/nextSection"
                 android:textColor="@color/white"
                 android:textSize="32sp" />
