@@ -22,8 +22,10 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import edu.aku.hassannaqvi.mapps_form6.other.mp060;
 import edu.aku.hassannaqvi.mappsform8.R;
+import edu.aku.hassannaqvi.mappsform8.core.AppMain;
+import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
+import edu.aku.hassannaqvi.mappsform8.other.mp060;
 import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
 public class Form6Section4Activity extends AppCompatActivity implements RadioButton.OnCheckedChangeListener {
@@ -488,38 +490,38 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         //region  hasmap
 
-        Hm_Lv.put("mp08g01", lvmp06d01);
-        Hm_Lv.put("mp08g02", lvmp06d02);
-        Hm_Lv.put("mp08g03", lvmp06d03);
-        Hm_Lv.put("mp08g04", lvmp06d04);
-        Hm_Lv.put("mp08g05", lvmp06d05);
-        Hm_Lv.put("mp08g06", lvmp06d06);
-        Hm_Lv.put("mp08g07", lvmp06d07);
-        Hm_Lv.put("mp08g08", lvmp06d08);
-        Hm_Lv.put("mp08g09", lvmp06d09);
-        Hm_Lv.put("mp08g10", lvmp06d10);
-        Hm_Lv.put("mp08g11", lvmp06d11);
-        Hm_Lv.put("mp08g12", lvmp06d12);
-        Hm_Lv.put("mp08g13", lvmp06d13);
-        Hm_Lv.put("mp08g14", lvmp06d14);
-        Hm_Lv.put("mp08g15", lvmp06d15);
-        Hm_Lv.put("mp08g16", lvmp06d16);
-        Hm_Lv.put("mp08g17", lvmp06d17);
-        Hm_Lv.put("mp08g18", lvmp06d18);
-        Hm_Lv.put("mp08g19", lvmp06d19);
-        Hm_Lv.put("mp08g20", lvmp06d20);
-        Hm_Lv.put("mp08g21", lvmp06d21);
-        Hm_Lv.put("mp08g22", lvmp06d22);
-        Hm_Lv.put("mp08g23", lvmp06d23);
-        Hm_Lv.put("mp08g24", lvmp06d24);
-        Hm_Lv.put("mp08g25", lvmp06d25);
-        Hm_Lv.put("mp08g26", lvmp06d26);
-        Hm_Lv.put("mp08g27", lvmp06d27);
-        Hm_Lv.put("mp08g28", lvmp06d28);
-        Hm_Lv.put("mp08g29", lvmp06d29);
-        Hm_Lv.put("mp08g30", lvmp06d30);
-        Hm_Lv.put("mp08g31", lvmp06d31);
-        Hm_Lv.put("mp08g32", lvmp06d32);
+        Hm_Lv.put("mp06d01", lvmp06d01);
+        Hm_Lv.put("mp06d02", lvmp06d02);
+        Hm_Lv.put("mp06d03", lvmp06d03);
+        Hm_Lv.put("mp06d04", lvmp06d04);
+        Hm_Lv.put("mp06d05", lvmp06d05);
+        Hm_Lv.put("mp06d06", lvmp06d06);
+        Hm_Lv.put("mp06d07", lvmp06d07);
+        Hm_Lv.put("mp06d08", lvmp06d08);
+        Hm_Lv.put("mp06d09", lvmp06d09);
+        Hm_Lv.put("mp06d10", lvmp06d10);
+        Hm_Lv.put("mp06d11", lvmp06d11);
+        Hm_Lv.put("mp06d12", lvmp06d12);
+        Hm_Lv.put("mp06d13", lvmp06d13);
+        Hm_Lv.put("mp06d14", lvmp06d14);
+        Hm_Lv.put("mp06d15", lvmp06d15);
+        Hm_Lv.put("mp06d16", lvmp06d16);
+        Hm_Lv.put("mp06d17", lvmp06d17);
+        Hm_Lv.put("mp06d18", lvmp06d18);
+        Hm_Lv.put("mp06d19", lvmp06d19);
+        Hm_Lv.put("mp06d20", lvmp06d20);
+        Hm_Lv.put("mp06d21", lvmp06d21);
+        Hm_Lv.put("mp06d22", lvmp06d22);
+        Hm_Lv.put("mp06d23", lvmp06d23);
+        Hm_Lv.put("mp06d24", lvmp06d24);
+        Hm_Lv.put("mp06d25", lvmp06d25);
+        Hm_Lv.put("mp06d26", lvmp06d26);
+        Hm_Lv.put("mp06d27", lvmp06d27);
+        Hm_Lv.put("mp06d28", lvmp06d28);
+        Hm_Lv.put("mp06d29", lvmp06d29);
+        Hm_Lv.put("mp06d30", lvmp06d30);
+        Hm_Lv.put("mp06d31", lvmp06d31);
+        Hm_Lv.put("mp06d32", lvmp06d32);
 
         //endregion
 
@@ -673,14 +675,34 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                if (updateDB()) {
+                    startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
+                            .putExtra("complete", true));
 
-                startActivity(new Intent(Form6Section4Activity.this, EndingActivity.class)
-                        .putExtra("complete", true));
+                } else {
+                    Toast.makeText(Form6Section4Activity.this, "Error in updating DB", Toast.LENGTH_SHORT).show();
+                }
 
 
             }
 
         });
+
+    }
+
+    private boolean updateDB() {
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updatesG();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
     }
 
@@ -1592,38 +1614,40 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         }
 
-        form6.put("mp06d01", mp06d0101.isChecked() ? "1" : mp06d0102.isChecked() ? "2" : "0");
-        form6.put("mp06d02", mp06d0201.isChecked() ? "1" : mp06d0202.isChecked() ? "2" : "0");
-        form6.put("mp06d03", mp06d0301.isChecked() ? "1" : mp06d0302.isChecked() ? "2" : "0");
-        form6.put("mp06d04", mp06d0401.isChecked() ? "1" : mp06d0402.isChecked() ? "2" : "0");
-        form6.put("mp06d05", mp06d0501.isChecked() ? "1" : mp06d0502.isChecked() ? "2" : "0");
-        form6.put("mp06d06", mp06d0601.isChecked() ? "1" : mp06d0602.isChecked() ? "2" : "0");
-        form6.put("mp06d07", mp06d0701.isChecked() ? "1" : mp06d0702.isChecked() ? "2" : "0");
-        form6.put("mp06d08", mp06d0801.isChecked() ? "1" : mp06d0802.isChecked() ? "2" : "0");
-        form6.put("mp06d09", mp06d0901.isChecked() ? "1" : mp06d0902.isChecked() ? "2" : "0");
-        form6.put("mp06d10", mp06d1001.isChecked() ? "1" : mp06d1002.isChecked() ? "2" : "0");
-        form6.put("mp06d11", mp06d1101.isChecked() ? "1" : mp06d1102.isChecked() ? "2" : "0");
-        form6.put("mp06d12", mp06d1201.isChecked() ? "1" : mp06d1202.isChecked() ? "2" : "0");
-        form6.put("mp06d13", mp06d1301.isChecked() ? "1" : mp06d1302.isChecked() ? "2" : "0");
-        form6.put("mp06d14", mp06d1401.isChecked() ? "1" : mp06d1402.isChecked() ? "2" : "0");
-        form6.put("mp06d15", mp06d1501.isChecked() ? "1" : mp06d1502.isChecked() ? "2" : "0");
-        form6.put("mp06d16", mp06d1601.isChecked() ? "1" : mp06d1602.isChecked() ? "2" : "0");
-        form6.put("mp06d17", mp06d1701.isChecked() ? "1" : mp06d1702.isChecked() ? "2" : "0");
-        form6.put("mp06d18", mp06d1801.isChecked() ? "1" : mp06d1802.isChecked() ? "2" : "0");
-        form6.put("mp06d19", mp06d1901.isChecked() ? "1" : mp06d1902.isChecked() ? "2" : "0");
-        form6.put("mp06d20", mp06d2001.isChecked() ? "1" : mp06d2002.isChecked() ? "2" : "0");
-        form6.put("mp06d21", mp06d2101.isChecked() ? "1" : mp06d2102.isChecked() ? "2" : "0");
-        form6.put("mp06d22", mp06d2201.isChecked() ? "1" : mp06d2202.isChecked() ? "2" : "0");
-        form6.put("mp06d23", mp06d2301.isChecked() ? "1" : mp06d2302.isChecked() ? "2" : "0");
-        form6.put("mp06d24", mp06d2401.isChecked() ? "1" : mp06d2402.isChecked() ? "2" : "0");
-        form6.put("mp06d25", mp06d2501.isChecked() ? "1" : mp06d2502.isChecked() ? "2" : "0");
-        form6.put("mp06d26", mp06d2601.isChecked() ? "1" : mp06d2602.isChecked() ? "2" : "0");
-        form6.put("mp06d27", mp06d2701.isChecked() ? "1" : mp06d2702.isChecked() ? "2" : "0");
-        form6.put("mp06d28", mp06d2801.isChecked() ? "1" : mp06d2802.isChecked() ? "2" : "0");
-        form6.put("mp06d29", mp06d2901.isChecked() ? "1" : mp06d2902.isChecked() ? "2" : "0");
-        form6.put("mp06d30", mp06d3001.isChecked() ? "1" : mp06d3002.isChecked() ? "2" : "0");
-        form6.put("mp06d31", mp06d3101.isChecked() ? "1" : mp06d3102.isChecked() ? "2" : "0");
-        form6.put("mp06d32", mp06d3201.isChecked() ? "1" : mp06d3202.isChecked() ? "2" : "0");
+        form6.put("mp08g01", mp06d0101.isChecked() ? "1" : mp06d0102.isChecked() ? "2" : "0");
+        form6.put("mp08g02", mp06d0201.isChecked() ? "1" : mp06d0202.isChecked() ? "2" : "0");
+        form6.put("mp08g03", mp06d0301.isChecked() ? "1" : mp06d0302.isChecked() ? "2" : "0");
+        form6.put("mp08g04", mp06d0401.isChecked() ? "1" : mp06d0402.isChecked() ? "2" : "0");
+        form6.put("mp08g05", mp06d0501.isChecked() ? "1" : mp06d0502.isChecked() ? "2" : "0");
+        form6.put("mp08g06", mp06d0601.isChecked() ? "1" : mp06d0602.isChecked() ? "2" : "0");
+        form6.put("mp08g07", mp06d0701.isChecked() ? "1" : mp06d0702.isChecked() ? "2" : "0");
+        form6.put("mp08g08", mp06d0801.isChecked() ? "1" : mp06d0802.isChecked() ? "2" : "0");
+        form6.put("mp08g09", mp06d0901.isChecked() ? "1" : mp06d0902.isChecked() ? "2" : "0");
+        form6.put("mp08g10", mp06d1001.isChecked() ? "1" : mp06d1002.isChecked() ? "2" : "0");
+        form6.put("mp08g11", mp06d1101.isChecked() ? "1" : mp06d1102.isChecked() ? "2" : "0");
+        form6.put("mp08g12", mp06d1201.isChecked() ? "1" : mp06d1202.isChecked() ? "2" : "0");
+        form6.put("mp08g13", mp06d1301.isChecked() ? "1" : mp06d1302.isChecked() ? "2" : "0");
+        form6.put("mp08g14", mp06d1401.isChecked() ? "1" : mp06d1402.isChecked() ? "2" : "0");
+        form6.put("mp08g15", mp06d1501.isChecked() ? "1" : mp06d1502.isChecked() ? "2" : "0");
+        form6.put("mp08g16", mp06d1601.isChecked() ? "1" : mp06d1602.isChecked() ? "2" : "0");
+        form6.put("mp08g17", mp06d1701.isChecked() ? "1" : mp06d1702.isChecked() ? "2" : "0");
+        form6.put("mp08g18", mp06d1801.isChecked() ? "1" : mp06d1802.isChecked() ? "2" : "0");
+        form6.put("mp08g19", mp06d1901.isChecked() ? "1" : mp06d1902.isChecked() ? "2" : "0");
+        form6.put("mp08g20", mp06d2001.isChecked() ? "1" : mp06d2002.isChecked() ? "2" : "0");
+        form6.put("mp08g21", mp06d2101.isChecked() ? "1" : mp06d2102.isChecked() ? "2" : "0");
+        form6.put("mp08g22", mp06d2201.isChecked() ? "1" : mp06d2202.isChecked() ? "2" : "0");
+        form6.put("mp08g23", mp06d2301.isChecked() ? "1" : mp06d2302.isChecked() ? "2" : "0");
+        form6.put("mp08g24", mp06d2401.isChecked() ? "1" : mp06d2402.isChecked() ? "2" : "0");
+        form6.put("mp08g25", mp06d2501.isChecked() ? "1" : mp06d2502.isChecked() ? "2" : "0");
+        form6.put("mp08g26", mp06d2601.isChecked() ? "1" : mp06d2602.isChecked() ? "2" : "0");
+        form6.put("mp08g27", mp06d2701.isChecked() ? "1" : mp06d2702.isChecked() ? "2" : "0");
+        form6.put("mp08g28", mp06d2801.isChecked() ? "1" : mp06d2802.isChecked() ? "2" : "0");
+        form6.put("mp08g29", mp06d2901.isChecked() ? "1" : mp06d2902.isChecked() ? "2" : "0");
+        form6.put("mp08g30", mp06d3001.isChecked() ? "1" : mp06d3002.isChecked() ? "2" : "0");
+        form6.put("mp08g31", mp06d3101.isChecked() ? "1" : mp06d3102.isChecked() ? "2" : "0");
+        form6.put("mp08g32", mp06d3201.isChecked() ? "1" : mp06d3202.isChecked() ? "2" : "0");
+
+        AppMain.fc.setsG(String.valueOf(form6));
 
 
     }

@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.mappsform8.R;
 import edu.aku.hassannaqvi.mappsform8.core.AppMain;
+import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySectionFBinding;
 import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
@@ -50,7 +51,17 @@ public class SectionFActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        return true;
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updatesF();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void SaveDraft() throws JSONException {
@@ -124,6 +135,8 @@ public class SectionFActivity extends AppCompatActivity {
 
         sForm08.put("mp08f10", bi.mp08f10a.isChecked() ? "1"
                 : bi.mp08f10b.isChecked() ? "2" : "0");
+
+        AppMain.fc.setsF(String.valueOf(sForm08));
 
     }
 
