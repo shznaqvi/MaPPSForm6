@@ -1678,4 +1678,9 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 }
