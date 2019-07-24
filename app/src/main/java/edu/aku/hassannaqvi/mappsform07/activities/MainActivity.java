@@ -386,6 +386,55 @@ public class MainActivity extends Activity {
     }
 
 
+    public void openForm9F(View v) {
+        if (!AppMain.curCluster.equals("")) {
+            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
+                Intent oF = new Intent(MainActivity.this, Section9FActivity.class).putExtra("fType", true);
+//                AppMain.formType = "9";
+                startActivity(oF);
+            } else {
+
+                builder = new AlertDialog.Builder(MainActivity.this);
+                ImageView img = new ImageView(getApplicationContext());
+                img.setImageResource(R.drawable.tagimg);
+                img.setPadding(0, 15, 0, 15);
+                builder.setCustomTitle(img);
+
+                final EditText input = new EditText(MainActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        if (!m_Text.equals("")) {
+                            editor.putString("tagName", m_Text);
+                            editor.commit();
+
+//                            AppMain.formType = "9";
+
+                            Intent oF = new Intent(MainActivity.this, Section9FActivity.class)
+                                    .putExtra("fType", true);
+                            startActivity(oF);
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        } else {
+            Toast.makeText(this, "Sync cluster's from login page", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     public void openForm10(View v) {
         if (!AppMain.curCluster.equals("")) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {

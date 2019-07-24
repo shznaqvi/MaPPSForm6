@@ -240,8 +240,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openE"
+
                 android:text="Section E"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/openF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openForm9F"
+                android:text="Section F"
                 android:textSize="28sp" />
 
 

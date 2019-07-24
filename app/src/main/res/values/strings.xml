@@ -437,4 +437,56 @@
     <string name="mp11b07">کاٻي ٻانهن يا /ڏوري جي ماپ لکو</string>
     <string name="mp11b08">ڇا کاٻي ٻانهن يا /ڏوري جي  ماپ ۾ (>.5cm)  آيوآهيجوفرق</string>
 
+
+
+    <!-- form 9 section 6 -->
+
+    <string name="mp09e4h"> آخر ۾، آئون توھان کان ڪجھ سوال پڇڻ چاھيندس جيڪي اُنھن علامتن يا حالتن جي باري ۾ ھوندا جيڪي آخري معائني (جيئن ٻار ڄڻڻ کانپوءِ) کان وٺي توھانکي درپيش آيون</string>
+
+    <string name="mp09ea"> ها </string>
+    <string name="mp09eb"> نه </string>
+    <string name="mp09eh1"> ڇا حمل جي دوران توهان کي هيٺ ڏنلن مان ڪا پيچيدگي ٿي هئي ؟ </string>
+    <string name="mp09eh2"> پيچيدگي جو وقت </string>
+    <string name="mp09eh2a"> وقت 1 </string>
+    <string name="mp09eh2b"> وقت 2 </string>
+    <string name="mp09eh2c"> وقت 3 </string>
+    <string name="mp09eh3"> علاج/سار سنڀال ورتي؟ </string>
+    <string name="mp09eh4"> علاج/سار سنڀال ڪٿان حاصل ڪئي؟ </string>
+    <string name="mp09eh4a"> نجي ڪلينڪ </string>
+    <string name="mp09eh4b"> نجي اسپتال </string>
+    <string name="mp09eh4c"> بي ايڇ يو/آر ايڇ سي </string>
+    <string name="mp09eh4d"> تعلقه اسپتال </string>
+    <string name="mp09eh4e"> ٽرشري اسپتال </string>
+    <string name="mp09eh4f"> ايل ايڇ ڊبليو </string>
+    <string name="mp09eh4g"> ٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="mp09eh5"> اسپتال ۾ گذاريل ڏينھن جو تعداد </string>
+    <string name="mp09eh"> نشانيون ۽ حالتون </string>
+    <string name="mp09e01"> پيٽ جو سور </string>
+    <string name="mp09e02"> پيٽ جي ھيٺين حصي ۾ سور </string>
+    <string name="mp09e03"> متلي </string>
+    <string name="mp09e04"> الٽي </string>
+    <string name="mp09e05"> قبضي </string>
+    <string name="mp09e06"> دست </string>
+    <string name="mp09e07"> مٿي جو سور </string>
+    <string name="mp09e08"> شديد مٿي جو سور </string>
+    <string name="mp09e09"> بخار </string>
+    <string name="mp09e10"> نزلو، زُڪام ۽ کنگھ </string>
+    <string name="mp09e11"> ساه کڻڻ ۾ تڪليف </string>
+    <string name="mp09e12"> چھري يا پيرن تي سوڄ </string>
+    <string name="mp09e13"> اکين آڏو ڌنڌلاڻ </string>
+    <string name="mp09e14"> جهٽڪا يا دورا پوڻ </string>
+    <string name="mp09e15"> بيهوشي </string>
+    <string name="mp09e16"> ٻچيداني مان بدبوء دار پاڻي جو اچڻ </string>
+    <string name="mp09e17"> بڇيداني مان خون جو هلڻ </string>
+    <string name="mp09e18"> ڪپڙن جو آلو ٿيڻ </string>
+    <string name="mp09e19"> بستري جو آلو ٿيڻ </string>
+    <string name="mp09e20"> فرش جو آلو ٿيڻ </string>
+    <string name="mp09e21"> خون هلڻ ڪري هوش جو وڃڻ </string>
+    <string name="mp09e22"> سائي </string>
+    <string name="mp09e23"> رت چاڙاھڻ </string>
+    <string name="mp09e24"> وينوفر جي ڊرپ يا سُئي لڳرائڻ </string>
+    <string name="mp09e25"> حمل يا ويم سان لاڳاپيل ڪا ٻئي حالت جنھن ۾ علاج يا اسپتال وغيره ڏانھن اُماڻڻ جي ضرورت پئي ھجي.  </string>
+    <string name="mp09e26"> ويم کان پوءِ ايل ايڇ ڊبليو جي طرفان ٻار جي سارسنڀال لاءِ ڪيل دورن جو تعداد </string>
+
+
 </resources>

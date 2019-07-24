@@ -102,6 +102,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
+
+        <activity
+            android:name=".activities.Section9FActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".activities.Section10EActivity"
             android:screenOrientation="portrait"
