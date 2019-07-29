@@ -1269,7 +1269,7 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
 
         CheckBox mp09eh2a, mp09eh2b, mp09eh2c;
         final LinearLayout mp09eh4lv, mp09eh5lv;
-        RadioButton
+        final RadioButton
                 mp09eh301,
                 mp09eh302,
                 mp09eh401,
@@ -1325,6 +1325,20 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                     mp09eh4lv.setVisibility(View.GONE);
                     mp09eh5lv.setVisibility(View.GONE);
 
+
+                    mp09eh401.setChecked(false);
+                    mp09eh402.setChecked(false);
+                    mp09eh403.setChecked(false);
+                    mp09eh404.setChecked(false);
+                    mp09eh405.setChecked(false);
+                    mp09eh406.setChecked(false);
+                    mp09eh407.setChecked(false);
+                    mp09eh407x.setText("");
+                    mp09eh5.setText("");
+
+
+
+
                 }
             }
         });
@@ -1334,6 +1348,16 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                 if (compoundButton.isChecked()) {
                     mp09eh4lv.setVisibility(View.GONE);
                     mp09eh5lv.setVisibility(View.GONE);
+
+                    mp09eh401.setChecked(false);
+                    mp09eh402.setChecked(false);
+                    mp09eh403.setChecked(false);
+                    mp09eh404.setChecked(false);
+                    mp09eh405.setChecked(false);
+                    mp09eh406.setChecked(false);
+                    mp09eh407.setChecked(false);
+                    mp09eh407x.setText("");
+                    mp09eh5.setText("");
                 } else {
 
 
