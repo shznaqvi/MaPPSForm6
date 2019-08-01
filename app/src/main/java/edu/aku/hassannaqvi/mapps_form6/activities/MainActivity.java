@@ -132,7 +132,6 @@ public class MainActivity extends Activity {
         Collection<FormsContract> unsyncedForms6 = db.getUnsyncedForms6();
 
 
-
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
 
         rSumText += "=======================\r\n";

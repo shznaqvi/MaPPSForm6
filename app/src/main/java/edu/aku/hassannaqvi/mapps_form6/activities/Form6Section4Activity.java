@@ -32,6 +32,7 @@ import edu.aku.hassannaqvi.mapps_form6.validation.ValidatorClass;
 
 public class Form6Section4Activity extends AppCompatActivity implements RadioButton.OnCheckedChangeListener {
 
+
     HashMap<String, mp060> HMmp06d0 = new HashMap<>();
 
     //region  CNTRL initilizatoin
@@ -78,12 +79,25 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
     @BindView(R.id.mp06d0602)
     RadioButton mp06d0602;
 
+    @BindView(R.id.mp06d06day)
+    EditText mp06d06day;
+
     @BindView(R.id.mp06d07)
     RadioGroup mp06d07;
     @BindView(R.id.mp06d0701)
     RadioButton mp06d0701;
     @BindView(R.id.mp06d0702)
     RadioButton mp06d0702;
+
+    @BindView(R.id.mp06d07day)
+    EditText mp06d07day;
+
+    @BindView(R.id.mp06d12day)
+    EditText mp06d12day;
+    @BindView(R.id.mp06d14day)
+    EditText mp06d14day;
+    @BindView(R.id.mp06d17day)
+    EditText mp06d17day;
 
     @BindView(R.id.mp06d08)
     RadioGroup mp06d08;
@@ -801,6 +815,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d0601) {
             if (mp06d0601.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+                mp06d06day.setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
@@ -812,6 +827,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             if (mp06d0602.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                mp06d06day.setVisibility(View.GONE);
+                mp06d06day.setText(null);
                 compoundButton.requestFocus();
 
             }
@@ -820,7 +837,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d0701) {
             if (mp06d0701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
-
+                mp06d07day.setVisibility(View.VISIBLE);
                 showLV(lst6, Hm_Lv.get(lst8));
 
             }
@@ -830,6 +847,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d0702) {
             if (mp06d0702.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
+                mp06d07day.setVisibility(View.GONE);
+                mp06d07day.setText(null);
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
 
@@ -914,6 +933,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1201) {
             if (mp06d1201.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+                mp06d12day.setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
@@ -924,6 +944,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1202) {
             if (mp06d1202.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
+                mp06d12day.setVisibility(View.GONE);
+                mp06d12day.setText(null);
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
 
@@ -952,6 +974,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1401) {
             if (mp06d1401.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+                mp06d14day.setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
@@ -962,6 +985,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1402) {
             if (mp06d1402.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
+                mp06d14day.setVisibility(View.GONE);
+                mp06d14day.setText(null);
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
 
@@ -1010,6 +1035,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1701) {
             if (mp06d1701.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+                mp06d17day.setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
@@ -1021,6 +1047,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             if (mp06d1702.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                mp06d17day.setVisibility(View.GONE);
+                mp06d17day.setText(null);
                 compoundButton.requestFocus();
 
             }
@@ -1077,7 +1105,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d2002) {
             if (mp06d2002.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
-                // Hm_Lv.get(lst8).setVisibility(View.GONE);
+                // Hm_Lv.get(l2st8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
 
             }
@@ -1439,8 +1467,6 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
     public void showLV(final String vname, LinearLayout lv) {
         // final AlertDialog b = new AlertDialog.Builder(this).create();
-
-
         LayoutInflater layoutInflater = getLayoutInflater();
         View v = layoutInflater.inflate(R.layout.alertdialogue, null);
         lv.addView(v);
@@ -1629,17 +1655,22 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         form6.put("mp06d04", mp06d0401.isChecked() ? "1" : mp06d0402.isChecked() ? "2" : "0");
         form6.put("mp06d05", mp06d0501.isChecked() ? "1" : mp06d0502.isChecked() ? "2" : "0");
         form6.put("mp06d06", mp06d0601.isChecked() ? "1" : mp06d0602.isChecked() ? "2" : "0");
+        form6.put("mp06d06day", mp06d06day.getText().toString());
         form6.put("mp06d07", mp06d0701.isChecked() ? "1" : mp06d0702.isChecked() ? "2" : "0");
+        form6.put("mp06d07day", mp06d07day.getText().toString());
         form6.put("mp06d08", mp06d0801.isChecked() ? "1" : mp06d0802.isChecked() ? "2" : "0");
         form6.put("mp06d09", mp06d0901.isChecked() ? "1" : mp06d0902.isChecked() ? "2" : "0");
         form6.put("mp06d10", mp06d1001.isChecked() ? "1" : mp06d1002.isChecked() ? "2" : "0");
         form6.put("mp06d11", mp06d1101.isChecked() ? "1" : mp06d1102.isChecked() ? "2" : "0");
         form6.put("mp06d12", mp06d1201.isChecked() ? "1" : mp06d1202.isChecked() ? "2" : "0");
+        form6.put("mp06d12day", mp06d12day.getText().toString());
         form6.put("mp06d13", mp06d1301.isChecked() ? "1" : mp06d1302.isChecked() ? "2" : "0");
         form6.put("mp06d14", mp06d1401.isChecked() ? "1" : mp06d1402.isChecked() ? "2" : "0");
+        form6.put("mp06d14day", mp06d14day.getText().toString());
         form6.put("mp06d15", mp06d1501.isChecked() ? "1" : mp06d1502.isChecked() ? "2" : "0");
         form6.put("mp06d16", mp06d1601.isChecked() ? "1" : mp06d1602.isChecked() ? "2" : "0");
         form6.put("mp06d17", mp06d1701.isChecked() ? "1" : mp06d1702.isChecked() ? "2" : "0");
+        form6.put("mp06d17day", mp06d17day.getText().toString());
         form6.put("mp06d18", mp06d1801.isChecked() ? "1" : mp06d1802.isChecked() ? "2" : "0");
         form6.put("mp06d19", mp06d1901.isChecked() ? "1" : mp06d1902.isChecked() ? "2" : "0");
         form6.put("mp06d20", mp06d2001.isChecked() ? "1" : mp06d2002.isChecked() ? "2" : "0");

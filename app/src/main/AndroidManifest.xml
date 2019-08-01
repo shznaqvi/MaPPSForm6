@@ -38,6 +38,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".activities.LoginActivity"
@@ -75,7 +76,9 @@
             android:name=".activities.Form6Section4Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
     </application>
 
 </manifest>

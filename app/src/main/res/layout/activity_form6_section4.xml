@@ -297,13 +297,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mp06db" />
-
-
         </RadioGroup>
 
+        <EditText
+            android:id="@+id/mp06d06day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:maxLength="2"
+            android:visibility="gone" />
+
         <LinearLayout
-
-
             android:id="@+id/lvmp06d06"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -343,6 +348,15 @@
 
 
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/mp06d07day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:maxLength="2"
+            android:visibility="gone" />
 
         <LinearLayout
 
@@ -559,6 +573,15 @@
 
         </RadioGroup>
 
+        <EditText
+            android:id="@+id/mp06d12day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:maxLength="2"
+            android:visibility="gone" />
+
         <LinearLayout
 
 
@@ -644,6 +667,16 @@
 
 
         </RadioGroup>
+
+
+        <EditText
+            android:id="@+id/mp06d14day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:maxLength="2"
+            android:visibility="gone" />
 
         <LinearLayout
 
@@ -771,6 +804,16 @@
 
 
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/mp06d17day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:maxLength="2"
+            android:visibility="gone" />
+
 
         <LinearLayout
 
@@ -1248,14 +1291,14 @@
 
         </LinearLayout>
 
-      <!-- <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/mp06d28"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" /> -->
+        <!-- <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="16dp"
+              android:background="@color/colorPrimary"
+              android:text="@string/mp06d28"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:textColor="@android:color/white" /> -->
 
         <TextView
             android:layout_width="match_parent"
@@ -1429,7 +1472,7 @@
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:orientation="horizontal">
@@ -1447,8 +1490,9 @@
             <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
 
             <Button
+                android:layout_width="0dp"
                 android:id="@+id/btn_Continue"
-                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="@string/nextSection"
