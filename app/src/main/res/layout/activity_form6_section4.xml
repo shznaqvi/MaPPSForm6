@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -299,13 +300,16 @@
                 android:text="@string/mp06db" />
         </RadioGroup>
 
-        <EditText
+        <com.edittextpicker.aliazaz.EditTextPicker
             android:id="@+id/mp06d06day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/days"
             android:inputType="number"
-            android:maxLength="2"
+            android:maxLength="3"
+            app:maxValue="190"
+            app:minValue="1"
+            app:type="range"
             android:visibility="gone" />
 
         <LinearLayout
@@ -349,13 +353,16 @@
 
         </RadioGroup>
 
-        <EditText
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:maxLength="3"
+            app:maxValue="190"
+            app:minValue="1"
             android:id="@+id/mp06d07day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/days"
             android:inputType="number"
-            android:maxLength="2"
+            app:type="range"
             android:visibility="gone" />
 
         <LinearLayout
@@ -573,13 +580,16 @@
 
         </RadioGroup>
 
-        <EditText
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:maxLength="3"
+            app:maxValue="190"
+            app:minValue="1"
             android:id="@+id/mp06d12day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/days"
             android:inputType="number"
-            android:maxLength="2"
+            app:type="range"
             android:visibility="gone" />
 
         <LinearLayout
@@ -625,6 +635,17 @@
 
         </RadioGroup>
 
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp06d13day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:maxLength="3"
+            android:visibility="gone"
+            app:maxValue="190"
+            app:minValue="1"
+            app:type="range" />
         <LinearLayout
 
 
@@ -669,13 +690,16 @@
         </RadioGroup>
 
 
-        <EditText
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:maxLength="3"
+            app:maxValue="190"
+            app:minValue="1"
             android:id="@+id/mp06d14day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/days"
             android:inputType="number"
-            android:maxLength="2"
+            app:type="range"
             android:visibility="gone" />
 
         <LinearLayout
@@ -805,13 +829,16 @@
 
         </RadioGroup>
 
-        <EditText
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:maxLength="3"
+            app:maxValue="190"
+            app:minValue="1"
             android:id="@+id/mp06d17day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/days"
             android:inputType="number"
-            android:maxLength="2"
+            app:type="range"
             android:visibility="gone" />
 
 

@@ -15,6 +15,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -80,7 +82,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
     RadioButton mp06d0602;
 
     @BindView(R.id.mp06d06day)
-    EditText mp06d06day;
+    EditTextPicker mp06d06day;
 
     @BindView(R.id.mp06d07)
     RadioGroup mp06d07;
@@ -90,14 +92,18 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
     RadioButton mp06d0702;
 
     @BindView(R.id.mp06d07day)
-    EditText mp06d07day;
+    EditTextPicker mp06d07day;
 
     @BindView(R.id.mp06d12day)
-    EditText mp06d12day;
+    EditTextPicker mp06d12day;
+
+    @BindView(R.id.mp06d13day)
+    EditTextPicker mp06d13day;
+
     @BindView(R.id.mp06d14day)
-    EditText mp06d14day;
+    EditTextPicker mp06d14day;
     @BindView(R.id.mp06d17day)
-    EditText mp06d17day;
+    EditTextPicker mp06d17day;
 
     @BindView(R.id.mp06d08)
     RadioGroup mp06d08;
@@ -955,6 +961,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1301) {
             if (mp06d1301.isChecked()) {
                 Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+                mp06d13day.setVisibility(View.VISIBLE);
 
                 showLV(lst6, Hm_Lv.get(lst8));
 
@@ -965,6 +972,8 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         if (compoundButton.getId() == R.id.mp06d1302) {
             if (mp06d1302.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
+                mp06d13day.setVisibility(View.GONE);
+                mp06d13day.setText(null);
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
                 compoundButton.requestFocus();
 
@@ -1665,6 +1674,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         form6.put("mp06d12", mp06d1201.isChecked() ? "1" : mp06d1202.isChecked() ? "2" : "0");
         form6.put("mp06d12day", mp06d12day.getText().toString());
         form6.put("mp06d13", mp06d1301.isChecked() ? "1" : mp06d1302.isChecked() ? "2" : "0");
+        form6.put("mp06d13day", mp06d13day.getText().toString());
         form6.put("mp06d14", mp06d1401.isChecked() ? "1" : mp06d1402.isChecked() ? "2" : "0");
         form6.put("mp06d14day", mp06d14day.getText().toString());
         form6.put("mp06d15", mp06d1501.isChecked() ? "1" : mp06d1502.isChecked() ? "2" : "0");

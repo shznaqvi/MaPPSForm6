@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.mapps_form6.validation;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edittextpicker.aliazaz.EditTextPicker;
 
 import java.lang.reflect.Field;
 
@@ -218,8 +221,16 @@ public abstract class ValidatorClass {
                     return false;
                 }
             } else if (view instanceof EditText) {
-                if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
-                    return false;
+                if (view instanceof EditTextPicker) {
+                    if (!EmptyEditTextPicker(context, (EditText) view, getString(context, getIDComponent(view))))
+                        return false;
+                } else if (view instanceof AppCompatEditText) {
+                    if (!EmptyTextBox(context, (AppCompatEditText) view, getString(context, getIDComponent(view))))
+                        return false;
+                } else {
+                    if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
+                        return false;
+                    }
                 }
             } else if (view instanceof CheckBox) {
                 if (!((CheckBox) view).isChecked()) {
@@ -249,6 +260,31 @@ public abstract class ValidatorClass {
         return true;
     }
 
+    public static boolean EmptyEditTextPicker(Context context, EditText txt, String msg) {
+        String messageConv = "";
+        boolean flag = true;
+        if (!((EditTextPicker) txt).isEmptyTextBox()) {
+            flag = false;
+            messageConv = "ERROR(empty)";
+        } else if (!((EditTextPicker) txt).isRangeTextValidate()) {
+            flag = false;
+            messageConv = "ERROR(range)";
+        } else if (!((EditTextPicker) txt).isTextEqualToPattern()) {
+            flag = false;
+            messageConv = "ERROR(pattern)";
+        }
+
+        if (!flag) {
+            Toast.makeText(context, messageConv + ": " + msg, Toast.LENGTH_SHORT).show();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": " + messageConv);
+            return false;
+        } else {
+            txt.setError(null);
+            txt.clearFocus();
+            return true;
+        }
+
+    }
 
     public static void getdata(Context context, LinearLayout lv) {
 
@@ -275,22 +311,22 @@ public abstract class ValidatorClass {
                     String asNamed = getString(context, getIDComponent(view));
 
                     if (!EmptyRadioButton(context, (RadioGroup) view, (RadioButton) v, asNamed)) {
-                      //  return false;
+                        //  return false;
                     }
                 }
             } else if (view instanceof Spinner) {
                 if (!EmptySpinner(context, (Spinner) view, getString(context, getIDComponent(view)))) {
-                   // return false;
+                    // return false;
                 }
             } else if (view instanceof EditText) {
                 if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
-                   // return false;
+                    // return false;
                 }
             } else if (view instanceof CheckBox) {
                 if (!((CheckBox) view).isChecked()) {
                     ((CheckBox) view).setError(getString(context, getIDComponent(view)));
                     Toast.makeText(context, "ERROR(empty): " + getString(context, getIDComponent(view)), Toast.LENGTH_SHORT).show();
-                   // return false;
+                    // return false;
                 }
             } else if (view instanceof LinearLayout) {
 
@@ -301,20 +337,18 @@ public abstract class ValidatorClass {
                         if (!EmptyCheckBox(context, ((LinearLayout) view),
                                 (CheckBox) ((LinearLayout) view).getChildAt(0),
                                 getString(context, getIDComponent(((LinearLayout) view).getChildAt(0))))) {
-                          //  return false;
+                            //  return false;
                         }
                     } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
                         //return false;
                     }
                 } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
-                  //  return false;
+                    //  return false;
                 }
             }
         }
-      //  return true;
+        //  return true;
     }
-
-
 
 
     public static String getIDComponent(View view) {

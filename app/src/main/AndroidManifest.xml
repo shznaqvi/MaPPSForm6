@@ -5,7 +5,7 @@
     <uses-sdk
         android:maxSdkVersion="22"
         android:minSdkVersion="22"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
@@ -31,14 +31,13 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.SplashscreenActivity"
-            android:theme="@style/AppTheme1"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activities.LoginActivity"
@@ -68,7 +67,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
-      <activity
+        <activity
             android:name=".activities.Form6Section2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
@@ -77,6 +76,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize">
+
 
         </activity>
     </application>
