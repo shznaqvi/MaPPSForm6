@@ -298,6 +298,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/mp09eb" />
 
+            <EditText
+                android:id="@+id/mp09e06x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Days"
+
+
+android:background="@color/white"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="22sp" />
+
 
         </RadioGroup>
 
@@ -340,7 +352,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mp09eb" />
+            <EditText
+                android:id="@+id/mp09e07x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Days"
 
+android:background="@color/white"
+
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="22sp" />
 
         </RadioGroup>
 
@@ -556,6 +578,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/mp09eb" />
 
+            <EditText
+                android:id="@+id/mp09e12x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Days"
+
+
+
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="22sp" />
+
 
         </RadioGroup>
 
@@ -598,7 +632,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mp09eb" />
+            <EditText
+                android:id="@+id/mp09e13x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Days"
 
+
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="22sp" />
 
         </RadioGroup>
 
@@ -641,7 +684,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mp09eb" />
+            <EditText
+                android:id="@+id/mp09e14x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Days"
 
+
+
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="22sp" />
 
         </RadioGroup>
 
@@ -768,6 +821,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mp09eb" />
+
+            <EditText
+                android:id="@+id/mp09e17x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Days"
+
+
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="22sp" />
 
 
         </RadioGroup>
@@ -1132,6 +1196,7 @@
             android:textColor="@android:color/white" />
 
         <RadioGroup
+            android:visibility="gone"
             android:id="@+id/mp09e26"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1151,6 +1216,19 @@
 
 
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/mp09e26x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Days"
+
+
+            android:background="@color/white"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="22sp" />
+
 
         <LinearLayout
 
