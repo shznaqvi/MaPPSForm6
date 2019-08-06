@@ -1461,6 +1461,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_S9C,
                 FormsTable.COLUMN_S9D,
                 FormsTable.COLUMN_S9E,
+                FormsTable.COLUMN_S9F,
                 FormsTable.COLUMN_S10B,
                 FormsTable.COLUMN_S10C,
                 FormsTable.COLUMN_S10D,
@@ -1480,9 +1481,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_FORMTYPE,
                 FormsTable.COLUMN_SNO,
         };
-/*        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' AND "
-                + FormsTable.COLUMN_FORMTYPE + " =?";*/
-        String whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_FORMTYPE + " =?";
+        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' AND "
+                + FormsTable.COLUMN_FORMTYPE + " =?";
         String[] whereArgs = {String.valueOf(type)};
         String groupBy = null;
         String having = null;
