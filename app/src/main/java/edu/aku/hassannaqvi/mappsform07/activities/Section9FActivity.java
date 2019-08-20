@@ -22,10 +22,10 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform07.other.mp090;
-import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.validation.ValidatorClass2;
 
 
@@ -1668,34 +1668,22 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
         form6.put("mp08g05", mp09e0501.isChecked() ? "1" : mp09e0502.isChecked() ? "2" : "0");
         form6.put("mp08g06", mp09e0601.isChecked() ? "1" : mp09e0602.isChecked() ? "2" : "0");
         form6.put("mp08g06x", mp09e06x.getText().toString());
-
-
         form6.put("mp08g07", mp09e0701.isChecked() ? "1" : mp09e0702.isChecked() ? "2" : "0");
         form6.put("mp08g07x", mp09e07x.getText().toString());
-
         form6.put("mp08g08", mp09e0801.isChecked() ? "1" : mp09e0802.isChecked() ? "2" : "0");
         form6.put("mp08g09", mp09e0901.isChecked() ? "1" : mp09e0902.isChecked() ? "2" : "0");
         form6.put("mp08g10", mp09e1001.isChecked() ? "1" : mp09e1002.isChecked() ? "2" : "0");
         form6.put("mp08g11", mp09e1101.isChecked() ? "1" : mp09e1102.isChecked() ? "2" : "0");
         form6.put("mp08g12", mp09e1201.isChecked() ? "1" : mp09e1202.isChecked() ? "2" : "0");
-
         form6.put("mp08g12x", mp09e12x.getText().toString());
-
         form6.put("mp08g13", mp09e1301.isChecked() ? "1" : mp09e1302.isChecked() ? "2" : "0");
-
         form6.put("mp08g13x", mp09e13x.getText().toString());
-
         form6.put("mp08g14", mp09e1401.isChecked() ? "1" : mp09e1402.isChecked() ? "2" : "0");
-
         form6.put("mp08g14x", mp09e14x.getText().toString());
-
         form6.put("mp08g15", mp09e1501.isChecked() ? "1" : mp09e1502.isChecked() ? "2" : "0");
         form6.put("mp08g16", mp09e1601.isChecked() ? "1" : mp09e1602.isChecked() ? "2" : "0");
         form6.put("mp08g17", mp09e1701.isChecked() ? "1" : mp09e1702.isChecked() ? "2" : "0");
-
         form6.put("mp08g17x", mp09e17x.getText().toString());
-
-
         form6.put("mp08g18", mp09e1801.isChecked() ? "1" : mp09e1802.isChecked() ? "2" : "0");
         form6.put("mp08g19", mp09e1901.isChecked() ? "1" : mp09e1902.isChecked() ? "2" : "0");
         form6.put("mp08g20", mp09e2001.isChecked() ? "1" : mp09e2002.isChecked() ? "2" : "0");
