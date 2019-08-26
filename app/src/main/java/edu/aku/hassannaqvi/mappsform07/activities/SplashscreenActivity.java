@@ -109,7 +109,6 @@ public class SplashscreenActivity extends Activity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
                 Intent i = new Intent(SplashscreenActivity.this, LoginActivity.class);
-              //  Intent i = new Intent(SplashscreenActivity.this, Section9FActivity.class);
                 toggle();
                 startActivity(i);
 
@@ -132,6 +131,11 @@ public class SplashscreenActivity extends Activity {
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+    }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
