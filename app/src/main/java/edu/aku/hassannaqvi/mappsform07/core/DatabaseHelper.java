@@ -1017,6 +1017,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+
     public int updates9F() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -1481,7 +1482,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_FORMTYPE,
                 FormsTable.COLUMN_SNO,
         };
-        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' AND "
+        String whereClause = "(" + FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '') AND "
                 + FormsTable.COLUMN_FORMTYPE + " =?";
         String[] whereArgs = {String.valueOf(type)};
         String groupBy = null;
