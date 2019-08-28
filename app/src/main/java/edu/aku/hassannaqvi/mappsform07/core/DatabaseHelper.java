@@ -260,6 +260,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 5:
                 db.execSQL(SQL_ALTER_ENROLLED3);
                 db.execSQL(SQL_ALTER_ENROLLED4);
+            case 6:
                 db.execSQL(SQL_ALTER_FORMSS9F);
         }
     }
