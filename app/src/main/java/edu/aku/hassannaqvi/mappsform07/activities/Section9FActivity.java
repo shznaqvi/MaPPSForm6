@@ -340,7 +340,6 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
     LinearLayout lvmp09e26;
 
 
-
     HashMap<String, LinearLayout> Hm_Lv = new HashMap<>();
 
 
@@ -441,9 +440,6 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
         mp09e2602.setOnCheckedChangeListener(this);
 
 
-      
-
-
 //endregion
 
 
@@ -475,7 +471,7 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
         Hm_Lv.put("mp09e24", lvmp09e24);
         Hm_Lv.put("mp09e25", lvmp09e25);
         Hm_Lv.put("mp09e26", lvmp09e26);
-  
+
 
         //endregion
 
@@ -572,43 +568,32 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                 }
 
 
-
-                if(mp09e06x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e06x.getText().toString().length()==0)
-                    {
+                if (mp09e06x.getVisibility() == View.VISIBLE) {
+                    if (mp09e06x.getText().toString().length() == 0) {
                         mp09e06x.setError("this field is mentadory");
                         mp09e06x.requestFocus();
 
 
                         return;
-                    }
-                    else
-                    {
-                        int a=Integer.parseInt(mp09e06x.getText().toString());
-                                if(a>90)
-                                {
-                                    mp09e06x.setError("Range Error 1 to 90 days");
-                                    return;
-                                }
+                    } else {
+                        int a = Integer.parseInt(mp09e06x.getText().toString());
+                        if (a > 90) {
+                            mp09e06x.setError("Range Error 1 to 90 days");
+                            return;
+                        }
 
                     }
                 }
 
 
-                if(mp09e07x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e07x.getText().toString().length()==0)
-                    {
+                if (mp09e07x.getVisibility() == View.VISIBLE) {
+                    if (mp09e07x.getText().toString().length() == 0) {
                         mp09e07x.setError("this field is mentadory");
                         mp09e07x.requestFocus();
                         return;
-                    }
-                    else
-                    {
-                        int a=Integer.parseInt(mp09e07x.getText().toString());
-                        if(a>90)
-                        {
+                    } else {
+                        int a = Integer.parseInt(mp09e07x.getText().toString());
+                        if (a > 90) {
                             mp09e07x.setError("Range Error 1 to 90 days");
                             return;
                         }
@@ -617,19 +602,14 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                 }
 
 
-                if(mp09e12x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e12x.getText().toString().length()==0)
-                    {
+                if (mp09e12x.getVisibility() == View.VISIBLE) {
+                    if (mp09e12x.getText().toString().length() == 0) {
                         mp09e12x.setError("this field is mentadory");
                         mp09e12x.requestFocus();
                         return;
-                    }
-                    else
-                    {
-                        int a=Integer.parseInt(mp09e12x.getText().toString());
-                        if(a>90)
-                        {
+                    } else {
+                        int a = Integer.parseInt(mp09e12x.getText().toString());
+                        if (a > 90) {
                             mp09e12x.setError("Range Error 1 to 90 days");
                             return;
                         }
@@ -638,20 +618,14 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                 }
 
 
-
-                if(mp09e13x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e13x.getText().toString().length()==0)
-                    {
+                if (mp09e13x.getVisibility() == View.VISIBLE) {
+                    if (mp09e13x.getText().toString().length() == 0) {
                         mp09e13x.setError("this field is mentadory");
                         mp09e13x.requestFocus();
                         return;
-                    }
-                    else
-                    {
-                        int a=Integer.parseInt(mp09e13x.getText().toString());
-                        if(a>90)
-                        {
+                    } else {
+                        int a = Integer.parseInt(mp09e13x.getText().toString());
+                        if (a > 90) {
                             mp09e13x.setError("Range Error 1 to 90 days");
                             return;
                         }
@@ -659,19 +633,14 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                     }
                 }
 
-                if(mp09e14x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e14x.getText().toString().length()==0)
-                    {
+                if (mp09e14x.getVisibility() == View.VISIBLE) {
+                    if (mp09e14x.getText().toString().length() == 0) {
                         mp09e14x.setError("this field is mentadory");
                         mp09e14x.requestFocus();
                         return;
-                    }
-                    else
-                    {
-                        int a=Integer.parseInt(mp09e14x.getText().toString());
-                        if(a>90)
-                        {
+                    } else {
+                        int a = Integer.parseInt(mp09e14x.getText().toString());
+                        if (a > 90) {
                             mp09e14x.setError("Range Error 1 to 90 days");
                             return;
                         }
@@ -679,19 +648,14 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                     }
                 }
 
-                if(mp09e17x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e17x.getText().toString().length()==0)
-                    {
+                if (mp09e17x.getVisibility() == View.VISIBLE) {
+                    if (mp09e17x.getText().toString().length() == 0) {
                         mp09e17x.setError("this field is mentadory");
                         mp09e17x.requestFocus();
                         return;
-                    }
-                    else
-                    {
-                        int a=Integer.parseInt(mp09e17x.getText().toString());
-                        if(a>90)
-                        {
+                    } else {
+                        int a = Integer.parseInt(mp09e17x.getText().toString());
+                        if (a > 90) {
                             mp09e17x.setError("Range Error 1 to 90 days");
                             return;
                         }
@@ -699,20 +663,14 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                     }
                 }
 
-                if(mp09e26x.getVisibility()==View.VISIBLE)
-                {
-                    if(mp09e26x.getText().toString().length()==0)
-                    {
+                if (mp09e26x.getVisibility() == View.VISIBLE) {
+                    if (mp09e26x.getText().toString().length() == 0) {
                         mp09e26x.setError("this field is mentadory");
                         mp09e26x.requestFocus();
                         return;
                     }
 
                 }
-
-
-
-
 
 
                 get_data(lvmp09e01);
@@ -743,13 +701,13 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                 get_data(lvmp09e26);
 
 
-
                 try {
                     saveDrafts();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 if (updateDB()) {
+                    finish();
                     startActivity(new Intent(Section9FActivity.this, EndingActivity.class)
                             .putExtra("complete", true));
 
@@ -1305,9 +1263,9 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
 
         if (compoundButton.getId() == R.id.mp09e2601) {
             if (mp09e2601.isChecked()) {
-               // Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
+                // Hm_Lv.get(lst8).setVisibility(View.VISIBLE);
 
-             //   showLV(lst6, Hm_Lv.get(lst8));
+                //   showLV(lst6, Hm_Lv.get(lst8));
 
             }
         }
@@ -1317,29 +1275,10 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
             if (mp09e2602.isChecked()) {
                 Hm_Lv.get(lst8).removeAllViews();
                 // Hm_Lv.get(lst8).setVisibility(View.GONE);
-               // compoundButton.requestFocus();
+                // compoundButton.requestFocus();
 
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
@@ -1551,8 +1490,6 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
                     mp09eh5.setText("");
 
 
-
-
                 }
             }
         });
@@ -1587,6 +1524,7 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
     @Override
     public void onBackPressed() {
         // Do Here what ever you want do on back press;
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
     public boolean checvalidation(LinearLayout lv) {
@@ -1649,9 +1587,9 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
 
             key = key.substring(2);
 
-           // form6.put(key + "02a", mp09eh2a);
-           // form6.put(key + "02b", mp09eh2b);
-           // form6.put(key + "02c", mp09eh2c);
+            // form6.put(key + "02a", mp09eh2a);
+            // form6.put(key + "02b", mp09eh2b);
+            // form6.put(key + "02c", mp09eh2c);
 
             form6.put(key + "03", mp09eh3);
             form6.put(key + "04", mp09eh4);
@@ -1692,7 +1630,7 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
         form6.put("mp08g23", mp09e2301.isChecked() ? "1" : mp09e2302.isChecked() ? "2" : "0");
         form6.put("mp08g24", mp09e2401.isChecked() ? "1" : mp09e2402.isChecked() ? "2" : "0");
         form6.put("mp08g25", mp09e2501.isChecked() ? "1" : mp09e2502.isChecked() ? "2" : "0");
-        form6.put("mp08g26",mp09e26x.getText().toString());
+        form6.put("mp08g26", mp09e26x.getText().toString());
 
 
         AppMain.fc.setS9F(String.valueOf(form6));

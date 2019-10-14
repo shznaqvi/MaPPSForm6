@@ -87,6 +87,7 @@ public class Section9EActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
+                finish();
                 Intent sece = new Intent(this, Section9FActivity.class);
                 sece.putExtra("complete", true);
                 startActivity(sece);
