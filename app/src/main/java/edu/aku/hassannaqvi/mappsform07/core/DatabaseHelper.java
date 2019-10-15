@@ -1381,6 +1381,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_S9C,
                 FormsTable.COLUMN_S9D,
                 FormsTable.COLUMN_S9E,
+                FormsTable.COLUMN_S9F,
                 FormsTable.COLUMN_S10B,
                 FormsTable.COLUMN_S10C,
                 FormsTable.COLUMN_S10D,
