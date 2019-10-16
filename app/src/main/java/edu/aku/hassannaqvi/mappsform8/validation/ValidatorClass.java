@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.mappsform8.validation;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,9 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edittextpicker.aliazaz.EditTextPicker;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.lang.reflect.Field;
 
@@ -218,8 +222,16 @@ public abstract class ValidatorClass {
                     return false;
                 }
             } else if (view instanceof EditText) {
-                if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
-                    return false;
+                if (view instanceof EditTextPicker) {
+                    if (!EmptyEditTextPicker(context, (EditText) view, getString(context, getIDComponent(view))))
+                        return false;
+                } else if (view instanceof AppCompatEditText) {
+                    if (!EmptyTextBox(context, (AppCompatEditText) view, getString(context, getIDComponent(view))))
+                        return false;
+                } else {
+                    if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
+                        return false;
+                    }
                 }
             } else if (view instanceof CheckBox) {
                 if (!((CheckBox) view).isChecked()) {
@@ -247,6 +259,32 @@ public abstract class ValidatorClass {
             }
         }
         return true;
+    }
+
+    public static boolean EmptyEditTextPicker(Context context, EditText txt, String msg) {
+        String messageConv = "";
+        boolean flag = true;
+        if (!((EditTextPicker) txt).isEmptyTextBox()) {
+            flag = false;
+            messageConv = "ERROR(empty)";
+        } else if (!((EditTextPicker) txt).isRangeTextValidate()) {
+            flag = false;
+            messageConv = "ERROR(range)";
+        } else if (!((EditTextPicker) txt).isTextEqualToPattern()) {
+            flag = false;
+            messageConv = "ERROR(pattern)";
+        }
+
+        if (!flag) {
+            FancyToast.makeText(context, messageConv + ": " + msg, FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": " + messageConv);
+            return false;
+        } else {
+            txt.setError(null);
+            txt.clearFocus();
+            return true;
+        }
+
     }
 
 

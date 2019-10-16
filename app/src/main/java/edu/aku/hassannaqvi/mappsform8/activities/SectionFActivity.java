@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -25,6 +26,30 @@ public class SectionFActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f);
         bi.setCallback(this);
+
+        setupViews();
+    }
+
+    private void setupViews() {
+
+        bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.mp08f01a.getId()) {
+                    edu.aku.hassannaqvi.mapps_form6.validation.ClearClass.ClearAllFields(bi.fldGrpMain, null);
+                }
+            }
+        });
+
+        bi.mp08f08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (i == bi.mp08f08b.getId()) {
+                    edu.aku.hassannaqvi.mapps_form6.validation.ClearClass.ClearAllFields(bi.fldGrpmp08f09, null);
+                }
+            }
+        });
     }
 
     public void BtnContinue() {

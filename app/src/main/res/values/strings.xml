@@ -466,11 +466,11 @@
     <string name="mp06c010d">نه،ڪڏهن به نه </string>
 
     <!-- Form 6 Section 4 -->
-    <string name="mp06d4h"> آخر ۾، آئون توھان کان ڪجھ سوال پڇڻ چاھيندس جيڪي اُنھن علامتن يا حالتن جي باري ۾ ھوندا جيڪي حمل جي شروعات کان وٺي توھان کي درپيش آيون </string>
+    <string name="mp06d4h"> آخر ۾، آئون توھان کان ڪجھ سوال پڇڻ چاھيندس جيڪي اُنھن علامتن يا حالتن جي باري ۾ ھوندا جيڪي آخري معائني . (حمل جي ٽئي مرحلي) کان وٺي توھان کي  درپيش آيون ؟) </string>
 
     <string name="mp06da"> ها </string>
     <string name="mp06db"> نه </string>
-    <string name="mp06dh1"> ڇا حمل جي دوران توهان کي هيٺ ڏنلن مان ڪا پيچيدگي ٿي هئي ؟ </string>
+    <string name="mp06dh1"> حمل جي ٽئي مرحلي کان وٺي ڇا توهان کي هيٺ ڏنلن مان ڪا پيچيدگي ٿي هئي ؟ </string>
     <string name="mp06dh2"> پيچيدگي جو وقت </string>
     <string name="mp06dh2a"> وقت 1 </string>
     <string name="mp06dh2b"> وقت 2 </string>
@@ -483,7 +483,7 @@
     <string name="mp06dh4d"> تعلقه اسپتال </string>
     <string name="mp06dh4e"> ٽرشري اسپتال </string>
     <string name="mp06dh4f"> ايل ايڇ ڊبليو </string>
-    <string name="mp06dh4g"> ٻٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="mp06dh4g">ٻيو ڪجھ وضاحت ڪريو</string>
     <string name="mp06dh5"> اسپتال ۾ گذاريل ڏينھن جو تعداد </string>
     <string name="mp06dh"> نشانيون ۽ حالتون </string>
     <string name="mp06d01"> پيٽ جو سور </string>

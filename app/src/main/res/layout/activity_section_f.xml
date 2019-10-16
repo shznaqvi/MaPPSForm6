@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -81,6 +81,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/fldGrpMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -353,33 +354,49 @@
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mp08f04a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/mp08f04a"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="10"
+                            app:minValue="0"
+                            app:type="range" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mp08f04b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/mp08f04b"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="10"
+                            app:minValue="0"
+                            app:type="range" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mp08f04c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/mp08f04c"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="10"
+                            app:minValue="0"
+                            app:type="range" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mp08f04d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/mp08f04d"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="10"
+                            app:minValue="0"
+                            app:type="range" />
 
 
                     </LinearLayout>
@@ -399,13 +416,16 @@
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mp08f05"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/mp08f05"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="2"
+                            app:maxValue="10"
+                            app:minValue="1"
+                            app:type="range" />
 
 
                     </LinearLayout>
@@ -685,9 +705,11 @@
 
                     <!--65-->
                     <LinearLayout
+                        android:id="@+id/fldGrpmp08f09"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility='@{mp08f08a.checked? View.VISIBLE : View.GONE}'>
 
                         <TextView
                             android:layout_width="match_parent"
