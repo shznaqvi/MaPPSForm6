@@ -1406,10 +1406,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                FormsTable._ID + " ASC";
+        String orderBy = FormsTable.COLUMN__ID + " ASC";
 
-        Collection<FormsContract> allFC = new ArrayList<FormsContract>();
+        Collection<FormsContract> allFC = new ArrayList<>();
         try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
@@ -1665,19 +1664,61 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormsTable._ID,
+                FormsTable.COLUMN_PROJECTNAME,
+                FormsTable.COLUMN_SURVEYTYPE,
+                FormsTable.COLUMN__ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_INTERVIEWER01,
+                FormsTable.COLUMN_INTERVIEWER02,
                 FormsTable.COLUMN_CLUSTERCODE,
-                FormsContract.FormsTable.COLUMN_VILLAGEACODE,
-                FormsContract.FormsTable.COLUMN_HOUSEHOLD,
+                FormsTable.COLUMN_VILLAGEACODE,
+                FormsTable.COLUMN_HOUSEHOLD,
+                FormsTable.COLUMN_LHWCODE,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_LHWCODE,
+                FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_FORMTYPE,
+                FormsTable.COLUMN_SNO,
+                FormsTable.COLUMN_S8B,
+                FormsTable.COLUMN_S8C,
+                FormsTable.COLUMN_S8D,
+                FormsTable.COLUMN_S8E,
+                FormsTable.COLUMN_S7B,
+                FormsTable.COLUMN_S7D,
+                FormsTable.COLUMN_S7E,
+                FormsTable.COLUMN_S9B,
+                FormsTable.COLUMN_S9C,
+                FormsTable.COLUMN_S9D,
+                FormsTable.COLUMN_S9E,
+                FormsTable.COLUMN_S9F,
+                FormsTable.COLUMN_S10B,
+                FormsTable.COLUMN_S10C,
+                FormsTable.COLUMN_S10D,
+                FormsTable.COLUMN_S10E,
+                FormsTable.COLUMN_S10E2,
+                FormsTable.COLUMN_S11B,
+                FormsTable.COLUMN_CHILD_ID,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_GPSLAT,
+                FormsTable.COLUMN_GPSLNG,
+                FormsTable.COLUMN_GPSTIME,
+                FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_APP_VERSION,
+                FormsTable.COLUMN_DEVICEID,
+                FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_APP_VERSION,
+                FormsTable.COLUMN_SYNCED,
+                FormsTable.COLUMN_SYNCED_DATE,
         };
 
-        String whereClause = FormsTable.COLUMN_CLUSTERCODE + " LIKE ?";
+        String whereClause = FormsTable.COLUMN_FORMDATE + " LIKE ?";
         String[] whereArgs = {spDateT};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable.COLUMN__ID + " ASC";
 
         Collection<FormsContract> formList = new ArrayList<FormsContract>();
         try {
