@@ -16,6 +16,8 @@ import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySectionFBinding;
 import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
 
+import static edu.aku.hassannaqvi.mapps_form6.validation.ClearClass.ClearAllFields;
+
 public class SectionFActivity extends AppCompatActivity {
 
     ActivitySectionFBinding bi;
@@ -36,7 +38,7 @@ public class SectionFActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.mp08f01a.getId()) {
-                    edu.aku.hassannaqvi.mapps_form6.validation.ClearClass.ClearAllFields(bi.fldGrpMain, null);
+                    ClearAllFields(bi.fldGrpMain, null);
                 }
             }
         });
@@ -46,7 +48,7 @@ public class SectionFActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
                 if (i == bi.mp08f08b.getId()) {
-                    edu.aku.hassannaqvi.mapps_form6.validation.ClearClass.ClearAllFields(bi.fldGrpmp08f09, null);
+                    ClearAllFields(bi.fldGrpmp08f09, null);
                 }
             }
         });

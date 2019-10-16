@@ -41,6 +41,19 @@ public abstract class ValidatorClass {
         }
     }
 
+    public static boolean EmptyTextBox(Context context, EditTextPicker txt, String msg) {
+        if (TextUtils.isEmpty(txt.getText().toString())) {
+            Toast.makeText(context, "ERROR(empty): " + msg, Toast.LENGTH_SHORT).show();
+            txt.setError("This data is Required! ");    // Set Error on last radio button
+            txt.requestFocus();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": This data is Required!");
+            return false;
+        } else {
+            txt.setError(null);
+            return true;
+        }
+    }
+
     public static boolean RangeTextBox(Context context, EditText txt, int min, int max, String msg, String type) {
 
         if (Integer.valueOf(txt.getText().toString()) < min || Integer.valueOf(txt.getText().toString()) > max) {
@@ -208,7 +221,18 @@ public abstract class ValidatorClass {
                 continue;
             } else if (view instanceof RadioGroup) {
 
-                View v = ((RadioGroup) view).getChildAt(0);
+                boolean radioFlag = false;
+                View v = null;
+                for (byte j = 0; j < ((RadioGroup) view).getChildCount(); j++) {
+                    if (((RadioGroup) view).getChildAt(j) instanceof RadioButton) {
+                        v = ((RadioGroup) view).getChildAt(j);
+                        radioFlag = true;
+                        break;
+                    }
+                }
+
+                if (!radioFlag) continue;
+
                 if (v != null) {
 
                     String asNamed = getString(context, getIDComponent(view));
@@ -313,22 +337,22 @@ public abstract class ValidatorClass {
                     String asNamed = getString(context, getIDComponent(view));
 
                     if (!EmptyRadioButton(context, (RadioGroup) view, (RadioButton) v, asNamed)) {
-                      //  return false;
+                        //  return false;
                     }
                 }
             } else if (view instanceof Spinner) {
                 if (!EmptySpinner(context, (Spinner) view, getString(context, getIDComponent(view)))) {
-                   // return false;
+                    // return false;
                 }
             } else if (view instanceof EditText) {
                 if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
-                   // return false;
+                    // return false;
                 }
             } else if (view instanceof CheckBox) {
                 if (!((CheckBox) view).isChecked()) {
                     ((CheckBox) view).setError(getString(context, getIDComponent(view)));
                     Toast.makeText(context, "ERROR(empty): " + getString(context, getIDComponent(view)), Toast.LENGTH_SHORT).show();
-                   // return false;
+                    // return false;
                 }
             } else if (view instanceof LinearLayout) {
 
@@ -339,20 +363,18 @@ public abstract class ValidatorClass {
                         if (!EmptyCheckBox(context, ((LinearLayout) view),
                                 (CheckBox) ((LinearLayout) view).getChildAt(0),
                                 getString(context, getIDComponent(((LinearLayout) view).getChildAt(0))))) {
-                          //  return false;
+                            //  return false;
                         }
                     } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
                         //return false;
                     }
                 } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
-                  //  return false;
+                    //  return false;
                 }
             }
         }
-      //  return true;
+        //  return true;
     }
-
-
 
 
     public static String getIDComponent(View view) {

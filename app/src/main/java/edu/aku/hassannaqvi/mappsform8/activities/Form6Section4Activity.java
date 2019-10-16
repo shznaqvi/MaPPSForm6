@@ -170,7 +170,36 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, bi.lvmain) == false) {
                     return;
                 }
-
+                if (bi.mp06d0601.isChecked()) {
+                    if (!ValidatorClass.EmptyTextBox(Form6Section4Activity.this, bi.mp06d0601x, getString(R.string.mp06d06))) {
+                        return;
+                    }
+                }
+                if (bi.mp06d0701.isChecked()) {
+                    if (!ValidatorClass.EmptyTextBox(Form6Section4Activity.this, bi.mp06d0701x, getString(R.string.mp06d07))) {
+                        return;
+                    }
+                }
+                if (bi.mp06d1201.isChecked()) {
+                    if (!ValidatorClass.EmptyTextBox(Form6Section4Activity.this, bi.mp06d1201x, getString(R.string.mp06d12))) {
+                        return;
+                    }
+                }
+                if (bi.mp06d1301.isChecked()) {
+                    if (!ValidatorClass.EmptyTextBox(Form6Section4Activity.this, bi.mp06d1301x, getString(R.string.mp06d13))) {
+                        return;
+                    }
+                }
+                if (bi.mp06d1401.isChecked()) {
+                    if (!ValidatorClass.EmptyTextBox(Form6Section4Activity.this, bi.mp06d1401x, getString(R.string.mp06d14))) {
+                        return;
+                    }
+                }
+                if (bi.mp06d1701.isChecked()) {
+                    if (!ValidatorClass.EmptyTextBox(Form6Section4Activity.this, bi.mp06d1701x, getString(R.string.mp06d17))) {
+                        return;
+                    }
+                }
 
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, bi.lvmp06d01) == false) {
                     return;
@@ -187,9 +216,11 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, bi.lvmp06d05) == false) {
                     return;
                 }
+
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, bi.lvmp06d06) == false) {
                     return;
                 }
+
                 if (ValidatorClass.EmptyCheckingContainer(Form6Section4Activity.this, bi.lvmp06d07) == false) {
                     return;
                 }
