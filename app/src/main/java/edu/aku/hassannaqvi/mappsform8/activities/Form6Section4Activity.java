@@ -124,38 +124,38 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         //region  hasmap
 
-        Hm_Lv.put("mp06d01", bi.lvmp06d01);
-        Hm_Lv.put("mp06d02", bi.lvmp06d02);
-        Hm_Lv.put("mp06d03", bi.lvmp06d03);
-        Hm_Lv.put("mp06d04", bi.lvmp06d04);
-        Hm_Lv.put("mp06d05", bi.lvmp06d05);
-        Hm_Lv.put("mp06d06", bi.lvmp06d06);
-        Hm_Lv.put("mp06d07", bi.lvmp06d07);
-        Hm_Lv.put("mp06d08", bi.lvmp06d08);
-        Hm_Lv.put("mp06d09", bi.lvmp06d09);
-        Hm_Lv.put("mp06d10", bi.lvmp06d10);
-        Hm_Lv.put("mp06d11", bi.lvmp06d11);
-        Hm_Lv.put("mp06d12", bi.lvmp06d12);
-        Hm_Lv.put("mp06d13", bi.lvmp06d13);
-        Hm_Lv.put("mp06d14", bi.lvmp06d14);
-        Hm_Lv.put("mp06d15", bi.lvmp06d15);
-        Hm_Lv.put("mp06d16", bi.lvmp06d16);
-        Hm_Lv.put("mp06d17", bi.lvmp06d17);
-        Hm_Lv.put("mp06d18", bi.lvmp06d18);
-        Hm_Lv.put("mp06d19", bi.lvmp06d19);
-        Hm_Lv.put("mp06d20", bi.lvmp06d20);
-        Hm_Lv.put("mp06d21", bi.lvmp06d21);
-        Hm_Lv.put("mp06d22", bi.lvmp06d22);
-        Hm_Lv.put("mp06d23", bi.lvmp06d23);
-        Hm_Lv.put("mp06d24", bi.lvmp06d24);
-        Hm_Lv.put("mp06d25", bi.lvmp06d25);
-        Hm_Lv.put("mp06d26", bi.lvmp06d26);
-        Hm_Lv.put("mp06d27", bi.lvmp06d27);
-        Hm_Lv.put("mp06d28", bi.lvmp06d28);
-        Hm_Lv.put("mp06d29", bi.lvmp06d29);
-        Hm_Lv.put("mp06d30", bi.lvmp06d30);
-        Hm_Lv.put("mp06d31", bi.lvmp06d31);
-        Hm_Lv.put("mp06d32", bi.lvmp06d32);
+        Hm_Lv.put("mp08d01", bi.lvmp06d01);
+        Hm_Lv.put("mp08d02", bi.lvmp06d02);
+        Hm_Lv.put("mp08d03", bi.lvmp06d03);
+        Hm_Lv.put("mp08d04", bi.lvmp06d04);
+        Hm_Lv.put("mp08d05", bi.lvmp06d05);
+        Hm_Lv.put("mp08d06", bi.lvmp06d06);
+        Hm_Lv.put("mp08d07", bi.lvmp06d07);
+        Hm_Lv.put("mp08d08", bi.lvmp06d08);
+        Hm_Lv.put("mp08d09", bi.lvmp06d09);
+        Hm_Lv.put("mp08d10", bi.lvmp06d10);
+        Hm_Lv.put("mp08d11", bi.lvmp06d11);
+        Hm_Lv.put("mp08d12", bi.lvmp06d12);
+        Hm_Lv.put("mp08d13", bi.lvmp06d13);
+        Hm_Lv.put("mp08d14", bi.lvmp06d14);
+        Hm_Lv.put("mp08d15", bi.lvmp06d15);
+        Hm_Lv.put("mp08d16", bi.lvmp06d16);
+        Hm_Lv.put("mp08d17", bi.lvmp06d17);
+        Hm_Lv.put("mp08d18", bi.lvmp06d18);
+        Hm_Lv.put("mp08d19", bi.lvmp06d19);
+        Hm_Lv.put("mp08d20", bi.lvmp06d20);
+        Hm_Lv.put("mp08d21", bi.lvmp06d21);
+        Hm_Lv.put("mp08d22", bi.lvmp06d22);
+        Hm_Lv.put("mp08d23", bi.lvmp06d23);
+        Hm_Lv.put("mp08d24", bi.lvmp06d24);
+        Hm_Lv.put("mp08d25", bi.lvmp06d25);
+        Hm_Lv.put("mp08d26", bi.lvmp06d26);
+        Hm_Lv.put("mp08d27", bi.lvmp06d27);
+        Hm_Lv.put("mp08d28", bi.lvmp06d28);
+        Hm_Lv.put("mp08d29", bi.lvmp06d29);
+        Hm_Lv.put("mp08d30", bi.lvmp06d30);
+        Hm_Lv.put("mp08d31", bi.lvmp06d31);
+        Hm_Lv.put("mp08d32", bi.lvmp06d32);
 
         //endregion
 
