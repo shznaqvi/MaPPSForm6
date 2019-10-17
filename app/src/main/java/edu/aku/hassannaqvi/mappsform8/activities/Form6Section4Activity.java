@@ -1190,6 +1190,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                     mp06dh407x.setVisibility(View.VISIBLE);
                 } else {
                     mp06dh407x.setVisibility(View.GONE);
+                    mp06dh407x.setText(null);
                 }
             }
         });
