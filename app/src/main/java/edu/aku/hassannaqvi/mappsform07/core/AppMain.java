@@ -144,6 +144,7 @@ public class AppMain extends Application {
     public static int outcome = 0;
     public static int currentAge = 0;
     public static String lmp;
+    public static int dbVersion = 0;
 
     protected LocationManager locationManager;
     //    Login Members Array
