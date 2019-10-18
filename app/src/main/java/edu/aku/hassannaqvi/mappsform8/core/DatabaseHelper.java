@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -79,6 +79,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+    private static final String SQL_ALTER_FORM2 = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_SF + " TEXT;";
+    private static final String SQL_ALTER_FORM3 = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_SG + " TEXT;";
     private static final String SQL_CREATE_PARTICIPANTS = "CREATE TABLE "
             + ParticipantsTable.TABLE_NAME + "("
             + ParticipantsTable.COLUMN_PROJECTNAME + " TEXT,"
@@ -195,6 +201,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 1:
                 db.execSQL(SQL_ALTER_ENROLLED2);
                 db.execSQL(SQL_ALTER_ENROLLED3);
+            case 2:
+                db.execSQL(SQL_ALTER_FORM2);
+                db.execSQL(SQL_ALTER_FORM3);
         }
     }
 
