@@ -176,6 +176,9 @@ public class InfoActivity extends Activity {
                     fldGrpmp08a004a.setVisibility(View.VISIBLE);
                     fupRound.setText("FUP Round: " + childMap.get(mp08a004.getSelectedItem().toString()).getFupround());
                     motherName.setText("Mother Name: " + childMap.get(mp08a004.getSelectedItem().toString()).getEpname());
+
+                    AppMain.cround = Integer.valueOf(childMap.get(mp08a004.getSelectedItem().toString()).getFupround());
+
                 } else {
                     fldGrpmp08a004a.setVisibility(View.GONE);
                     mp08a002.setText(null);
@@ -353,7 +356,7 @@ public class InfoActivity extends Activity {
                 }
 
                 finish();
-             //   Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, EndingActivity.class);
                 endSec.putExtra("complete", false);
                 startActivity(endSec);
@@ -366,7 +369,7 @@ public class InfoActivity extends Activity {
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
-       // Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
         if (ValidateForm()) {
             try {
@@ -375,7 +378,7 @@ public class InfoActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-              //  Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
                 Intent intent;
@@ -419,23 +422,23 @@ public class InfoActivity extends Activity {
         AppMain.fc.setID(rowId);
 
         if (rowId != null) {
-        //    Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             AppMain.fc.setUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
-           // Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
 
             // Update UID of Last Inserted Form
             db.updateFormsUID();
 
             return true;
         } else {
-          //  Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
     }
 
     private void SaveDraft() throws JSONException {
-      //  Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -508,7 +511,7 @@ public class InfoActivity extends Activity {
             AppMain.fc.setSurveyType("Form-11 Maternal Postpartum Clinical Assessment (6 Months)");
         }
 
-       // Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -537,7 +540,7 @@ public class InfoActivity extends Activity {
 //            AppMain.fc.setGpsTime(GPSPref.getString(date, "0")); // Timestamp is converted to date above
             AppMain.fc.setGpsTime(date); // Timestamp is converted to date above
 
-           // Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             Log.e(TAG, "setGPS: " + e.getMessage());

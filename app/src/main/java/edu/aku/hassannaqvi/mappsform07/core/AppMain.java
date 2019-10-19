@@ -133,6 +133,7 @@ public class AppMain extends Application {
     public static String[] loginMem;
     public static String ftype = "";
     public static int fround = 0;
+    public static int cround = 0;
     public static String dob = "";
 
 

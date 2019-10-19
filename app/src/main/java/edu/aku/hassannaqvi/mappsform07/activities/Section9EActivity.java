@@ -88,7 +88,7 @@ public class Section9EActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent sece = new Intent(this, Section9FActivity.class);
+                Intent sece = new Intent(this, AppMain.cround == 1 ? Section9FActivity.class : EndingActivity.class);
                 sece.putExtra("complete", true);
                 startActivity(sece);
 
