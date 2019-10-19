@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersTable.ROW_PASSWORD + " TEXT );";
 
     public static final String DATABASE_NAME = "mapps_f2.db";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 7;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "(" +
             FormsTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -260,13 +260,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 5:
                 db.execSQL(SQL_ALTER_ENROLLED3);
                 db.execSQL(SQL_ALTER_ENROLLED4);
-            case 8:
-                db.execSQL(SQL_ALTER_FORMSS9F);
+            case 6:
+            case 7:
+                Log.d(TAG, "onUpgrade: DV_VER: 7");
+                try {
+                    db.execSQL(SQL_ALTER_FORMSS9F);
+                } catch (SQLException e) {
+                    Log.d(TAG, "onUpgrade: DV_VER: 7 " + e);
+                } finally {
+                    Log.d(TAG, "onUpgrade: DV_VER: 7 DONE!");
+
+                }
+
         }
     }
 
     public void syncUsers(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
+        Log.d(TAG, "DataBase Version: " + db.getVersion());
+        AppMain.dbVersion = db.getVersion();
         db.delete(UsersContract.UsersTable.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = userlist;

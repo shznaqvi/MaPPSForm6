@@ -146,7 +146,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     .getPackageManager()
                     .getPackageInfo("edu.aku.hassannaqvi.mappsform07", 0)
                     .versionName;
-            txtinstalldate.setText("Ver. " + AppMain.versionName + "." + String.valueOf(AppMain.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(AppMain.installedOn)) + " )");
+            txtinstalldate.setText("App Ver. " + AppMain.versionName + "." + AppMain.versionCode + " Database Ver. " + AppMain.dbVersion + " \r\n" +
+                    "( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(AppMain.installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -522,6 +523,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
+
                 if ((mEmail1.equals("dmu@aku") && mPassword1.equals("aku?dmu")) || db.Login(mEmail1, mPassword1) ||
                         (mEmail1.equals("test1234") && mPassword1.equals("test1234")) || (mEmail1.equals("test12345") && mPassword1.equals("test12345"))) {
                     AppMain.userName = mEmail1;

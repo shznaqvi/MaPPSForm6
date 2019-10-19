@@ -119,7 +119,7 @@
         <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
-        <item name="android:elevation">2dp</item>
+        <item name="android:elevation">1dp</item>
         <item name="android:radius">2dp</item>
 
         <item name="android:textColorHint">@color/colorPrimaryAlpha</item>
@@ -180,14 +180,18 @@
     </style>
 
     <style name="buttons" parent="android:Widget.Material.Light.Button">
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:minWidth">64dp</item>
         <item name="android:minHeight">36dp</item>
-        <item name="android:textSize">14pt</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:typeface">serif</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:radius">2dp</item>
-        <item name="android:elevation">5dp</item>
+        <item name="android:elevation">1dp</item>
         <item name="android:background">@drawable/button_bg</item>
     </style>
 
