@@ -46,8 +46,9 @@ public class Section7BActivity extends AppCompatActivity {
 
         maxdate1Week = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_WEEK)));
 
-        bi.mp07q17.setManager(getSupportFragmentManager());
+
         bi.mp07q20.setManager(getSupportFragmentManager());
+        bi.mp07q17.setManager(getSupportFragmentManager());
         bi.mp07q17.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q20.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q17.setMinDate(fup_flag ? maxdate1Week : AppMain.convertDateFormat(getIntent().getStringExtra("fdate_f4")));
