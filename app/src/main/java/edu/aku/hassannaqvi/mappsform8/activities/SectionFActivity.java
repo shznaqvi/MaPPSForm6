@@ -98,34 +98,30 @@ public class SectionFActivity extends AppCompatActivity {
         sForm08.put("mp08f01", bi.mp08f01a.isChecked() ? "1"
                 : bi.mp08f01b.isChecked() ? "2" : "0");
 
-        sForm08.put("mp08f02", bi.mp08f02a.isChecked() ? "1"
-                : bi.mp08f02b.isChecked() ? "2"
-                : bi.mp08f02c.isChecked() ? "3"
-                : bi.mp08f02d.isChecked() ? "4"
-                : bi.mp08f02e.isChecked() ? "5"
-                : bi.mp08f02f.isChecked() ? "6"
-                : bi.mp08f02g.isChecked() ? "7"
-                : bi.mp08f02h.isChecked() ? "8"
-                : bi.mp08f0296.isChecked() ? "96"
-                : "0");
-
+        sForm08.put("mp08f02a", bi.mp08f02a.isChecked() ? "1" : "0");
+        sForm08.put("mp08f02b", bi.mp08f02b.isChecked() ? "2" : "0");
+        sForm08.put("mp08f02c", bi.mp08f02c.isChecked() ? "3" : "0");
+        sForm08.put("mp08f02d", bi.mp08f02d.isChecked() ? "4" : "0");
+        sForm08.put("mp08f02e", bi.mp08f02e.isChecked() ? "5" : "0");
+        sForm08.put("mp08f02f", bi.mp08f02f.isChecked() ? "6" : "0");
+        sForm08.put("mp08f02g", bi.mp08f02g.isChecked() ? "7" : "0");
+        sForm08.put("mp08f02h", bi.mp08f02h.isChecked() ? "8" : "0");
+        sForm08.put("mp08f0296", bi.mp08f0296.isChecked() ? "96" : "0");
         sForm08.put("mp08f0296x", bi.mp08f0296x.getText().toString());
 
-        sForm08.put("mp08f03", bi.mp08f03a.isChecked() ? "1"
-                : bi.mp08f03b.isChecked() ? "2"
-                : bi.mp08f03c.isChecked() ? "3"
-                : bi.mp08f03d.isChecked() ? "4"
-                : bi.mp08f03e.isChecked() ? "5"
-                : bi.mp08f03f.isChecked() ? "6"
-                : bi.mp08f03g.isChecked() ? "7"
-                : bi.mp08f03h.isChecked() ? "8"
-                : bi.mp08f03i.isChecked() ? "9"
-                : bi.mp08f03j.isChecked() ? "10"
-                : bi.mp08f03k.isChecked() ? "11"
-                : bi.mp08f03l.isChecked() ? "12"
-                : bi.mp08f0296.isChecked() ? "96"
-                : "0");
-
+        sForm08.put("mp08f03a", bi.mp08f03a.isChecked() ? "1" : "0");
+        sForm08.put("mp08f03b", bi.mp08f03b.isChecked() ? "2" : "0");
+        sForm08.put("mp08f03c", bi.mp08f03c.isChecked() ? "3" : "0");
+        sForm08.put("mp08f03d", bi.mp08f03d.isChecked() ? "4" : "0");
+        sForm08.put("mp08f03e", bi.mp08f03e.isChecked() ? "5" : "0");
+        sForm08.put("mp08f03f", bi.mp08f03f.isChecked() ? "6" : "0");
+        sForm08.put("mp08f03g", bi.mp08f03g.isChecked() ? "7" : "0");
+        sForm08.put("mp08f03h", bi.mp08f03h.isChecked() ? "8" : "0");
+        sForm08.put("mp08f03i", bi.mp08f03i.isChecked() ? "9" : "0");
+        sForm08.put("mp08f03j", bi.mp08f03j.isChecked() ? "10" : "0");
+        sForm08.put("mp08f03k", bi.mp08f03k.isChecked() ? "11" : "0");
+        sForm08.put("mp08f03l", bi.mp08f03l.isChecked() ? "12" : "0");
+        sForm08.put("mp08f0396", bi.mp08f0396.isChecked() ? "96" : "0");
         sForm08.put("mp08f0396x", bi.mp08f0396x.getText().toString());
 
         sForm08.put("mp08f04a", bi.mp08f04a.getText().toString());
