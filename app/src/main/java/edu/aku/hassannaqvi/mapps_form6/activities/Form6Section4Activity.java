@@ -1362,7 +1362,13 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             obj_mp06d0.mp06dh2b = "0";
             obj_mp06d0.mp06dh2c = "0";
             obj_mp06d0.mp06dh3 = "0";
-            obj_mp06d0.mp06dh4 = "0";
+            obj_mp06d0.mp06dh401 = "0";
+            obj_mp06d0.mp06dh402 = "0";
+            obj_mp06d0.mp06dh403 = "0";
+            obj_mp06d0.mp06dh404 = "0";
+            obj_mp06d0.mp06dh405 = "0";
+            obj_mp06d0.mp06dh406 = "0";
+            obj_mp06d0.mp06dh407 = "0";
             obj_mp06d0.mp06dh5 = "0";
             obj_mp06d0.mp06dh407x = "0";
             HMmp06d0.put(vname, obj_mp06d0);
@@ -1371,10 +1377,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         }
 
 
-        final CheckBox mp06dh2a, mp06dh2b, mp06dh2c;
-        final RadioButton
-                mp06dh301,
-                mp06dh302,
+        final CheckBox mp06dh2a, mp06dh2b, mp06dh2c,
                 mp06dh401,
                 mp06dh402,
                 mp06dh403,
@@ -1382,6 +1385,9 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 mp06dh405,
                 mp06dh406,
                 mp06dh407;
+        final RadioButton
+                mp06dh301,
+                mp06dh302;
         final EditText mp06dh407x,
                 mp06dh5;
 
@@ -1431,25 +1437,25 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
 
         if (mp06dh401.isChecked()) {
-            obj_mp06d0.mp06dh4 = "1";
+            obj_mp06d0.mp06dh401 = "1";
         }
         if (mp06dh402.isChecked()) {
-            obj_mp06d0.mp06dh4 = "2";
+            obj_mp06d0.mp06dh402 = "2";
         }
         if (mp06dh403.isChecked()) {
-            obj_mp06d0.mp06dh4 = "3";
+            obj_mp06d0.mp06dh403 = "3";
         }
         if (mp06dh404.isChecked()) {
-            obj_mp06d0.mp06dh4 = "4";
+            obj_mp06d0.mp06dh404 = "4";
         }
         if (mp06dh405.isChecked()) {
-            obj_mp06d0.mp06dh4 = "5";
+            obj_mp06d0.mp06dh405 = "5";
         }
         if (mp06dh406.isChecked()) {
-            obj_mp06d0.mp06dh4 = "6";
+            obj_mp06d0.mp06dh406 = "6";
         }
         if (mp06dh407.isChecked()) {
-            obj_mp06d0.mp06dh4 = "7";
+            obj_mp06d0.mp06dh407 = "7";
 
             if (!mp06dh407x.getText().toString().isEmpty()) {
                 obj_mp06d0.mp06dh407x = mp06dh407x.getText().toString();
@@ -1484,11 +1490,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         // b.setCancelable(false);
 
 
-        CheckBox mp06dh2a, mp06dh2b, mp06dh2c;
-        final LinearLayout mp06dh4lv, mp06dh5lv;
-        final RadioButton
-                mp06dh301,
-                mp06dh302,
+        final CheckBox mp06dh2a, mp06dh2b, mp06dh2c,
                 mp06dh401,
                 mp06dh402,
                 mp06dh403,
@@ -1496,6 +1498,10 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 mp06dh405,
                 mp06dh406,
                 mp06dh407;
+        final LinearLayout mp06dh4lv, mp06dh5lv;
+        final RadioButton
+                mp06dh301,
+                mp06dh302;
         final EditText mp06dh407x,
                 mp06dh5;
 
@@ -1624,11 +1630,16 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
         String mp06dh2a;
         String mp06dh2b;
         String mp06dh2c;
-
+        String mp06dh401;
+        String mp06dh402;
+        String mp06dh403;
+        String mp06dh404;
+        String mp06dh405;
+        String mp06dh406;
+        String mp06dh407;
+        String mp06dh407x;
 
         String mp06dh3;
-        String mp06dh4;
-        String mp06dh407x;
 
         String mp06dh5;
 
@@ -1640,7 +1651,13 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             mp06dh2b = obj_mp060.mp06dh2b;
             mp06dh2c = obj_mp060.mp06dh2c;
             mp06dh3 = obj_mp060.mp06dh3;
-            mp06dh4 = obj_mp060.mp06dh4;
+            mp06dh401 = obj_mp060.mp06dh401;
+            mp06dh402 = obj_mp060.mp06dh402;
+            mp06dh403 = obj_mp060.mp06dh403;
+            mp06dh404 = obj_mp060.mp06dh404;
+            mp06dh405 = obj_mp060.mp06dh405;
+            mp06dh406 = obj_mp060.mp06dh406;
+            mp06dh407 = obj_mp060.mp06dh407;
             mp06dh407x = obj_mp060.mp06dh407x;
             mp06dh5 = obj_mp060.mp06dh5;
 
@@ -1651,7 +1668,13 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
             form6.put(key + "02c", mp06dh2c);
 
             form6.put(key + "03", mp06dh3);
-            form6.put(key + "04", mp06dh4);
+            form6.put(key + "04a", mp06dh401);
+            form6.put(key + "04b", mp06dh402);
+            form6.put(key + "04c", mp06dh403);
+            form6.put(key + "04d", mp06dh404);
+            form6.put(key + "04e", mp06dh405);
+            form6.put(key + "04f", mp06dh406);
+            form6.put(key + "04g", mp06dh407);
             form6.put(key + "04x", mp06dh407x);
             form6.put(key + "05", mp06dh5);
 
