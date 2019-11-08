@@ -103,6 +103,13 @@
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
+                        <LinearLayout
+                            android:id="@+id/fldGrpmp08f002"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:tag="0">
+
                         <CheckBox
                             android:id="@+id/mp08f02a"
                             android:layout_width="match_parent"
@@ -168,6 +175,7 @@
                             android:text='@{mp08f0296.checked ? mp08f0296x.getText.toString : ""}'
                             android:visibility="@{mp08f0296.checked ? View.VISIBLE : View.GONE}" />
 
+                        </LinearLayout>
                     </LinearLayout>
 
                     <!--59-->
@@ -184,6 +192,13 @@
                             android:text="@string/mp08f03"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/fldGrpmp08f003"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:tag="0">
 
                         <CheckBox
                             android:id="@+id/mp08f03a"
@@ -275,6 +290,7 @@
                             android:text='@{mp08f0396.checked ? mp08f0396x.getText.toString : ""}'
                             android:visibility="@{mp08f0396.checked ? View.VISIBLE : View.GONE}" />
 
+                        </LinearLayout>
                     </LinearLayout>
 
 
