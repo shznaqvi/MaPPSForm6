@@ -1605,7 +1605,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
                 if (id == -1) {
                     view.requestFocus();
 
-                    Toast.makeText(Form6Section4Activity.this, "Radio Button: Some filed are missing", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Form6Section4Activity.this, "Some filed are missing", Toast.LENGTH_LONG).show();
 
                     return false;
                 }
