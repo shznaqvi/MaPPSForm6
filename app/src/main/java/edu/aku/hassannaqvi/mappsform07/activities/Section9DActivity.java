@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,7 +24,7 @@ import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection9DBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.ClearClass;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Section9DActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
+public class Section9DActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     ActivitySection9DBinding bi;
 
@@ -44,15 +45,15 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
         bi.setCallback(this);
         setListeners();
 
-        bi.mp09q35.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bi.mp09q35b.isChecked()) {
-                    bi.mp09q37.clearCheck();
-                    bi.mp09q38.setText(null);
-                }
-            }
-        });
+//        bi.mp09q35.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//                if (bi.mp09q35b.isChecked()) {
+//                    bi.mp09q37.clearCheck();
+//                    bi.mp09q38.setText(null);
+//                }
+//            }
+//        });
 
         for (RadioGroup rg : grpmp09q34) {
             rg.setOnCheckedChangeListener(this);
@@ -275,6 +276,7 @@ public class Section9DActivity extends Activity implements RadioGroup.OnCheckedC
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         if (is34AllNo()) {
             bi.fldGrpmp09q35.setVisibility(View.GONE);
+            ClearClass.ClearAllFields(bi.fldGrpmp09q35, null);
             bi.mp09q35.clearCheck();
             bi.mp09q37.clearCheck();
             bi.mp09q38.setText(null);
