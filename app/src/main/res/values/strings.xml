@@ -145,9 +145,9 @@
     <string name="mp06db"> نه </string>
     <string name="mp06dh1"> ڇا حمل جي دوران توهان کي هيٺ ڏنلن مان ڪا پيچيدگي ٿي هئي ؟ </string>
     <string name="mp06dh2"> پيچيدگي جو وقت </string>
-    <string name="mp06dh2a"> وقت 1 </string>
-    <string name="mp06dh2b"> وقت 2 </string>
-    <string name="mp06dh2c"> وقت 3 </string>
+    <string name="mp06dh2a"> حمل جي پھرين ٽن مھينن (ھڪ کان ٽئي مھينا يا 4 کان 12 ھفتا)  ۾ </string>
+    <string name="mp06dh2b"> حمل جي وچين ٽن مھينن  (چوٿين کان ڇھ مھينا يا  13 کان 27 ھفتا) ۾ </string>
+    <string name="mp06dh2c"> حمل جي آخري ٽن مھينن (ستين کان نون مھينا يا 28 کان 40 ھفتا) </string>
     <string name="mp06dh3"> علاج/سار سنڀال ورتي؟ </string>
     <string name="mp06dh4"> علاج/سار سنڀال ڪٿان حاصل ڪئي؟ </string>
     <string name="mp06dh4a"> نجي ڪلينڪ </string>
