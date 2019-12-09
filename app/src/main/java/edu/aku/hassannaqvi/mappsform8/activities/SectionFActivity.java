@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import edu.aku.hassannaqvi.mappsform8.core.AppMain;
 import edu.aku.hassannaqvi.mappsform8.core.DatabaseHelper;
 import edu.aku.hassannaqvi.mappsform8.databinding.ActivitySectionFBinding;
 import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass;
+import edu.aku.hassannaqvi.mappsform8.validation.ValidatorClass02;
 
 import static edu.aku.hassannaqvi.mapps_form6.validation.ClearClass.ClearAllFields;
 
@@ -34,11 +36,57 @@ public class SectionFActivity extends AppCompatActivity {
 
     private void setupViews() {
 
-        bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.mp08f01a.getId()) {
                     ClearAllFields(bi.fldGrpMain, null);
+                }
+            }
+        });*/
+
+       bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (!bi.mp08f01a.isChecked()) {
+                    bi.fldGrpMain.setVisibility(View.GONE);
+                    bi.mp08f02a.setChecked(false);
+                    bi.mp08f02b.setChecked(false);
+                    bi.mp08f02c.setChecked(false);
+                    bi.mp08f02d.setChecked(false);
+                    bi.mp08f02e.setChecked(false);
+                    bi.mp08f02f.setChecked(false);
+                    bi.mp08f02g.setChecked(false);
+                    bi.mp08f02h.setChecked(false);
+                    bi.mp08f0296.setChecked(false);
+                    bi.mp08f0296x.setText(null);
+                } else {
+                    bi.fldGrpMain.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (!bi.mp08f01a.isChecked()) {
+                    bi.fldGrpMain.setVisibility(View.GONE);
+                    bi.mp08f03a.setChecked(false);
+                    bi.mp08f03b.setChecked(false);
+                    bi.mp08f03c.setChecked(false);
+                    bi.mp08f03d.setChecked(false);
+                    bi.mp08f03e.setChecked(false);
+                    bi.mp08f03f.setChecked(false);
+                    bi.mp08f03g.setChecked(false);
+                    bi.mp08f03h.setChecked(false);
+                    bi.mp08f03i.setChecked(false);
+                    bi.mp08f03j.setChecked(false);
+                    bi.mp08f03k.setChecked(false);
+                    bi.mp08f03l.setChecked(false);
+                    bi.mp08f0396.setChecked(false);
+                    bi.mp08f0396x.setText(null);
+                } else {
+                    bi.fldGrpMain.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -46,7 +94,6 @@ public class SectionFActivity extends AppCompatActivity {
         bi.mp08f08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-
                 if (i == bi.mp08f08b.getId()) {
                     ClearAllFields(bi.fldGrpmp08f09, null);
                 }
@@ -98,34 +145,30 @@ public class SectionFActivity extends AppCompatActivity {
         sForm08.put("mp08f01", bi.mp08f01a.isChecked() ? "1"
                 : bi.mp08f01b.isChecked() ? "2" : "0");
 
-        sForm08.put("mp08f02", bi.mp08f02a.isChecked() ? "1"
-                : bi.mp08f02b.isChecked() ? "2"
-                : bi.mp08f02c.isChecked() ? "3"
-                : bi.mp08f02d.isChecked() ? "4"
-                : bi.mp08f02e.isChecked() ? "5"
-                : bi.mp08f02f.isChecked() ? "6"
-                : bi.mp08f02g.isChecked() ? "7"
-                : bi.mp08f02h.isChecked() ? "8"
-                : bi.mp08f0296.isChecked() ? "96"
-                : "0");
-
+        sForm08.put("mp08f02a", bi.mp08f02a.isChecked() ? "1" : "0");
+        sForm08.put("mp08f02b", bi.mp08f02b.isChecked() ? "2" : "0");
+        sForm08.put("mp08f02c", bi.mp08f02c.isChecked() ? "3" : "0");
+        sForm08.put("mp08f02d", bi.mp08f02d.isChecked() ? "4" : "0");
+        sForm08.put("mp08f02e", bi.mp08f02e.isChecked() ? "5" : "0");
+        sForm08.put("mp08f02f", bi.mp08f02f.isChecked() ? "6" : "0");
+        sForm08.put("mp08f02g", bi.mp08f02g.isChecked() ? "7" : "0");
+        sForm08.put("mp08f02h", bi.mp08f02h.isChecked() ? "8" : "0");
+        sForm08.put("mp08f0296", bi.mp08f0296.isChecked() ? "96" : "0");
         sForm08.put("mp08f0296x", bi.mp08f0296x.getText().toString());
 
-        sForm08.put("mp08f03", bi.mp08f03a.isChecked() ? "1"
-                : bi.mp08f03b.isChecked() ? "2"
-                : bi.mp08f03c.isChecked() ? "3"
-                : bi.mp08f03d.isChecked() ? "4"
-                : bi.mp08f03e.isChecked() ? "5"
-                : bi.mp08f03f.isChecked() ? "6"
-                : bi.mp08f03g.isChecked() ? "7"
-                : bi.mp08f03h.isChecked() ? "8"
-                : bi.mp08f03i.isChecked() ? "9"
-                : bi.mp08f03j.isChecked() ? "10"
-                : bi.mp08f03k.isChecked() ? "11"
-                : bi.mp08f03l.isChecked() ? "12"
-                : bi.mp08f0296.isChecked() ? "96"
-                : "0");
-
+        sForm08.put("mp08f03a", bi.mp08f03a.isChecked() ? "1" : "0");
+        sForm08.put("mp08f03b", bi.mp08f03b.isChecked() ? "2" : "0");
+        sForm08.put("mp08f03c", bi.mp08f03c.isChecked() ? "3" : "0");
+        sForm08.put("mp08f03d", bi.mp08f03d.isChecked() ? "4" : "0");
+        sForm08.put("mp08f03e", bi.mp08f03e.isChecked() ? "5" : "0");
+        sForm08.put("mp08f03f", bi.mp08f03f.isChecked() ? "6" : "0");
+        sForm08.put("mp08f03g", bi.mp08f03g.isChecked() ? "7" : "0");
+        sForm08.put("mp08f03h", bi.mp08f03h.isChecked() ? "8" : "0");
+        sForm08.put("mp08f03i", bi.mp08f03i.isChecked() ? "9" : "0");
+        sForm08.put("mp08f03j", bi.mp08f03j.isChecked() ? "10" : "0");
+        sForm08.put("mp08f03k", bi.mp08f03k.isChecked() ? "11" : "0");
+        sForm08.put("mp08f03l", bi.mp08f03l.isChecked() ? "12" : "0");
+        sForm08.put("mp08f0396", bi.mp08f0396.isChecked() ? "96" : "0");
         sForm08.put("mp08f0396x", bi.mp08f0396x.getText().toString());
 
         sForm08.put("mp08f04a", bi.mp08f04a.getText().toString());
@@ -169,7 +212,21 @@ public class SectionFActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpForm08);
+        /*if (bi.mp08f01a.isChecked()) {
+            if (ValidatorClass.EmptyCheckBox(this, bi.fldGrpmp08f002, bi.mp08f02a, getString(R.string.mp08f01))) {
+                return false;
+            }
+
+            if (ValidatorClass.EmptyCheckBox(this, bi.fldGrpmp08f002, bi.mp08f0296, bi.mp08f0296x, getString(R.string.mp08f02) + " - " + getString(R.string.other))) {
+                return false;
+            }
+            if (ValidatorClass.EmptyCheckBox(this, bi.fldGrpmp08f003, bi.mp08f0396, bi.mp08f0396x, getString(R.string.mp08f03) + " - " + getString(R.string.other))) {
+                return false;
+            }
+
+        }*/
+
+        return ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpForm08);
 
     }
 
