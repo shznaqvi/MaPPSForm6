@@ -1525,7 +1525,7 @@ public class Form6Section4Activity extends AppCompatActivity implements RadioBut
 
         mp06dh407x = v.findViewById(R.id.mp06dh407x);
         mp06dh5 = v.findViewById(R.id.mp06dh5);
-        mp06dh5.setFilters(new InputFilter[]{new MinMaxFilter("1", "30")});
+//        mp06dh5.setFilters(new InputFilter[]{new MinMaxFilter("1", "30")});
 
 
         mp06dh407.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
