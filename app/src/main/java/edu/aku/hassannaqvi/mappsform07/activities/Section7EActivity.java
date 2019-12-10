@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,20 +16,20 @@ import java.util.Date;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection7EBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection7eBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Section7EActivity extends Activity {
+public class Section7EActivity extends AppCompatActivity {
 
-    ActivitySection7EBinding bi;
+    ActivitySection7eBinding bi;
 
     Date dob, today;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section7_e);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_e);
+        //setContentView(R.layout.activity_section7e);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section7e);
         bi.setCallback(this);
 
         dob = AppMain.getCalendarDate(AppMain.dob).getTime();

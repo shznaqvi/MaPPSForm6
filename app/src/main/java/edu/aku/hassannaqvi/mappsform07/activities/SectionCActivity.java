@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -15,19 +15,19 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySectionCBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySectioncBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class SectionCActivity extends Activity {
+public class SectionCActivity extends AppCompatActivity {
 
-    ActivitySectionCBinding bl;
+    ActivitySectioncBinding bl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_c);
+        //setContentView(R.layout.activity_sectionc);
 
-        bl = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
+        bl = DataBindingUtil.setContentView(this, R.layout.activity_sectionc);
 
         bl.setCallback(this);
         setupViews();

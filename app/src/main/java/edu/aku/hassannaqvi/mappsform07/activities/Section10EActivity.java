@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
@@ -20,12 +20,12 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection10EBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection10eBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Section10EActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
+public class Section10EActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
-    ActivitySection10EBinding bi;
+    ActivitySection10eBinding bi;
 
     @BindViews({R.id.mp10q38a, R.id.mp10q38b, R.id.mp10q38c, R.id.mp10q38d, R.id.mp10q38e, R.id.mp10q38f,
             R.id.mp10q38g, R.id.mp10q38h, R.id.mp10q38i, R.id.mp10q39a, R.id.mp10q39b, R.id.mp10q39c, R.id.mp10q39d,
@@ -57,9 +57,9 @@ public class Section10EActivity extends Activity implements RadioGroup.OnChecked
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section10_e);
+        //setContentView(R.layout.activity_section10e);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section10_e);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section10e);
         ButterKnife.bind(this);
         bi.setCallback(this);
 

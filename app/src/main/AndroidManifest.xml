@@ -115,7 +115,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".activities.Section9EActivity" />
+        <activity
+            android:name=".activities.Section9EActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1">
+
+        </activity>
         <activity
             android:name=".activities.Form11BActivity"
             android:screenOrientation="portrait"

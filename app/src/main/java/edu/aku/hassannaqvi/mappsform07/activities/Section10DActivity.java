@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -14,19 +14,19 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection10DBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection10dBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Section10DActivity extends Activity {
+public class Section10DActivity extends AppCompatActivity {
 
-    ActivitySection10DBinding bi;
+    ActivitySection10dBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section10_d);
+        //setContentView(R.layout.activity_section10d);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section10_d);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section10d);
         bi.setCallback(this);
 
         bi.mp10q34.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

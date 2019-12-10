@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,13 +21,13 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection7DBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection7dBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Section7DActivity extends Activity {
+public class Section7DActivity extends AppCompatActivity {
     private static final String TAG = Section7DActivity.class.getSimpleName();
 
-    ActivitySection7DBinding bi;
+    ActivitySection7dBinding bi;
     boolean flag_q25 = false, flag_q29 = false, flag_q33 = false, flag_q37 = false;
 
     @BindViews({R.id.mp07q22id, R.id.mp07q23id, R.id.mp07q25id, R.id.mp07q26id, R.id.mp07q27id,
@@ -40,7 +40,7 @@ public class Section7DActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section7_d);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_d);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section7d);
         ButterKnife.bind(this);
 
         bi.setCallback(this);

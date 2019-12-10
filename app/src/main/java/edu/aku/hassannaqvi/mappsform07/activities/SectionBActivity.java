@@ -17,12 +17,12 @@ import java.util.Date;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySectionBBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySectionbBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
 
-    ActivitySectionBBinding bl;
+    ActivitySectionbBinding bl;
 
     String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
     String minDate = AppMain.convertDateFormat("01-07-2017");
@@ -32,8 +32,8 @@ public class SectionBActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_b);
-        bl = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
+        //setContentView(R.layout.activity_sectionb);
+        bl = DataBindingUtil.setContentView(this, R.layout.activity_sectionb);
 
         bl.setCallback(this);
         setupViews();

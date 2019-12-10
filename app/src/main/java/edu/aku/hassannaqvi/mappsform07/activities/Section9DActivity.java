@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -20,13 +19,13 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection9DBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection9dBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.ClearClass;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
 public class Section9DActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
-    ActivitySection9DBinding bi;
+    ActivitySection9dBinding bi;
 
     @BindViews({R.id.mp09q34a, R.id.mp09q34b, R.id.mp09q34c, R.id.mp09q34d, R.id.mp09q34e, R.id.mp09q34f, R.id.mp09q34g, R.id.mp09q34h, R.id.mp09q34i, R.id.mp09q3488})
     List<RadioGroup> grpmp09q34;
@@ -40,7 +39,7 @@ public class Section9DActivity extends AppCompatActivity implements RadioGroup.O
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section9_d);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section9_d);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section9d);
         ButterKnife.bind(this);
         bi.setCallback(this);
         setListeners();

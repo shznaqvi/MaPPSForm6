@@ -27,7 +27,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySectionEBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySectioneBinding;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -85,13 +85,13 @@ public class SectionEActivity extends AppCompatActivity {
     List<Spinner> grpSpinners;
 
     String dateToday;
-    ActivitySectionEBinding bl;
+    ActivitySectioneBinding bl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_e);
-        bl = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
+        //setContentView(R.layout.activity_sectione);
+        bl = DataBindingUtil.setContentView(this, R.layout.activity_sectione);
         ButterKnife.bind(this);
 
 

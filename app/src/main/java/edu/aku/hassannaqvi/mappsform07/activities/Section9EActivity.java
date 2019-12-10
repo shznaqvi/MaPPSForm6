@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.mappsform07.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -12,19 +12,19 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection9EBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection9eBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
-public class Section9EActivity extends Activity {
+public class Section9EActivity extends AppCompatActivity {
 
-    ActivitySection9EBinding bi;
+    ActivitySection9eBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section9_e);
+        //setContentView(R.layout.activity_section9e);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section9_e);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section9e);
         bi.setCallback(this);
     }
 

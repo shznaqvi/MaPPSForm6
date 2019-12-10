@@ -352,7 +352,7 @@ public class Section9FActivity extends AppCompatActivity implements RadioButton.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section9_f);
+        setContentView(R.layout.activity_section9f);
         ButterKnife.bind(this);
 
         //region RB click evernts
