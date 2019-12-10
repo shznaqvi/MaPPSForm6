@@ -22,12 +22,12 @@ import edu.aku.hassannaqvi.mappsform07.R;
 import edu.aku.hassannaqvi.mappsform07.contracts.FormsContract;
 import edu.aku.hassannaqvi.mappsform07.core.AppMain;
 import edu.aku.hassannaqvi.mappsform07.core.DatabaseHelper;
-import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection7BBinding;
+import edu.aku.hassannaqvi.mappsform07.databinding.ActivitySection7bBinding;
 import edu.aku.hassannaqvi.mappsform07.validation.validatorClass;
 
 public class Section7BActivity extends AppCompatActivity {
 
-    ActivitySection7BBinding bi;
+    ActivitySection7bBinding bi;
     Collection<FormsContract> child;
     DatabaseHelper db;
     String maxdate1Week;
@@ -39,19 +39,21 @@ public class Section7BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section7_b);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section7_b);
+        //setContentView(R.layout.activity_section7b);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section7b);
+        bi.setCallback(this);
 
         fup_flag = getIntent().getBooleanExtra("fup_flag", false);
 
         maxdate1Week = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_WEEK)));
 
-        bi.mp07q17.setManager(getSupportFragmentManager());
-        bi.mp07q20.setManager(getSupportFragmentManager());
+
+//        bi.mp07q20.setManager(getSupportFragmentManager());
+//        bi.mp07q17.setManager(getSupportFragmentManager());
         bi.mp07q17.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q20.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
         bi.mp07q17.setMinDate(fup_flag ? maxdate1Week : AppMain.convertDateFormat(getIntent().getStringExtra("fdate_f4")));
-        bi.mp07q1701.setManager(getSupportFragmentManager());
+//        bi.mp07q1701.setManager(getSupportFragmentManager());
         bi.mp07q1701.setIs24HourView(true);
 
         bi.setCallback(this);

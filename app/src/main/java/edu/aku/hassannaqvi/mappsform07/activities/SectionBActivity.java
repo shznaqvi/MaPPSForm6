@@ -40,8 +40,8 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public void setupViews() {
-        bl.mp08b002.setManager(getSupportFragmentManager());
-        bl.mp08b004.setManager(getSupportFragmentManager());
+//        bl.mp08b002.setManager(getSupportFragmentManager());
+//        bl.mp08b004.setManager(getSupportFragmentManager());
         bl.mp08b002.setMaxDate(dateToday);
         bl.mp08b004.setMaxDate(dateToday);
         bl.mp08b002.setMinDate(minDate);

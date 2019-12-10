@@ -474,78 +474,45 @@
                         android:textColor="@android:color/white" />
 
 
-                    <RadioGroup
-                        android:id="@+id/mp09q36"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/mp09q36a"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36a" />
 
-                        <RadioButton
-                            android:id="@+id/mp09q36a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36a" />
+                    <CheckBox
+                        android:id="@+id/mp09q36b"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36b" />
 
-                        <RadioButton
-                            android:id="@+id/mp09q36b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36b" />
+                    <CheckBox
+                        android:id="@+id/mp09q36c"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36c" />
 
+                    <CheckBox
+                        android:id="@+id/mp09q36d"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36d" />
 
-                        <RadioButton
-                            android:id="@+id/mp09q36c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36c" />
+                    <CheckBox
+                        android:id="@+id/mp09q36e"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36e" />
 
-                        <RadioButton
-                            android:id="@+id/mp09q36d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36d" />
+                    <CheckBox
+                        android:id="@+id/mp09q36f"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36f" />
 
-                        <RadioButton
-                            android:id="@+id/mp09q36e"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36e" />
+                    <CheckBox
+                        android:id="@+id/mp09q36g"
+                        style="@style/checkbox"
+                        android:text="@string/mp09q36g" />
 
-                        <RadioButton
-                            android:id="@+id/mp09q36f"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36f" />
-
-                        <RadioButton
-                            android:id="@+id/mp09q36g"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/mp09q36g" />
-
-                        <RadioButton
-                            android:id="@+id/mp09q3688"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/other" />
-
-                    </RadioGroup>
+                    <CheckBox
+                        android:id="@+id/mp09q3688"
+                        style="@style/checkbox"
+                        android:text="@string/other" />
 
 
                     <EditText

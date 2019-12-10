@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.mappsform07.validation;
 
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -7,6 +8,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 /**
  * Created by ali.azaz on 03/19/18.
@@ -92,10 +94,16 @@ public class ClearClass {
                     v.setEnabled(flag);
 
             } else if (v instanceof RadioButton) {
-                ((RadioButton) v).setChecked(false);
                 if (flag != null)
                     v.setEnabled(flag);
-
+            } else if (v instanceof Spinner) {
+                ((Spinner) v).setSelection(0);
+                if (flag != null)
+                    v.setEnabled(flag);
+            } else if (v instanceof CardView) {
+                ClearAllFields(v, flag);
+            } else if (v instanceof LinearLayout) {
+                ClearAllFields(v, flag);
             }
 
         }
