@@ -45,46 +45,47 @@ public class SectionFActivity extends AppCompatActivity {
             }
         });*/
 
-       bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (!bi.mp08f01a.isChecked()) {
-                    bi.fldGrpMain.setVisibility(View.GONE);
-                    bi.mp08f02a.setChecked(false);
-                    bi.mp08f02b.setChecked(false);
-                    bi.mp08f02c.setChecked(false);
-                    bi.mp08f02d.setChecked(false);
-                    bi.mp08f02e.setChecked(false);
-                    bi.mp08f02f.setChecked(false);
-                    bi.mp08f02g.setChecked(false);
-                    bi.mp08f02h.setChecked(false);
-                    bi.mp08f0296.setChecked(false);
-                    bi.mp08f0296x.setText(null);
-                } else {
-                    bi.fldGrpMain.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+//       bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//                if (!bi.mp08f01a.isChecked()) {
+//                    bi.fldGrpMain.setVisibility(View.GONE);
+//                    bi.mp08f02a.setChecked(false);
+//                    bi.mp08f02b.setChecked(false);
+//                    bi.mp08f02c.setChecked(false);
+//                    bi.mp08f02d.setChecked(false);
+//                    bi.mp08f02e.setChecked(false);
+//                    bi.mp08f02f.setChecked(false);
+//                    bi.mp08f02g.setChecked(false);
+//                    bi.mp08f02h.setChecked(false);
+//                    bi.mp08f0296.setChecked(false);
+//                    bi.mp08f0296x.setText(null);
+//                } else {
+//                    bi.fldGrpMain.setVisibility(View.VISIBLE);
+//                }
+//            }
+//        });
 
         bi.mp08f01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (!bi.mp08f01a.isChecked()) {
+                    ClearAllFields(bi.fldGrpMain, null);
                     bi.fldGrpMain.setVisibility(View.GONE);
-                    bi.mp08f03a.setChecked(false);
-                    bi.mp08f03b.setChecked(false);
-                    bi.mp08f03c.setChecked(false);
-                    bi.mp08f03d.setChecked(false);
-                    bi.mp08f03e.setChecked(false);
-                    bi.mp08f03f.setChecked(false);
-                    bi.mp08f03g.setChecked(false);
-                    bi.mp08f03h.setChecked(false);
-                    bi.mp08f03i.setChecked(false);
-                    bi.mp08f03j.setChecked(false);
-                    bi.mp08f03k.setChecked(false);
-                    bi.mp08f03l.setChecked(false);
-                    bi.mp08f0396.setChecked(false);
-                    bi.mp08f0396x.setText(null);
+//                    bi.mp08f03a.setChecked(false);
+//                    bi.mp08f03b.setChecked(false);
+//                    bi.mp08f03c.setChecked(false);
+//                    bi.mp08f03d.setChecked(false);
+//                    bi.mp08f03e.setChecked(false);
+//                    bi.mp08f03f.setChecked(false);
+//                    bi.mp08f03g.setChecked(false);
+//                    bi.mp08f03h.setChecked(false);
+//                    bi.mp08f03i.setChecked(false);
+//                    bi.mp08f03j.setChecked(false);
+//                    bi.mp08f03k.setChecked(false);
+//                    bi.mp08f03l.setChecked(false);
+//                    bi.mp08f0396.setChecked(false);
+//                    bi.mp08f0396x.setText(null);
                 } else {
                     bi.fldGrpMain.setVisibility(View.VISIBLE);
                 }

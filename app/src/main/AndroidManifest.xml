@@ -32,6 +32,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,6 +62,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden">
+
 
         </activity>
 
