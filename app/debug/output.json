@@ -3,10 +3,10 @@
     "outputType": {
       "type": "APK"
     },
-    "apkInfo": {
+    "apkData": {
       "type": "MAIN",
       "splits": [],
-      "versionCode": 442,
+      "versionCode": 474,
       "versionName": "1.2",
       "enabled": true,
       "outputFile": "app-debug.apk",
